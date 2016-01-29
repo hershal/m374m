@@ -1,0 +1,71 @@
+\newenvironment{Ex}{\textbf{Problem}\vspace{.75em}\\}{}
+\Newassociation{solution}{Soln}{Answers}
+\pagebreak[3]
+\newcommand{\Opentesthook}[2]{\Writetofile{#1}{\protect\section{#1: #2}}}
+\renewcommand{\Solnlabel}[1]{\textbf{Solution}\quad}
+\newcommand{\dd}[1]{\mathrm{d}{#1}}
+\newcommand{\ddt}[1]{\frac{\dd{}}{\dd{#1}}}
+\newcommand{\dddt}[1]{\frac{\dd{}^2}{\dd{#1}^2}}
+\newcommand{\aoneonematrix}{
+  \begin{bmatrix}
+    1 & 0.25 & 0.75 \\
+    1 & 0    & 0.5 \\
+    1 & 0    & 1 \\
+  \end{bmatrix}
+}
+\newcommand{\aonetwomatrix}{
+  \begin{bmatrix}
+    1 & 0.25 & 0.75 \\
+    1 & 0    & 0.5  \\
+    1 & 0.5  & 0.5  \\
+  \end{bmatrix}
+}
+\newcommand{\bonematrix}[2]{
+  \begin{bmatrix}
+    a_{#1}^{(#2)} \\
+    b_{#1}^{(#2)} \\
+    c_{#1}^{(#2)} \\
+  \end{bmatrix}
+}
+\newcommand{\setupaonematrices}[2]{
+\aoneonematrix \bonematrix{#1}{#2}
+}
+\newcommand{\setupatwomatrices}[2]{
+\aonetwomatrix \bonematrix{#1}{#2}
+}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstloadlanguages{Octave,C++,Perl}
+
+\lstset{
+  backgroundcolor=\color{white},
+  basicstyle=\scriptsize\ttfamily,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{mygreen},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  frame=single,
+  keywordstyle=\color{blue},
+  % language=Octave,
+  % numbers=left,
+  % numbersep=5pt,
+  % numberstyle=\tiny\color{mygray},
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  % stepnumber=2,
+  stringstyle=\color{mymauve},
+  tabsize=2,
+  title=\lstname,
+  columns=fullflexible,
+}
+
+\relpenalty=10000
+\binoppenalty=10000
