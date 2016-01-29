@@ -15,11 +15,11 @@
   In the blast wave problem, assume, instead of {\color{red}TODO}, a physical law
   in the form
   \begin{equation}
-    g(t,r,\rho,e,P)=0,
+    g(t,r,\rho,E,P)=0,
   \end{equation}
   where $P$ is the ambient air pressure\footnote{$P=M L^{-1} T^{-2}$}. ``By
   inspection'', find two independent dimensionless parameters formed from $t$,
-  $r$, $\rho$, $e$, and $P$. Naming the two dimensionless parameters $\pi_1$ and
+  $r$, $\rho$, $E$, and $P$. Naming the two dimensionless parameters $\pi_1$ and
   $\pi_2$ and assuming the law is equivalent to
   \begin{equation}
     f(\pi_1,\pi_2)=0,
@@ -31,6 +31,88 @@
   $P=0$, deduce that $r=C(Et^2/\rho)^{1/5}$ as before.
 
   \subsubsection*{Solution}
+  In the case where $P\ne0$, we will find exponents where $g(t,r,\rho,E,P)=0$.
+  Utilizing the mapping in \cref{tab:4-var-mappings}, we obtain the relation in
+  \cref{eq:4-p-ne-step-1}.
+
+  \begin{figure}
+    \centering
+    \label{tab:4-var-mappings}
+    \begin{tabularx}{0.5\textwidth}{XXX}
+      Variable & Unit & Exponent \\ \hline
+      $t$ & $T$ & $a$ \\
+      $r$ & $L$ & $b$ \\
+      $\rho$ & $ML^{-3}$ & $c$ \\
+      $E$ & $ML^{2}L^{-2}$ & $d$ \\
+      $P$ & $ML^{-1}T^{-2}$ & $e$ \\
+    \end{tabularx}
+    \caption{Variable mappings for \#4}
+  \end{figure}
+
+  \begin{equation}
+    \label{eq:4-p-ne-step-1}
+    \begin{aligned}
+      0 &= (T)^a(L)^b(ML^{-3})^c(ML^2T^{-2})^d(ML^{-1}T^{-2})^e\\
+        &= M^{c+d+e}L^{b-3c+2d-e}T^{a-2d-2e} \\
+    \end{aligned}
+  \end{equation}
+
+  We can now isolate the exponents for each unit.
+
+  \begin{equation}
+    \label{eq:4-p-ne-step-2}
+    \begin{aligned}
+      c + d + e &= 0 \\
+      b - 3c + 2d - e &= 0 \\
+      a - 2d - 2e &= 0 \\
+    \end{aligned}
+  \end{equation}
+
+  \Cref{eq:4-p-ne-step-2} includes five unknowns in three equations. Thus we
+  must choose values for at least two variables. We will pick values for two variables
+
+  \begin{equation}
+    \implies d=1, \quad e=1.
+  \end{equation}
+
+  \begin{equation}
+    \begin{aligned}
+      c+d+e &= 0\\
+      c + 2 &= 0\\
+      \implies c &= -2.\\
+    \end{aligned}
+  \end{equation}
+
+  Furthermore,
+
+  \begin{equation}
+    \begin{aligned}
+      b-3c+2d-e&=0\\
+      b-3(-2)+2(1)-(1)&=0 \\
+      b-6+2-1&=0 \\
+      \implies b&=5.\\
+    \end{aligned}
+  \end{equation}
+
+  Which implies
+
+  \begin{equation}
+    \begin{aligned}
+      a-2d-2e&=0\\
+      a-2(1)-2(1)&=0\\
+      \implies a&=4.\\
+    \end{aligned}
+  \end{equation}
+
+  From this information, we can construct the final answer for $P\ne0$, shown in
+  \cref{eq:4-p-ne-sol}.
+
+  \begin{equation}
+    \label{eq:4-p-ne-sol}
+      \boxed{
+        t^4r^5\rho^{-2}EP=C
+      }
+    \end{equation}
   {\huge \color{red}TODO}
 
 \subsection{5}
