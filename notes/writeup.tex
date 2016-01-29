@@ -10,9 +10,8 @@
 
 \tableofcontents
 
-\section{\textit{[2016-01-29 Fri]}}
-\subsection{Characteristic Scales}
-\subsubsection{Definition}
+\section{Characteristic Scales}
+\subsection{Definition}
 Non-zero constants $t_c$, $y_c$ are called characteristic scales for a function
 $y=f(t)$ if the following is true:
 
@@ -26,9 +25,8 @@ $y=f(t)$ if the following is true:
    window for moderate values of $m,n$ ($1 \le m, \quad n \le 10$).
 \end{enumerate}
 
-\subsubsection{Examples}
-\begin{enumerate}
-\item Example 1
+\subsection{Examples}
+\subsubsection{Example 1}
 
 $y=A\sin(\pi t/b), t \ge 0$, $A$, $b$ constants, $A = 1 \text{ meter}$, $b=1
 \text{ second}$. Reference fig. 1.1.
@@ -41,20 +39,19 @@ Can understand the features of the graph within this window. Reference fig. 1.2.
 Windows of significantly different sizes would give poor representations of
 functions. Reference fig. 1.3.
 
-\item Example 2
+\subsubsection{Example 2}
 
 $y = Ae^{-t/b}, t\ge0$ where $[y]=L$, $[t] = T$, $A$, $b$ constants.
 
 Reference fig. 1.4. Characteristic scales are $t_c=b$, $y_c=A$ since window
 $10b \times A$ captures main features.
 
-\item Example 3
+\subsubsection{Example 3}
 
 Fig. 1.5 has two sets of characteristic scales; two window sizes are needed to
 represent the features, as shown in figs. 1.6 and 1.7.
-\end{enumerate}
 
-\subsubsection{Procedure}
+\subsection{Procedure}
 Given some (potentially indirect) definition of a graph, how do we indentify the
 scales?
 
@@ -70,9 +67,8 @@ then characteristic scales $t_c$, $y_c$ can be found by solving:
 
 for $\alpha_1, \ldots, \alpha_m$ and $\beta_1, \ldots, \beta_m$.
 
-\subsubsection{Examples}
-\begin{enumerate}
-\item Example 1
+\subsection{Examples}
+\subsubsection{Example 1}
 
 Find characteristic scales $t_c$, $y_c$ for $y=f(t)$ defined by
 
@@ -80,7 +76,7 @@ Find characteristic scales $t_c$, $y_c$ for $y=f(t)$ defined by
   \left\{
   \begin{aligned}
     \frac{dy}{dt} &= \eta y, \quad t\ge0 \\
-    y_{(0)} = \lambda \\
+    y_{(0)} &= \lambda \\
   \end{aligned} \right.
 \end{equation}
 
@@ -101,8 +97,8 @@ Scales for $t$, $y$:
   \begin{aligned}
     t_c &= \eta^{\alpha_1} \lambda^{\alpha_2} \\
     \implies T &= T^{-\alpha_1}\Eta^{\alpha_2} \\
-    \implies \alpha_1=-1,\quad \alpha_2 = 0 \\
-    \implies t_c = \frac{1}{\eta}
+    \implies \alpha_1 &= -1,\quad \alpha_2 = 0 \\
+    \implies t_c &= \frac{1}{\eta}\\
   \end{aligned}
 \end{equation}
 
@@ -110,31 +106,29 @@ Scales for $t$, $y$:
   \begin{aligned}
     y_c &= \eta^{\beta_1} \lambda^{\beta_2} \\
     \implies \Eta &= T^{-\beta_1}\Eta^{\beta_2} \\
-    \implies \beta_1=0,\quad \beta_2 = 1 \\
-    \implies y_c = \lambda
+    \implies \beta_1 &= 0,\quad \beta_2 = 1 \\
+    \implies y_c &= \lambda
   \end{aligned}
 \end{equation}
 
-\item Example 2
-\label{sec:orgheadline8}
+\subsubsection{Example 2}
 
 Do the same for
 \begin{equation}
   \left\{
   \begin{aligned}
     \frac{d^2y}{dt^2} &= \eta \frac{dy}{dt} + \mu y^2,\quad t \ge 0 \\
-    y_{(0)}=\lambda, \quad \frac{dy}{dt}(0) = 0
+    y_{(0)} &= \lambda, \quad \frac{dy}{dt}(0) = 0
   \end{aligned} \right.
 \end{equation}
-
 $[y]=L$, $[t]=T$, $\eta$, $\mu$, $\lambda$ constants.
 
 Dimensions of $\eta$, $\mu$, $\lambda$:
 \begin{equation}
   \begin{aligned}
     [\lambda] &= L \\
-    [\eta]\frac{L}{T} &= \frac{L}{T^2} \rightarrow [\eta] &= \frac{1}{T} \\
-    [\mu]L^2 &= \frac{L}{T^2} \rightarrow [\mu] &= \frac{1}{LT^2} \\
+    [\eta]\frac{L}{T} &= \frac{L}{T^2} \quad\longrightarrow\quad [\eta] = \frac{1}{T} \\
+    [\mu]L^2 &= \frac{L}{T^2} \quad\longrightarrow\quad [\mu] = \frac{1}{LT^2} \\
   \end{aligned}
 \end{equation}
 
@@ -194,7 +188,7 @@ Where $\alpha_3$ is free. $\alpha_3=0, \quad \alpha_3\ne0$ gives two scales for
 t\_c:
 
 \begin{equation}
-  \alpha_3=0 \quad
+  \alpha_3=0, \quad
   \begin{pmatrix}
     -1 \\ 0 \\ 0
   \end{pmatrix}
@@ -207,7 +201,7 @@ t\_c:
 And
 
 \begin{equation}
-  \alpha_3 = \frac{-1}{2} \quad
+  \alpha_3 = \frac{-1}{2}, \quad
   \begin{pmatrix}
     \alpha_1 \\ \alpha_2 \\ \alpha_3 \\
   \end{pmatrix}
@@ -229,6 +223,5 @@ Same for $y_c$
     y_c &= \lambda
   \end{aligned}
 \end{equation}
-\end{enumerate}
 
 \end{document}
