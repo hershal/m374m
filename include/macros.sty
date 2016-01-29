@@ -12,15 +12,9 @@
 \usepackage{caption}
 \usepackage{wrapfig}
 \usepackage{subcaption}
-\usepackage[nosolutionfiles]{answers}
 \usepackage[acronym]{glossaries}
 \usepackage{listings}
 
-\newenvironment{Ex}{\textbf{Problem}\vspace{.75em}\\}{}
-\Newassociation{solution}{Soln}{Answers}
-\pagebreak[3]
-\newcommand{\Opentesthook}[2]{\Writetofile{#1}{\protect\section{#1: #2}}}
-\renewcommand{\Solnlabel}[1]{\textbf{Solution}\quad}
 \newcommand{\dd}[1]{\mathrm{d}{#1}}
 \newcommand{\ddt}[1]{\frac{\dd{}}{\dd{#1}}}
 \newcommand{\dddt}[1]{\frac{\dd{}^2}{\dd{#1}^2}}
