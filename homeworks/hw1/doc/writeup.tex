@@ -94,20 +94,20 @@ A model for an ideal pendulum released from rest is
   \label{eq:minilab-pendulum-model}
    \left\{
   \begin{aligned}
-    l\ddot{\theta}+g\sin\theta = 0, \quad & t\ge0 \\
+    \ell\ddot{\theta}+g\sin\theta = 0, \quad & t\ge0 \\
     \dot{\theta} = 0, \quad & t = 0 \\
     \theta = \theta_0, \quad & t = 0.
   \end{aligned}\right.
 \end{equation}
 
-Here $\theta$ is the pendulum angle, $l$ is the pendulum length, $g$ is the
+Here $\theta$ is the pendulum angle, $\ell$ is the pendulum length, $g$ is the
 gravitational acceleration constant, $t$ is time, and over-dots denote time
 derivatives. A dimensional analysis of \cref{eq:minilab-pendulum-model} reveals
 that the general solution can be written in the form
 
 \begin{equation}
   \label{eq:minilab-general-solution}
-  \theta = \tilde{f}(t\sqrt{g/l}, \;\theta_0)
+  \theta = \tilde{f}(t\sqrt{g/\ell}, \;\theta_0)
 \end{equation}
 
 for some function $\tilde{f}$. Here we investigate various consequences of
@@ -118,19 +118,30 @@ for length and time.
 \label{sec:minilab-part-1}
 \begin{Ex}
   For the initial conditions $\theta_0=3\pi/8$ and interval $t\in[0,2.5]$,
-  superimpose plots of $\theta$ versus $t$ for different values of $g$ and $l$,
-  say, $(g,l)=(10, 0.25), (10, 0.5), (10, 1)$. Based on the general solution
-  $\theta = f(t,g,l,\theta_0)$, briefly explain why different values of $g$ and
-  $l$ produce different curves.
+  superimpose plots of $\theta$ versus $t$ for different values of $g$ and $\ell$,
+  say, $(g,\ell)=(10, 0.25), (10, 0.5), (10, 1)$. Based on the general solution
+  $\theta = f(t,g,\ell,\theta_0)$, briefly explain why different values of $g$ and
+  $\ell$ produce different curves.
   \begin{solution} \hfill \vspace{.75em} \\
     {\huge \color{red}TODO}
   \end{solution}
 \end{Ex}
 
 \subsection{}
-Repeat \cref{sec:minilab-part-1} but now plot $\theta$ vs $t\sqrt{g/l}$. Based
-on the from solution in , briefly
-explain why different values of g and l produce the same curve (or portion thereof). If θ 0 were
-changed in addition to g and l, would we still get this same curve?
+\label{sec:minilab-part-2}
+Repeat \cref{sec:minilab-part-1} but now plot $\theta$ vs $t\sqrt{g/\ell}$.
+Based on the from solution in \cref{eq:minilab-general-solution}, briefly
+explain why different values of $g$ and $\ell$ produce the same curve (or
+portion thereof). If $\theta_0$ were changed in addition to $g$ and $\ell$,
+would we still get this same curve?
+
+\subsection{}
+Let $T$ be the period of the pendulum motion for given $\theta_0$, $g$, $\ell$.
+Using the form of the solution in \cref{eq:minilab-general-solution}, show
+$T=\sqrt{\ell/g}h(\theta_0)$ for some function $h$. Does this agree with the
+observations in \cref{sec:minilab-part-2}? Specifically, for fixed $\theta_0$
+and $g$, does $T$ increase by a factor of two when $\ell$ is increased by a
+factor of four?
+
 
 \end{document}
