@@ -18,7 +18,7 @@
     g(t,r,\rho,E,P)=0,
   \end{equation}
   where $P$ is the ambient air pressure\footnote{$P=M L^{-1} T^{-2}$}. ``By
-  inspection'', find two independent dimensionless parameters formed from $t$,
+  inspection,'' find two independent dimensionless parameters formed from $t$,
   $r$, $\rho$, $E$, and $P$. Naming the two dimensionless parameters $\pi_1$ and
   $\pi_2$ and assuming the law is equivalent to
   \begin{equation}
@@ -31,13 +31,12 @@
   $P=0$, deduce that $r=C(Et^2/\rho)^{1/5}$ as before.
 
   \subsubsection*{Solution}
-  In the case where $P\ne0$, we will find exponents where $g(t,r,\rho,E,P)=0$.
-  Utilizing the mapping in \cref{tab:4-var-mappings}, we obtain the relation in
+  We will find the  $g(t,r,\rho,E,P)=0$ where $P\ne0$. Utilizing the
+  mapping in \cref{fig:4-var-mappings}, we obtain the relation in
   \cref{eq:4-p-ne-step-1}.
 
   \begin{figure}
     \centering
-    \label{tab:4-var-mappings}
     \begin{tabularx}{0.5\textwidth}{XXX}
       Variable & Unit & Exponent \\ \hline
       $t$ & $T$ & $a$ \\
@@ -47,17 +46,18 @@
       $P$ & $ML^{-1}T^{-2}$ & $e$ \\
     \end{tabularx}
     \caption{Variable mappings for \#4}
+    \label{fig:4-var-mappings}
   \end{figure}
 
   \begin{equation}
     \label{eq:4-p-ne-step-1}
     \begin{aligned}
-      0 &= (T)^a(L)^b(ML^{-3})^c(ML^2T^{-2})^d(ML^{-1}T^{-2})^e\\
+      C &= (T)^a(L)^b(ML^{-3})^c(ML^2T^{-2})^d(ML^{-1}T^{-2})^e \\
         &= M^{c+d+e}L^{b-3c+2d-e}T^{a-2d-2e} \\
     \end{aligned}
   \end{equation}
 
-  We can now isolate the exponents for each unit.
+  We may now isolate the exponents for each unit.
 
   \begin{equation}
     \label{eq:4-p-ne-step-2}
@@ -69,13 +69,17 @@
   \end{equation}
 
   \Cref{eq:4-p-ne-step-2} includes five unknowns in three equations. Thus we
-  must choose values for at least two variables. We will pick values for two variables
+  must choose values for at least two variables.
 
   \begin{equation}
+    \label{eq:4-p-ne-step-3-de}
     \implies d=1, \quad e=1.
   \end{equation}
 
+  Substituting these results into \cref{eq:4-p-ne-step-2} yeilds
+
   \begin{equation}
+    \label{eq:4-p-ne-step-3-c}
     \begin{aligned}
       c+d+e &= 0\\
       c + 2 &= 0\\
@@ -86,6 +90,7 @@
   Furthermore,
 
   \begin{equation}
+    \label{eq:4-p-ne-step-3-b}
     \begin{aligned}
       b-3c+2d-e&=0\\
       b-3(-2)+2(1)-(1)&=0 \\
@@ -97,14 +102,17 @@
   Which implies
 
   \begin{equation}
+    \label{eq:4-p-ne-step-3-a}
     \begin{aligned}
-      a-2d-2e&=0\\
-      a-2(1)-2(1)&=0\\
-      \implies a&=4.\\
+      a-2d-2e&=0 \\
+      a-2(1)-2(1)&=0 \\
+      \implies a&=4. \\
     \end{aligned}
   \end{equation}
 
-  From this information, we can construct the final answer for $P\ne0$, shown in
+  From the information in
+  \cref{eq:4-p-ne-step-3-de,eq:4-p-ne-step-3-c,eq:4-p-ne-step-3-b,eq:4-p-ne-step-3-a},
+  we may construct the reduced form for the case when $P\ne0$, shown in
   \cref{eq:4-p-ne-sol}.
 
   \begin{equation}
@@ -113,7 +121,81 @@
         t^4r^5\rho^{-2}EP=C
       }
     \end{equation}
-  {\huge \color{red}TODO}
+
+  \newpage
+  Now we will find the $g(t,r,\rho,E,P)=0$ where $P=0$. We may utilize the same
+  mapping from \cref{fig:4-var-mappings} to obtain the relation in
+  \cref{eq:4-p-eq-step-1}.
+
+  \begin{equation}
+    \label{eq:4-p-eq-step-1}
+    \begin{aligned}
+      C &= (T)^a(L)^b(ML^{-3})^c(ML^2T^{-2})^d
+      &= M^{c+d}L^{b-3c+2d}T^{a-2d}.
+      \end{aligned}
+  \end{equation}
+
+  We may now isolate the components of each element as before:
+
+  \begin{equation}
+    \label{eq:4-p-eq-step-2}
+    \begin{aligned}
+      c + d &= 0 \\
+      b - 3c + 2d &= 0 \\
+      a - 2d &= 0 \\
+    \end{aligned}
+  \end{equation}
+
+  Note that \cref{eq:4-p-eq-step-2} contains four variables in three equations.
+  Thus we must choose a value for at least one of the variables. I will remain
+  different from the text for didatic purpose.
+
+  \begin{equation}
+    \label{eq:4-p-eq-step-3-d}
+    \implies d=-1
+  \end{equation}
+
+  From this result we obtain
+  \begin{equation}
+    \label{eq:4-p-eq-step-3-c}
+    \begin{aligned}
+      c+d &= 0 \\
+      c + (-1) &= 0 \\
+      \implies c = 1. \\
+    \end{aligned}
+  \end{equation}
+
+  Which yields
+  \begin{equation}
+    \label{eq:4-p-eq-step-3-b}
+    \begin{aligned}
+      b - 3c + 2d &= 0 \\
+      b - 3(1) + 2(-1) &= 0 \\
+      \implies b &= 5. \\
+    \end{aligned}
+  \end{equation}
+
+  Finally,
+  \begin{equation}
+    \label{eq:4-p-eq-step-3-a}
+    \begin{aligned}
+      a - 2d &= 0 \\
+      a - 2(-1) &= 0 \\
+      \implies a &= -2. \\
+    \end{aligned}
+  \end{equation}
+
+  From the results in
+  \cref{eq:4-p-eq-step-3-d,eq:4-p-eq-step-3-c,eq:4-p-eq-step-3-b,eq:4-p-eq-step-3-a}
+  we may confirm the original hypothesis
+  \begin{equation} \boxed{
+    \begin{aligned}
+      t^{-2} r^{5} \rho E^{-1} &= C \\
+      r^5 &= C\left(\frac{Et^2}{\rho}\right) \\
+      \implies r &= C\left(\frac{Et^2}{\rho}\right)^{1/5} \\
+    \end{aligned}
+    }
+  \end{equation}
 
 \subsection{5}
   \subsubsection*{Problem}
@@ -121,7 +203,32 @@
   are energy, pressure, and area, respectively. Show that $PA^{3/2}/E=\text{const}$.
 
   \subsubsection*{Solution}
-  {\huge \color{red}TODO}
+  \begin{figure}
+    \centering
+    \begin{tabularx}{0.5\textwidth}{XXX}
+      Variable & Unit & Exponent \\ \hline
+      $E$ & $ML^2T^{-2}$ & $a$ \\
+      $P$ & $ML^{-1}T^{-2}$ & $b$ \\
+      $A$ & $L^2$ & $c$ \\
+    \end{tabularx}
+    \caption{Variable mappings for \#5}
+    \label{fig:5-var-mappings}
+  \end{figure}
+
+  We may substitute the mappings in \cref{fig:5-var-mappings} into the given
+  equation to obtain \cref{eq:5-substitution}.
+
+  \begin{equation}
+    \label{eq:5-substitution}
+    \boxed{
+    \begin{aligned}
+      C &= \frac{PA^{3/2}}{E} \\
+        &= \frac{ML^{-1}T^{-2}(L^2)^{3/2}}{ML^2T^{-2}} \\
+        &= \frac{ML^2T^{-2}}{ML^2T^{-2}} \\
+      \implies C &= C. \\
+    \end{aligned}
+    }
+  \end{equation}
 
 \subsection{9$^2$}
   \subsubsection*{Problem}
