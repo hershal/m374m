@@ -38,7 +38,7 @@
   \begin{figure}
     \centering
     \begin{tabularx}{0.5\textwidth}{XXX}
-      Variable & Unit & Exponent \\ \hline
+      Variable & Dimension & Exponent \\ \hline
       $t$ & $T$ & $a$ \\
       $r$ & $L$ & $b$ \\
       $\rho$ & $ML^{-3}$ & $c$ \\
@@ -57,7 +57,7 @@
     \end{aligned}
   \end{equation}
 
-  We may now isolate the exponents for each unit.
+  We may now isolate the exponents for each dimension.
 
   \begin{equation}
     \label{eq:4-p-ne-step-2}
@@ -206,7 +206,7 @@
   \begin{figure}
     \centering
     \begin{tabularx}{0.5\textwidth}{XXX}
-      Variable & Unit & Exponent \\ \hline
+      Variable & Dimension & Exponent \\ \hline
       $E$ & $ML^2T^{-2}$ & $a$ \\
       $P$ & $ML^{-1}T^{-2}$ & $b$ \\
       $A$ & $L^2$ & $c$ \\
@@ -230,23 +230,143 @@
     }
   \end{equation}
 
+  \newpage
 \subsection{9$^2$}
   \subsubsection*{Problem}
   In modeling the digestion process in the insects, it is believed that
   digestion yield rate $Y$, in mass per time, is related to the concentration
   $C$, of the limiting nutrient, the residence time $T$ in the gut, the gut
-  volume $V$, and the rate of nutrient breakdown $r$, given the mass per time
-  per volume. Show that for fixed $T$, $r$, $C$, the yield is positively related
-  to the gut volume.
+  volume $V$, and the rate of nutrient breakdown $r$, given in mass per time per
+  volume. Show that for fixed $T$, $r$, $C$, the yield is positively related to
+  the gut volume.
 
   \subsubsection*{Remarks}
   For fixed $(T,r,C)$, show that $Y$ must be proportional to
   $V$. The dimensions of concentration are $M/L^3$.
 
   \subsubsection*{Solution}
-  {\huge \color{red}TODO}
+  \begin{figure}
+    \centering
+    \begin{tabularx}{0.5\textwidth}{XXX}
+      Variable & Dimension & Exponent \\ \hline
+      $Y$ & $MT^{-1}$ & a \\
+      $C$ & $MV^{-1}$ & b \\
+      $T$ & $T$ & c \\
+      $V$ & $V$ & d \\
+      $r$ & $MT^{-1}V^{-1}$ & e \\
+    \end{tabularx}
+    \caption{Variable mappings for \#9}
+    \label{fig:9-var-mappings}
+  \end{figure}
 
-\subsection{13}
+  The physical equation for the digestion process is given in \cref{eq:9-phy}.
+
+  \begin{equation}
+    \label{eq:9-phy}
+    f(Y,C,T,V,r)
+  \end{equation}
+
+  Applying the mapping from \cref{fig:9-var-mappings} gives an equivalent
+  dimensionless equation. We will use $V$ instead of $L^3$ for simplicity.
+
+  \begin{equation}
+    \label{eq:9-var}
+    \begin{aligned}
+      \Pi &= Y^a C^b T^c V^d r^e \\
+      &= (MT^{-1})^a (MV^{-1})^b (T)^c (V)^d (MT^{-1}V)^e \\
+      &= M^{a+b+e}V^{-a+c-e}T^{-b+c-e} \\
+    \end{aligned}
+  \end{equation}
+
+  From \cref{eq:9-var}, we can solve the exponents such that $\Pi$ is
+  dimensionless.
+
+  \begin{equation}
+    \label{eq:9-exp-eqs}
+    \begin{aligned}
+      a + b + e &= 0 \\
+      -a + c - e &= 0 \\
+      -b + d - e &= 0 \\
+    \end{aligned}
+  \end{equation}
+
+  \Cref{eq:9-exp-eqs} can be rewritten in matrix echelon form and solved by
+  ``standard methods for solving linear systems''.
+
+  \begin{equation}
+    \label{eq:9-matrix}
+    \begin{pmatrix}
+      1 & 0 & 0 & 1 & 0 \\
+      0 & 1 & 0 & -1 & 1 \\
+      0 & 0 & 1 & 1 & -1 \\
+    \end{pmatrix}
+    \vec{v} = 0
+  \end{equation}
+
+  \begin{equation}
+    \label{eq:9-exp-sol}
+    \implies
+    \vec{v} =
+    \begin{pmatrix}
+      -1 \\ 1 \\ -1 \\ 1 \\ 0
+    \end{pmatrix}d +
+    \begin{pmatrix}
+      0 \\ -1 \\ 1 \\ 0 \\ 1
+    \end{pmatrix}e
+  \end{equation}
+
+  From \cref{eq:9-exp-sol} we may now show that $Y$ must be proportional to $V$
+  in two linearly independent solutions. The two cases in particular are when
+  $d=1, e=0$; $d=1, e=1$. We must utilize $d$ in each case to maintain $Y$'s
+  proportionality to $V$.
+
+  \begin{multicols}{2}
+    \begin{equation}
+      \label{eq:9-sol-1}
+      \boxed{
+      \begin{aligned}
+        \Pi &= Y^{-1} C^{1} T^{-1} V^1 r^0 \\
+        \implies Y &= \Pi\frac{CV}{T} \\
+      \end{aligned}
+      }
+    \end{equation}
+
+    \begin{equation}
+      \label{eq:9-sol-2}
+      \boxed{
+      \begin{aligned}
+        \Pi &= Y^{-1} C^{0} T^{0} V^1 r^0 \\
+        \implies Y &= \Pi Vr \\
+      \end{aligned}
+      }
+    \end{equation}
+  \end{multicols}
+
+  \subsubsection*{Check}
+  We will verify that the dimensions in \cref{eq:9-sol-1} are correct.
+
+  \begin{equation}
+    \begin{aligned}
+      [Y] &= \frac{[C][V]}{[T]} \\
+      MT^{-1} &= \frac{MV^{-1}V}{T} \\
+      MT^{-1} &= MV^{-1}VT^{-1} \\
+      MT^{-1} &= M\cancel{V^{-1}}\cancel{V}T^{-1} \\
+      \implies MT^{-1} &= MT^{-1} \quad\checkmark \\
+    \end{aligned}
+  \end{equation}
+
+  We will verify that the dimensions in \cref{eq:9-sol-2} are correct.
+
+  \begin{equation}
+    \begin{aligned}
+      [Y] &= [V] [r] \\
+      MT^{-1} &= V MT^{-1}V^{-1} \\
+      MT^{-1} &= \cancel{V} MT^{-1} \cancel{V^{-1}} \\
+      \implies MT^{-1} &= MT^{-1} \quad\checkmark \\
+    \end{aligned}
+  \end{equation}
+
+  \subsection{13}
   \subsubsection*{Problem}
   Imagine an experiment where we set up a line of dominos with spacing $d$
   between them. Further, we assume a typical domino has height $h$ and thickness
