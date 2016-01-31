@@ -433,17 +433,80 @@
   \subsubsection*{Problem}
   A perfect gas in equilibrium has specific energy $E$ (energy per mass),
   temperature $T$, and Boltzmann constant $k$ (specific energy per degress).
-  Derive a functional relationship of the form $E=f(k,T)$.
+  Derive a functional relationship of the form $E=f(T,k)$.
 
   \subsubsection*{Remarks}
   Assuming a law $F(E,T,k)=0$, derive an equivalent reduce law and show that
-  $E=ckT$ for some constant $c$.
+  $E=Tck$ for some constant $c$.
 
   \subsubsection*{Solution}
-  \todo
+
+  \begin{figure}
+    \centering
+    \begin{tabularx}{0.5\textwidth}{XXX}
+      Variable & Dimension & Exponent \\ \hline
+      $E$ & $L^2T^{-2}$ & a \\
+      $T$ & $\Theta$ & b \\
+      $k$ & $L^2T^{-2}\Theta^{-1}$ & c \\
+    \end{tabularx}
+    \caption{Variable mappings for \#14}
+    \label{fig:14-var-mappings}
+  \end{figure}
+
+  Given the physical relationship $F(E,T,k)=0$ and the variable mappings in
+  \cref{fig:14-var-mappings}, we may derive an equivalent dimensionless physical
+  relationship between $E$, $T$, and $k$.
+
+  \begin{equation}
+    \begin{aligned}
+      \pi &= E^aT^bk^c \\
+      &= (L^2T^{-2})^a (\Theta)^{b} (L^2T^{-2}\Theta^{-1})^c = 1\\
+    \end{aligned}
+  \end{equation}
+
+  By inspection we can clearly see that $a=1$, $b=-1$, and $c=-1$. Thus
+
+  \begin{equation}
+    \pi = \frac{E}{Tk}
+  \end{equation}
+
+  This makes the equivalent dimensionless physical relationship
+
+  \begin{equation}
+    g\left(\frac{E}{Tk}\right) = 0
+  \end{equation}
+
+  Which means that the physical law must take the form
+
+  \begin{equation}
+    \frac{E}{Tk} = c
+  \end{equation}
+
+  Solving for $E$ gives us
+
+  \begin{equation}
+    \boxed{
+      \begin{aligned}
+        E &= Tck \\
+        E &= f(T,k) \\
+      \end{aligned}
+    }
+  \end{equation}
 
   \subsubsection*{Check}
-  \todo
+  Utilizing the dimensions from the mapping in \cref{fig:14-var-mappings}, we
+  may verify by inspection.
+
+  \begin{equation}
+    \begin{aligned}
+      E &= Tck \\
+      [E] &= [T][k] \\
+      L^2T^{-2} &= L^2T^{-2}\Theta^{-1} \Theta \\
+       &= L^2T^{-2} \cancel{\Theta^{-1}} \cancel{\Theta} \\
+      \implies L^2T^{-2} &= L^2T^{-2} \quad\checkmark \\
+    \end{aligned}
+  \end{equation}
+
 
 \section{Programming Minilab}
 A model for an ideal pendulum released from rest is
@@ -454,7 +517,7 @@ A model for an ideal pendulum released from rest is
   \begin{aligned}
     &\ell\ddot{\theta}+g\sin\theta = 0, \quad & t\ge0 \\
     &\dot{\theta} = 0, \quad & t = 0 \\
-    &\theta = \theta_0, \quad & t = 0.
+    &\theta = \theta_0, \quad & t = 0. \\
   \end{aligned}\right.
 \end{equation}
 
