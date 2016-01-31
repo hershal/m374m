@@ -382,7 +382,11 @@
 
   \begin{enumerate}
   \item Use dimensional analysis to show
-    that $$v=\sqrt{gh}\; F\left(\frac{d}{h},\frac{\tau}{h}\right).$$
+    that
+    \begin{equation}
+      \label{eq:13-1-question}
+      v=\sqrt{gh}\; F\left(\frac{d}{h},\frac{\tau}{h}\right).
+    \end{equation}
     Assume $\tau/h$ is very small and can be neglected. What does the law become?
   \item Experiments have been performed that show the graph of $v/\sqrt{gh}$ vs.
     $d/h$ is approximately constant, $1.5$, for $d/h$ varying over the range $0$
@@ -390,7 +394,37 @@
   \end{enumerate}
 
   \subsubsection*{Solution}
-  \todo
+  \begin{enumerate}
+  \item We will first prove \cref{eq:13-1-question}. $F$ is some dimensionless
+    quantity. We will verify that the dimensions match up
+
+    \begin{equation}
+      \begin{aligned}
+        [v] &= [g]^{1/2}[h]^{1/2} \\
+        LT^{-1} &= LT^{-2}T \\
+        \implies LT^{-1} &= LT^{-1}. \quad \checkmark \\
+      \end{aligned}
+    \end{equation}
+
+    Assuming that $\tau/h$ is small, the law becomes
+    \begin{equation} \boxed {
+        \label{eq:13-1-new-law}
+        v=\sqrt{gh}\; F\left(\frac{d}{h}\right).
+      }
+    \end{equation}
+
+  \item Since $d/h$ is approximately constant, we can model the quantity by the
+    given constant ($1.5$) in \cref{eq:13-1-new-law}.
+
+    \begin{equation} \boxed{
+        \begin{aligned}
+          v &= \sqrt{gh}(1.5) \\
+          &= \sqrt{9.8\cdot0.05}(1.5) \\
+          \implies v &= 1.05 \text{ m/s}
+        \end{aligned}
+      }
+    \end{equation}
+  \end{enumerate}
 
   \subsubsection*{Check}
   \todo
