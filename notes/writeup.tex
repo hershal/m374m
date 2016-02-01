@@ -194,6 +194,7 @@ Find all dimensionless combinations of $x, t, g$.
 The cases where $c=1$ and $c=2$ are the same combination, so we don't have
 independent results.
 
+\newpage
 \section{Characteristic Scales}
 \subsection{Definition}
 Non-zero constants $t_c$, $y_c$ are called characteristic scales for a function
@@ -408,7 +409,8 @@ Same for $y_c$
   \end{aligned}
 \end{equation}
 
-\section{Dimensionless form of an equation}
+\newpage
+\section{Dimensionless Forms}
 \subsection{Definition}
 Consider an equation involving vars $v_1,\ldots,v_k$. By the dimensionless form
 of an equation with respect to scales $v_1^c,\ldots,v_k^c$ we mean the equation
@@ -440,7 +442,7 @@ Dimensionless vars
   \end{aligned}
 \end{equation}
 
-Deriv relation
+Derivitive relation
 \begin{equation}
   \begin{aligned}
     \frac{d\bar{y}}{d\bar{t}} &= \frac{d\bar{y}}{dt} \cdot \frac{dt}{d\bar{t}}
@@ -448,9 +450,8 @@ Deriv relation
 \end{equation}
 
 Where $\frac{d\bar{y}}{dt} = \frac{d}{dt}(y/\lambda) = \frac{1}{\lambda}\frac{dy}{dt}$ and
-$\frac{dt}{d\bar{t}} = \frac{1}{\eta}$.
+$\frac{dt}{d\bar{t}} = \frac{1}{\eta}$. Thus
 
-Thus
 \begin{equation}
   \begin{aligned}
     \frac{d\bar{y}}{d\bar{t}} &= \frac{1}{\eta\lambda}\frac{dy}{dt} \\
@@ -459,32 +460,28 @@ Thus
 \end{equation}
 
 In general, $\frac{dy}{dt} = \frac{y_c}{t_c} \cdot \frac{d\bar{y}}{d\bar{t}}$.
-
 Substituted into equations,
 
 \begin{equation}
   \begin{aligned}
-    \frac{dy}{dt} &= \eta y+r, &\quad t\ge0 \\
-    \eta\lambda\frac{d\bar{y}}{d\bar{t}} = \eta\lambda\bar{y}+r, &\quad \bar{t}/\eta&\ge0 \\
+    \frac{dy}{dt} &= \eta y+r, &\quad t&\ge0 \\
+    \eta\lambda\frac{d\bar{y}}{d\bar{t}} &= \eta\lambda\bar{y}+r, &\quad \bar{t}/\eta&\ge0 \\
     \frac{d\bar{y}}{d\bar{t}} &= \bar{y}+\frac{r}{\eta\lambda}, &\quad \bar{t}&\ge0 \\
-    y &= \lambda \text{ at } t=0 \\
-    \lambda\bar{y} = \lambda &\quad \bar{t}/\eta &= 0 \\
-    \bar{y} &= 1 \text{ at } \bar{t}=0 \\
+    y &= \lambda, &\quad t&=0 \\
+    \lambda\bar{y} &= \lambda, &\quad \bar{t}/\eta &= 0 \\
+    \bar{y} &= 1, &\quad\bar{t}&=0. \\
   \end{aligned}
 \end{equation}
 
 We end up with dimensionless equations
 \begin{equation} \left\{
   \begin{aligned}
-    \frac{d\bar{y}}{d\bar{t}} = \bar{y} + \bar{r}, &\quad \bar{t}&\ge0 \\
-    \bar{y} &= 1 \text{ at } \bar{t} = 0
+    \frac{d\bar{y}}{d\bar{t}} &= \bar{y} + \bar{r}, &\quad \bar{t}&\ge0 \\
+    \bar{y} &= 1, &\quad \bar{t} &= 0
   \end{aligned} \right.
 \end{equation}
 
-\begin{equation}
-  \bar{r} = \frac{r}{\eta\lambda}
-\end{equation}
-is a dimensionless constant.
+Where $\bar{r} = \frac{r}{\eta\lambda}$ is a dimensionless constant.
 
 \subsection{Remarks}
 \begin{enumerate}
@@ -509,43 +506,42 @@ is a dimensionless constant.
   \begin{equation}
     \begin{aligned}
       \frac{d\bar{y}}{d\bar{t}} &= \bar{\eta}\bar{y} + 1, &\quad \bar{t}&\ge0 \\
-      \bar{y} &= 1 \text{ at } \bar{t} = 0 \\
-      \bar{\eta} &= \frac{\eta\lambda}{r} \text{ dimensionless}
+      \bar{y} &= 1 &\quad \bar{t} &= 0 \\
+      \bar{\eta} &= \frac{\eta\lambda}{r} \\
     \end{aligned}
   \end{equation}
+
+  Where $\bar{y}$ and $\bar{\eta}$ are dimensionless.
 
 \item Solutions of dimensionful and dimensionless equations are equivalent
 
   \begin{equation}
-    \text{dim-full soln} \leftrightarrow
-    \begin{aligned}
-      \bar{y} &= y/y_c \\
-      \bar{t} &= t/t_c \\
-    \end{aligned}
-    \leftrightarrow
-    \text{dim-less sol}
+    \text{dimensioned solution}\quad\xleftrightarrow[\bar{t} = t/t_c]{\bar{y} = y/y_c}\quad
+    \text{dimensionless solution}
   \end{equation}
 
 \item Dimensionless equations allow comparisons to be made
 \end{enumerate}
 
-\begin{equation}
-  \begin{aligned}
-    \text{dim-full eq} \frac{d^2u}{dt^2} = au + bu^2 + ce^{-u/d}
-  \end{aligned}
-\end{equation}
-Can't compare $a$, $b$, $c$, $d$ since dimensions are different.
+For example, we may not compare $a$, $b$, $c$, $d$ in \cref{eq:dim-full-eq}
+since dimensions are different. By comparison, we may compare $\bar{a}$,
+$\bar{b}$, $\bar{c}$, $\bar{d}$ in \cref{eq:dim-less-eq} since all variables are
+dimensionless.
 
-Dimensionless equations
 \begin{equation}
+  \label{eq:dim-full-eq}
+  \frac{d^2u}{dt^2} = au + bu^2 + ce^{-u/d}
+\end{equation}
+
+\begin{equation}
+  \label{eq:dim-less-eq}
   \frac{d^2\bar{u}}{d\bar{t^2}} = \bar{a} \bar{u} + \bar{b} \bar{u^2} + \bar{c}e^{-\bar{u}/\bar{d}}
 \end{equation}
-can compare $\bar{a}$, $\bar{b}$, $\bar{c}$, $\bar{d}$ since dimensionless.
 
 \subsection{Example}
-Vertical motion of a ball:
+Vertical motion of a ball can be described using the variables in
+\cref{fig:ball-model} and the equation
 
-Name the variables in \cref{fig:ball-model}
 \begin{figure}
   \centering
   \begin{tabularx}{0.5\textwidth}{XX}
@@ -563,7 +559,7 @@ Name the variables in \cref{fig:ball-model}
 
 Where
 \begin{equation}
-  x=0,\quad \frac{dx}{dt} = v_0 \text{ at } t=0
+  x=0,\quad \frac{dx}{dt} = v_0, \quad t=0
 \end{equation}
 
 Where $\eta$, $g$, $v_0$ are constants greater than zero.
