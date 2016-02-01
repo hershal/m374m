@@ -17,10 +17,12 @@
   \begin{equation}
     g(t,r,\rho,E,P)=0,
   \end{equation}
-  where $P$ is the ambient air pressure\footnote{$P=M L^{-1} T^{-2}$}. By
-  inspection, find two independent dimensionless parameters formed from $t$,
-  $r$, $\rho$, $E$, and $P$. We will name the two dimensionless parameters $\pi_1$ and
-  $\pi_2$ and assume the law is equivalent to
+  where $t$ is time, $r$ is the blast radius, $\rho$ is density of the
+  atom\footnote{$ML^{-3}$}, $E$ is the energy released during the explosion, and
+  $P$ is the ambient air pressure. By inspection, find two independent
+  dimensionless parameters formed from $t$, $r$, $\rho$, $E$, and $P$. We will
+  name the two dimensionless parameters $\pi_1$ and $\pi_2$ and assume the law
+  is equivalent to
   \begin{equation}
     f(\pi_1,\pi_2)=0.
   \end{equation}
@@ -227,15 +229,14 @@
 \subsection{9$^2$}
   \subsubsection*{Problem}
   In modeling the digestion process in insects, it is believed that digestion
-  yield rate $Y$, in mass per time, is related to the concentration $C$, of the
-  limiting nutrient, the residence time $T$ in the gut, the gut volume $V$, and
-  the rate of nutrient breakdown $r$, given in mass per time per volume. Show
-  that for fixed $T$, $r$, $C$, the yield is positively related to the gut
-  volume.
+  yield rate $Y$, in mass per time, is related to the
+  concentration\footnote{$M/L^3$} $C$, of the limiting nutrient, the residence
+  time $T$ in the gut, the gut volume $V$, and the rate of nutrient
+  breakdown\footnote{$MT^{-1}V^{-1}$} $r$. Show that for fixed $T$, $r$, $C$,
+  the yield is positively related to the gut volume.
 
   \subsubsection*{Remarks}
-  For fixed $(T,r,C)$, show that $Y$ must be proportional to
-  $V$. The dimensions of concentration are $M/L^3$.
+  For fixed $(T,r,C)$, show that $Y$ must be proportional to $V$.
 
   \subsubsection*{Solution}
   \begin{figure}
@@ -387,7 +388,7 @@
 
   \subsubsection*{Solution}
   \begin{enumerate}
-  \item We will first prove \cref{eq:13-1-question}. $F$ is some dimensionless
+  \item We will first analyze \cref{eq:13-1-question}. $F$ is some dimensionless
     quantity. We will verify that the dimensions match up
 
     \begin{equation}
@@ -420,8 +421,8 @@
 
 \subsection{14$^3$}
   \subsubsection*{Problem}
-  A perfect gas in equilibrium has specific energy $E$ (energy per mass),
-  temperature $T$, and Boltzmann constant $k$ (specific energy per degress).
+  A perfect gas in equilibrium has specific energy\footnote{$L^2T^{-2}$} $E$,
+  temperature $T$, and Boltzmann constant\footnote{$L^2T^{-2}\Theta^{-1}$} $k$.
   Derive a functional relationship of the form $E=f(T,k)$.
 
   \subsubsection*{Remarks}
@@ -580,7 +581,6 @@ for length and time, respectively.
     \label{eq:2-3-prob}
     T=\sqrt{\ell/g}\;h(\theta_0).
   \end{equation}
-
   Does this agree with the observations in \cref{sec:minilab-part-1}?
   Specifically, for fixed $\theta_0$ and $g$, does $T$ increase by a factor of
   two when $\ell$ is increased by a factor of four?
