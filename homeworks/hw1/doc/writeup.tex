@@ -544,7 +544,17 @@ for length and time, respectively.
   $\ell$ produce different curves.
 
   \subsubsection*{Solution}
-  \todo
+  Reference \cref{fig:2-1-solution}. It seems that different values of $g$ and
+  $\ell$ produce the same curve with different scaling. Based on the general
+  solution, $\theta$ is inversely proportional to the square root of $\ell$.
+  Thus when $\ell$ varies between $0.25$ to $1$, the curve halves in frequency.
+
+  \begin{figure}
+    \centering
+    \scalebox{0.8}{\huge\input{prog1_fig1.tex}}
+    \caption{$\theta$ vs $t$ for varying values of $\ell$}
+    \label{fig:2-1-solution}
+  \end{figure}
 
 \subsection{}
   \label{sec:minilab-part-2}
@@ -556,17 +566,67 @@ for length and time, respectively.
   $\ell$, would we still get this same curve?
 
   \subsubsection*{Solution}
-    \todo
+  Reference \cref{fig:2-2-solution}. Dimensional analysis of the quantity
+  $t\sqrt{g/\ell}$ reveals that $t\sqrt{g/\ell}$ is dimensionless. This means
+  that the plot of $\theta$ vs. $t\sqrt{g/\ell}$ effectively rescales the
+  dimensions in \cref{fig:2-1-solution} to produce \cref{fig:2-2-solution}.
+  Since the pendulum with the smallest length has the fastest frequency, its
+  curve is the longest. Furthermore, changing $\theta_0$ in addition to $g$ and
+  $\ell$ should produce the same curve since angles are dimensionless.
+
+  \begin{figure}
+    \centering
+    \scalebox{0.8}{\huge\input{prog1_fig2.tex}}
+    \caption{$\theta$ vs $t\sqrt{g/\ell}$ for varying values of $\ell$}
+    \label{fig:2-2-solution}
+  \end{figure}
 
 \subsection{}
   \subsubsection*{Problem}
   Let $T$ be the period of the pendulum motion for given $\theta_0$, $g$, $\ell$.
   Using the form of the solution in \cref{eq:minilab-general-solution}, show
-  $T=\sqrt{\ell/g}h(\theta_0)$ for some function $h$. Does this agree with the
-  observations in \cref{sec:minilab-part-2}? Specifically, for fixed $\theta_0$
+
+  \begin{equation}
+    \label{eq:2-3-prob}
+    T=\sqrt{\ell/g}\;h(\theta_0)
+  \end{equation}
+
+  for some function $h$. Does this agree with the
+  observations in \cref{sec:minilab-part-1}? Specifically, for fixed $\theta_0$
   and $g$, does $T$ increase by a factor of two when $\ell$ is increased by a
   factor of four?
 
   \subsubsection*{Solution}
-  \todo
+
+  Since $\theta$ in \cref{eq:minilab-general-solution} is dimensionless, we may
+  utilize the Pi theorem to obtain a relation for $h(\theta_0)$.
+
+  \begin{equation}
+    \begin{aligned}
+      \theta &= \tilde{f}(t\sqrt{g/\ell},\;\theta_0) \\
+      &= \tilde{f}(\pi_1,\;\pi_2) \\
+      0 &= F(\pi_1,\;\pi_2) \\
+      \pi_1 &= h(\pi_2) \\
+      \implies t\sqrt{g/\ell} &= h(\theta_0) \\
+    \end{aligned}
+  \end{equation}
+
+  Since $t\sqrt{g/\ell}$ is dimensionless, we may confirm that $h(\theta_0)$ is
+  also dimensionless. Through dimensional analysis we may also confirm that the
+  dimensions in \cref{eq:2-3-prob} agree.
+
+  \begin{equation}
+    \begin{aligned}
+      T &= \sqrt{\ell/g}\;h(\theta_0) \\
+      [T] &= [\ell]^{-1/2}[g]^{1/2} \\
+      T &= L^{-1/2}(LT^2)^{1/2} \\
+      &= L^{-1/2}L^{1/2}T \\
+      &= \cancel{L^{-1/2}}\cancel{L^{1/2}}T \\
+      T &= T \quad\checkmark
+    \end{aligned}
+  \end{equation}
+
+  This agrees with the observations in \cref{sec:minilab-part-1}; since $T$
+  varies in relation to $\ell$ by square root, quadrupling $\ell$ doubles $T$.
+
 \end{document}

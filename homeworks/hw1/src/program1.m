@@ -69,13 +69,13 @@ g = 10 ; L = 1  ;
 figure(1) ; %open figure
 clf ; % clear figure
 hold on ; % hold figure for multiple plots
-plot(tsolnA,usolnA(:,1),'b-')  ; %plot u1 versus t
-plot(tsolnB,usolnB(:,1),'k--') ; %plot u1 versus t
-plot(tsolnC,usolnC(:,1),'r-.') ; %plot u1 versus t
+plot(tsolnA.*sqrt(g/0.25),usolnA(:,1),'b-')  ; %plot u1 versus t
+plot(tsolnB.*sqrt(g/0.5),usolnB(:,1),'k--') ; %plot u1 versus t
+plot(tsolnC.*sqrt(g/1),usolnC(:,1),'r-.') ; %plot u1 versus t
 xlabel('t')          ; %label x axis
 ylabel('theta')      ; %label y axis
 title('L=0.25 (blue,solid), 0.5 (black,dash), 1 (red,dashdot)') ;
-print -f1 -dpslatex prog1_fig1.tex;
+print -f1 -dtex prog1_fig1.tex;
 ## print -f1 -dpdf prog1_fig1.pdf ; %print figure to a file
 
 % Rescale t values by a constant factor c
@@ -88,4 +88,4 @@ clf ;
 plot(tsolnAc,usolnA(:,1),'b-')  ;
 xlabel('t*c')        ;
 ylabel('theta')      ;
-print -f2 -dpslatex prog1_fig2.tex;
+print -f2 -dtex prog1_fig2.tex;
