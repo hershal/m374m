@@ -115,14 +115,14 @@
     \begin{equation}
       \label{eq:4-p-ne-sol-1}
       \boxed{
-        \pi_1 = t^2r^{-2}\rho^{-1}P
+        \implies \pi_1 = t^2r^{-2}\rho^{-1}P
       }
     \end{equation}
 
     \begin{equation}
       \label{eq:4-p-ne-sol-2}
       \boxed{
-        \pi_2 = t^4r^{-7}\rho^{-2}EP
+        \implies \pi_2 = t^4r^{-7}\rho^{-2}EP
       }
     \end{equation}
   \end{multicols}
@@ -146,7 +146,8 @@
   \end{equation}
 
   \subsubsection*{Check}
-  We will verify the dimensions in the case where $P\ne0$.
+  We will verify the dimensions in the case where $P\ne0$ in
+  \cref{eq:4-p-ne-sol-1,eq:4-p-ne-sol-2}.
 
   \begin{equation}
     \begin{aligned}
@@ -225,12 +226,12 @@
   \newpage
 \subsection{9$^2$}
   \subsubsection*{Problem}
-  In modeling the digestion process in the insects, it is believed that
-  digestion yield rate $Y$, in mass per time, is related to the concentration
-  $C$, of the limiting nutrient, the residence time $T$ in the gut, the gut
-  volume $V$, and the rate of nutrient breakdown $r$, given in mass per time per
-  volume. Show that for fixed $T$, $r$, $C$, the yield is positively related to
-  the gut volume.
+  In modeling the digestion process in insects, it is believed that digestion
+  yield rate $Y$, in mass per time, is related to the concentration $C$, of the
+  limiting nutrient, the residence time $T$ in the gut, the gut volume $V$, and
+  the rate of nutrient breakdown $r$, given in mass per time per volume. Show
+  that for fixed $T$, $r$, $C$, the yield is positively related to the gut
+  volume.
 
   \subsubsection*{Remarks}
   For fixed $(T,r,C)$, show that $Y$ must be proportional to
@@ -314,7 +315,7 @@
 
   From \cref{eq:9-exp-sol} we may now show that $Y$ must be proportional to $V$
   in two linearly independent solutions. The two cases in particular are when
-  $d=1, e=0$; $d=1, e=1$. We must utilize $d$ in each case to maintain $Y$'s
+  $d=1,\; e=0$ and $d=1,\; e=1$. We must utilize $d$ in each case to maintain $Y$'s
   proportionality to $V$.
 
   \begin{multicols}{2}
@@ -571,18 +572,18 @@ for length and time, respectively.
 
 \subsection{}
   \subsubsection*{Problem}
-  Let $T$ be the period of the pendulum motion for given $\theta_0$, $g$, $\ell$.
-  Using the form of the solution in \cref{eq:minilab-general-solution}, show
+  Let $T$ be the period of the pendulum motion for given $\theta_0$, $g$,
+  $\ell$. Using the form of the solution in \cref{eq:minilab-general-solution}
+  and for some function $h$, show that
 
   \begin{equation}
     \label{eq:2-3-prob}
-    T=\sqrt{\ell/g}\;h(\theta_0)
+    T=\sqrt{\ell/g}\;h(\theta_0).
   \end{equation}
 
-  for some function $h$. Does this agree with the
-  observations in \cref{sec:minilab-part-1}? Specifically, for fixed $\theta_0$
-  and $g$, does $T$ increase by a factor of two when $\ell$ is increased by a
-  factor of four?
+  Does this agree with the observations in \cref{sec:minilab-part-1}?
+  Specifically, for fixed $\theta_0$ and $g$, does $T$ increase by a factor of
+  two when $\ell$ is increased by a factor of four?
 
   \subsubsection*{Solution}
 
@@ -615,6 +616,7 @@ for length and time, respectively.
   \end{equation}
 
   This agrees with the observations in \cref{sec:minilab-part-1}; since $T$
-  varies in relation to $\ell$ by square root, quadrupling $\ell$ doubles $T$.
+  varies in relation to $\ell$ by square root, quadrupling $\ell$ doubles $T$
+  when $\theta_0$ and $g$ are held constant.
 
 \end{document}
