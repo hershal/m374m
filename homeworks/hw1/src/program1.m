@@ -1,3 +1,4 @@
+% -*- mode: octave -*-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Program 1.
 %
@@ -34,6 +35,7 @@
 %        defined in the file pendulum.m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+pkg load odepkg
 
 % Define global constants
 global g  L ;
@@ -73,7 +75,8 @@ plot(tsolnC,usolnC(:,1),'r-.') ; %plot u1 versus t
 xlabel('t')          ; %label x axis
 ylabel('theta')      ; %label y axis
 title('L=0.25 (blue,solid), 0.5 (black,dash), 1 (red,dashdot)') ;
-print -f1 -dpdf prog1_fig1.pdf ; %print figure to a file
+print -f1 -dpslatex prog1_fig1.tex;
+## print -f1 -dpdf prog1_fig1.pdf ; %print figure to a file
 
 % Rescale t values by a constant factor c
 c = 0.37 ;
@@ -85,4 +88,4 @@ clf ;
 plot(tsolnAc,usolnA(:,1),'b-')  ;
 xlabel('t*c')        ;
 ylabel('theta')      ;
-print -f2 -dpdf prog1_fig2.pdf ;
+print -f2 -dpslatex prog1_fig2.tex;
