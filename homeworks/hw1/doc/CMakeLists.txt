@@ -6,6 +6,10 @@ add_custom_target (copy)
 add_custom_command (
   TARGET copy
      COMMAND ${CMAKE_COMMAND} -E copy ../../../../include/macros.sty ./macros.sty
+     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../resources/prog1_fig1.tex ./
+     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../resources/prog1_fig2.tex ./
+     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../resources/prog1_fig1-inc.eps ./
+     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../resources/prog1_fig2-inc.eps ./
 )
 
 add_latex_document (
