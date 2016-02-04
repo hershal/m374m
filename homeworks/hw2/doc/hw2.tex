@@ -14,13 +14,14 @@
 
 \subsubsection*{Problem}
 Let $u=u(t),\;0 \le t \le b$, be a given smooth function. If
-$M=\text{max}[u(t)]$, then $u$ can be scales by $M$ to obtain the dimensionless
-dependent $U-u/M$. A time scale can be taken as $c_c=M/\text{max}|u'(t)|$, the
-ratio of the maximum slope. Find $M$ and $_c$ for the following functions:
+$M=\text{max}\abs{u(t)}$, then $u$ can be scales by $M$ to obtain the
+dimensionless dependent $U-u/M$. A time scale can be taken as
+$c_c=M/\text{max}\abs{u'(t)}$, the ratio of the maximum slope. Find $M$ and $_c$
+for the following functions:
 \begin{enumerate}
 \item $u(t)=A\sin\omega t, \quad t>0$.
 \item $u(t)=Ae^{-\lambda t},\quad t>0$.
-\item $u(t)=Ate^{-\lambda t},\quad 0 \le t \le 2/lamdba.$
+\item $u(t)=Ate^{-\lambda t},\quad 0 \le t \le 2/\lambda.$
 \end{enumerate}
 
 \subsubsection*{Remarks}
@@ -28,9 +29,45 @@ This problem illustrates an alternative way to identify scales. Assume $A$,
 $\omega$, and $\lambda$ are positive constants.
 
 \subsubsection*{Solution}
+\begin{enumerate}
+\item
+  \begin{equation} \boxed{
+    \begin{aligned}
+      M &= \text{max}\abs{A\sin\omega t} \\
+      \implies M &= A \\
+    \end{aligned}
+    }
+  \end{equation}
+
+  \begin{equation} \boxed{
+    \begin{aligned}
+      t_c &= M/\text{max}\abs{u'(t)} \\
+      &= A/\text{max}\abs{\omega A \cos \omega t} \\
+      \implies t_c &= 1/\omega \\
+    \end{aligned}
+    }
+  \end{equation}
+\item
+  \begin{equation} \boxed{
+    \begin{aligned}
+      M &= \text{max}\abs{Ae^{-\lambda t}} \\
+      \implies M &= A \\
+    \end{aligned}
+    }
+  \end{equation}
+
+  \begin{equation} \boxed{
+    \begin{aligned}
+      t_c &= M/\text{max}\abs{u'(t)} \\
+      &= A/\text{max}\abs{-A\lambda e^{-\lambda t}} \\
+      \implies t_c &= 1/\lambda \\
+    \end{aligned}
+    }
+  \end{equation}
+
+\item
 \todo
-\subsubsection*{Check}
-\todo
+\end{enumerate}
 
 \subsection{3$^2$}
 \subsubsection*{Problem}
