@@ -16,7 +16,6 @@
 \usepackage[acronym]{glossaries}
 \usepackage{listings}
 \usepackage[makeroom]{cancel}
-\usepackage{commath}
 
 \newcommand{\dd}[1]{\mathrm{d}{#1}}
 \newcommand{\ddt}[1]{\frac{\dd{}}{\dd{#1}}}
@@ -63,3 +62,7 @@
 \newcommand{\Epsilon}{E}
 \newcommand{\Eta}{H}
 \newcommand{\todo}{{\huge\color{red}TODO}}
+
+\newcommand{\pd}[3][]{\ensuremath{\frac{\partial^{#1} {#2}}{\partial {#3}^{#1}}}}
+\newcommand{\od}[3][]{\ensuremath{\frac{\mathrm{d}^{#1} {#2}}{\mathrm{d}{#3}^{#1}}}}
+\newcommand{\abs}[1]{\ensuremath{\left|{#1}\right|}}
