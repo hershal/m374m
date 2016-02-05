@@ -72,11 +72,20 @@ $\omega$, and $\lambda$ are positive constants.
 \subsection{3$^2$}
 \subsubsection*{Problem}
 The growth rate of an organism is often measured using carbon biomass as the
-``currency.'' The \textbf{von Bertalanffy growth model} is $$m' = ax^2 - bx^3,$$
+``currency.'' The \textbf{von Bertalanffy growth model} is
+\begin{equation}
+  \label{eq:growth-model}
+  m' = ax^2 - bx^3,
+\end{equation}
 where $m$ is its biomass, $x$ is some characteristic length of the organism, $a$
 is its biomass assimilation rate, and $b$ is its biomass use rate. Thus, it
 assimilates nutrients proportional to its area, and it uses nutrients
-proportional to its volume. Assume $m=\rho x^2$ and rewrite the model in terms
+proportional to its volume. Assume
+\begin{equation}
+  \label{eq:biomass-model}
+  m=\rho x^2
+\end{equation}
+and rewrite the model in terms
 of the length $x$. Determine the dimensions of the constants $a$, $b$, and
 $\rho$. Select time and length scales $\rho/b$ and $a/b$, repsectively, and
 reduce the problem to dimensionless form. If $x(0)=0$, find the length $x$ at
@@ -88,9 +97,140 @@ time $t$ increases, show that the size $x$ of an organism does not grow without
 bound, but instead approaches some maximum value.
 
 \subsubsection*{Solution}
-\todo
+First we will obtain the dimensions of each quantity. It is assumed that $[x]=L$
+and $[\od{x}{t}=LT^{-1}]$. We will obtain $\rho$ from \cref{eq:biomass-model}.
+\begin{equation}
+  \begin{aligned}
+    m &= \rho x^3 \\
+    [m] &= [\rho] [x]^3 \\
+    M &= \rho L^3 \\
+    \implies \rho &= ML^{-3} \\
+  \end{aligned}
+\end{equation}
+Similarly, we will obtain $a$ and $b$ from \cref{eq:growth-model}. We will
+separate the terms in \cref{eq:growth-model} to more clearly demonstrate the
+dimension breakdown.
+\vspace{-2em}
+\begin{multicols}{2}
+  \begin{equation}
+    \begin{aligned}
+      MT^{-1} &= aL^2 \\
+      \implies a &= ML^{-2}T^{-1} \\
+    \end{aligned}
+  \end{equation} \\
+  \begin{equation}
+    \begin{aligned}
+      MT^{-1} &= bL^3 \\
+      \implies b &= ML^{-3}T^{-1} \\
+    \end{aligned}
+  \end{equation}
+\end{multicols}
+Now we will rewrite the model in terms of length $x$ by differentiating $m$ and
+setting it equal to the given $m'$.
+\begin{equation}
+  \begin{aligned}
+    \label{eq:model-in-terms-of-x}
+    \od{}{t}\rho x^3 &= ax^2-bx^3 \\
+    3\rho x^2\od{x}{t} &= ax^2-bx^3 \\
+    \od{x}{t} &= \frac{a}{3\rho} - \frac{bx}{3\rho} \\
+  \end{aligned}
+\end{equation}
+We are given scales $t_c=\rho/b$ and $x_c=a/b$. From this we may construct a
+dimensionless model. Assuming $\bar{t}=t/t_c=bt/\rho$ and $\bar{x}=x/x_c=bx/a$, we may use
+the chain rule.
+\begin{equation}
+  \label{eq:chain-rule-setup}
+  \od{\bar{x}}{\bar{t}} = \od{\bar{x}}{t} \cdot \od{t}{\bar{t}}
+\end{equation}
+Differentiating $\bar{x}$ in terms of $t$ and $t$ in terms of $\bar{t}$ to
+yields the first and second terms, respectively so that
+\cref{eq:chain-rule-setup} becomes
+\begin{equation}
+  \begin{aligned}
+    \od{\bar{x}}{\bar{t}} &= \left(\frac{b}{a}\od{x}{t}\right)\cdot\left(\frac{\rho}{b}\right) \\
+    &= \frac{\rho}{a}\od{x}{t} \\
+  \end{aligned}
+\end{equation}
+We may substitute in $\od{x}{t}$ from \cref{eq:model-in-terms-of-x}
+\begin{equation}
+  \label{eq:dimensionless-model-in-terms-of-x}
+  \begin{aligned}
+    \od{\bar{x}}{\bar{t}} &= \frac{\rho}{a}\left(\frac{a}{3\rho} -
+    \frac{bx}{3\rho}\right) \\ &= \left(\frac{a\rho}{3a\rho} -
+    \frac{bx\rho}{3a\rho}\right) \\
+    &= \left(\frac{\cancel{a}\cancel{\rho}}{3\cancel{a}\cancel{\rho}} -
+    \frac{bx\cancel{\rho}}{3a\cancel{\rho}}\right) \\
+    &= \frac{1}{3}\left(1-\frac{bx}{a}\right) \\
+  \end{aligned}
+\end{equation}
+Substituting $x$ in \cref{eq:dimensionless-model-in-terms-of-x}
+\begin{equation}
+  \label{eq:dimensionless-model-in-terms-of-x-bar}
+  \begin{aligned}
+    \od{\bar{x}}{\bar{t}} &= \frac{1}{3}(1-\frac{b}{a}\frac{a\bar{x}}{b}) \\
+    &=
+    \frac{1}{3}(1-\frac{\cancel{b}}{\cancel{a}}\frac{\cancel{a}\bar{x}}{\cancel{b}})
+    \\
+    \implies \od{\bar{x}}{\bar{t}} &= \frac{1}{3}(1-\bar{x}) \\
+  \end{aligned}
+\end{equation}
+We may now solve the IVP from \cref{eq:dimensionless-model-in-terms-of-x-bar} to
+obtain the dimensionless version of \cref{eq:model-in-terms-of-x}.
+\begin{equation}
+  \label{eq:dimensionless-model-for-x-bar}
+  \begin{aligned}
+    \od{\bar{x}}{\bar{t}} &= \frac{1}{3}(1-\bar{x}) \\
+    \frac{\dd{\bar{x}}}{1-\bar{x}} &= \frac{1}{3} \dd{\bar{t}} \\
+    \int \frac{\dd{\bar{x}}}{1-\bar{x}} &= \int \frac{1}{3} \dd{\bar{t}} \\
+    -\ln (1-\bar{x}) &= \frac{\bar{t}}{3} + C \\
+    \ln (1-\bar{x}) &= -\frac{\bar{t}}{3} + C \\
+    1-\bar{x} &= e^{-\bar{t}/3+C} \\
+    &= Ce^{-\bar{t}/3} \\
+    \implies \bar{x} &= 1-Ce^{-\bar{t}/3}
+  \end{aligned}
+\end{equation}
+The initial condition $x(0)=0$ is equivalent to the dimensionless version
+$\bar{x}(0)=0$.
+\begin{equation}
+  \label{eq:dimensionless-model-for-x-bar-for-c}
+  \begin{aligned}
+    \bar{x}(0) &= 1-Ce^{0} \\
+    0 = 1-C \\
+    \implies C = 1
+  \end{aligned}
+\end{equation}
+From these results we can conclude that the dimensionless form of the organism's
+characteristic length $x$ in terms of time $t$ is
+\begin{equation} \boxed{
+    \bar{x} = 1-e^{-\bar{t}/3}
+  }
+\end{equation}
+The model seems reasonable since this equation is bounded, i.e. the organism
+does not infinitely grow.
+
 \subsubsection*{Check}
-\todo
+We will verify that the obtained dimensions are accurate.
+
+\begin{equation}
+  \begin{aligned}
+    \od{m}{t} &= ax^2 - bx^3 \\
+    \left[\od{m}{t}\right] &= [a][x]^2 - [b][x]^3 \\
+    MT^{-1} &= (ML^{-2}T^{-1})(L^2) - (ML^{-3}T^{-1})(L^3) \\
+    &= (M\cancel{L^{-2}}T^{-1})\cancel{(L^2)} - (M\cancel{L^{-3}}T^{-1})\cancel{(L^3)} \\
+    &= MT^{-1} - MT^{-1} \\
+    \implies MT^{-1} &= MT^{-1} \quad\checkmark
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    m &= \rho x^3 \\
+    [m] &= [\rho] [x]^3 \\
+    M &= ML^{-3} L^{3} \\
+    &= M\cancel{L^{-3}} \cancel{L^{3}} \\
+    \implies M &= M \quad\checkmark
+  \end{aligned}
+\end{equation}
 
 \subsection{4$^3$}
 \subsubsection*{Problem}
