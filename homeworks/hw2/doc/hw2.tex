@@ -236,7 +236,12 @@ We will verify that the obtained dimensions are accurate.
 \subsubsection*{Problem}
 A mass hanging on a spring is given a positive initial velocity $V$ from
 equilibrium. The ensuing displacement $x=x(t)$ from equilibrium ($x=0$) is
-governed by $$mx'' = -ax\abs{x'}-kx, \qquad x(0) = 0,\quad x'(0) = V$$ where
+governed by
+\begin{equation}
+  \label{eq:4-problem}
+  mx'' = -ax\abs{x'}-kx, \qquad x(0) = 0,\quad x'(0) = V
+\end{equation}
+where
 $-ax\abs{x'}$ is a nonlinear damping force and $-kx$ is a linear rebound force
 of the spring. What are possible length scales? If the restoring force is small
 compared to the damping force, choose appropriate time and length scales and
@@ -250,7 +255,189 @@ non-dimensionalize the equation. Under what condition on $k$ would we expect the
 rebound force term to be negligible?
 
 \subsubsection*{Solution}
-\todo
+By inspection, the dimensions of each variable are determined and represented in
+\cref{fig:4-var-mappings}.
+  \begin{figure}
+    \centering
+    \begin{tabularx}{0.5\textwidth}{XXX}
+      Variable & Dimension & Exponent \\ \hline
+      $m$ & $M$ & $a$ \\
+      $V$ & $L^{-1}T^{-1}$ & $b$ \\
+      $a$ & $ML^{-1}T^{-2}$ & $c$ \\
+      $k$ & $MT^{-2}$ & $d$ \\
+      $x$ & $L$ &  \\
+      $\od{x}{t}$ & $ML^{-3}$ &  \\
+      $\od[2]{x}{t}$ & $ML^{2}T^{-2}$ & \\
+    \end{tabularx}
+    \caption{Variable mappings for \#4}
+    \label{fig:4-var-mappings}
+  \end{figure}
+We will first determine appropriate time and length scales. The length scales
+are found by solving $L=m^aV^ba^ck^d$.
+\begin{equation}
+  \begin{aligned}
+    L &= m^aV^ba^ck^d \\
+    &= M^{a}(LT^{-1})^b(ML^{-1}T^{-1})^c(MT^{-2})^d \\
+    &= M^{a+c+d}L^{b-c}T^{-b-c-2d} \\
+  \end{aligned}
+\end{equation}
+This yields the following linear system
+\begin{equation}
+  \begin{aligned}
+    0 &= a + c + d \\
+    1 &= b - c \\
+    0 &= -b  - c - 2d \\
+  \end{aligned}
+\end{equation}
+Written in augmented matrix form
+\begin{equation}
+  \begin{pmatrix}[cccc|c]
+    1 & 0 & 1 & 1 & 0 \\
+    0 & 1 & -1 & 0 & 1 \\
+    0 & -1 & -1 & -2 & 0 \\
+  \end{pmatrix}
+\end{equation}
+Which may be reduced to echelon form
+\begin{equation}
+  \begin{pmatrix}[cccc|c]
+    1 & 0 & 0 & 0 & 1/2 \\
+    0 & 1 & 0 & 1 & 1/2 \\
+    0 & 0 & 1 & 1 & -1/2 \\
+  \end{pmatrix}
+\end{equation}
+Solving this system yields
+\begin{equation}
+  \begin{pmatrix}
+    a \\ b \\ c \\ d
+  \end{pmatrix} =
+  \begin{pmatrix}
+    1/2 \\ 1/2 \\ -1/2 \\ 0
+  \end{pmatrix} +
+  \begin{pmatrix}
+    0 \\ -1 \\ -1 \\ 1
+  \end{pmatrix}
+  d
+\end{equation}
+We pick the case when $d=0$ so that our length scale turns into
+\begin{equation}
+  \label{eq:4-length-scale}
+  \implies x_c = \sqrt{\frac{mV}{a}}
+\end{equation}
+
+We do the same approach to obtain the time scales, this time solving for
+$T=m^aV^ba^ck^d$.
+\begin{equation}
+  \begin{aligned}
+    T &= m^aV^ba^ck^d \\
+    &= M^{a}(LT^{-1})^b(ML^{-1}T^{-1})^c(MT^{-2})^d \\
+    &= M^{a+c+d}L^{b-c}T^{-b-c-2d} \\
+  \end{aligned}
+\end{equation}
+This yields the following system
+\begin{equation}
+  \begin{aligned}
+    0 &= a + c + d \\
+    0 &= b - c \\
+    1 &= -b  - c - 2d \\
+  \end{aligned}
+\end{equation}
+Written in augmented matrix form
+\begin{equation}
+  \begin{pmatrix}[cccc|c]
+    1 & 0 & 1 & 1 & 0 \\
+    0 & 1 & -1 & 0 & 0 \\
+    0 & -1 & -1 & -2 & 1 \\
+  \end{pmatrix}
+\end{equation}
+Which may be reduced to echelon form
+\begin{equation}
+  \begin{pmatrix}[cccc|c]
+    1 & 0 & 0 & 0 & 1/2 \\
+    0 & 1 & 0 & 1 & -1/2 \\
+    0 & 0 & 1 & 1 & -1/2 \\
+  \end{pmatrix}
+\end{equation}
+Solving this system yields
+\begin{equation}
+  \begin{pmatrix}
+    a \\ b \\ c \\ d
+  \end{pmatrix} =
+  \begin{pmatrix}
+    1/2 \\ -1/2 \\ -1/2 \\ 0
+  \end{pmatrix} +
+  \begin{pmatrix}
+    0 \\ -1 \\ -1 \\ 1
+  \end{pmatrix}
+  d
+\end{equation}
+We pick the case when $d=0$ so that our time scale turns into
+\begin{equation}
+  \label{eq:4-time-scale}
+  \implies t_c = \sqrt{\frac{m}{aV}}
+\end{equation}
+Thus the dimensionless forms of the dependent and independent forms of $x$ and
+$t$ become
+\begin{equation}
+  \bar{x} = \frac{x}{\sqrt{\frac{mV}{a}}}, \qquad
+  \bar{t} = \frac{t}{\sqrt{\frac{m}{Va}}}
+\end{equation}
+We'll use the scales from \cref{eq:4-length-scale,eq:4-time-scale} to construct
+a dimensionless version of \cref{eq:4-problem}.
+
+We'll begin by obtaining the first derivitive of $\bar{x}$ in terms of
+$\bar{t}$.
+\begin{equation}
+  \begin{aligned}
+    \od{\bar{x}}{\bar{t}} &= \od{\bar{x}}{t}\od{t}{\bar{t}} \\
+    &= \frac{1}{\sqrt{\frac{mV}{a}}}\od{x}{t}\od{t}{\bar{t}} \\
+    &= \frac{1}{\sqrt{\frac{mV}{a}}}\sqrt{\frac{m}{vA}}\od{x}{t} \\
+    &= \sqrt{\frac{a}{mV}\frac{m}{Va}} \od{x}{t} \\
+    &= \sqrt{\frac{\cancel{a}}{\cancel{m}V}\frac{\cancel{m}}{V\cancel{a}}}
+    \od{x}{t} \\
+    \implies \od{\bar{x}}{\bar{t}} &= \frac{1}{V}\od{x}{t} \\
+  \end{aligned}
+\end{equation}
+Deriving $\od{\bar{x}}{\bar{t}}$
+\begin{equation}
+  \begin{aligned}
+    \od{}{\bar{t}}\od{\bar{x}}{\bar{t}} &= \od{}{\bar{t}} \left(\frac{1}{V}\od{x}{t}\right) \\
+    \od[2]{\bar{x}}{\bar{t}} &= \od{}{t}
+    \left(\frac{1}{V}\od{x}{t}\right) \od{t}{\bar{t}} \\
+    &= \frac{1}{V} \left(\od[2]{x}{t}\right) \sqrt{\frac{m}{Va}} \\
+    \od[2]{\bar{x}}{\bar{t}} &= \frac{1}{V}\sqrt{\frac{m}{Va}} \left(\od[2]{x}{t}\right) \\
+  \end{aligned}
+\end{equation}
+Now we can transform the orignal equation slightly to our
+taste and insert the equations for the dimensionless equations to
+non-dimensionalize the variables within the equation.
+\begin{equation}
+  \label{eq:4-equation}
+  \begin{aligned}
+    \od[2]{x}{t} &= -\frac{ax}{m} \abs{\od{x}{t}} - \frac{kx}{m} \\
+    \implies \od[2]{x}{t} &= -\frac{a}{m}\left( \sqrt{\frac{mV}{a}}\bar{x}\right)
+    \left( \abs{V\od{\bar{x}}{\bar{t}}}\right) -
+    \frac{k\bar{x}}{m}\sqrt{\frac{mV}{a}} \\
+  \end{aligned}
+\end{equation}
+Substituting in \cref{eq:4-equation}
+\begin{equation}
+  \begin{aligned}
+    \od[2]{\bar{x}}{\bar{t}} &= \frac{1}{V}\sqrt{\frac{m}{Va}} \left(
+    -\frac{a}{m}\left( \sqrt{\frac{mV}{a}}\bar{x}\right) \left(
+    \abs{V\od{\bar{x}}{\bar{t}}}\right) -
+    \frac{k\bar{x}}{m}\sqrt{\frac{mV}{a}}\right) \\
+    &= \left(\frac{1}{V}\sqrt{\frac{m}{Va}}\right)\frac{-a}{m}\sqrt{\frac{mV}{a}}\bar{x}
+    \abs{V\od{\bar{x}}{\bar{t}}} -
+    \left(\frac{1}{V}\sqrt{\frac{m}{Va}}\right)\frac{k\bar{x}}{m}\sqrt{\frac{mV}{a}} \\
+    &= \left(\cancel{\frac{1}{V}}\sqrt{\frac{m}{\cancel{V}a}}\right)\frac{-a}{m}\sqrt{\frac{m\cancel{V}}{a}}\bar{x}
+    \abs{\cancel{V}\od{\bar{x}}{\bar{t}}} -
+    \left(\frac{1}{V}\sqrt{\frac{m}{\cancel{V}a}}\right)\frac{k\bar{x}}{m}\sqrt{\frac{m\cancel{V}}{a}} \\
+    &= -\cancel{\frac{a}{m}}\cancel{\frac{m}{a}}\bar{x}\od{\bar{x}}{\bar{t}} -
+    \frac{\cancel{m}}{Va}\frac{k\bar{x}}{\cancel{m}} \\
+    \implies \od[2]{\bar{x}}{\bar{t}} &= -\bar{x}\od{\bar{x}}{\bar{t}} - \frac{k\bar{x}}{Va} \\
+  \end{aligned}
+\end{equation}
+
 \subsubsection*{Check}
 \todo
 
