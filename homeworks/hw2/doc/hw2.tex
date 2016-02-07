@@ -459,6 +459,101 @@ of cooling.
 \end{enumerate}
 
 \subsubsection*{Solution}
+\begin{enumerate}
+\item The variable mappings have been determined by inspection and are shown in
+  \cref{fig:9-var-mappings}.
+
+  \begin{figure}
+    \centering
+    \begin{tabularx}{0.5\textwidth}{XXX}
+      Variable & Dimension & Exponent \\ \hline
+      $k$ & $T^{-1}$ & $a$ \\
+      $q$ & $\Theta T^{-1}$ & $b$ \\
+      $A$ & $\Theta$ & $c$ \\
+      $T_f$ & $\Theta$ & $d$ \\
+    \end{tabularx}
+    \caption{Variable mappings for \#9}
+    \label{fig:9-var-mappings}
+  \end{figure}
+
+\item
+  We are given the temperature scale so that $\bar{T}=T/T_f$. We will determine
+  appropriate length scales when the heat loss is large compared to the heat
+  generated.
+  \begin{equation}
+    \begin{aligned}
+      T &= k^aq^bA^cT_f^d \\
+      &= (T^{-1})^a(\Theta T^{-1})^b(\Theta)^c(\Theta)^d \\
+      &= T^{-a-b}\Theta^{b+c+d}
+    \end{aligned}
+  \end{equation}
+  This yeilds the linear system
+  \begin{equation}
+    \begin{aligned}
+      1 &= -a - b \\
+      0 &= b + c + d \\
+    \end{aligned}
+  \end{equation}
+  which can be written in augmented matrix form
+  \begin{equation}
+    \begin{pmatrix}[cccc|c]
+      -1 & -1 & 0 & 0 & 1 \\
+      0 & 1 & 1 & 1 & 0 \\
+    \end{pmatrix}
+  \end{equation}
+  and reduced into echelon form
+  \begin{equation}
+    \begin{pmatrix}[cccc|c]
+      1 & 0 & -1 & -1 & -1 \\
+      0 & 1 & 1 & 1 & 0 \\
+    \end{pmatrix}.
+  \end{equation}
+  Solving this system yields
+  \begin{equation}
+    \begin{pmatrix}
+      a \\ b \\ c \\ d \\
+    \end{pmatrix} =
+    \begin{pmatrix}
+      -1 \\ 0 \\ 0 \\ 0 \\
+    \end{pmatrix} +
+    \begin{pmatrix}
+      1 \\ -1 \\ 1 \\ 0 \\
+    \end{pmatrix}c +
+    \begin{pmatrix}
+      1 \\ -1 \\ 0 \\ 1 \\
+    \end{pmatrix}d.
+  \end{equation}
+
+  We now have many time scales to explore. We'll examine cases when
+  $(c,d)=(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
+  \begin{equation}
+    \begin{aligned}
+      (0,0) &\implies
+      \begin{pmatrix}
+        -1 \\ 0 \\ 0 \\ 0 \\
+      \end{pmatrix} \implies t_c =\frac{1}{k} \\
+      (0,1) &\implies
+      \begin{pmatrix}
+        0 \\ -1 \\ 0 \\ 1 \\
+      \end{pmatrix} \implies t_c =\frac{T_f}{q} \\
+      (1,0) &\implies
+      \begin{pmatrix}
+        0 \\ -1 \\ 1 \\ 0 \\
+      \end{pmatrix} \implies t_c =\frac{A}{q} \\
+      (1,1) &\implies
+      \begin{pmatrix}
+        1 \\ -2 \\ 1 \\ 1 \\
+      \end{pmatrix} \implies t_c =\frac{kAT_f}{q^2} \\
+    \end{aligned}
+  \end{equation}
+\end{enumerate}
+\subsection*{Solution Case 1}
+\todo
+\subsection*{Solution Case 2}
+\todo
+\subsection*{Solution Case 3}
+\todo
+\subsection*{Solution Case 4}
 \todo
 \subsubsection*{Check}
 \todo
