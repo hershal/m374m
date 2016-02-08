@@ -1,5 +1,4 @@
-
-function dudt = F(t,u)
+function dudt = rtank(t,u)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Evaluates du/dt for the reaction tank model
@@ -17,11 +16,10 @@ function dudt = F(t,u)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Access global constants from main prog
-global cin eta V gamma ;        
+global cin eta V gamma ;
 
 % Initialize output variable dudt
-dudt = 0 ; 
+dudt = 0 ;
 
 % Evaluate dudt for given t and u
 dudt = (eta/V)*(cin - u) - gamma*u^2 ;
- 
