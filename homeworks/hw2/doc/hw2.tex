@@ -31,50 +31,50 @@ $\omega$, and $\lambda$ are positive constants.
 \subsubsection*{Solution}
 \begin{enumerate}
 \item
-  \begin{equation} \boxed{
+  \begin{equation*} \boxed{
     \begin{aligned}
       M &= \text{max}\abs{A\sin\omega t} \\
       \implies M &= A \\
     \end{aligned}
     }
-  \end{equation}
+  \end{equation*}
 
-  \begin{equation} \boxed{
+  \begin{equation*} \boxed{
     \begin{aligned}
       t_c &= M/\text{max}\abs{u'(t)} \\
       &= A/\text{max}\abs{\omega A \cos \omega t} \\
       \implies t_c &= 1/\omega \\
     \end{aligned}
     }
-  \end{equation}
+  \end{equation*}
 \item
-  \begin{equation} \boxed{
+  \begin{equation*} \boxed{
     \begin{aligned}
       M &= \text{max}\abs{Ae^{-\lambda t}} \\
       \implies M &= A \\
     \end{aligned}
     }
-  \end{equation}
+  \end{equation*}
 
-  \begin{equation} \boxed{
+  \begin{equation*} \boxed{
     \begin{aligned}
       t_c &= M/\text{max}\abs{u'(t)} \\
       &= A/\text{max}\abs{-A\lambda e^{-\lambda t}} \\
       \implies t_c &= 1/\lambda \\
     \end{aligned}
     }
-  \end{equation}
+  \end{equation*}
 
 \item
-  \begin{equation} \boxed{
+  \begin{equation*} \boxed{
       \begin{aligned}
         M &= \text{max}\abs{Ate^{-\lambda t}} \\
         \implies M &= \frac{A}{\lambda e} \\
       \end{aligned}
     }
-  \end{equation}
+  \end{equation*}
 
-  \begin{equation} \boxed{
+  \begin{equation*} \boxed{
       \begin{aligned}
         t_c &= M/\text{max}\abs{u'(t)} \\
         &= M/\text{max}\abs{(1-\lambda t)Ae^{-\lambda t}} \\
@@ -82,7 +82,7 @@ $\omega$, and $\lambda$ are positive constants.
         \implies t_c &= \frac{1}{\lambda e}
       \end{aligned}
     }
-  \end{equation}
+  \end{equation*}
 \end{enumerate}
 
 \newpage
@@ -116,31 +116,31 @@ bound, but instead approaches some maximum value.
 \subsubsection*{Solution}
 First we will obtain the dimensions of each quantity. It is assumed that $[x]=L$
 and $[\od{x}{t}=LT^{-1}]$. We will obtain $\rho$ from \cref{eq:biomass-model}.
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     m &= \rho x^3 \\
     [m] &= [\rho] [x]^3 \\
     M &= \rho L^3 \\
     \implies \rho &= ML^{-3} \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 Similarly, we will obtain $a$ and $b$ from \cref{eq:growth-model}. We will
 separate the terms in \cref{eq:growth-model} to more clearly demonstrate the
 dimension breakdown.
 \vspace{-2em}
 \begin{multicols}{2}
-  \begin{equation}
+  \begin{equation*}
     \begin{aligned}
       MT^{-1} &= aL^2 \\
       \implies a &= ML^{-2}T^{-1} \\
     \end{aligned}
-  \end{equation} \\
-  \begin{equation}
+  \end{equation*} \\
+  \begin{equation*}
     \begin{aligned}
       MT^{-1} &= bL^3 \\
       \implies b &= ML^{-3}T^{-1} \\
     \end{aligned}
-  \end{equation}
+  \end{equation*}
 \end{multicols}
 Now we will rewrite the model in terms of length $x$ by differentiating $m$ and
 setting it equal to the given $m'$.
@@ -162,12 +162,12 @@ the chain rule.
 Differentiating $\bar{x}$ in terms of $t$ and $t$ in terms of $\bar{t}$ to
 yields the first and second terms, respectively so that
 \cref{eq:chain-rule-setup} becomes
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}} &= \left(\frac{b}{a}\od{x}{t}\right)\cdot\left(\frac{\rho}{b}\right) \\
     &= \frac{\rho}{a}\od{x}{t} \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 We may substitute in $\od{x}{t}$ from \cref{eq:model-in-terms-of-x}
 \begin{equation}
   \label{eq:dimensionless-model-in-terms-of-x}
@@ -193,8 +193,7 @@ Substituting $x$ in \cref{eq:dimensionless-model-in-terms-of-x}
 \end{equation}
 We may now solve the IVP from \cref{eq:dimensionless-model-in-terms-of-x-bar} to
 obtain the dimensionless version of \cref{eq:model-in-terms-of-x}.
-\begin{equation}
-  \label{eq:dimensionless-model-for-x-bar}
+\begin{equation*}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}} &= \frac{1}{3}(1-\bar{x}) \\
     \frac{\dd{\bar{x}}}{1-\bar{x}} &= \frac{1}{3} \dd{\bar{t}} \\
@@ -205,30 +204,29 @@ obtain the dimensionless version of \cref{eq:model-in-terms-of-x}.
     &= Ce^{-\bar{t}/3} \\
     \implies \bar{x} &= 1-Ce^{-\bar{t}/3}
   \end{aligned}
-\end{equation}
+\end{equation*}
 The initial condition $x(0)=0$ is equivalent to the dimensionless version
 $\bar{x}(0)=0$.
-\begin{equation}
-  \label{eq:dimensionless-model-for-x-bar-for-c}
+\begin{equation*}
   \begin{aligned}
     \bar{x}(0) &= 1-Ce^{0} \\
     0 = 1-C \\
     \implies C = 1
   \end{aligned}
-\end{equation}
+\end{equation*}
 From these results we can conclude that the dimensionless form of the organism's
 characteristic length $x$ in terms of time $t$ is
-\begin{equation} \boxed{
+\begin{equation*} \boxed{
     \bar{x} = 1-e^{-\bar{t}/3}
   }
-\end{equation}
+\end{equation*}
 The model seems reasonable since this equation is bounded, i.e. the organism
 does not grow infinitely.
 
 %% \subsubsection*{Check}
 %% We will verify that the obtained dimensions are accurate.
 
-%% \begin{equation}
+%% \begin{equation*}
 %%   \begin{aligned}
 %%     \od{m}{t} &= ax^2 - bx^3 \\
 %%     \left[\od{m}{t}\right] &= [a][x]^2 - [b][x]^3 \\
@@ -237,9 +235,9 @@ does not grow infinitely.
 %%     &= MT^{-1} - MT^{-1} \\
 %%     \implies MT^{-1} &= MT^{-1} \quad\checkmark
 %%   \end{aligned}
-%% \end{equation}
+%% \end{equation*}
 
-%% \begin{equation}
+%% \begin{equation*}
 %%   \begin{aligned}
 %%     m &= \rho x^3 \\
 %%     [m] &= [\rho] [x]^3 \\
@@ -247,7 +245,7 @@ does not grow infinitely.
 %%     &= M\cancel{L^{-3}} \cancel{L^{3}} \\
 %%     \implies M &= M \quad\checkmark
 %%   \end{aligned}
-%% \end{equation}
+%% \end{equation*}
 
 \newpage
 \subsection{4$^3$}
@@ -272,8 +270,8 @@ non-dimensionalize the equation. Under what condition on $k$ would we expect the
 rebound force term to be negligible?
 
 \subsubsection*{Solution}
-By inspection, the dimensions of each variable are determined and represented in
-\cref{fig:4-var-mappings}.
+The dimensions of each variable are determined by inspection and are represented
+in \cref{fig:4-var-mappings}.
   \begin{figure}
     \centering
     \begin{tabularx}{0.5\textwidth}{XXX}
@@ -291,39 +289,39 @@ By inspection, the dimensions of each variable are determined and represented in
   \end{figure}
 We will first determine appropriate time and length scales. The length scales
 are found by solving $L=m^aV^ba^ck^d$.
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     L &= m^aV^ba^ck^d \\
     &= M^{a}(LT^{-1})^b(ML^{-1}T^{-1})^c(MT^{-2})^d \\
     &= M^{a+c+d}L^{b-c}T^{-b-c-2d} \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 This yields the following linear system
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     0 &= a + c + d \\
     1 &= b - c \\
     0 &= -b  - c - 2d \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 Written in augmented matrix form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}[cccc|c]
     1 & 0 & 1 & 1 & 0 \\
     0 & 1 & -1 & 0 & 1 \\
     0 & -1 & -1 & -2 & 0 \\
   \end{pmatrix}
-\end{equation}
+\end{equation*}
 Which may be reduced to echelon form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}[cccc|c]
     1 & 0 & 0 & 0 & 1/2 \\
     0 & 1 & 0 & 1 & 1/2 \\
     0 & 0 & 1 & 1 & -1/2 \\
   \end{pmatrix}
-\end{equation}
+\end{equation*}
 Solving this system yields
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}
     a \\ b \\ c \\ d
   \end{pmatrix} =
@@ -334,7 +332,7 @@ Solving this system yields
     0 \\ -1 \\ -1 \\ 1
   \end{pmatrix}
   d
-\end{equation}
+\end{equation*}
 Since the rebound force is small compared to the damping force, we may assume
 that $k\ll a$. This implies that we'd like to avoid terms involving $k$, so we
 pick the case when $d=0$. Our length scale turns into
@@ -344,39 +342,39 @@ pick the case when $d=0$. Our length scale turns into
 \end{equation}
 We do the same approach to obtain the time scales, this time solving for
 $T=m^aV^ba^ck^d$.
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     T &= m^aV^ba^ck^d \\
     &= M^{a}(LT^{-1})^b(ML^{-1}T^{-1})^c(MT^{-2})^d \\
     &= M^{a+c+d}L^{b-c}T^{-b-c-2d} \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 This yields the following system
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     0 &= a + c + d \\
     0 &= b - c \\
     1 &= -b  - c - 2d \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 Written in augmented matrix form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}[cccc|c]
     1 & 0 & 1 & 1 & 0 \\
     0 & 1 & -1 & 0 & 0 \\
     0 & -1 & -1 & -2 & 1 \\
   \end{pmatrix}
-\end{equation}
+\end{equation*}
 Which may be reduced to echelon form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}[cccc|c]
     1 & 0 & 0 & 0 & 1/2 \\
     0 & 1 & 0 & 1 & -1/2 \\
     0 & 0 & 1 & 1 & -1/2 \\
   \end{pmatrix}
-\end{equation}
+\end{equation*}
 Solving this system yields
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}
     a \\ b \\ c \\ d
   \end{pmatrix} =
@@ -387,7 +385,7 @@ Solving this system yields
     0 \\ -1 \\ -1 \\ 1
   \end{pmatrix}
   d
-\end{equation}
+\end{equation*}
 Similar to the length scales, we pick the case when $d=0$ so that our time scale
 turns into
 \begin{equation}
@@ -396,10 +394,10 @@ turns into
 \end{equation}
 Thus the dimensionless forms of the dependent and independent forms of $x$ and
 $t$ become
-\begin{equation}
+\begin{equation*}
   \bar{x} = \frac{x}{\sqrt{\frac{mV}{a}}}, \quad
   \bar{t} = \frac{t}{\sqrt{\frac{m}{Va}}}
-\end{equation}
+\end{equation*}
 We'll use the scales from \cref{eq:4-length-scale,eq:4-time-scale} to construct
 a dimensionless version of \cref{eq:4-problem}. We begin by obtaining the first
 derivitive of $\bar{x}$ in terms of $\bar{t}$.
@@ -416,7 +414,7 @@ derivitive of $\bar{x}$ in terms of $\bar{t}$.
   \end{aligned}
 \end{equation}
 Deriving $\od{\bar{x}}{\bar{t}}$
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     \od{}{\bar{t}}\od{\bar{x}}{\bar{t}} &= \od{}{\bar{t}} \left(\frac{1}{V}\od{x}{t}\right) \\
     \od[2]{\bar{x}}{\bar{t}} &= \od{}{t}
@@ -424,10 +422,9 @@ Deriving $\od{\bar{x}}{\bar{t}}$
     &= \frac{1}{V} \left(\od[2]{x}{t}\right) \sqrt{\frac{m}{Va}} \\
     \od[2]{\bar{x}}{\bar{t}} &= \frac{1}{V}\sqrt{\frac{m}{Va}} \left(\od[2]{x}{t}\right) \\
   \end{aligned}
-\end{equation}
-Now we can transform the orignal equation slightly to our
-taste and insert the equations for the dimensionless equations to
-non-dimensionalize the variables within the equation.
+\end{equation*}
+We may non-dimensionalize the variables within the original dimensioned
+equation
 \begin{equation}
   \label{eq:4-equation}
   \begin{aligned}
@@ -437,8 +434,8 @@ non-dimensionalize the variables within the equation.
     \frac{k\bar{x}}{m}\sqrt{\frac{mV}{a}} \\
   \end{aligned}
 \end{equation}
-Substituting in \cref{eq:4-equation}
-\begin{equation}
+and insert it into \cref{eq:4-equation}
+\begin{equation*}
   \begin{aligned}
     \od[2]{\bar{x}}{\bar{t}} &= \frac{1}{V}\sqrt{\frac{m}{Va}} \left(
     -\frac{a}{m}\left( \sqrt{\frac{mV}{a}}\bar{x}\right) \left(
@@ -454,24 +451,24 @@ Substituting in \cref{eq:4-equation}
     \frac{\cancel{m}}{Va}\frac{k\bar{x}}{\cancel{m}} \\
     \implies \od[2]{\bar{x}}{\bar{t}} &= -\bar{x}\od{\bar{x}}{\bar{t}} - \frac{k\bar{x}}{Va} \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 
-Based on \cref{eq:4-dxbar-dtbar}, we may scale the initial condition for
-$\od{\bar{x}}{\bar{t}}$.
-\begin{equation}
+We may scale the initial condition for $\od{\bar{x}}{\bar{t}}$ based on
+\cref{eq:4-dxbar-dtbar}.
+\begin{equation*}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}}(0) &= \frac{1}{V}\od{x}{t}(0) \\
      &= \frac{1}{V}V \\
     \implies \od{\bar{x}}{\bar{t}}(0) &= 1 \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 
 If the rebound force is very small, we expect $k\ll a$
-\begin{equation} \boxed{
+\begin{equation*} \boxed{
     \od[2]{\bar{x}}{\bar{t}} = -\bar{x}\od{\bar{x}}{\bar{t}} -
     \frac{k\bar{x}}{Va}, \quad \bar{x}(0)=0, \quad \od{\bar{x}}{\bar{t}}(0) = 1
   }
-\end{equation}
+\end{equation*}
 
 %% \subsubsection*{Check}
 %% \todo
@@ -516,36 +513,36 @@ of cooling.
   We are given the temperature scale so that $\bar{T}=T/T_f$. We will determine
   appropriate length scales when the heat loss is large compared to the heat
   generated.
-  \begin{equation}
+  \begin{equation*}
     \begin{aligned}
       T &= k^aq^bA^cT_f^d \\
       &= (T^{-1})^a(\Theta T^{-1})^b(\Theta)^c(\Theta)^d \\
       &= T^{-a-b}\Theta^{b+c+d}
     \end{aligned}
-  \end{equation}
+  \end{equation*}
   This yeilds the linear system
-  \begin{equation}
+  \begin{equation*}
     \begin{aligned}
       1 &= -a - b \\
       0 &= b + c + d \\
     \end{aligned}
-  \end{equation}
+  \end{equation*}
   which can be written in augmented matrix form
-  \begin{equation}
+  \begin{equation*}
     \begin{pmatrix}[cccc|c]
       -1 & -1 & 0 & 0 & 1 \\
       0 & 1 & 1 & 1 & 0 \\
     \end{pmatrix}
-  \end{equation}
+  \end{equation*}
   and reduced into echelon form
-  \begin{equation}
+  \begin{equation*}
     \begin{pmatrix}[cccc|c]
       1 & 0 & -1 & -1 & -1 \\
       0 & 1 & 1 & 1 & 0 \\
     \end{pmatrix}.
-  \end{equation}
+  \end{equation*}
   Solving this system yields
-  \begin{equation}
+  \begin{equation*}
     \begin{pmatrix}
       a \\ b \\ c \\ d \\
     \end{pmatrix} =
@@ -558,37 +555,37 @@ of cooling.
     \begin{pmatrix}
       1 \\ -1 \\ 0 \\ 1 \\
     \end{pmatrix}d.
-  \end{equation}
+  \end{equation*}
 
   We now have many time scales to explore. We'll examine cases when
   $(c,d)=(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
-  \begin{equation}
+  \begin{equation*}
       (0,0) \implies
       \begin{pmatrix}
         -1 \\ 0 \\ 0 \\ 0 \\
       \end{pmatrix} \implies t_c =\frac{1}{k}
-  \end{equation}
+  \end{equation*}
 
-  \begin{equation}
+  \begin{equation*}
       (0,1) \implies
       \begin{pmatrix}
         0 \\ -1 \\ 0 \\ 1 \\
       \end{pmatrix} \implies t_c =\frac{T_f}{q}
-  \end{equation}
+  \end{equation*}
 
-  \begin{equation}
+  \begin{equation*}
       (1,0) \implies
       \begin{pmatrix}
         0 \\ -1 \\ 1 \\ 0 \\
       \end{pmatrix} \implies t_c =\frac{A}{q}
-  \end{equation}
+  \end{equation*}
 
-  \begin{equation}
+  \begin{equation*}
       (1,1) \implies
       \begin{pmatrix}
         1 \\ -2 \\ 1 \\ 1 \\
       \end{pmatrix} \implies t_c =\frac{kAT_f}{q^2}
-  \end{equation}
+  \end{equation*}
 
   If we assume the heat loss is large compared to the heat generated, then we
   would like to be able to delete the $qe^{-A/T}$ term from the original
@@ -630,12 +627,12 @@ of cooling.
   \cref{eq:case-0-1} would work for us since it isolates $A$ to the first term
   on the right of the equation.
 
-  \begin{equation} \boxed{
+  \begin{equation*} \boxed{
       \od{\bar{T}}{\bar{t}} =
     e^{-\alpha/(\bar{T})}-\beta(\bar{T}-1), \quad \alpha = A/T_f,\quad
     \beta = \frac{kT_f}{q} \quad T(0) = T_0/T_f
     }
-  \end{equation}
+  \end{equation*}
 \end{enumerate}
 
 %% \subsubsection*{Check}
@@ -686,30 +683,30 @@ $c_c$. Rewrite \cref{eq:minilab-tank} in dimensionless form.
 \subsubsection*{Solution}
 We'll first find a possible concentration scale using the mappings from
 \cref{fig:minilab-var-mappings}.
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     ML^{-3} &= \gamma^aV^bc_{\text{in}}^c\gamma^d \\
     &= M^{c-d}L^{3a+3b-3c+3d}T^{-a-d} \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 This yeilds the linear system in augmented matrix form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}[cccc|c]
     1 & 0 & 0 & 1 & 0 \\
     3 & 3 & -3 & 3 & -3 \\
     0 & 0 & 1 & -1 & 1 \\
   \end{pmatrix}
-\end{equation}
+\end{equation*}
 which may be rewritten in echelon form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}
     1 & 0 & 0 & 1 & 0 \\
     0 & 1 & 0 & -1 & 0 \\
     0 & 0 & 1 & -1 & 1 \\
   \end{pmatrix}.
-\end{equation}
+\end{equation*}
 Solving this system results in
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}
     a \\ b \\ c \\ d \\
   \end{pmatrix} =
@@ -719,38 +716,38 @@ Solving this system results in
   \begin{pmatrix}
     -1 \\ 1 \\ 1 \\ 1 \\
   \end{pmatrix}d
-\end{equation}
+\end{equation*}
 Since we do not want to involve $\gamma$ in our scales, we'll use the case when
 $d=0$.
-\begin{equation}
+\begin{equation*}
   \implies c_c = c_{\text{in}}
-\end{equation}
+\end{equation*}
 
 We'll do the same to obtain the scales for time.
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     T &= \gamma^aV^bc_{\text{in}}^c\gamma^d \\
     &= M^{c-d}L^{3a+3b-3c+3d}T^{-a-d} \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 This yeilds the linear system in augmented matrix form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}[cccc|c]
     1 & 0 & 0 & 1 & 1 \\
     3 & 3 & -3 & 3 & 0 \\
     0 & 0 & 1 & -1 & 0 \\
   \end{pmatrix}
-\end{equation}
+\end{equation*}
 which may be rewritten in echelon form
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}
     1 & 0 & 0 & 1 & 1 \\
     0 & 1 & 0 & -1 & -1 \\
     0 & 0 & 1 & -1 & 0 \\
   \end{pmatrix}.
-\end{equation}
+\end{equation*}
 Solving this system results in
-\begin{equation}
+\begin{equation*}
   \begin{pmatrix}
     a \\ b \\ c \\ d \\
   \end{pmatrix} =
@@ -760,15 +757,15 @@ Solving this system results in
   \begin{pmatrix}
     -1 \\ 1 \\ 1 \\ 1 \\
   \end{pmatrix}d
-\end{equation}
+\end{equation*}
 Again, since we do not want to involve $\gamma$ in scales, we'll use the case
 when $d=0$.
-\begin{equation}
+\begin{equation*}
   \implies t_c = \frac{V}{\eta}
-\end{equation}
+\end{equation*}
 
 Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     \od{\bar{c}}{\bar{t}} &=
     \frac{t_c}{c_c}\od{c}{t} \\
@@ -784,13 +781,13 @@ Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
     \frac{V \gamma c_{\text{in}}^{\cancel{2}}}{\eta \cancel{c_{\text{in}}}}\bar{c}^2 \\
     &= 1-\bar{c} - \frac{V \gamma c_{\text{in}}}{\eta}\bar{c}^2 \\
   \end{aligned}
-\end{equation}
+\end{equation*}
 Or more concisely,
-\begin{equation} \boxed{
+\begin{equation*} \boxed{
     \od{\bar{c}}{\bar{t}} = 1 - \bar{c} - \beta\bar{c}^2,
     \quad \beta = \frac{V \gamma c_{\text{in}}}{\eta} \quad c(0)=0.
     }
-\end{equation}
+\end{equation*}
 
 \subsection{}
 \label{sec:minilab-second-problem}
