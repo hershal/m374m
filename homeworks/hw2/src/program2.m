@@ -38,7 +38,8 @@ global cin eta V gamma ;
 
 
 %%% Set value of constants for Scenario One %%%
-cin=10^(-2) ; eta=10^(-2) ; V = 10 ; gamma = 10^(-1) ;
+## cin=10^(-2) ; eta=10^(-2) ; V = 10 ; gamma = 10^(-1) ;
+cin=10^(-2) ; eta=10^(-1) ; V = 1 ; gamma = 10^(-1) ;
 
 % Define initial condition u0
 u0 = 0 ; %this is c0
@@ -62,11 +63,11 @@ gamma = 0 ;
 figure(1) ; %open figure
 clf ; % clear figure
 hold on ; % hold figure for multiple plots
-## plot(tsolnOne1,usolnOne1,'b-')  ; %plot u versus t
-## plot(tsolnOne2,usolnOne2,'r--') ; %plot u versus t
-plot(tsolnOne1Approx,usolnOne1Approx,'b-')  ; %plot u versus t
-plot(tsolnOne2Approx,usolnOne2Approx,'p--')  ; %plot u versus t
+plot(tsolnOne1,usolnOne1,'b-')  ; %plot u versus t
+plot(tsolnOne2,usolnOne2,'r--') ; %plot u versus t
+## plot(tsolnOne1Approx,usolnOne1Approx,'b-')  ; %plot u versus t
+## plot(tsolnOne2Approx,usolnOne2Approx,'p--')  ; %plot u versus t
 xlabel('t')      ; %label x axis
 ylabel('c')      ; %label y axis
 title('Scenario One: Ode 1 (blue,solid), Ode 2 (red,dash)') ;
-print -f1 -dpdf prog2_fig1.pdf ; %print figure to a file
+print -f1 -dtex prog2_fig1.tex ; %print figure to a file

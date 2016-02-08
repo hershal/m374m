@@ -733,14 +733,18 @@ Or more concisely,
 \subsubsection*{Problem}
 Using the result from \cref{sec:minilab-first-problem}, identify a condition on
 $\gamma$ under which the nonlinear term is expected to be negligible. In which
-of the two perating scenarios
+of the two operating scenarios
 $(c_{\text{in}}\,,\eta\,,V\,,\gamma) = (10^{-2}\,,10^{-2}\,,10\,,10^{-1})$ or
-$(c_{\text{in}}\,,\eta\,,V\,,\gamma) = (10^{-2}\,,10^{-1}\,,1\,,10^{-1})$ is
-this condition reasonably met? That is, in which scenario can $\eta$ be regarded
-as ``small''?
+$(c_{\text{in}}\,,\eta\,,V\,,\gamma) = (10^{-2}\,,10^{-1}\,,1\,,10^{-1})$
+is this condition reasonably met? That is, in which scenario can $\gamma$ be
+regarded as ``small''?
 
 \subsubsection*{Solution}
-\todo
+$\gamma$ can be regarded as small when the reaction rate is small compared to
+the flow rate, that is, $\gamma \ll \frac{\eta}{V}$. The second operating
+scenario allows this condition to be met, while the first operating scenario
+does not. Therefore, $\gamma$ may be considered ``small'' under the second
+operating scenario.
 
 \subsection{}
 \subsubsection*{Problem}
@@ -752,6 +756,23 @@ Repeat for the second scenario. Do the simulations agree with the analysis in
 to have a negligible or small effect in one of the scenarios as predicted?
 
 \subsubsection*{Solution}
-\todo
+The simulations agree with the analysis in \cref{sec:minilab-second-problem}, as
+the nonlinear term seems to have negligible effects on the solution of the
+second scenario, as predicted. Reference
+\cref{fig:minilab-scenario-one,fig:minilab-scenario-two}.
+
+  \begin{figure}
+    \centering
+    \caption{Scenario One}
+    \scalebox{0.85}{\huge\input{prog2_fig1.tex}}
+    \label{fig:minilab-scenario-one}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \caption{Scenario Two}
+    \scalebox{0.85}{\huge\input{prog2_fig2.tex}}
+    \label{fig:minilab-scenario-two}
+  \end{figure}
 
 \end{document}
