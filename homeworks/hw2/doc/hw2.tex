@@ -115,16 +115,7 @@ bound, but instead approaches some maximum value.
 
 \subsubsection*{Solution}
 First we will obtain the dimensions of each quantity. It is assumed that $[x]=L$
-and $[\od{x}{t}=LT^{-1}]$. We will obtain $\rho$ from \cref{eq:biomass-model}.
-\begin{equation*}
-  \begin{aligned}
-    m &= \rho x^3 \\
-    [m] &= [\rho] [x]^3 \\
-    M &= \rho L^3 \\
-    \implies \rho &= ML^{-3} \\
-  \end{aligned}
-\end{equation*}
-Similarly, we will obtain $a$ and $b$ from \cref{eq:growth-model}. We will
+and $[\od{x}{t}]=LT^{-1}$. We will obtain $a$ and $b$ from \cref{eq:growth-model}. We will
 separate the terms in \cref{eq:growth-model} to more clearly demonstrate the
 dimension breakdown.
 \vspace{-2em}
@@ -142,6 +133,16 @@ dimension breakdown.
     \end{aligned}
   \end{equation*}
 \end{multicols}
+\noindent
+Similarly, we will obtain $\rho$ from \cref{eq:biomass-model}.
+\begin{equation*}
+  \begin{aligned}
+    m &= \rho x^3 \\
+    [m] &= [\rho] [x]^3 \\
+    M &= \rho L^3 \\
+    \implies \rho &= ML^{-3} \\
+  \end{aligned}
+\end{equation*}
 Now we will rewrite the model in terms of length $x$ by differentiating $m$ and
 setting it equal to the given $m'$.
 \begin{equation}
@@ -155,20 +156,21 @@ setting it equal to the given $m'$.
 We are given scales $t_c=\rho/b$ and $x_c=a/b$. From this we may construct a
 dimensionless model. Assuming $\bar{t}=t/t_c=bt/\rho$ and $\bar{x}=x/x_c=bx/a$, we may use
 the chain rule.
-\begin{equation}
-  \label{eq:chain-rule-setup}
+\begin{equation*}
   \od{\bar{x}}{\bar{t}} = \od{\bar{x}}{t} \cdot \od{t}{\bar{t}}
-\end{equation}
+\end{equation*}
 Differentiating $\bar{x}$ in terms of $t$ and $t$ in terms of $\bar{t}$ to
 yields the first and second terms, respectively so that
 \cref{eq:chain-rule-setup} becomes
-\begin{equation*}
+\begin{equation}
+  \label{eq:dxbar-in-terms-of-dx}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}} &= \left(\frac{b}{a}\od{x}{t}\right)\cdot\left(\frac{\rho}{b}\right) \\
     &= \frac{\rho}{a}\od{x}{t} \\
   \end{aligned}
-\end{equation*}
-We may substitute in $\od{x}{t}$ from \cref{eq:model-in-terms-of-x}
+\end{equation}
+We may substitute in $\od{x}{t}$ from \cref{eq:model-in-terms-of-x} into
+\cref{eq:dxbar-in-terms-of-dx}.
 \begin{equation}
   \label{eq:dimensionless-model-in-terms-of-x}
   \begin{aligned}
@@ -402,7 +404,7 @@ We'll use the scales from \cref{eq:4-length-scale,eq:4-time-scale} to construct
 a dimensionless version of \cref{eq:4-problem}. We begin by obtaining the first
 derivitive of $\bar{x}$ in terms of $\bar{t}$.
 \begin{equation}
-  \label{eq:4-dxbar-dtbar}
+  \label{eq:4-dxbar-in-terms-of-dx}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}} &= \od{\bar{x}}{t}\od{t}{\bar{t}} \\
     &= \frac{1}{\sqrt{\frac{mV}{a}}}\od{x}{t}\od{t}{\bar{t}} \\
@@ -410,11 +412,12 @@ derivitive of $\bar{x}$ in terms of $\bar{t}$.
     &= \sqrt{\frac{a}{mV}\frac{m}{Va}} \od{x}{t} \\
     &= \sqrt{\frac{\cancel{a}}{\cancel{m}V}\frac{\cancel{m}}{V\cancel{a}}}
     \od{x}{t} \\
-    \implies \od{\bar{x}}{\bar{t}} &= \frac{1}{V}\od{x}{t} \\
+    \od{\bar{x}}{\bar{t}} &= \frac{1}{V}\od{x}{t} \\
   \end{aligned}
 \end{equation}
-Deriving $\od{\bar{x}}{\bar{t}}$
-\begin{equation*}
+Deriving \cref{eq:4-dxbar-in-terms-of-dx}
+\begin{equation}
+  \label{eq:4-d2xbar-in-terms-of-d2x}
   \begin{aligned}
     \od{}{\bar{t}}\od{\bar{x}}{\bar{t}} &= \od{}{\bar{t}} \left(\frac{1}{V}\od{x}{t}\right) \\
     \od[2]{\bar{x}}{\bar{t}} &= \od{}{t}
@@ -422,19 +425,18 @@ Deriving $\od{\bar{x}}{\bar{t}}$
     &= \frac{1}{V} \left(\od[2]{x}{t}\right) \sqrt{\frac{m}{Va}} \\
     \od[2]{\bar{x}}{\bar{t}} &= \frac{1}{V}\sqrt{\frac{m}{Va}} \left(\od[2]{x}{t}\right) \\
   \end{aligned}
-\end{equation*}
-We may non-dimensionalize the variables within the original dimensioned
-equation
+\end{equation}
+We may non-dimensionalize the variables within \cref{eq:4-problem}
 \begin{equation}
   \label{eq:4-equation}
   \begin{aligned}
     \od[2]{x}{t} &= -\frac{ax}{m} \abs{\od{x}{t}} - \frac{kx}{m} \\
-    \implies \od[2]{x}{t} &= -\frac{a}{m}\left( \sqrt{\frac{mV}{a}}\bar{x}\right)
+    \od[2]{x}{t} &= -\frac{a}{m}\left( \sqrt{\frac{mV}{a}}\bar{x}\right)
     \left( \abs{V\od{\bar{x}}{\bar{t}}}\right) -
     \frac{k\bar{x}}{m}\sqrt{\frac{mV}{a}} \\
   \end{aligned}
 \end{equation}
-and insert it into \cref{eq:4-equation}
+and insert it into \cref{eq:4-d2xbar-in-terms-of-d2x}
 \begin{equation*}
   \begin{aligned}
     \od[2]{\bar{x}}{\bar{t}} &= \frac{1}{V}\sqrt{\frac{m}{Va}} \left(
@@ -452,9 +454,7 @@ and insert it into \cref{eq:4-equation}
     \implies \od[2]{\bar{x}}{\bar{t}} &= -\bar{x}\od{\bar{x}}{\bar{t}} - \frac{k\bar{x}}{Va} \\
   \end{aligned}
 \end{equation*}
-
-We may scale the initial condition for $\od{\bar{x}}{\bar{t}}$ based on
-\cref{eq:4-dxbar-dtbar}.
+We may scale the initial conditions based on \cref{eq:4-dxbar-in-terms-of-dx}.
 \begin{equation*}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}}(0) &= \frac{1}{V}\od{x}{t}(0) \\
@@ -462,11 +462,17 @@ We may scale the initial condition for $\od{\bar{x}}{\bar{t}}$ based on
     \implies \od{\bar{x}}{\bar{t}}(0) &= 1 \\
   \end{aligned}
 \end{equation*}
-
+\begin{equation}
+  \begin{aligned}
+    \bar{x}(0) &= \frac{0}{\sqrt{\frac{mV}{a}}} \\
+    \implies \bar{x}(0) &= 0 \\
+  \end{aligned}
+\end{equation}
 If the rebound force is very small, we expect $k\ll a$
 \begin{equation*} \boxed{
-    \od[2]{\bar{x}}{\bar{t}} = -\bar{x}\od{\bar{x}}{\bar{t}} -
-    \frac{k\bar{x}}{Va}, \quad \bar{x}(0)=0, \quad \od{\bar{x}}{\bar{t}}(0) = 1
+    \od[2]{\bar{x}}{\bar{t}} = -\bar{x}\od{\bar{x}}{\bar{t}} - \beta\bar{x},
+    \quad\beta=\frac{k}{Va},\quad \bar{x}(0)=0,
+    \quad\od{\bar{x}}{\bar{t}}(0) = 1
   }
 \end{equation*}
 
@@ -629,8 +635,8 @@ of cooling.
 
   \begin{equation*} \boxed{
       \od{\bar{T}}{\bar{t}} =
-    e^{-\alpha/(\bar{T})}-\beta(\bar{T}-1), \quad \alpha = A/T_f,\quad
-    \beta = \frac{kT_f}{q} \quad T(0) = T_0/T_f
+      e^{-\alpha/(\bar{T})}-\beta(\bar{T}-1), \quad \alpha = \frac{A}{T_f},
+      \quad \beta = \frac{kT_f}{q} \quad T(0) = T_0/T_f
     }
   \end{equation*}
 \end{enumerate}
@@ -779,6 +785,7 @@ Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
     &= \cancel{\frac{V}{\eta c_{\text{in}}}} \cancel{\frac{\eta c_{\text{in}}}{V}}
     (1-\bar{c}) -
     \frac{V \gamma c_{\text{in}}^{\cancel{2}}}{\eta \cancel{c_{\text{in}}}}\bar{c}^2 \\
+    \implies \od{\bar{c}}{\bar{t}}
     &= 1-\bar{c} - \frac{V \gamma c_{\text{in}}}{\eta}\bar{c}^2 \\
   \end{aligned}
 \end{equation*}
