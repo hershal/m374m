@@ -578,6 +578,180 @@ of cooling.
 \todo
 
 \section{Programming Minilab}
+A model for the mass concentration of a chemical \textbf{C} in a tank reactor is
+\begin{equation}
+  \label{eq:minilab-tank}
+  \dot{c} = \frac{\eta}{V}(c_{\text{in}}-c)-\gamma c^2,\quad c(0)=0.
+\end{equation}
+Here $c(t)$ is the average concentration of \textbf{C} in the reactor and its
+output, $c_{\text{in}}$ is the concentration of the input, $V$ is the volume of
+the reactor, $\eta$ is the volume flow rate, and $\gamma$ is a constant that
+describes the reaction rate. When $\gamma$ is ``small'', we expect the nonlinear
+term to be negligible, so that \cref{eq:minilab-tank} may be approximated by
+\begin{equation}
+  \label{eq:minilab-tank-approx}
+  \dot{c} = \frac{\eta}{V}(c_{\text{in}}-c),\quad c(0)=0.
+\end{equation}
+Here we derive a condition to determine what it means for $\gamma$ to be
+``small'' in this sense. Relevant physical dimensions are indicated in
+\cref{fig:minilab-var-mappings}. Use the units of kilograms, meters, and
+seconds.
+
+\begin{figure}
+  \centering
+  \begin{tabularx}{0.5\textwidth}{XXX}
+    Variable & Dimension & Exponent \\ \hline
+    $\eta$ & $L^3T^{-1}$ & $a$ \\
+    $V$ & $L^3$ & $b$ \\
+    $c_{\text{in}}$ & $ML^{-3}$ & $c$ \\
+    $\gamma$ & $L^3M^{-1}T^{-1}$ & $d$ \\
+  \end{tabularx}
+  \caption{Variable mappings for \#9}
+  \label{fig:minilab-var-mappings}
+\end{figure}
+
+\newpage
+\subsection{}
+\label{sec:minilab-first-problem}
+\subsubsection*{Problem}
+In the case when $\gamma$ is ``small'', or actually zero, the dominant effects
+in \cref{eq:minilab-tank} are due to $\eta$, $V$, and $c_{\text{in}}$. Use these
+quantities to find a characteristic time scale $t_c$ and concentration scale
+$c_c$. Rewrite \cref{eq:minilab-tank} in dimensionless form.
+
+\subsubsection*{Solution}
+We'll first find a possible concentration scale using the mappings from
+\cref{fig:minilab-var-mappings}.
+\begin{equation}
+  \begin{aligned}
+    ML^{-3} &= \gamma^aV^bc_{\text{in}}^c\gamma^d \\
+    &= M^{c-d}L^{3a+3b-3c+3d}T^{-a-d} \\
+  \end{aligned}
+\end{equation}
+This yeilds the linear system in augmented matrix form
+\begin{equation}
+  \begin{pmatrix}[cccc|c]
+    1 & 0 & 0 & 1 & 0 \\
+    3 & 3 & -3 & 3 & -3 \\
+    0 & 0 & 1 & -1 & 1 \\
+  \end{pmatrix}
+\end{equation}
+which may be rewritten in echelon form
+\begin{equation}
+  \begin{pmatrix}
+    1 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & -1 & 0 \\
+    0 & 0 & 1 & -1 & 1 \\
+  \end{pmatrix}.
+\end{equation}
+Solving this system results in
+\begin{equation}
+  \begin{pmatrix}
+    a \\ b \\ c \\ d \\
+  \end{pmatrix} =
+  \begin{pmatrix}
+    0 \\ 0 \\ 1 \\ 0 \\
+  \end{pmatrix} +
+  \begin{pmatrix}
+    -1 \\ 1 \\ 1 \\ 1 \\
+  \end{pmatrix}d
+\end{equation}
+Since we do not want to involve $\gamma$ in our scales, we'll use the case when
+$d=0$.
+\begin{equation}
+  \implies c_c = c_{\text{in}}
+\end{equation}
+
+We'll do the same to obtain the scales for time.
+\begin{equation}
+  \begin{aligned}
+    T &= \gamma^aV^bc_{\text{in}}^c\gamma^d \\
+    &= M^{c-d}L^{3a+3b-3c+3d}T^{-a-d} \\
+  \end{aligned}
+\end{equation}
+This yeilds the linear system in augmented matrix form
+\begin{equation}
+  \begin{pmatrix}[cccc|c]
+    1 & 0 & 0 & 1 & 1 \\
+    3 & 3 & -3 & 3 & 0 \\
+    0 & 0 & 1 & -1 & 0 \\
+  \end{pmatrix}
+\end{equation}
+which may be rewritten in echelon form
+\begin{equation}
+  \begin{pmatrix}
+    1 & 0 & 0 & 1 & 1 \\
+    0 & 1 & 0 & -1 & -1 \\
+    0 & 0 & 1 & -1 & 0 \\
+  \end{pmatrix}.
+\end{equation}
+Solving this system results in
+\begin{equation}
+  \begin{pmatrix}
+    a \\ b \\ c \\ d \\
+  \end{pmatrix} =
+  \begin{pmatrix}
+    1 \\ -1 \\ 0 \\ 0 \\
+  \end{pmatrix} +
+  \begin{pmatrix}
+    -1 \\ 1 \\ 1 \\ 1 \\
+  \end{pmatrix}d
+\end{equation}
+Again, since we do not want to involve $\gamma$ in scales, we'll use the case
+when $d=0$.
+\begin{equation}
+  \implies t_c = \frac{V}{\eta}
+\end{equation}
+
+Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
+\begin{equation}
+  \begin{aligned}
+    \od{\bar{c}}{\bar{t}} &=
+    \frac{t_c}{c_c}\od{c}{t} \\
+    &= \frac{V}{\eta c_{\text{in}}} \left(\frac{\eta}{V}(c_{\text{in}}-c)-\gamma
+    c^2\right) \\
+    &= \frac{V}{\eta c_{\text{in}}}
+    \left(\frac{\eta}{V}(c_{\text{in}}-\bar{c}c_{\text{in}})-\gamma
+    (\bar{c}c_{\text{in}})^2\right) \\
+    &= \frac{V}{\eta c_{\text{in}}}\frac{\eta c_{\text{in}}}{V} (1-\bar{c}) -
+    \frac{V\gamma c_{\text{in}}^2}{\eta c_{\text{in}}}\bar{c}^2 \\
+    &= \cancel{\frac{V}{\eta c_{\text{in}}}} \cancel{\frac{\eta c_{\text{in}}}{V}}
+    (1-\bar{c}) -
+    \frac{V \gamma c_{\text{in}}^{\cancel{2}}}{\eta \cancel{c_{\text{in}}}}\bar{c}^2 \\
+    &= 1-\bar{c} - \frac{V \gamma c_{\text{in}}}{\eta}\bar{c}^2 \\
+  \end{aligned}
+\end{equation}
+Or more concisely,
+\begin{equation} \boxed{
+    \od{\bar{c}}{\bar{t}} = 1 - \bar{c} - \beta\bar{c}^2,
+    \quad \beta = \frac{V \gamma c_{\text{in}}}{\eta}.
+    }
+\end{equation}
+
+\subsection{}
+\label{sec:minilab-second-problem}
+\subsubsection*{Problem}
+Using the result from \cref{sec:minilab-first-problem}, identify a condition on
+$\gamma$ under which the nonlinear term is expected to be negligible. In which
+of the two perating scenarios
+$(c_{\text{in}}\,,\eta\,,V\,,\gamma) = (10^{-2}\,,10^{-2}\,,10\,,10^{-1})$ or
+$(c_{\text{in}}\,,\eta\,,V\,,\gamma) = (10^{-2}\,,10^{-1}\,,1\,,10^{-1})$ is
+this condition reasonably met? That is, in which scenario can $\eta$ be regarded
+as ``small''?
+
+\subsubsection*{Solution}
+\todo
+
+\subsection{}
+\subsubsection*{Problem}
+For the first operating scenario in \cref{sec:minilab-second-problem}, simulate
+the systems in \cref{eq:minilab-tank,eq:minilab-tank-approx} for
+$t\in[0,10\,V/\eta]$ and superimose plots of $c$ versus $t$ for the two systems.
+Repeat for the second scenario. Do the simulations agree with the analysis in
+\cref{sec:minilab-second-problem}? Specifically, does the nonlinear term seem
+to have a negligible or small effect in one of the scenarios as predicted?
+
+\subsubsection*{Solution}
 \todo
 
 \end{document}
