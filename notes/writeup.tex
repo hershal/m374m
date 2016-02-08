@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \title{M374M Homework 1 \\
-  \normalsize{\S~1.1 \#4$^1$, 5, 9$^2$, 13, 14$^3$}}
+\normalsize{\S~1.1 \#4$^1$, 5, 9$^2$, 13, 14$^3$}}
 \author{Hershal Bhave (hb6279)}
 \date{Due 2016-02-01}
 
@@ -174,7 +174,7 @@ Find all dimensionless combinations of $x, t, g$.
   \end{pmatrix}
 \end{equation}
 
-  Where $c$ is free.
+Where $c$ is free.
 
 \begin{equation}
   \begin{aligned}
@@ -709,253 +709,253 @@ In limiting case of no reaction \#2, ($k_2=0$), the remaining consts are
 \end{equation}
 
 Where
-  \begin{figure}
-    \centering
-    \begin{tabularx}{0.5\textwidth}{XXX}
-      Variable & Dimension \\ \hline
-      $\frac{\eta}{V}$ & $T^{-1}$  \\
-      $\frac{k_1}{V}$ & $LT^{-1}$ \\
-    \end{tabularx}
-    \caption{Variable mappings for \#14}
-    \label{fig:14-var-mappings}
-  \end{figure}
+\begin{figure}
+  \centering
+  \begin{tabularx}{0.5\textwidth}{XXX}
+    Variable & Dimension \\ \hline
+    $\frac{\eta}{V}$ & $T^{-1}$  \\
+    $\frac{k_1}{V}$ & $LT^{-1}$ \\
+  \end{tabularx}
+  \caption{Variable mappings for \#14}
+  \label{fig:14-var-mappings}
+\end{figure}
 
-  We choose scales
-  \begin{equation}
-    \begin{aligned}
-      a_c &= a_{in}, Y\quad b_c &= b_{in} \\
-      t_c &= \frac{V}{k_1}\frac{1}{a_{in}b_{in}}
-    \end{aligned}
-  \end{equation}
+We choose scales
+\begin{equation}
+  \begin{aligned}
+    a_c &= a_{in}, Y\quad b_c &= b_{in} \\
+    t_c &= \frac{V}{k_1}\frac{1}{a_{in}b_{in}}
+  \end{aligned}
+\end{equation}
 
-  \subsubsection{Dimensionless Form of Equations}
-  \begin{equation}
-    \begin{aligned}
-      \bar{a} &= \frac{a}{a_c}, &\quad a &= a_c\bar{a} \\
-      \bar{b} &= \frac{b}{b_c}, &\quad b &= b_c\bar{b} \\
-      \bar{t} &= \frac{t}{t_c}, &\quad t &= t_c\bar{t} \\
-    \end{aligned}
-  \end{equation}
+\subsubsection{Dimensionless Form of Equations}
+\begin{equation}
+  \begin{aligned}
+    \bar{a} &= \frac{a}{a_c}, &\quad a &= a_c\bar{a} \\
+    \bar{b} &= \frac{b}{b_c}, &\quad b &= b_c\bar{b} \\
+    \bar{t} &= \frac{t}{t_c}, &\quad t &= t_c\bar{t} \\
+  \end{aligned}
+\end{equation}
 
-  Derivatives
-  \begin{equation}
-    \begin{aligned}
-      \od{\bar{a}}{\bar{t}} &= \od{\bar{a}}{t} \cdot \od{t}{\bar{t}} &= \frac{t_c}{a_c}\cdot\od{a}{t} \\
-      &= \frac{1}{a_c}\od{a}{t} \cdot t_c \\
-      \od{\bar{b}}{\bar{t}} &= \od{\bar{b}}{t} \cdot \od{t}{\bar{t}} &= \frac{t_c}{b_c}\cdot\od{b}{t} \\
-    \end{aligned}
-  \end{equation}
+Derivatives
+\begin{equation}
+  \begin{aligned}
+    \od{\bar{a}}{\bar{t}} &= \od{\bar{a}}{t} \cdot \od{t}{\bar{t}} &= \frac{t_c}{a_c}\cdot\od{a}{t} \\
+    &= \frac{1}{a_c}\od{a}{t} \cdot t_c \\
+    \od{\bar{b}}{\bar{t}} &= \od{\bar{b}}{t} \cdot \od{t}{\bar{t}} &= \frac{t_c}{b_c}\cdot\od{b}{t} \\
+  \end{aligned}
+\end{equation}
 
-  Equations
-  \begin{equation}
-    \begin{aligned}
-      \frac{a_c}{t_c}\cdot\od{\bar{a}}{\bar{t}} &= \frac{\eta}{V}(a_{in}-a_c\bar{a})-\frac{k_1}{V}a_c\bar{a}b_c^2\bar{b}^2 \\
-      &- \frac{2k_2}{V}a_c^2a^{-2},\qquad t,\bar{t}\ge 0 \\
-    \end{aligned}
-  \end{equation}
+Equations
+\begin{equation}
+  \begin{aligned}
+    \frac{a_c}{t_c}\cdot\od{\bar{a}}{\bar{t}} &= \frac{\eta}{V}(a_{in}-a_c\bar{a})-\frac{k_1}{V}a_c\bar{a}b_c^2\bar{b}^2 \\
+    &- \frac{2k_2}{V}a_c^2a^{-2},\qquad t,\bar{t}\ge 0 \\
+  \end{aligned}
+\end{equation}
 
-    \begin{equation}
-    \begin{aligned}
-      \frac{b_c}{t_c}\cdot\od{\bar{b}}{\bar{t}} &= \frac{\eta}{V}(b_{in}-b_c\bar{b})-\frac{2k_1}{V}a_c\bar{a}b_c^2\bar{b}^2 \\
-      &- \frac{k_2}{V}a_c^2a^{-2},\qquad t,\bar{t}\ge 0 \\
-    \end{aligned}
-  \end{equation}
+\begin{equation}
+  \begin{aligned}
+    \frac{b_c}{t_c}\cdot\od{\bar{b}}{\bar{t}} &= \frac{\eta}{V}(b_{in}-b_c\bar{b})-\frac{2k_1}{V}a_c\bar{a}b_c^2\bar{b}^2 \\
+    &- \frac{k_2}{V}a_c^2a^{-2},\qquad t,\bar{t}\ge 0 \\
+  \end{aligned}
+\end{equation}
 
-    Where
+Where
 
-    \begin{equation}
-      a_c\bar{a} = a_0, \qquad b_c\bar{b} = b_0, \quad\text{ at } t_c\bar{t} = 0
-    \end{equation}
+\begin{equation}
+  a_c\bar{a} = a_0, \qquad b_c\bar{b} = b_0, \quad\text{ at } t_c\bar{t} = 0
+\end{equation}
 
-    Simplifying gives
+Simplifying gives
 
-    \begin{equation}
-      \begin{aligned}
-        \od{\bar{a}}{\bar{t}} &= \mu(1-\bar{a}) - \sigma\bar{a}\bar{b}^2 - 2\lambda\bar{a}^2, &\quad t&\ge0 \\
-        \od{\bar{b}}{\bar{t}} &= \mu(1-\bar{b}) - 2\bar{a}\bar{b}^2 - 2\frac{\lambda}{\sigma}\bar{a}^2, &\quad t&\ge0 \\
-      \end{aligned}
-    \end{equation}
+\begin{equation}
+  \begin{aligned}
+    \od{\bar{a}}{\bar{t}} &= \mu(1-\bar{a}) - \sigma\bar{a}\bar{b}^2 - 2\lambda\bar{a}^2, &\quad t&\ge0 \\
+    \od{\bar{b}}{\bar{t}} &= \mu(1-\bar{b}) - 2\bar{a}\bar{b}^2 - 2\frac{\lambda}{\sigma}\bar{a}^2, &\quad t&\ge0 \\
+  \end{aligned}
+\end{equation}
 
-    Where
-    \begin{equation}
-      \bar{a} = \frac{a_0}{a_{in}}, \quad \bar{b} = \frac{b_0}{b_{in}} \quad \text{ at } t=0
-    \end{equation}
+Where
+\begin{equation}
+  \bar{a} = \frac{a_0}{a_{in}}, \quad \bar{b} = \frac{b_0}{b_{in}} \quad \text{ at } t=0
+\end{equation}
 
 
-    \subsubsection{Observation}
-    We expect reaction \#2 terms to have small influence on solution (solution
-    viewed in scales $t_c, a_c, b_c$) when $\bar{a}$ equation
-    $$2\lambda << \sigma, \mu \rightarrow \lambda << \frac{\sigma}{2},\frac{\mu}{2}$$,
-    $\bar{b}$ equation $$\frac{\lambda}{\sigma} << 2, \mu \rightarrow \lambda << 2\sigma, \mu\sigma$$.
+\subsubsection{Observation}
+We expect reaction \#2 terms to have small influence on solution (solution
+viewed in scales $t_c, a_c, b_c$) when $\bar{a}$ equation
+$$2\lambda << \sigma, \mu \rightarrow \lambda << \frac{\sigma}{2},\frac{\mu}{2}$$,
+$\bar{b}$ equation $$\frac{\lambda}{\sigma} << 2, \mu \rightarrow \lambda << 2\sigma, \mu\sigma$$.
 
-    All conditions met when
-    $$\lambda << \frac{\mu}{2}, \frac{\sigma}{2},\mu\sigma$$ which implies $$k_2 << \frac{\eta}{2a_{in}}, \frac{k_1b_{in}^2}{2a_{in}}, \frac{\eta b_{in}}{a_{in}^2}$$
+All conditions met when
+$$\lambda << \frac{\mu}{2}, \frac{\sigma}{2},\mu\sigma$$ which implies $$k_2 << \frac{\eta}{2a_{in}}, \frac{k_1b_{in}^2}{2a_{in}}, \frac{\eta b_{in}}{a_{in}^2}$$
 
-    \section{Dynamical Systems in 1 Dimension}
-    \subsection{Setup}
-    A dynamical system for a variable $u=u(t)$ is a system in the form
-    \begin{equation} \text{IVP}\left\{
-      \begin{aligned}
-        \od{u}{t} &= f(u),&\qquad t\ge t_0 \\
-        u(t_0) &= u_0 \\
-      \end{aligned}\right.
-    \end{equation}
-    We seek to understand behavior of solutions for different $u_0$.
+\section{Dynamical Systems in 1 Dimension}
+\subsection{Setup}
+A dynamical system for a variable $u=u(t)$ is a system in the form
+\begin{equation} \text{IVP}\left\{
+  \begin{aligned}
+    \od{u}{t} &= f(u),&\qquad t\ge t_0 \\
+    u(t_0) &= u_0 \\
+  \end{aligned}\right.
+\end{equation}
+We seek to understand behavior of solutions for different $u_0$.
 
-    Solutions can be viewed in two ways
-    \begin{enumerate}
-    \item $u$ vs $t$ graph. Reference fig. 5.1
-    \item motion of point $u(t)$ on $u$-axis. Reference fig. 5.2
-    \end{enumerate}
+Solutions can be viewed in two ways
+\begin{enumerate}
+\item $u$ vs $t$ graph. Reference fig. 5.1
+\item motion of point $u(t)$ on $u$-axis. Reference fig. 5.2
+\end{enumerate}
 
-    \subsection{Solvability Theorem}
-    Consider (IVP) and assume $f(u)$, $f'(u)$ are continuous for all $u_0$.
-    Then:
+\subsection{Solvability Theorem}
+Consider (IVP) and assume $f(u)$, $f'(u)$ are continuous for all $u_0$.
+Then:
 
-    \begin{enumerate}
-    \item $\exists$ a unique solution $u(t)$ for any given $t_0$, $u_0$.
-    \item Solution $u(t)$ is defined for $t$ in some interval $[t_0,t_0+T]$
-      where $T$ depends on $u_0$.
-    \item Either $T=\infty$ or $T$ is finite; if finite, then
-      $|u(t)| \rightarrow \infty$ as $t\rightarrow (t_0+T)$.
-    \item For a given $t_0$, solutions with different $u_0$ cannot intersect or touch.
-    \end{enumerate}
+\begin{enumerate}
+\item $\exists$ a unique solution $u(t)$ for any given $t_0$, $u_0$.
+\item Solution $u(t)$ is defined for $t$ in some interval $[t_0,t_0+T]$
+  where $T$ depends on $u_0$.
+\item Either $T=\infty$ or $T$ is finite; if finite, then
+  $|u(t)| \rightarrow \infty$ as $t\rightarrow (t_0+T)$.
+\item For a given $t_0$, solutions with different $u_0$ cannot intersect or touch.
+\end{enumerate}
 
-    \subsection{Examples}
-    \subsubsection{Example 1}
+\subsection{Examples}
+\subsubsection{Example 1}
 
-      \begin{equation} \left\{
-        \begin{aligned}
-          \od{u}{t} &= 2u,&\qquad t\ge0 \\
-          u(0) &= u_0 \\
-        \end{aligned}\right.
-      \end{equation}
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= 2u,&\qquad t\ge0 \\
+    u(0) &= u_0 \\
+  \end{aligned}\right.
+\end{equation}
 
-      \begin{equation}
-        \begin{aligned}
-          f(u) &= 2u \\
-          f'(u) &= 2 \\
-        \end{aligned}
-      \end{equation}
-      This implies $f(u)$ and $f'(u)$ is continuous.
+\begin{equation}
+  \begin{aligned}
+    f(u) &= 2u \\
+    f'(u) &= 2 \\
+  \end{aligned}
+\end{equation}
+This implies $f(u)$ and $f'(u)$ is continuous.
 
-      Therefore the solution is defined for all $t\in[0,\infty)$ so $T=\infty$
-      in this case.
-      \begin{equation}
-        u(t) = u_0e^{2t}
-      \end{equation}
-      Reference figs. 5.3, 5.4.
+Therefore the solution is defined for all $t\in[0,\infty)$ so $T=\infty$ in this
+case.
+\begin{equation}
+  u(t) = u_0e^{2t}
+\end{equation}
+Reference figs. 5.3, 5.4.
 
-      \subsubsection{Example 2}
-      \begin{equation} \left\{
-        \begin{aligned}
-          \od{u}{t} &= u^2, &\qquad t\ge0 \\
-          u(0) &= u_0 \\
-        \end{aligned} \right.
-      \end{equation}
+\subsubsection{Example 2}
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= u^2, &\qquad t\ge0 \\
+    u(0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
 
-      \begin{equation}
-        \begin{aligned}
-          f(u) &= u^2 \\
-          f'(u) &= 2u \\
-        \end{aligned}
-      \end{equation}
-      This implies $f(u)$ and $f'(u)$ is continuous. The solution is defined for
-      $t\in[0,\frac{1}{u_0})$ if $u_0>0$ and for $t\in[0,\infty)$ if $u_0\le0$.
-      \begin{equation}
-        \begin{aligned}
-          u^{-2} \dd{u} &= \dd{t} \\
-          \int u^{-2} \dd{u} &= \int \dd{t} \\
-          -u^{-1} &= t+C \\
-          \implies u(t) &= \frac{-1}{t+C} \\
-        \end{aligned}
-      \end{equation}
+\begin{equation}
+  \begin{aligned}
+    f(u) &= u^2 \\
+    f'(u) &= 2u \\
+  \end{aligned}
+\end{equation}
+This implies $f(u)$ and $f'(u)$ is continuous. The solution is defined for
+$t\in[0,\frac{1}{u_0})$ if $u_0>0$ and for $t\in[0,\infty)$ if $u_0\le0$.
+\begin{equation}
+  \begin{aligned}
+    u^{-2} \dd{u} &= \dd{t} \\
+    \int u^{-2} \dd{u} &= \int \dd{t} \\
+    -u^{-1} &= t+C \\
+    \implies u(t) &= \frac{-1}{t+C} \\
+  \end{aligned}
+\end{equation}
 
-      $$u(0) = u_0 \rightarrow u_0 = \frac{-1}{C}$$
-      $$\therefore u(t) = \frac{-1}{t-\frac{1}{u_0}} = \frac{u_0}{1-u_0t}$$
+$$u(0) = u_0 \rightarrow u_0 = \frac{-1}{C}$$
+$$\therefore u(t) = \frac{-1}{t-\frac{1}{u_0}} = \frac{u_0}{1-u_0t}$$
 
-      \section{Definition}
-      An equilibrium or steady-state solutoin of (IVP) is a solution of the form
+\section{Definition}
+An equilibrium or steady-state solutoin of (IVP) is a solution of the form
 
-      $$u(t) \equiv u_*,\qquad t\in[t_0,\infty)$$
-        Since $\od{u}{t}=f(u)$ we have \todo
-        %% \begin{equation}
-        %%   \left[
-        %%     \parbox{2cm}{u_* \text{is an equilibrium solution}}
-        %%     \right]
-        %%   \Leftrightarrow
-        %%   \left[
-        %%     f(u_*)=0
-        %%   \right]e
-        %% \end{equation}
+$$u(t) \equiv u_*,\qquad t\in[t_0,\infty)$$
+Since $\od{u}{t}=f(u)$ we have \todo
+  %% \begin{equation}
+  %%   \left[
+  %%     \parbox{2cm}{u_* \text{is an equilibrium solution}}
+  %%     \right]
+  %%   \Leftrightarrow
+  %%   \left[
+  %%     f(u_*)=0
+  %%   \right]e
+  %% \end{equation}
 
-      \subsection{Examples}
-      \subsubsection{Example 1}
-      \begin{equation} \left\{
-        \begin{aligned}
-          \od{u}{t} &= 2u, &\qquad t\ge0 \\
-          u(0) &= u_0 \\
-        \end{aligned} \right.
-      \end{equation}
-      \begin{equation}
-        \begin{aligned}
-          f(u) &= 2u \\
-          f(u_*) &= 0 \\
-          \implies u_* &= 0 \\
-        \end{aligned}
-      \end{equation}
+\subsection{Examples}
+\subsubsection{Example 1}
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= 2u, &\qquad t\ge0 \\
+    u(0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
+\begin{equation}
+  \begin{aligned}
+    f(u) &= 2u \\
+    f(u_*) &= 0 \\
+    \implies u_* &= 0 \\
+  \end{aligned}
+\end{equation}
 
-      \subsubsection{Example 2}
-      \begin{equation} \left\{
-        \begin{aligned}
-          \od{u}{t} &= u^2-3u &\qquad t\ge0 \\
-          u(0) &= u_0 \\
-        \end{aligned} \right.
-      \end{equation}
-      \begin{equation}
-        \begin{aligned}
-          f(u) &= u^2-3u \\
-          f(u_*) &= 0 \rightarrow u^2-3u_* = 0 \\
-          \implies u_* &= 0,3 \\
-        \end{aligned}
-      \end{equation}
+\subsubsection{Example 2}
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= u^2-3u &\qquad t\ge0 \\
+    u(0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
+\begin{equation}
+  \begin{aligned}
+    f(u) &= u^2-3u \\
+    f(u_*) &= 0 \rightarrow u^2-3u_* = 0 \\
+    \implies u_* &= 0,3 \\
+  \end{aligned}
+\end{equation}
 
-      This has two constant equilibrium solutions which exist for all time.
-      Reference fig. 5.7.
+This has two constant equilibrium solutions which exist for all time.
+Reference fig. 5.7.
 
-      \subsection{Characterization Theorem}
-      Consider (IVP) with $f(u)$, $f'(u)$ continuous and define the sets
-      \begin{equation}
-        \begin{aligned}
-          \text{Equil} &= {u | f(u) = 0} \\
-          I^+ &= {u | f(u) > 0} \\
-          I^- &= {u | f(u) < 0} \\
-        \end{aligned}
-      \end{equation}
-      Then $u\in\text{Equil} \implies u(t)\equiv u_0$ is an equal solution.
-      $u_0\in I^+ \implies u(t)$ increases as it is defined. $u_0\in I^-
-      \implies u(t)$ decreases while it is defined. Since solutions with
-      different $u_0$ cannot interset, this gives a complete portrait of
-      behavior.
+\subsection{Characterization Theorem}
+Consider (IVP) with $f(u)$, $f'(u)$ continuous and define the sets
+\begin{equation}
+  \begin{aligned}
+    \text{Equil} &= {u | f(u) = 0} \\
+    I^+ &= {u | f(u) > 0} \\
+    I^- &= {u | f(u) < 0} \\
+  \end{aligned}
+\end{equation}
+Then $u\in\text{Equil} \implies u(t)\equiv u_0$ is an equal solution.
+$u_0\in I^+ \implies u(t)$ increases as it is defined. $u_0\in I^-
+\implies u(t)$ decreases while it is defined. Since solutions with
+different $u_0$ cannot interset, this gives a complete portrait of
+behavior.
 
-      \subsubsection{Example 1}
-      Sketch time and phase portait of solutions for
-      \begin{equation} \left\{
-        \begin{aligned}
-          \od{u}{t} &= u^3-8u^2,&\qquad t\ge0 \\
-          u(0) &= u_0 \\
-        \end{aligned} \right.
-      \end{equation}
+\subsubsection{Example 1}
+Sketch time and phase portait of solutions for
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= u^3-8u^2,&\qquad t\ge0 \\
+    u(0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
 
-      $$f(u)=u^3-8u^2 = u^2(u-8)$$ Reference figs. 5.8--5.10.
+$$f(u)=u^3-8u^2 = u^2(u-8)$$ Reference figs. 5.8--5.10.
 
-      \subsubsection{Example 2}
-      \begin{equation} \left\{
-        \begin{aligned}
-          \od{u}{t} &= u-e^{-u},&\qquad t\ge0 \\
-          u(0) &= u_0 \\
-        \end{aligned} \right.
-      \end{equation}
-      Does $f(u)=u-e^{-u}$ have any roots? Reference figs. 5.11, 5.12.
+\subsubsection{Example 2}
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= u-e^{-u},&\qquad t\ge0 \\
+    u(0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
+Does $f(u)=u-e^{-u}$ have any roots? Reference figs. 5.11, 5.12.
 
 \end{document}
