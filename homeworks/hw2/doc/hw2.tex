@@ -115,9 +115,9 @@ bound, but instead approaches some maximum value.
 
 \subsubsection*{Solution}
 First we will obtain the dimensions of each quantity. It is assumed that $[x]=L$
-and $[\od{x}{t}]=LT^{-1}$. We will obtain $a$ and $b$ from \cref{eq:growth-model}. We will
-separate the terms in \cref{eq:growth-model} to more clearly demonstrate the
-dimension breakdown.
+and $[\od{x}{t}]=LT^{-1}$. We will obtain the dimensions of $a$ and $b$ from
+\cref{eq:growth-model}. We will separate the terms in \cref{eq:growth-model} to
+more clearly demonstrate the dimension breakdown.
 \vspace{-2em}
 \begin{multicols}{2}
   \begin{equation*}
@@ -134,7 +134,7 @@ dimension breakdown.
   \end{equation*}
 \end{multicols}
 \noindent
-Similarly, we will obtain $\rho$ from \cref{eq:biomass-model}.
+Similarly, we will obtain the dimensions of $\rho$ from \cref{eq:biomass-model}.
 \begin{equation*}
   \begin{aligned}
     m &= \rho x^3 \\
@@ -160,8 +160,8 @@ the chain rule.
   \label{eq:chain-rule-setup}
   \od{\bar{x}}{\bar{t}} = \od{\bar{x}}{t} \cdot \od{t}{\bar{t}}
 \end{equation}
-Differentiating $\bar{x}$ in terms of $t$ and $t$ in terms of $\bar{t}$ to
-yields the first and second terms, respectively so that
+Differentiating $\bar{x}$ in terms of $t$ and differentiating $t$ in terms of
+$\bar{t}$ to yields the first and second terms, respectively so that
 \cref{eq:chain-rule-setup} becomes
 \begin{equation}
   \label{eq:dxbar-in-terms-of-dx}
@@ -217,7 +217,7 @@ $\bar{x}(0)=0$.
     \implies C = 1
   \end{aligned}
 \end{equation*}
-From these results we can conclude that the dimensionless form of the organism's
+From these results we may conclude that the dimensionless form of the organism's
 characteristic length $x$ in terms of time $t$ is
 \begin{equation*} \boxed{
     \bar{x} = 1-e^{-\bar{t}/3}
@@ -527,14 +527,14 @@ of cooling.
       &= T^{-a-b}\Theta^{b+c+d}
     \end{aligned}
   \end{equation*}
-  This yeilds the linear system
+  This yields the linear system
   \begin{equation*}
     \begin{aligned}
       1 &= -a - b \\
       0 &= b + c + d \\
     \end{aligned}
   \end{equation*}
-  which can be written in augmented matrix form
+  which may be written in augmented matrix form
   \begin{equation*}
     \begin{pmatrix}[cccc|c]
       -1 & -1 & 0 & 0 & 1 \\
@@ -729,7 +729,6 @@ $d=0$.
 \begin{equation*}
   \implies c_c = c_{\text{in}}
 \end{equation*}
-
 We'll do the same to obtain the scales for time.
 \begin{equation*}
   \begin{aligned}
@@ -770,7 +769,6 @@ when $d=0$.
 \begin{equation*}
   \implies t_c = \frac{V}{\eta}
 \end{equation*}
-
 Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
 \begin{equation*}
   \begin{aligned}
@@ -809,7 +807,7 @@ is this condition reasonably met? That is, in which scenario can $\gamma$ be
 regarded as ``small''?
 
 \subsubsection*{Solution}
-$\gamma$ can be regarded as small when the reaction rate is small compared to
+$\gamma$ may be regarded as small when the reaction rate is small compared to
 the flow rate, that is, $\gamma \ll \frac{\eta}{V}$. The second operating
 scenario allows this condition to be met, while the first scenario does not.
 Therefore, $\gamma$ may be considered ``small'' under the second scenario.
