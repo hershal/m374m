@@ -122,14 +122,14 @@ dimension breakdown.
 \begin{multicols}{2}
   \begin{equation*}
     \begin{aligned}
-      MT^{-1} &= aL^2 \\
-      \implies a &= ML^{-2}T^{-1} \\
+      MT^{-1} &= [a]L^2 \\
+      \implies [a] &= ML^{-2}T^{-1} \\
     \end{aligned}
   \end{equation*} \\
   \begin{equation*}
     \begin{aligned}
-      MT^{-1} &= bL^3 \\
-      \implies b &= ML^{-3}T^{-1} \\
+      MT^{-1} &= [b]L^3 \\
+      \implies [b] &= ML^{-3}T^{-1} \\
     \end{aligned}
   \end{equation*}
 \end{multicols}
@@ -139,8 +139,8 @@ Similarly, we will obtain $\rho$ from \cref{eq:biomass-model}.
   \begin{aligned}
     m &= \rho x^3 \\
     [m] &= [\rho] [x]^3 \\
-    M &= \rho L^3 \\
-    \implies \rho &= ML^{-3} \\
+    M &= [\rho] L^3 \\
+    \implies [\rho] &= ML^{-3} \\
   \end{aligned}
 \end{equation*}
 Now we will rewrite the model in terms of length $x$ by differentiating $m$ and
@@ -156,9 +156,10 @@ setting it equal to the given $m'$.
 We are given scales $t_c=\rho/b$ and $x_c=a/b$. From this we may construct a
 dimensionless model. Assuming $\bar{t}=t/t_c=bt/\rho$ and $\bar{x}=x/x_c=bx/a$, we may use
 the chain rule.
-\begin{equation*}
+\begin{equation}
+  \label{eq:chain-rule-setup}
   \od{\bar{x}}{\bar{t}} = \od{\bar{x}}{t} \cdot \od{t}{\bar{t}}
-\end{equation*}
+\end{equation}
 Differentiating $\bar{x}$ in terms of $t$ and $t$ in terms of $\bar{t}$ to
 yields the first and second terms, respectively so that
 \cref{eq:chain-rule-setup} becomes
