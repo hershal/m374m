@@ -66,9 +66,26 @@ $\omega$, and $\lambda$ are positive constants.
   \end{equation}
 
 \item
-\todo
+  \begin{equation} \boxed{
+      \begin{aligned}
+        M &= \text{max}\abs{Ate^{-\lambda t}} \\
+        \implies M &= \frac{A}{\lambda e} \\
+      \end{aligned}
+    }
+  \end{equation}
+
+  \begin{equation} \boxed{
+      \begin{aligned}
+        t_c &= M/\text{max}\abs{u'(t)} \\
+        &= M/\text{max}\abs{(1-\lambda t)Ae^{-\lambda t}} \\
+        &= \frac{A}{\lambda e}\frac{1}{A} \\
+        \implies t_c &= \frac{1}{\lambda e}
+      \end{aligned}
+    }
+  \end{equation}
 \end{enumerate}
 
+\newpage
 \subsection{3$^2$}
 \subsubsection*{Problem}
 The growth rate of an organism is often measured using carbon biomass as the
@@ -208,30 +225,31 @@ characteristic length $x$ in terms of time $t$ is
 The model seems reasonable since this equation is bounded, i.e. the organism
 does not grow infinitely.
 
-\subsubsection*{Check}
-We will verify that the obtained dimensions are accurate.
+%% \subsubsection*{Check}
+%% We will verify that the obtained dimensions are accurate.
 
-\begin{equation}
-  \begin{aligned}
-    \od{m}{t} &= ax^2 - bx^3 \\
-    \left[\od{m}{t}\right] &= [a][x]^2 - [b][x]^3 \\
-    MT^{-1} &= (ML^{-2}T^{-1})(L^2) - (ML^{-3}T^{-1})(L^3) \\
-    &= (M\cancel{L^{-2}}T^{-1})\cancel{(L^2)} - (M\cancel{L^{-3}}T^{-1})\cancel{(L^3)} \\
-    &= MT^{-1} - MT^{-1} \\
-    \implies MT^{-1} &= MT^{-1} \quad\checkmark
-  \end{aligned}
-\end{equation}
+%% \begin{equation}
+%%   \begin{aligned}
+%%     \od{m}{t} &= ax^2 - bx^3 \\
+%%     \left[\od{m}{t}\right] &= [a][x]^2 - [b][x]^3 \\
+%%     MT^{-1} &= (ML^{-2}T^{-1})(L^2) - (ML^{-3}T^{-1})(L^3) \\
+%%     &= (M\cancel{L^{-2}}T^{-1})\cancel{(L^2)} - (M\cancel{L^{-3}}T^{-1})\cancel{(L^3)} \\
+%%     &= MT^{-1} - MT^{-1} \\
+%%     \implies MT^{-1} &= MT^{-1} \quad\checkmark
+%%   \end{aligned}
+%% \end{equation}
 
-\begin{equation}
-  \begin{aligned}
-    m &= \rho x^3 \\
-    [m] &= [\rho] [x]^3 \\
-    M &= ML^{-3} L^{3} \\
-    &= M\cancel{L^{-3}} \cancel{L^{3}} \\
-    \implies M &= M \quad\checkmark
-  \end{aligned}
-\end{equation}
+%% \begin{equation}
+%%   \begin{aligned}
+%%     m &= \rho x^3 \\
+%%     [m] &= [\rho] [x]^3 \\
+%%     M &= ML^{-3} L^{3} \\
+%%     &= M\cancel{L^{-3}} \cancel{L^{3}} \\
+%%     \implies M &= M \quad\checkmark
+%%   \end{aligned}
+%% \end{equation}
 
+\newpage
 \subsection{4$^3$}
 \subsubsection*{Problem}
 A mass hanging on a spring is given a positive initial velocity $V$ from
@@ -241,11 +259,10 @@ governed by
   \label{eq:4-problem}
   mx'' = -ax\abs{x'}-kx, \quad x(0) = 0,\quad x'(0) = V
 \end{equation}
-where
-$-ax\abs{x'}$ is a nonlinear damping force and $-kx$ is a linear rebound force
-of the spring. What are possible length scales? If the restoring force is small
-compared to the damping force, choose appropriate time and length scales and
-non-dimensionalize the model so that the small term appears in the damping
+where $-ax\abs{x'}$ is a nonlinear damping force and $-kx$ is a linear rebound
+force of the spring. What are possible length scales? If the rebound force is
+small compared to the damping force, choose appropriate time and length scales
+and non-dimensionalize the model so that the small term appears in the damping
 force.
 
 \subsubsection*{Remarks}
@@ -318,12 +335,13 @@ Solving this system yields
   \end{pmatrix}
   d
 \end{equation}
-We pick the case when $d=0$ so that our length scale turns into
+Since the rebound force is small compared to the damping force, we may assume
+that $k\ll a$. This implies that we'd like to avoid terms involving $k$, so we
+pick the case when $d=0$. Our length scale turns into
 \begin{equation}
   \label{eq:4-length-scale}
   \implies x_c = \sqrt{\frac{mV}{a}}
 \end{equation}
-
 We do the same approach to obtain the time scales, this time solving for
 $T=m^aV^ba^ck^d$.
 \begin{equation}
@@ -370,7 +388,8 @@ Solving this system yields
   \end{pmatrix}
   d
 \end{equation}
-We pick the case when $d=0$ so that our time scale turns into
+Similar to the length scales, we pick the case when $d=0$ so that our time scale
+turns into
 \begin{equation}
   \label{eq:4-time-scale}
   \implies t_c = \sqrt{\frac{m}{aV}}
@@ -382,11 +401,10 @@ $t$ become
   \bar{t} = \frac{t}{\sqrt{\frac{m}{Va}}}
 \end{equation}
 We'll use the scales from \cref{eq:4-length-scale,eq:4-time-scale} to construct
-a dimensionless version of \cref{eq:4-problem}.
-
-We'll begin by obtaining the first derivitive of $\bar{x}$ in terms of
-$\bar{t}$.
+a dimensionless version of \cref{eq:4-problem}. We begin by obtaining the first
+derivitive of $\bar{x}$ in terms of $\bar{t}$.
 \begin{equation}
+  \label{eq:4-dxbar-dtbar}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}} &= \od{\bar{x}}{t}\od{t}{\bar{t}} \\
     &= \frac{1}{\sqrt{\frac{mV}{a}}}\od{x}{t}\od{t}{\bar{t}} \\
@@ -439,8 +457,7 @@ Substituting in \cref{eq:4-equation}
 \end{equation}
 
 Based on \cref{eq:4-dxbar-dtbar}, we may scale the initial condition for
-$\od{\bar{x}}{\bar{t}}$. The initial condition for $x$ need not be scaled since
-it's already zero.
+$\od{\bar{x}}{\bar{t}}$.
 \begin{equation}
   \begin{aligned}
     \od{\bar{x}}{\bar{t}}(0) &= \frac{1}{V}\od{x}{t}(0) \\
@@ -449,15 +466,15 @@ it's already zero.
   \end{aligned}
 \end{equation}
 
-If the rebound force is very small, we may expect $k$ to be small. For the case when
+If the rebound force is very small, we expect $k\ll a$
 \begin{equation} \boxed{
     \od[2]{\bar{x}}{\bar{t}} = -\bar{x}\od{\bar{x}}{\bar{t}} -
     \frac{k\bar{x}}{Va}, \quad \bar{x}(0)=0, \quad \od{\bar{x}}{\bar{t}}(0) = 1
   }
 \end{equation}
 
-\subsubsection*{Check}
-\todo
+%% \subsubsection*{Check}
+%% \todo
 
 \newpage
 \subsection{9}
@@ -546,37 +563,85 @@ of cooling.
   We now have many time scales to explore. We'll examine cases when
   $(c,d)=(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
   \begin{equation}
-    \begin{aligned}
-      (0,0) &\implies
+      (0,0) \implies
       \begin{pmatrix}
         -1 \\ 0 \\ 0 \\ 0 \\
-      \end{pmatrix} \implies t_c =\frac{1}{k} \\
-      (0,1) &\implies
+      \end{pmatrix} \implies t_c =\frac{1}{k}
+  \end{equation}
+
+  \begin{equation}
+      (0,1) \implies
       \begin{pmatrix}
         0 \\ -1 \\ 0 \\ 1 \\
-      \end{pmatrix} \implies t_c =\frac{T_f}{q} \\
-      (1,0) &\implies
+      \end{pmatrix} \implies t_c =\frac{T_f}{q}
+  \end{equation}
+
+  \begin{equation}
+      (1,0) \implies
       \begin{pmatrix}
         0 \\ -1 \\ 1 \\ 0 \\
-      \end{pmatrix} \implies t_c =\frac{A}{q} \\
-      (1,1) &\implies
+      \end{pmatrix} \implies t_c =\frac{A}{q}
+  \end{equation}
+
+  \begin{equation}
+      (1,1) \implies
       \begin{pmatrix}
         1 \\ -2 \\ 1 \\ 1 \\
-      \end{pmatrix} \implies t_c =\frac{kAT_f}{q^2} \\
-    \end{aligned}
+      \end{pmatrix} \implies t_c =\frac{kAT_f}{q^2}
+  \end{equation}
+
+  If we assume the heat loss is large compared to the heat generated, then we
+  would like to be able to delete the $qe^{-A/T}$ term from the original
+  equation. To that end, we'll enumerate the cases here.
+
+  \begin{equation}
+    \label{eq:case-0-0}
+    %% t_c = \frac{1}{k} \implies
+    \od{\bar{T}}{\bar{t}} =
+    \frac{qe^{-A/(\bar{T}T_f)}}{kT_f} - (\bar{T}-1)
+  \end{equation}
+
+  \begin{equation}
+    \label{eq:case-0-1}
+    %% t_c = \frac{T_f}{q} \implies
+    \od{\bar{T}}{\bar{t}} =
+    e^{-A/(\bar{T}T_f)}-\frac{kT_f}{q}(\bar{T}-1)
+  \end{equation}
+
+  \begin{equation}
+    \label{eq:case-1-0}
+    %% t_c = \frac{A}{q} \implies
+    \od{\bar{T}}{\bar{t}} =
+    \frac{A}{T_f}e^{-A/(\bar{T}T_f)}-\frac{Ak}{q}(\bar{T}-1)
+  \end{equation}
+
+  \begin{equation}
+    \label{eq:case-1-1}
+    %% t_c = \frac{kAT_f}{q^2} \implies
+    \od{\bar{T}}{\bar{t}} =
+    \frac{kA}{q^2}\left(qe^{-A/(\bar{T}T_f)}-kT_f(\bar{T}-1) \right)
+  \end{equation}
+
+  \Cref{eq:case-1-0,eq:case-1-1} are not viable solutions since the heat
+  generation term cannot be easily removed, so we are left with
+  \cref{eq:case-0-0,eq:case-0-1}. Since we would like to delete the heat
+  generation terms, the original equation implies that $q \ll k$ and/or
+  $e^{-A/T} \ll k$. Since $e^{-A/T}$ shrinks faster than $q$ ,
+  \cref{eq:case-0-1} would work for us since it isolates $A$ to the first term
+  on the right of the equation.
+
+  \begin{equation} \boxed{
+      \od{\bar{T}}{\bar{t}} =
+    e^{-\alpha/(\bar{T})}-\beta(\bar{T}-1), \quad \alpha = A/T_f,\quad
+    \beta = \frac{kT_f}{q} \quad T(0) = T_0/T_f
+    }
   \end{equation}
 \end{enumerate}
-\subsection*{Solution Case 1}
-\todo
-\subsection*{Solution Case 2}
-\todo
-\subsection*{Solution Case 3}
-\todo
-\subsection*{Solution Case 4}
-\todo
-\subsubsection*{Check}
-\todo
 
+%% \subsubsection*{Check}
+%% \todo
+
+\newpage
 \section{Programming Minilab}
 A model for the mass concentration of a chemical \textbf{C} in a tank reactor is
 \begin{equation}
@@ -610,7 +675,6 @@ seconds.
   \label{fig:minilab-var-mappings}
 \end{figure}
 
-\newpage
 \subsection{}
 \label{sec:minilab-first-problem}
 \subsubsection*{Problem}
@@ -708,8 +772,8 @@ Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
   \begin{aligned}
     \od{\bar{c}}{\bar{t}} &=
     \frac{t_c}{c_c}\od{c}{t} \\
-    &= \frac{V}{\eta c_{\text{in}}} \left(\frac{\eta}{V}(c_{\text{in}}-c)-\gamma
-    c^2\right) \\
+    %% &= \frac{V}{\eta c_{\text{in}}} \left(\frac{\eta}{V}(c_{\text{in}}-c)-\gamma
+    %% c^2\right) \\
     &= \frac{V}{\eta c_{\text{in}}}
     \left(\frac{\eta}{V}(c_{\text{in}}-\bar{c}c_{\text{in}})-\gamma
     (\bar{c}c_{\text{in}})^2\right) \\
@@ -724,7 +788,7 @@ Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
 Or more concisely,
 \begin{equation} \boxed{
     \od{\bar{c}}{\bar{t}} = 1 - \bar{c} - \beta\bar{c}^2,
-    \quad \beta = \frac{V \gamma c_{\text{in}}}{\eta}.
+    \quad \beta = \frac{V \gamma c_{\text{in}}}{\eta} \quad c(0)=0.
     }
 \end{equation}
 
@@ -742,9 +806,8 @@ regarded as ``small''?
 \subsubsection*{Solution}
 $\gamma$ can be regarded as small when the reaction rate is small compared to
 the flow rate, that is, $\gamma \ll \frac{\eta}{V}$. The second operating
-scenario allows this condition to be met, while the first operating scenario
-does not. Therefore, $\gamma$ may be considered ``small'' under the second
-operating scenario.
+scenario allows this condition to be met, while the first scenario does not.
+Therefore, $\gamma$ may be considered ``small'' under the second scenario.
 
 \subsection{}
 \subsubsection*{Problem}
