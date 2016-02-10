@@ -957,4 +957,165 @@ $$f(u)=u^3-8u^2 = u^2(u-8)$$ Reference figs. 5.8--5.10.
 \end{equation}
 Does $f(u)=u-e^{-u}$ have any roots? Reference figs. 5.11, 5.12.
 
+\newpage
+\section{Stability of Equilibria}
+\subsubsection*{Recall}
+We consider the system where $f(u)$, $f'(u)$ continuous.
+\begin{equation} \text{(IVP)}
+  \left\{
+  \begin{aligned}
+    \od{u}{t}&=f(u),\quad t&\ge t_0, \\
+    u(t_0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
+
+\subsection{Definition}
+\begin{enumerate}
+\item An equilibrium solution $u_*$ is called asymptotically stable if there is
+  an interval $I$ such that
+  \begin{equation}
+    u(t) \rightarrow u_* \text{ as } t\rightarrow\infty
+  \end{equation}
+  For every $u_0\in I$. Reference fig. 7.1. This is usually called an
+  ``attractor'' or ``sink''.
+\item An equilibrium solution $u_*$ is called neutrally stable if for any given
+  interval $G$ there is an interval $I \subset G$ such that $u(t) \in G$ for all
+  $t\ge t_0$ for every $u_0\in I$. Reference fig. 7.2.
+\item An equilibrium solution $u_*$ is called unstable if it is not
+  asymptotically or neutrally stable. Reference figs. 7.3, 7.4. This is called a
+  ``repellor'', or ``source''.
+\end{enumerate}
+
+Asymptotically stable $\implies$ neutrally stable, but the converse is not true.
+
+\subsection{Examples}
+\subsubsection*{Example 1}
+Find equilibrium solutions; determine stability
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= 4u^2-u^3,&\quad t&\ge0, \\ \quad u(0)&=u_0 \\
+  \end{aligned} \right.
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    f(u_*) &= 0 &\rightarrow 4u_*^2-u_*^3 &= 0 \\
+    & & u_*^2(4-u_*) &= 0 \\
+    & & u_* &= 0, 4 \\
+  \end{aligned}
+\end{equation}
+
+Reference figs. 7.5, 7.6. However, this ``sign table'' does not generalize to
+many variables.
+
+\subsection{Derivative Method For Stablity}
+This method generalizes for many variables. We'll start by showing a single
+variable. Let $u_*$ be an equilibrium solution and let $\lambda_*=f(u_*)$.
+Then
+\begin{equation}
+  \begin{aligned}
+    \lambda_* < 0 &\implies u_* \text{ is asymptotically stable} \\
+    \lambda_* > 0 &\implies u_* \text{ is unstable} \\
+    \lambda_* = 0 &\implies u_* \text{ no conclusion} \\
+  \end{aligned}
+\end{equation}
+
+\subsubsection*{Idea}
+We want to know what $f$ looks like near $u_*$. Near $u_*$, we can use the
+Taylor series to write
+\begin{equation}
+  f(u) = f(u_*) + f'(u_*)(u-u_*) + R(u-u_*)
+\end{equation}
+
+
+From this we can construct sign tables
+
+When $\lambda_*<0$, $f(u)$ is positive until it passes through $u_*$, after
+which the sign becomes negative. Thus $f$ has negative slope. Therefore $u_*$ is
+asympotitally stable. Reference figs. 7.7, 7.8.
+
+When $\lambda_*>0$, $f(u)$ is negative until it passes through $u_*$, after
+which the sign becomes positive. Thus $f$ has positive slope. Thereforce $u_*$
+is unstable. Reference figs. 7.9, 7.10.
+
+When $\lambda_*=0$, no conclusion can be made. Reference fig. 7.11.
+
+\subsection{Examples}
+\subsubsection*{Example 1}
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= \sin u, &\quad t&\ge 0 \\
+    u(0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    f(u_*) = 0 \rightarrow \sin u_* & = 0 \\
+    u_*  &= n\pi \\
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    f'(u) &= \cos u \\
+    f'(n\pi) &= \cos n\pi \\
+    &= \left\{
+    \begin{aligned}
+      +1,\quad n&=0,\pm2,\pm4,\ldots \\
+      -1,\quad n&=\pm1,\pm3,\ldots \\
+    \end{aligned}
+    \right.
+  \end{aligned}
+\end{equation}
+Therefore, $u_*=n\pi$ is asymptotically stable if $n=\pm1,\pm3,\ldots$, and
+$u_*=n\pi$ is unstable if $n=0,\pm2,\pm3,\ldots$.
+
+\subsection{Lyapunov Method For Stablity}
+Let $u_*$ be an equilibrium solution. Suppose we can find a function $E(u)$ such
+that
+\begin{enumerate}
+\item $E(u)$ has a strict local minimum at $u=u_*$.
+\item $E'(u)f(u)$ does not change sign in some interval $I$ containing $u_*$.
+\end{enumerate}
+
+\begin{itemize}
+\item If $E'(u)f(u)<0\,\; \forall u\in I, u\ne u_* \implies u_* $ is asymptotically
+stable.
+\item If $E'(u)f(u)\le 0,\; \forall u\in I, u\ne u_* \implies u_*$ is neutrally
+stable.
+\item If $E'(u)f(u)> 0,\; \forall u\in I, u\ne u_* \implies u_*$ is unstable
+\end{itemize}
+
+\subsubsection*{Idea}
+Suppose $E(u)$ has a minimum at $u=u_*$ and $E'(u)f(u)<0$ for
+$u\in I, u\ne u_*$. If $u(t)$ is a solution of $\od{u}{t}=f(u)$, then
+
+\begin{equation}
+  \begin{aligned}
+    \od{}{t}E(u(t)) &= E'(u(t))\od{u}{t}(t) \\
+    &= E'(u(t))f(u(t)) \\
+    &<0 \\
+  \end{aligned}
+\end{equation}
+
+This says that $E(u(t))$ is strictly negative and decreases in time. Thus $u(t)$
+gets closer to $u_*$ in time. Reference fig. 7.12.
+
+\subsection{Example}
+\begin{equation}
+  \begin{aligned}
+    \od{u}{t} &= -5u^3,\quad t\ge0 \\
+    u(0) &= u_0 \\
+  \end{aligned}
+\end{equation}
+
+$u_*=0$ is equilibrium. Consider $E(u)=u^2$.
+
+$E'(u)f(u) = (2u)(-5u^3) = -10u^4 < 0$ for all $u\in(-\infty,\infty)$, $u\ne
+u_*$. $u_*$ is asymptotically stable.
+
+\newpage
+\section{}
+
 \end{document}
