@@ -1012,13 +1012,14 @@ Reference figs. 7.5, 7.6. However, this ``sign table'' does not generalize to
 many variables.
 
 \subsection{Derivative Method For Stablity}
+\label{sec:derivative-method}
 This method generalizes for many variables. We'll start by showing a single
 variable. Let $u_*$ be an equilibrium solution and let $\lambda_*=f(u_*)$.
 Then
 \begin{equation}
   \begin{aligned}
-    \lambda_* < 0 &\implies u_* \text{ is asymptotically stable} \\
-    \lambda_* > 0 &\implies u_* \text{ is unstable} \\
+    \lambda_* < 0 &\implies u_* \text{ is asymptotically stable (attractor)} \\
+    \lambda_* > 0 &\implies u_* \text{ is unstable (repeller)} \\
     \lambda_* = 0 &\implies u_* \text{ no conclusion} \\
   \end{aligned}
 \end{equation}
@@ -1119,6 +1120,94 @@ $E'(u)f(u) = (2u)(-5u^3) = -10u^4 < 0$ for all $u\in(-\infty,\infty)$, $u\ne
 u_*$. $u_*$ is asymptotically stable.
 
 \newpage
-\section{}
+\section{Bifurcation of Equilibria}
+\subsection{Definition}
+Consider a dynamical system of the form
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= f(u,h), &\quad t\ge t_0 \\
+    u(u) &= u_0 &\quad h \in \mathbb{R} \\
+  \end{aligned} \right.
+\end{equation}
+Where $h$ is some constant of interest. The equilibrium solutions $u_*$
+satisfy $$f(u_*,h)=0.$$ The set of all $(u_*,h)$ satisfying this equation, with
+stability indicated, is called a bifurcation diagram.
+
+\subsection{Examples}
+\subsubsection*{Example 1}
+\begin{equation}
+  \begin{aligned}
+    \od{u}{t} &= u^3-uh, &\quad t&\ge0 \\
+    u(0) &= u_0, &\quad h&\in(-\infty,\infty) \\
+  \end{aligned}
+\end{equation}
+Equilibria solution
+\begin{equation}
+  \begin{aligned}
+    f(u,h) \quad \rightarrow \quad & u^3-uh=0 \\
+    & u(u^2-h)=0 \\
+  \end{aligned}
+\end{equation}
+$u_*$ is an equilibrium solution for $h\in(-\infty,\infty)$. $u_*=\pm\sqrt{h}$
+is an equilibria for all $h\ge0$. This solution has 1 or 3 equilibria depending
+on $h$. Reference fig. 8.1.
+
+\subsection{Definition of Stability}
+Let $$\lambda_*=\pd{f}{u}(u_*,h)=3u_*^2-h.$$ Recall
+\cref{sec:derivative-method}.
+
+\begin{enumerate}
+\item $u_*=0, h\in(-\infty,\infty)$, then $\lambda_*=-h$.
+  $\therefore u_*=0$ is asymtotically stable if $h>0$.
+  $u_*$is unstable for $h<0$.
+
+  For $h=0$, consider $f(u,0)=u^3$. Reference fig. 8.2. Therefore $u_*=0$ is
+  unstable if $h=0$.
+\item $u_*=+\sqrt{h},\quad h>0$, then $\lambda_*=3u_*^2-h=2h.$
+  $\therefore u_*=+\sqrt{h}$ is unstable for $h>0$.
+\item $u_*=-\sqrt{h},\quad h>0$, then $\lambda_*=3u_*^2-h=2h.$
+  $\therefore u_*=-\sqrt{h}$ is unstable for $h>0$.
+\end{enumerate}
+
+We can put all of this information into a bifurcation diagram for this system.
+Reference fig. 8.3. We have multiple solution portraits. For $h\le0$, reference
+fig. 8.4. For $h>0$, reference fig. 8.5.
+
+\subsubsection*{Example}
+\begin{equation} \left\{
+  \begin{aligned}
+    \od{u}{t} &= hu-(u-2)(a-u), &\quad t&\ge0 \\
+    u(0) &= u_0, &\quad a&>2, h>0 \text{ constants}. \\
+  \end{aligned} \right.
+\end{equation}
+Find the bifucation diagram in terms of $h$ (for fixed $a$).
+
+The equilibrium solution $$f(u,h)=0\quad\rightarrow\quad hu-(u-2)(a-u)=0.$$
+
+First plot one easily available solution $hu=(u-2)(a-u)$. Reference fig. 8.6.
+
+The $hu$ line may or may not intersect the $(u-2)(a-u)$ parabola.
+
+\begin{description}
+\item[Case 1] $h=h_{\text{tang}}$ (some number $>0$). Reference fig. 8.7. In
+  this case we have one equilibrium solution $u_*=u_{\text{tang}}$
+  ($2<u_{\text{tang}}<a$), where $u_{\text{tang}}$ is some number. Reference the
+  sign table in fig. 8.8. This equilibrium solution is hyperbolic and is
+  therefore unstable.
+\item[Case 2] $0<h<h_{\text{tang}}$. Reference fig. 8.9. In this case we have
+  two equilibria, $u_*=u_L,u_R$ ($2<u_L<u_R<a$). Reference the sign table in
+  fig. 8.10. $u_L$ is asymptotically stable; $u_R$ is unstable.
+  $u_L\rightarrow2$, $u_R\rightarrow a$ as $h\rightarrow0$ and
+  $u_L,u_R\rightarrow u_{\text{tang}}$ as $h\rightarrow h_{\text{tang}}$.
+\item[Case 3] $h>h_{\text{tang}}$. Reference fig. 8.11. No equilibrium
+  solutions; all solutions increase. Reference the sign table in fig. 8.12.
+\end{description}
+
+Reference the Bifurcation Diagram in fig. 8.13. Solution portraits
+\begin{itemize}
+\item $0<h<h_{\text{tang}}$. Reference fig. 8.14.
+\item $h=h_{\text{tang}}$. Reference fig. 8.15.
+\item $h>h_{\text{tang}}$. Reference fig. 8.16.
+\end{itemize}
 
 \end{document}
