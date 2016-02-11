@@ -9,6 +9,7 @@
 \maketitle
 \tableofcontents
 
+\newpage
 \section{Dimensional Analysis}
 \subsection{Example}
 Let $q = \alpha p^2$, where $[\alpha] = \frac{L}{T^2}$, $[p] = T$. Find $[q]$,
@@ -59,7 +60,6 @@ Galileo's Law.
 \end{equation}
 
 Where $[x] = L$, $[\frac{gt^2}{2}] = [gt^2] = L$.
-
 $\therefore F(x,t,g)=0$ is unit-free.
 
 \subsection{Remarks}
@@ -126,9 +126,7 @@ All dimensionless combinations of $q_1,\ldots,q_m$ can be found from the null
 vectors of $A$. That is,
 
 $$Z = q_1^{v_1}, q_2^{v_2}, \cdots, q_n^{v_n}$$ where $v_1, \ldots, v_m$
-arbitrary.
-
-Then
+arbitrary. Then
 \begin{equation}
   \begin{aligned}
     [Z] &= 1 \rightleftarrows Av=0, \\
@@ -172,9 +170,7 @@ Find all dimensionless combinations of $x, t, g$.
     -1 & 2 & 1
   \end{pmatrix}
 \end{equation}
-
 Where $c$ is free.
-
 \begin{equation}
   \begin{aligned}
     c &= 1 \rightarrow v =
@@ -189,7 +185,6 @@ Where $c$ is free.
     Z = \frac{t^4g^1}{x^2}
   \end{aligned}
 \end{equation}
-
 The cases where $c=1$ and $c=2$ are the same combination, so we don't have
 independent results.
 
@@ -256,45 +251,40 @@ for $\alpha_1, \ldots, \alpha_m$ and $\beta_1, \ldots, \beta_m$.
 
 Find characteristic scales $t_c$, $y_c$ for $y=f(t)$ defined by
 
-\begin{equation}
+\begin{equation} \text{(IVP)}\quad
   \left\{
   \begin{aligned}
     \frac{dy}{dt} &= \eta y, \quad t\ge0 \\
     y_{(0)} &= \lambda \\
   \end{aligned} \right.
 \end{equation}
-
-$[y] = \Eta , [t]=T$.
-
-Dimensions of $\eta$, $\lambda$:
-
+$[y] = \Eta , [t]=T$. Dimensions of $\eta$, $\lambda$:
 \begin{equation}
   \begin{aligned}
     \frac{\Eta}{T} &= [\eta]\Eta \rightarrow [\eta]=\frac{1}{T} \\
     \Eta &= [\lambda]
   \end{aligned}
 \end{equation}
-
 Scales for $t$, $y$:
-
-\begin{equation}
-  \begin{aligned}
-    t_c &= \eta^{\alpha_1} \lambda^{\alpha_2} \\
-    \implies T &= T^{-\alpha_1}\Eta^{\alpha_2} \\
-    \implies \alpha_1 &= -1,\quad \alpha_2 = 0 \\
-    \implies t_c &= \frac{1}{\eta}\\
-  \end{aligned}
-\end{equation}
-
-\begin{equation}
-  \begin{aligned}
-    y_c &= \eta^{\beta_1} \lambda^{\beta_2} \\
-    \implies \Eta &= T^{-\beta_1}\Eta^{\beta_2} \\
-    \implies \beta_1 &= 0,\quad \beta_2 = 1 \\
-    \implies y_c &= \lambda
-  \end{aligned}
-\end{equation}
-
+\begin{multicols}{2}
+  \begin{equation}
+    \begin{aligned}
+      t_c &= \eta^{\alpha_1} \lambda^{\alpha_2} \\
+      \implies T &= T^{-\alpha_1}\Eta^{\alpha_2} \\
+      \implies \alpha_1 &= -1,\quad \alpha_2 = 0 \\
+      \implies t_c &= \frac{1}{\eta}\\
+    \end{aligned}
+  \end{equation}
+\\
+  \begin{equation}
+    \begin{aligned}
+      y_c &= \eta^{\beta_1} \lambda^{\beta_2} \\
+      \implies \Eta &= T^{-\beta_1}\Eta^{\beta_2} \\
+      \implies \beta_1 &= 0,\quad \beta_2 = 1 \\
+      \implies y_c &= \lambda
+    \end{aligned}
+  \end{equation}
+\end{multicols}
 \subsubsection{Example 2}
 
 Do the same for
@@ -305,7 +295,7 @@ Do the same for
     y_{(0)} &= \lambda, \quad \frac{dy}{dt}(0) = 0
   \end{aligned} \right.
 \end{equation}
-$[y]=L$, $[t]=T$, $\eta$, $\mu$, $\lambda$ constants.
+Where $[y]=L$, $[t]=T$, $\eta$, $\mu$, $\lambda$ are constants.
 
 Dimensions of $\eta$, $\mu$, $\lambda$:
 \begin{equation}
@@ -555,16 +545,15 @@ Vertical motion of a ball can be described using the variables in
 \begin{equation}
   \frac{d^2x}{dt^2} = -g - \eta\frac{dx}{dt}, \quad t\ge0
 \end{equation}
-
-Where
 \begin{equation}
   x=0,\quad \frac{dx}{dt} = v_0, \quad t=0
 \end{equation}
+$\eta$, $g$, $v_0$ are constants greater than zero.
 
-Where $\eta$, $g$, $v_0$ are constants greater than zero.
-
+\subsubsection*{Problem}
 Under what condition on $\eta$ do we expect air effects to be small?
 
+\subsubsection*{Solution}
 First, choose scales. In the limiting case of no air resistance ($\eta=0$), the
 solution is determined by $g$, $v_0$. Using these constants, we get
 $t_c=v_0/g, x_c=v_0^2/g$. Define dimensionless variables
@@ -574,7 +563,6 @@ equations
   \frac{d^2\bar{x}}{d\bar{t^2}} = -\bar{g} -
   \bar{\eta}\frac{d\bar{x}}{d\bar{t}}, \quad \bar{t}\ge0
 \end{equation}
-
 Where dimensionless variables
 \begin{equation}
   \begin{aligned}
@@ -615,7 +603,7 @@ tank outlet, $k_1$, $k_2$ are the rate constants
 
 Under what conditions on $k_2$ would we expect the second reaction to be insignificant?
 
-\subsubsection{Derivation of Model}
+\subsection{Derivation of Model}
 
 In a reaction $pA+qB \xrightarrow{k} \text{product}$, one product requires a
 successful pairing of $pA$'s and $qB$'s. We assume
@@ -692,7 +680,7 @@ Where
 \end{equation}
 $\eta$, $V$, $k_1$, $k_2$, $a_{in}$, $b_{in}$, $a_0$, $b_0$ are constants $>0$.
 
-\subsubsection{Scales for $t$, $a$, $b$}
+\subsection{Scales for $t$, $a$, $b$}
 In limiting case of no reaction \#2, ($k_2=0$), the remaining consts are
 \begin{equation}
   \frac{\eta}{V},\quad \frac{k_1}{V}, \quad a_{in}, \quad b_{in}, \quad a_0, \quad b_0
@@ -716,7 +704,7 @@ We choose scales
   \end{aligned}
 \end{equation}
 
-\subsubsection{Dimensionless Form of Equations}
+\subsection{Dimensionless Form of Equations}
 \begin{equation}
   \begin{aligned}
     \bar{a} &= \frac{a}{a_c}, &\quad a &= a_c\bar{a} \\
@@ -770,7 +758,7 @@ Where
 \end{equation}
 
 
-\subsubsection{Observation}
+\subsection{Observation}
 We expect reaction \#2 terms to have small influence on solution (solution
 viewed in scales $t_c, a_c, b_c$) when $\bar{a}$ equation
 $$2\lambda << \sigma, \mu \quad\longrightarrow\quad \lambda << \frac{\sigma}{2},\frac{\mu}{2},$$
