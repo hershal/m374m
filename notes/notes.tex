@@ -869,16 +869,16 @@ $$\therefore u(t) = \frac{-1}{t-\frac{1}{u_0}} = \frac{u_0}{1-u_0t}$$
 An equilibrium or steady-state solutoin of (IVP) is a solution of the form
 
 $$u(t) \equiv u_*,\qquad t\in[t_0,\infty)$$
-Since $\od{u}{t}=f(u)$ we have \todo
-  %% \begin{equation}
-  %%   \left[
-  %%     \parbox{2cm}{u_* \text{is an equilibrium solution}}
-  %%     \right]
-  %%   \Leftrightarrow
-  %%   \left[
-  %%     f(u_*)=0
-  %%   \right]e
-  %% \end{equation}
+Since $\od{u}{t}=f(u)$ we have
+\begin{equation}
+  \left[
+    u_* \;\text{equilibrium solution}
+    \right]
+  \Longleftrightarrow
+  \left[
+    f(u_*)=0
+    \right]
+\end{equation}
 
 \subsection{Examples}
 \subsubsection{Example 1}
@@ -910,7 +910,6 @@ Since $\od{u}{t}=f(u)$ we have \todo
     \implies u_* &= 0,3 \\
   \end{aligned}
 \end{equation}
-
 This has two constant equilibrium solutions which exist for all time.
 Reference fig. 5.7.
 
@@ -953,7 +952,7 @@ Does $f(u)=u-e^{-u}$ have any roots? Reference figs. 5.11, 5.12.
 \section{Stability of Equilibria}
 \subsubsection*{Recall}
 We consider the system where $f(u)$, $f'(u)$ continuous.
-\begin{equation} \text{(IVP)}
+\begin{equation} \text{(IVP)} \quad
   \left\{
   \begin{aligned}
     \od{u}{t}&=f(u),\quad t&\ge t_0, \\
@@ -983,7 +982,8 @@ Asymptotically stable $\implies$ neutrally stable, but the converse is not true.
 \subsection{Examples}
 \subsubsection*{Example 1}
 Find equilibrium solutions; determine stability
-\begin{equation} \left\{
+\begin{equation} \text{(IVP)}\quad
+  \left\{
   \begin{aligned}
     \od{u}{t} &= 4u^2-u^3,&\quad t&\ge0, \\ \quad u(0)&=u_0 \\
   \end{aligned} \right.
@@ -1035,7 +1035,8 @@ When $\lambda_*=0$, no conclusion can be made. Reference fig. 7.11.
 
 \subsection{Examples}
 \subsubsection*{Example 1}
-\begin{equation} \left\{
+\begin{equation} \text{(IVP)} \quad
+  \left\{
   \begin{aligned}
     \od{u}{t} &= \sin u, &\quad t&\ge 0 \\
     u(0) &= u_0 \\
@@ -1091,7 +1092,6 @@ $u\in I, u\ne u_*$. If $u(t)$ is a solution of $\od{u}{t}=f(u)$, then
     &<0 \\
   \end{aligned}
 \end{equation}
-
 This says that $E(u(t))$ is strictly negative and decreases in time. Thus $u(t)$
 gets closer to $u_*$ in time. Reference fig. 7.12.
 
@@ -1102,11 +1102,10 @@ gets closer to $u_*$ in time. Reference fig. 7.12.
     u(0) &= u_0 \\
   \end{aligned}
 \end{equation}
-
 $u_*=0$ is equilibrium. Consider $E(u)=u^2$.
 
-$E'(u)f(u) = (2u)(-5u^3) = -10u^4 < 0$ for all $u\in(-\infty,\infty)$, $u\ne
-u_*$. $u_*$ is asymptotically stable.
+$$E'(u)f(u) = (2u)(-5u^3) = -10u^4 < 0 \qquad\forall\;u\in(-\infty,\infty),$$
+$u\ne u_*$. $u_*$ is asymptotically stable.
 
 \newpage
 \section{Bifurcation of Equilibria}
@@ -1172,9 +1171,7 @@ fig. 8.4. For $h>0$, reference fig. 8.5.
 Find the bifucation diagram in terms of $h$ (for fixed $a$).
 
 The equilibrium solution $$f(u,h)=0\quad\rightarrow\quad hu-(u-2)(a-u)=0.$$
-
 First plot one easily available solution $hu=(u-2)(a-u)$. Reference fig. 8.6.
-
 The $hu$ line may or may not intersect the $(u-2)(a-u)$ parabola.
 
 \begin{description}
@@ -1192,7 +1189,7 @@ The $hu$ line may or may not intersect the $(u-2)(a-u)$ parabola.
   solutions; all solutions increase. Reference the sign table in fig. 8.12.
 \end{description}
 
-Reference the Bifurcation Diagram in fig. 8.13. Solution portraits
+Reference the Bifurcation Diagram in fig. 8.13. Solution portraits:
 \begin{itemize}
 \item $0<h<h_{\text{tang}}$. Reference fig. 8.14.
 \item $h=h_{\text{tang}}$. Reference fig. 8.15.
