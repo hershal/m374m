@@ -34,8 +34,6 @@
   breaklines=true,
   captionpos=b,
   commentstyle=\color{mygreen},
-  deletekeywords={...},
-  escapeinside={\%*}{*)},
   extendedchars=true,
   frame=single,
   keywordstyle=\color{blue},
@@ -56,8 +54,8 @@
 
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
-  \hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
+  \hskip -\arraycolsep[]
+  \let\@ifnextchar\new@ifnextchar[]
   \array{#1}}
 \makeatother
 
