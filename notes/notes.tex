@@ -621,72 +621,64 @@ In a reaction $pA+qB \xrightarrow{k} \text{product}$, one product requires a
 successful pairing of $pA$'s and $qB$'s. We assume
 
 \begin{equation}
-  \left(\frac{\text{number of successful pairings}}{time}\right) = \left(text{reaction const}\right)\cdot
-  \left(\text{number of possible pairings of pA's and qB'mas}\right)
+  \left(\frac{\text{\# successful pairings}}{\text{time}}\right) = \left(\text{reaction const}\right)\cdot
+  \left(\text{\parbox{10em}{\centering \# possible pairings of pA's and qB's}}\right)
 \end{equation}
 
 The second parameter turns out to be
 \begin{equation}
   \begin{aligned}
-    &\left(text{total number of A's}\right)^p \cdot \left(text{total number of Bmq's}\right)^q \\
+    &\left(\text{total \# A's}\right)^p \cdot \left(\text{total \# B's}\right)^q \\
     = &(Va)^p(Vb)^q \\
-    = & \left(text{reaction const}\right)V^{p+q} a^p b^q \\
+    = & \left(\text{reaction const}\right)V^{p+q} a^p b^q \\
   \end{aligned}
 \end{equation}
 
-Where $\left(text{reaction const}\right)V^{p+q} = k$.
+Where $\left(\text{reaction const}\right)V^{p+q} = k$.
 
 From this we get
 
 \begin{equation}
   \begin{aligned}
-    \left(text{consumption rate of }A\right) &= \left(frac{\text{\# }A}{\text{successful pairing}}\right)
-    \left(frac{\text{\# successful pairing}}{\text{time}}\right) \\
+    \left(\text{consumption rate of }A\right) &= \left(\frac{\text{\# }A}{\text{successful pairing}}\right)
+    \left(\frac{\text{\# successful pairing}}{\text{time}}\right) \\
     &= (p) (ka^pb^q) \\
   \end{aligned}
 \end{equation}
 
 Similarly,
 \begin{equation}
-  \left(text{consumption rate of }A\right) = (q)(ka^pb^q)
+  \left(\text{consumption rate of }A\right) = (q)(ka^pb^q)
 \end{equation}
-
-This is the Law of Mass Action
-
-Now, conservation o fmass is applied to chemical $A$ in tank states
-
+This is the Law of Mass Action. Now, conservation of mass is applied to chemical
+$A$ in tank states
 \begin{equation}
   \begin{aligned}
-    \od{}{t}\text{\# of A in tank} = \text{rate A enters tank} - \text{rate A leaves tank} - \text{rate of consumption of A} - \text{rate of consumption of A}
+    \od{}{t}\left(\text{A in tank}\right) = \left(\text{\parbox{5em}{\centering rate A enters tank}}\right) -
+    \left(\text{\parbox{5em}{\centering rate A leaves tank}}\right) -
+    \left(\text{\parbox{5em}{\centering rate of consumption of A}}\right) -
+    \left(\text{\parbox{5em}{\centering rate of consumption of A}}\right)
   \end{aligned}
 \end{equation}
-
-\todo clean up
 Where the first ``rate of consumption of A'' is $A + 2B \xrightarrow{k_1} C$,
 and the second ``rate of consumption of A'' is $2A \xrightarrow{k_2} B$.
-
 \begin{equation}
   \begin{aligned}
     \od{}{t}(Va) = \eta a_{in} - \eta a - 1\cdot k_1ab^2 - 2\cdot k_2a^2
   \end{aligned}
 \end{equation}
-
 Conservation of mass for chemical $B$ states
-
 \begin{equation}
-  \od{}{t}\text{\# B in tank} = \text{rate B enters tank} - \text{rate B leaves
-    tank} - \text{rate of consumption of B} + \text{rate of production}
+  \od{}{t}\left(\text{B in tank}\right) = \left(\text{\parbox{5em}{\centering rate B enters tank}}\right) -
+  \left(\text{\parbox{5em}{\centering rate B leaves tank}}\right) -
+  \left(\text{\parbox{5em}{\centering rate of consumption of B}}\right) +
+  \left(\text{\parbox{5em}{\centering rate of production}}\right)
 \end{equation}
-
 Where the rate of consumption is $A + 2B \xrightarrow{k_1} C$, and the rate of
 production is $2A \xrightarrow{k_2} B$.
-
-\todo clean up
-
 \begin{equation}
   \od{}{t}Vb = \eta b_{\text{in}} - \eta b - 2\cdot k_2a^2
 \end{equation}
-
 Now, combining all gives
 \begin{equation}
   \begin{aligned}
@@ -694,32 +686,28 @@ Now, combining all gives
     \od{b}{t} &= \frac{\eta}{V}(b_{in}-b) - \frac{2k_1}{V}ab^2 + \frac{k_2}{V}a^2, &\quad t&\ge0 \\
   \end{aligned}
 \end{equation}
-
 Where
 \begin{equation}
   a_{(0)}=a_0,\qquad b_{(0)}=b_0,\qquad \text{ at } t=0
 \end{equation}
-
-$\eta$, $V$, $k_1$, $k_2$, $a_{in}$, $b_{in}$, $a_0$, $b_0$ consts $>0$.
+$\eta$, $V$, $k_1$, $k_2$, $a_{in}$, $b_{in}$, $a_0$, $b_0$ are constants $>0$.
 
 \subsubsection{Scales for $t$, $a$, $b$}
 In limiting case of no reaction \#2, ($k_2=0$), the remaining consts are
 \begin{equation}
   \frac{\eta}{V},\quad \frac{k_1}{V}, \quad a_{in}, \quad b_{in}, \quad a_0, \quad b_0
 \end{equation}
-
 Where
 \begin{figure}
   \centering
   \begin{tabularx}{0.5\textwidth}{XXX}
     Variable & Dimension \\ \hline
-    $\frac{\eta}{V}$ & $T^{-1}$  \\
-    $\frac{k_1}{V}$ & $LT^{-1}$ \\
+    $\eta/V$ & $T^{-1}$  \\
+    $k_1/V$ & $LT^{-1}$ \\
   \end{tabularx}
   \caption{Variable mappings for \#14}
   \label{fig:14-var-mappings}
 \end{figure}
-
 We choose scales
 \begin{equation}
   \begin{aligned}
@@ -785,11 +773,12 @@ Where
 \subsubsection{Observation}
 We expect reaction \#2 terms to have small influence on solution (solution
 viewed in scales $t_c, a_c, b_c$) when $\bar{a}$ equation
-$$2\lambda << \sigma, \mu \rightarrow \lambda << \frac{\sigma}{2},\frac{\mu}{2}$$,
-$\bar{b}$ equation $$\frac{\lambda}{\sigma} << 2, \mu \rightarrow \lambda << 2\sigma, \mu\sigma$$.
-
-All conditions met when
-$$\lambda << \frac{\mu}{2}, \frac{\sigma}{2},\mu\sigma$$ which implies $$k_2 << \frac{\eta}{2a_{in}}, \frac{k_1b_{in}^2}{2a_{in}}, \frac{\eta b_{in}}{a_{in}^2}$$
+$$2\lambda << \sigma, \mu \quad\longrightarrow\quad \lambda << \frac{\sigma}{2},\frac{\mu}{2},$$
+$\bar{b}$ equation
+$$\frac{\lambda}{\sigma} << 2, \mu \quad\longrightarrow\quad \lambda << 2\sigma, \mu\sigma.$$
+All conditions are met when
+$$\lambda << \frac{\mu}{2},\; \frac{\sigma}{2},\;\mu\sigma$$ which implies
+$$k_2 << \frac{\eta}{2a_{in}},\; \frac{k_1b_{in}^2}{2a_{in}},\; \frac{\eta b_{in}}{a_{in}^2}$$
 
 \newpage
 \section{Dynamical Systems in 1 Dimension}
