@@ -19,7 +19,57 @@ Find the general solution of the following differential equations:
 \end{enumerate}
 
 \subsubsection*{Solution}
-\todo[]
+\begin{enumerate}
+\item This first-order ODE may be rewritten is in normal linear form
+  $$\od{u}{t} + p(t)u = q(t)$$
+  In this case, $p(t)=2$, $q(t)=e^{-t}$. This ODE may be solved by obtaining an
+  integrating factor $r$.
+  \begin{equation}
+    \label{eq:1a-integrating-factor}
+    \begin{aligned}
+      r(t) &= e^{\int p(t) \dd{t}} \\
+      &=e^{2t} \\
+    \end{aligned}
+  \end{equation}
+  Now the general form of the solution looks like
+  \begin{equation} \boxed{
+    \label{eq:1a-general-form}
+    \begin{aligned}
+      u(t) &= \frac{\int r(t)q(t)\dd{t}}{r(t)} \\
+      &= \frac{\int e^{2t}e^{-t}\dd{t}}{e^{2t}} \\
+      &= \frac{\int e^{t}\dd{t}}{e^{2t}} \\
+      &= \frac{e^t+C}{e^{2t}} \\
+      \implies u(t) &= e^{-t} + Ce^{-2t} \\
+    \end{aligned}
+  }
+  \end{equation}
+\item The general form of a second-order ODE is
+  $$P(t)\od[2]{u}{t} + Q(t)\od{u}{t} + R(t)u = G(t)$$
+
+  The general solution to a second-order ODE is $$u = u_c + u_p$$ where $u_c$ is
+  the solution to the homogenous case and $u_p$ is a particular solution.
+
+  In the homogenous case ($G=0$),
+  $$u''+\omega^2u=0$$
+  which can be transformed into the characteristic equation
+  $$r^2+\omega^2=0.$$
+
+  Solving this results in $r=\pm i\omega$ so that the complementary equation
+  takes the form
+  $$u_c = c_1e^{i\omega t}c_2e^{-i\omega t}$$
+
+  In our case, the particular solution takes the form\footnote{The $t$ appears
+    at the end of the general solution since a similar form exists in $G(t)$.}
+  $$u_p(t) = (A\cos \omega t + b\cos \omega t)t.$$
+
+  Substituting this into the the original equation yields
+  $$\od[2]{u}{t}((A\cos \omega t + b\cos \omega t)t) + \od{u}{t}((A\cos \omega t
+  + b\cos \omega t)t)\omega^2
+  = \cos \omega t
+  $$
+
+  \todo[]
+\end{enumerate}
 
 \subsection{8a$^1$}
 \subsubsection*{Problem}
@@ -118,4 +168,5 @@ sizes we introduce the dimensions $[p] = \text{Plant}$, $[q] =
 
 \subsubsection*{Solution}
 \todo[]
+
 \end{document}
