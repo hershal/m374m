@@ -1184,4 +1184,118 @@ Reference the Bifurcation Diagram in fig. 8.13. Solution portraits:
 \item $h>h_{\text{tang}}$. Reference fig. 8.16.
 \end{itemize}
 
+\newpage
+\section{Case Study: Plant-Herbivore System}
+\subsection{Problem}
+Use bifurcation analysis to study model of a simple ecosystem.
+We'll define $P(t)$ as  number of plants, and $q$ as the number of herbivores.
+Assume $q$ is constant.
+
+$$[p]=\text{Plant}\quad[q]=\text{Herbivore}\quad[t]=\text{Time}$$
+
+\subsection{Basic Form of Model}
+\begin{equation}
+  \left( \text{\parbox{10em}{net rate of change of \# plants}} \right) = \left( \text{\parbox{10em}{\centering rate of change due to births, deaths}} \right) - \left( \text{\parbox{10em}{\centering rate of consumption by herbivores}} \right).
+\end{equation}
+
+Is equivalent to $$\od{p}{t}=F-G*q$$
+We'll define:
+\begin{equation}
+  \begin{aligned}
+    F &= \text{net birth rate} &\quad [F] &= \frac{\text{Plants}}{\text{Time}} \\
+    G &=  \text{net consumption rate per herbivore} &\quad [G]&= \frac{\text{Plants}}{\text{Time} \cdot \text{Herbivore}} \\
+  \end{aligned}
+\end{equation}
+Ecologists have suggested different models for $F$, $G$.
+
+\subsection{Examples For F}
+\begin{enumerate}
+\item Malthus Model
+$$F = rp, \quad r>0\;\text{const}.$$
+In this case,
+$$\left(\text{more plants}\right) \implies \left(\text{\parbox{15em}{\centering more plants
+    born per unit time}}\right)$$
+Reference fig. 9.1.
+\item Logistic Model
+$$F= r(p-p^2/k, \quad r,k>0\;\text{const}.$$
+In this case,
+$$\left(\text{too many plants}\right) \implies
+\left(\text{\parbox{15em}{\centering net birth rate becomes negative due to
+      competition, overcrowding}}\right)$$
+Reference fig. 9.2.
+\item Holling Type I / Lotka-Volterra
+$$G = ap,\quad a>0\;\text{const}.$$
+In this case,
+$$\left(\text{more plants}\right) \implies \left(\text{\parbox{15em}{\centering
+      each herbivore consumes more per unit time}}\right)$$
+Reference fig. 9.3.
+\item Holling Type II
+$$G = \frac{ap}{1-bp}\quad a,b>0\;\text{const}.$$
+In this case,
+$$\left(\text{more plants}\right) \implies \left(\text{\parbox{15em}{\centering
+      each herbivore consumes more per unit time, up to a limit}}\right)$$
+Reference fig. 9.4.
+\item Holling Type 3
+$$G=\frac{ap^2}{1+bp^2},\quad a,b>0\;\text{const}$$
+Reference fig. 9.5.
+\end{enumerate}
+
+\subsection{Catalog of Models}
+\begin{description}
+\item[$F1, G2$:] $$\od{p}{t}=rp-\frac{ap}{a+bp}\cdot q$$
+\item[$F2, G3$:] $$\od{p}{t} = rp(1-p/k)-\frac{ap^2}{1-bp^2}\cdot q$$
+\todo[etc]
+\end{description}
+
+\subsection{Analysis of the $F1,G2$ Model}
+Let $t_c=1/r$, $p_c=1/b$, and define $\tau=t/t_c$, $u=p/p_c$. Then the model
+becomes $$\od{u}{\tau}=u-\frac{hu}{1+u},\quad h>0\;\text{const}\; (h=aq/r)$$ We
+only consider solutions with $u\ge0$, since it doesn't make physical sense
+otherwise.
+
+\subsubsection*{Equilibria}
+\begin{equation}
+  \begin{aligned}
+    f(u,h)=u-\frac{hu}{1-u}&=\frac{u(1+u)-hu}{1+u} \\
+    &= \frac{g(u,h)}{1+u} \\
+  \end{aligned}
+\end{equation}
+Since $f=0$ iff $g=0$, we get
+\begin{equation}
+  \begin{aligned}
+    f=0 \quad\Longleftrightarrow &\quad u(1+u)-hu=0 \\
+    &\quad u(1-h+u)=0 \\
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    \therefore\; u_*&=0 \quad\forall\;h>0  \\
+    u_*&= h-1 \quad\forall\;h>1 \\
+  \end{aligned}
+\end{equation}
+
+\subsubsection*{Stability}
+Since $f=\frac{g}{1+u}$ and $u\ge0$, we get $\text{sign}(f)=\text{sign}(g)$.
+Hence we consider table for $g$.
+
+\begin{description}
+\item[$0<h\le1$:] One equilibrium $u_*=0$, which is unstable. Reference fig. 9.6.
+\item[$h>0$:] Two equilibria $u_*=0, h-1$, which are stable, unstable
+  respectively. Reference fig. 9.7.
+\end{description}
+Reference fig. 9.8 for bifurcation diagram. Reference figs. 9.9, 9.10 for
+solution pics.
+
+\subsubsection*{Question}
+Suppose $u_0=1/3$ is given. What happens to plant population for different $h$?
+Reference fig. 8.11.
+
+\begin{equation}
+  \begin{aligned}
+    u_0 = \frac{1}{3} \quad\longrightarrow \quad& \text{pop grows for}\; 0<h<4/3 \\
+    & \text{pop remains const if}\; h=4/3 \\
+    & \text{pop decays to extinction for any}\; h>4/3 \\
+  \end{aligned}
+\end{equation}
 \end{document}
