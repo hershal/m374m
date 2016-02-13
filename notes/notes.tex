@@ -991,7 +991,7 @@ many variables.
 \subsection{Derivative Method For Stablity}
 \label{sec:derivative-method}
 This method generalizes for many variables. We'll start by showing a single
-variable. Let $u_*$ be an equilibrium solution and let $\lambda_*=f(u_*)$.
+variable. Let $u_*$ be an equilibrium solution and let $\lambda_*=f'(u_*)$.
 Then
 \begin{equation}
   \begin{aligned}
@@ -1016,7 +1016,7 @@ which the sign becomes negative. Thus $f$ has negative slope. Therefore $u_*$ is
 asympotitally stable. Reference figs. 7.7, 7.8.
 
 When $\lambda_*>0$, $f(u)$ is negative until it passes through $u_*$, after
-which the sign becomes positive. Thus $f$ has positive slope. Thereforce $u_*$
+which the sign becomes positive. Thus $f$ has positive slope. Therefore $u_*$
 is unstable. Reference figs. 7.9, 7.10.
 
 When $\lambda_*=0$, no conclusion can be made. Reference fig. 7.11.
@@ -1124,24 +1124,24 @@ Equilibria solution
     & u(u^2-h)=0 \\
   \end{aligned}
 \end{equation}
-$u_*$ is an equilibrium solution for $h\in(-\infty,\infty)$. $u_*=\pm\sqrt{h}$
-is an equilibria for all $h\ge0$. This solution has 1 or 3 equilibria depending
-on $h$. Reference fig. 8.1.
+$u_*=0$ is an equilibrium solution for $h\in(-\infty,\infty)$. $u_*=\pm\sqrt{h}$
+are equilibria for all $h\ge0$. This solution has 1 or 3 equilibria depending on
+$h$. Reference fig. 8.1.
 
 \subsection{Definition of Stability}
 Let $$\lambda_*=\pd{f}{u}(u_*,h)=3u_*^2-h.$$ Recall
 \cref{sec:derivative-method}.
 
 \begin{enumerate}
-\item $u_*=0, h\in(-\infty,\infty)$, then $\lambda_*=-h$.
+\item $u_*=0$, $h\in(-\infty,\infty)$, then $\lambda_*=-h$.
   $\therefore u_*=0$ is asymtotically stable if $h>0$.
-  $u_*$is unstable for $h<0$.
+  $u_*$ is unstable for $h<0$.
 
   For $h=0$, consider $f(u,0)=u^3$. Reference fig. 8.2. Therefore $u_*=0$ is
   unstable if $h=0$.
-\item $u_*=+\sqrt{h},\quad h>0$, then $\lambda_*=3u_*^2-h=2h.$
+\item $u_*=+\sqrt{h},\, h>0$, then $\lambda_*=3u_*^2-h=2h.$
   $\therefore u_*=+\sqrt{h}$ is unstable for $h>0$.
-\item $u_*=-\sqrt{h},\quad h>0$, then $\lambda_*=3u_*^2-h=2h.$
+\item $u_*=-\sqrt{h},\, h>0$, then $\lambda_*=3u_*^2-h=2h.$
   $\therefore u_*=-\sqrt{h}$ is unstable for $h>0$.
 \end{enumerate}
 
