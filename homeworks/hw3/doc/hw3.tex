@@ -60,7 +60,7 @@ Find the general solution of the following differential equations:
   $$r^2+\omega^2=0.$$
 
   Solving this results in $r=\pm i\omega$ so that the complementary equation
-  takes the form
+  takes the form.
   \begin{equation}
     \label{eq:1n-hom-sol}
     \implies u_c = c_1e^{i\omega t}c_2e^{-i\omega t}
@@ -106,10 +106,10 @@ Find the general solution of the following differential equations:
 
 \subsection{8a$^1$}
 \subsubsection*{Problem}
-The following model contains a parameter $h$. Find the equilibria in terms of
-$h$ and determine its stability. Construct a bifurcation diagram showing how
-equilibria depend upon $h$, and label the branches of the curves as stable or
-unstable.
+The model in \cref{eq:8a-problem} contains a parameter $h$. Find equilibria in
+terms of $h$ and determine their stability. Construct a bifurcation diagram
+showing how equilibria depend upon $h$, and label the branches of the curves as
+stable or unstable.
 
 \begin{equation}
   \label{eq:8a-problem}
@@ -122,9 +122,7 @@ Assume the parameter $h$ may take any value: negative, zero, or positive.
 \subsubsection*{Solution}
 By inspection, the equilibria for this problem are $u_*=0,\,h$. We will
 enumerate through the solutions and use the derivative method to establish the
-stability of the equilibria solutions. Reference the bifurcation diagram in
-\cref{fig:8-bifurcation-diagram}.
-
+stability of the equilibrium solutions.
 \begin{enumerate}
 \item $u_*=0$.
   $$\implies u''=h.$$ From this, we may conclude that $u_*$ is stable if $h<0$
@@ -133,6 +131,7 @@ stability of the equilibria solutions. Reference the bifurcation diagram in
   $$\implies u''=-h$$ From this, we may conclude that $u_*$ is unstable if $h\le0$
   and is stable if $h>0$.
 \end{enumerate}
+Reference the bifurcation diagram in \cref{fig:8-bifurcation-diagram}.
 
 \begin{figure}
   \centering
@@ -144,8 +143,8 @@ stability of the equilibria solutions. Reference the bifurcation diagram in
     node[very near start,above]{stable}
     node[near end,above]{unstable};
     \draw[thick,<->] (-1.5,-1.5) -- (3,3)
-    node[very near start,above,sloped]{stable}
-    node[near end,above,sloped]{unstable};
+    node[very near start,above,sloped]{unstable}
+    node[near end,above,sloped]{stable};
     \draw[fill] (0,0) circle [radius=0.05];
     \draw[<-] (0.05,-0.05) -- (0.5,-0.5) node[near end,below right]{unstable};
 
@@ -161,7 +160,7 @@ stability of the equilibria solutions. Reference the bifurcation diagram in
 Consider the model
 \begin{equation}
   \label{eq:9-problem}
-  u'-(\lambda - b) u-au^3,
+  u'=(\lambda - b) u-au^3,
 \end{equation}
 where $a$ and $b$ are fixed positive constants and $\lambda$ is a parameter that
 varies.
