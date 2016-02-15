@@ -5,6 +5,7 @@
 \date{Due 2016--02--15}
 
 \usepackage{macros}
+\usetikzlibrary{decorations.markings}
 
 \begin{document}
 \maketitle
@@ -173,6 +174,26 @@ varies.
 
 \subsubsection*{Solution}
 \todo[]
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[domain=2:4,label/.style={
+        postaction={decorate,transform shape,
+          decoration={markings, mark=at position .5 with \node #1;}}}]
+    \draw[<-] (0,3) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$\lambda$};
+
+    \draw[->,thick,label={[above]{stable}}] plot(\x,{sqrt(\x)}) node[right]{$u_*=\sqrt{\frac{\lambda-b}{a}}$};
+    \draw[->,thick,label={[above]{stable}}] plot(\x,{-sqrt(\x)})
+        node[right]{$u_*=-\sqrt{\frac{\lambda-b}{a}}$};
+    \draw[<-|,thick] (-1,0) -- (2,0) node[above left, very near end]{stable};
+    \draw[->,thick] (2,0) -- (4,0) node[above right, at start]{unstable} node[above right]{$u_*=0$};
+
+    \draw[dashed] (2,{sqrt(2)}) -- (2,{-sqrt(2)}) node[below right,midway]{$b$};
+
+  \end{tikzpicture}
+  \caption{Bifurcation diagram for \#9a}
+  \label{fig:9-bifurcation-diagram}
+\end{figure}
 
 \subsection{13}
 \subsubsection*{Problem}
