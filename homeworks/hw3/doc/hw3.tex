@@ -107,23 +107,22 @@ Find the general solution of the following differential equations:
 
 \subsection{8a$^1$}
 \subsubsection*{Problem}
-The model in \cref{eq:8a-problem} contains a parameter $h$. Find equilibria in
-terms of $h$ and determine their stability. Construct a bifurcation diagram
-showing how equilibria depend upon $h$, and label the branches of the curves as
-stable or unstable.
-
-\begin{equation}
+The following model contains a parameter $h$.
+\begin{equation*}
   \label{eq:8a-problem}
   u'=hu-u^2
-\end{equation}
+\end{equation*}
+Find equilibria in terms of $h$ and determine their stability. Construct a
+bifurcation diagram showing how equilibria depend upon $h$, and label the
+branches of the curves as stable or unstable.
 
 \subsubsection*{Remarks}
 Assume the parameter $h$ may take any value: negative, zero, or positive.
 
 \subsubsection*{Solution}
-By inspection, the equilibria for this problem are $u_*=0,\,h$. We will
-enumerate through the solutions and use the derivative method to establish the
-stability of the equilibrium solutions.
+By inspection, the equilibria are $u_*=0,\,h$. We will enumerate through the
+solutions and use the derivative method to establish the stability of the
+equilibrium solutions.
 \begin{enumerate}
 \item $u_*=0$.
   $$\implies u''=h.$$ From this, we may conclude that $u_*$ is stable if $h<0$
@@ -138,14 +137,18 @@ Reference the bifurcation diagram in \cref{fig:8-bifurcation-diagram}.
   \centering
   \begin{tikzpicture}
     %% axes
-    \draw[<->] (0,3) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$h$};
+    \draw[<-] (0,3) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$h$};
     %% lines
-    \draw[thick,<->] (-2,0) -- (4,0)
-      node[very near start,above]{stable}
-      node[near end,above]{unstable} node[above right]{$u_*=0$};
-    \draw[thick,<->] (-1.5,-1.5) -- (3,3)
-      node[very near start,above,sloped]{unstable}
-      node[near end,above,sloped]{stable} node [above right]{$u_*=h$};
+    \draw[thick,<-] (-2,0) -- (0,0)
+      node[midway,above]{stable};
+    \draw[thick,->] (0,0) -- (4,0)
+      node[midway,above]{unstable}
+      node[above right]{$u_*=0$};
+    \draw[thick,<-] (-1.75,-1.75) -- (0,0)
+      node[midway,above,sloped]{unstable};
+    \draw[thick,->] (0,0) -- (3,3)
+      node[midway,above,sloped]{stable}
+      node[right]{$u_*=h$};
     \draw[fill] (0,0) circle (2pt);
     \draw[<-] (0.05,-0.05) -- (0.5,-0.5) node[near end,below right]{unstable};
   \end{tikzpicture}
@@ -155,12 +158,10 @@ Reference the bifurcation diagram in \cref{fig:8-bifurcation-diagram}.
 
 \subsection{9}
 \subsubsection*{Problem}
-Consider the model
+The following model contains fixed positive constants $a$, $b$ and a variable paramter $\lambda$.
 \begin{equation*}
-  u'=(\lambda - b) u-au^3,
+  u'=(\lambda - b) u-au^3
 \end{equation*}
-where $a$ and $b$ are fixed positive constants and $\lambda$ is a parameter that
-varies.
 
 \begin{enumerate}
 \item If $\lambda < b$  show that there is a single equilibrium and that it is
@@ -215,14 +216,15 @@ Since $c<0$, $u_*=0$ is stable.
           decoration={markings, mark=at position .5 with \node #1;}}}]
     \draw[<-] (0,3) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$\lambda$};
 
-    \draw[->,thick,label={[above]{stable}}] plot(\x,{sqrt(\x)}) node[right]{$u_*=\sqrt{\frac{\lambda-b}{a}}$};
+    \draw[->,thick,label={[above]{stable}}] plot(\x,{sqrt(\x)})
+      node[above right]{$u_*=\sqrt{\frac{\lambda-b}{a}}$};
     \draw[->,thick,label={[above]{stable}}] plot(\x,{-sqrt(\x)})
-        node[right]{$u_*=-\sqrt{\frac{\lambda-b}{a}}$};
+      node[above right]{$u_*=-\sqrt{\frac{\lambda-b}{a}}$};
     \draw[<-|,thick] (-1,0) -- (2,0) node[above left, very near end]{stable};
-    \draw[->,thick] (2,0) -- (4,0) node[above right, at start]{unstable} node[above right]{$u_*=0$};
-
+    \draw[->,thick] (2,0) -- (4,0)
+    node[above right, at start]{unstable}
+    node[above right]{$u_*=0$};
     \draw[dashed] (2,{sqrt(2)}) -- (2,{-sqrt(2)}) node[below right,midway]{$b$};
-
   \end{tikzpicture}
   \caption{Bifurcation diagram for \#9}
   \label{fig:9-bifurcation-diagram}
