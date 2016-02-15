@@ -37,7 +37,7 @@ Find the general solution of the following differential equations:
   \end{equation*}
   Multiplying both sides of \cref{eq:1a-standard-form} by $r$ yields
   $$\od{u}{t} e^{2t} + 2u e^{2t} = e^{-t} e^{2t}$$
-  or \todo[why does $p(t)r(t)u$ disappear?]
+  or %\todo[why does $p(t)r(t)u$ disappear?]
   $$\od{}{t}(u e^{2t}) = e^{t}.$$
   Integrating both sides yields
   \begin{equation} \boxed{
@@ -242,7 +242,22 @@ respect to the parameter $a$ while holding $h$ constant. Indicate the stable and
 unstable branches.
 
 \subsubsection*{Solution}
-\todo[]
+Reference \cref{fig:13-bifurcation-diagram}.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[domain=-.3:3,label/.style={
+        postaction={decorate,transform shape,
+          decoration={markings, mark=at position .5 with \node #1;}}}]
+    \draw[<-] (0,3.25) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$a$};
+
+    \draw[->,thick,label={[below]{stable}}] plot({\x+1},{e-pow(e,-\x)});
+    \draw[->,thick,label={[above]{unstable}}] plot({\x+1},{pow(e,-\x)});
+    \draw[dashed] (0,{e}) -- (4,{e});
+    \draw[fill] (.7,{e/2}) circle (2pt) node[right]{unstable};
+  \end{tikzpicture}
+  \caption{Bifurcation diagram for \#13}
+  \label{fig:13-bifurcation-diagram}
+\end{figure}
 
 \newpage
 \section{Programming Minilab}
