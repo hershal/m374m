@@ -140,16 +140,13 @@ Reference the bifurcation diagram in \cref{fig:8-bifurcation-diagram}.
     \draw[<->] (0,3) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$h$};
     %% lines
     \draw[thick,<->] (-2,0) -- (4,0)
-    node[very near start,above]{stable}
-    node[near end,above]{unstable};
+      node[very near start,above]{stable}
+      node[near end,above]{unstable} node[above right]{$u_*=0$};
     \draw[thick,<->] (-1.5,-1.5) -- (3,3)
-    node[very near start,above,sloped]{unstable}
-    node[near end,above,sloped]{stable};
+      node[very near start,above,sloped]{unstable}
+      node[near end,above,sloped]{stable} node [above right]{$u_*=h$};
     \draw[fill] (0,0) circle [radius=0.05];
     \draw[<-] (0.05,-0.05) -- (0.5,-0.5) node[near end,below right]{unstable};
-
-    \draw[->] (1,0.05) to [out=90,in=180] (3,1) node[right]{$u_*=0$};
-    \draw[->] (2,1.95) to [out=-45,in=180] (3,1.5) node[right]{$u_*=h$};
   \end{tikzpicture}
   \caption{Bifurcation diagram for \#8}
   \label{fig:8-bifurcation-diagram}
