@@ -224,7 +224,7 @@ Since $c<0$, $u_*=0$ is stable.
     \draw[->,thick] (2,0) -- (4,0)
     node[above right, at start]{unstable}
     node[above right]{$u_*=0$};
-    \draw[dashed] (2,{sqrt(2)}) -- (2,{-sqrt(2)}) node[below right,midway]{$b$};
+    \draw[dashed] (2,3) -- (2,-2.2) node[below left, very near end]{$b$};
   \end{tikzpicture}
   \caption{Bifurcation diagram for \#9}
   \label{fig:9-bifurcation-diagram}
@@ -284,8 +284,155 @@ sizes we introduce the dimensions $[p] = \text{Plant}$, $[q] =
   $\tau\rightarrow\infty$, $c=4$, and $u(0)=1/4$? For what range of $h$, if any,
   would the plant population die out as $\tau\rightarrow\infty$?
 \end{enumerate}
-
+\newpage
 \subsubsection*{Solution}
-\todo[]
+\begin{enumerate}
+\item Substituting the dimensions of each variable for the first expression on
+  the right side of \cref{eq:minilab-problem} yields
+  \begin{equation}
+    \label{eq:minilab-rhs-1}
+    \begin{aligned}
+      PT^{-1} &= rp(1-\frac{p}{k}) \\
+      &= rP - \frac{rP^2}{k}.
+    \end{aligned}
+  \end{equation}
+  Both of the expressions on the right side of \cref{eq:minilab-rhs-1} must have
+  the same dimensions. Thus
+  $$\implies r=T^{-1}.$$ and
+  \begin{equation*}
+    \begin{aligned}
+      PT^{-1} &= \frac{rP^2}{k} \\
+      &= \frac{P^2T^{-1}}{k} \\
+      \implies k&= P. \\
+    \end{aligned}
+  \end{equation*}
+
+  Substituting the dimensions of each variable for the second expression on the
+  right side of \cref{eq:minilab-problem} yields
+  \begin{equation}
+    \label{eq:minilab-rhs-2}
+    \begin{aligned}
+      PT^{-1} &= \frac{apq}{1+bp} \\
+      &= \frac{HPa}{1+Pb} \\
+      PT^{-1}+P^2T^{-1}b &= HPa \\
+      PT^{-1} &= HPa - P^2T^{-1}b \\
+    \end{aligned}
+  \end{equation}
+
+  Each expression on the right side of \cref{eq:minilab-rhs-2} must have the
+  same dimensions. Thus
+  \begin{equation*}
+    \begin{aligned}
+      \implies a&=H^{-1}T^{-1} \quad\text{and} \\
+      \implies b&=P^{-1}. \\
+    \end{aligned}
+  \end{equation*}
+
+  Now we may obtain the dimensionless form of \cref{eq:minilab-problem}.
+  \begin{equation}
+    \begin{aligned}
+      \od{u}{\tau} &= \frac{t_c}{p_c}\od{p}{t} \\
+      &= \frac{1}{rk}\left(rp(1-\frac{p}{k})\right)-\frac{apq}{1+bp} \\
+      &= \frac{1}{rk}\left(ruk\left(1-\frac{u\cancel{k}}{\cancel{k}}\right)\right) - \frac{aukq}{1+bk} \\
+      &= \cancel{\frac{1}{rk}}(\cancel{r}u\cancel{k}-\cancel{r}u^2\cancel{k})- \frac{aukq}{1+bk} \\
+      &= u-u^2 - \frac{aukq}{1+bk} \\
+      &= u(1-u) - \frac{(akq)u}{1+(bk)u}
+    \end{aligned}
+  \end{equation}
+  From this we may conclude
+  \begin{equation*}
+    \begin{aligned}
+      \implies h&=akq \\
+      \implies c&=bk. \\
+    \end{aligned}
+  \end{equation*}
+  This agrees with \cref{eq:minilab-problem-a}.
+\item Reference \cref{fig:minilab-bifurcation-diagram}. The solutions seem to
+  generally decay as $h$ grows.
+  \begin{figure}
+  \centering
+  \begin{tikzpicture}[domain=0:{sqrt(2)},label/.style={
+        postaction={decorate,transform shape,
+          decoration={markings, mark=at position .5 with \node #1;}}},x=2.5cm,y=1.5cm]
+    \draw[<-] (0,3) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$h$};
+
+    \draw[-,thick] plot(-\x^2+2,{\x+1});
+    \draw[-,thick,domain=0:1] plot(-\x^2+2,{-\x+1});
+    \draw[->,thick] (0,0) -- (4,0);
+    \draw (2.5,0) node[above right]{stable};
+
+    \draw[dashed] (1,-1) -- (1,3);
+    \draw[dashed] (2,-1) -- (2,3);
+
+    \draw[fill] (1,2) circle (2pt);
+    \draw[fill] (1,0) circle (2pt);
+    \draw[fill] (2,1) circle (2pt);
+
+    \draw[-] (1.5,{sqrt(1.5)-1}) to [out=-45,in=180] (2.5,-0.5)
+    node[right]{unstable};
+    \draw[-] (1.5,{-sqrt(1.5)+3}) to [out=45,in=180] (2.5,2)
+    node[right]{stable};
+
+    \draw[-] (1+0.07,{sqrt(1)-1-0.07}) to [out=-45,in=180] (2.5,-1)
+    node[right]{hyperbolic};
+    \draw[-] (1+0.07,{-sqrt(1)+3+0.07}) to [out=45,in=180] (2.5,2.5)
+    node[right]{stable};
+
+    \draw[-] (0.5,{-sqrt(0.5)+3}) to [out=45,in=180] (2.5,3)
+    node[right]{stable};
+
+    \draw[-] (2+0.1,1) -- (2.5,1) node[right]{hyperbolic};
+
+    \draw (0,0) node[above right]{unstable};
+  \end{tikzpicture}
+  \caption{Bifurcation diagram for minilab}
+  \label{fig:minilab-bifurcation-diagram}
+  \end{figure}
+\item Reference \cref{fig:minilab-solution-curves}. The solutions agree with the
+  analysis.
+
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+      \hspace{-4em}
+      \scalebox{0.45}{\input{prog3_fig1.tex}}
+      \label{fig:minilab-scenario-one}
+      \vspace{-28.5em}
+      \caption{$h=0.8$}
+    \end{subfigure}~
+    \begin{subfigure}{0.45\textwidth}
+      \hspace{-4em}
+      \scalebox{0.45}{\input{prog3_fig2.tex}}
+      \label{fig:minilab-scenario-one}
+      \vspace{-28.5em}
+      \caption{$h=1.0$}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+      \hspace{-4em}
+      \scalebox{0.45}{\input{prog3_fig3.tex}}
+      \label{fig:minilab-scenario-one}
+      \vspace{-28.5em}
+      \caption{$h=1.5$}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+      \hspace{-4em}
+      \scalebox{0.45}{\input{prog3_fig4.tex}}
+      \label{fig:minilab-scenario-one}
+      \vspace{-28.5em}
+      \caption{$h=1.6$}
+    \end{subfigure}~
+    \begin{subfigure}{0.45\textwidth}
+      \hspace{-4em}
+      \scalebox{0.45}{\input{prog3_fig5.tex}}
+      \label{fig:minilab-scenario-one}
+      \vspace{-28.5em}
+      \caption{$h=2.0$}
+    \end{subfigure}
+    \caption{Solution curves for various $h$}
+    \label{fig:minilab-solution-curves}
+  \end{figure}
+\item The plant population will survive when $0<h\le1.5$. The plant population
+  will die out when $h>1.5$.
+\end{enumerate}
 
 \end{document}
