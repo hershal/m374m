@@ -146,20 +146,19 @@ Reference the bifurcation diagram in \cref{fig:8-bifurcation-diagram}.
     \draw[thick,<->] (-1.5,-1.5) -- (3,3)
       node[very near start,above,sloped]{unstable}
       node[near end,above,sloped]{stable} node [above right]{$u_*=h$};
-    \draw[fill] (0,0) circle [radius=0.05];
+    \draw[fill] (0,0) circle (2pt);
     \draw[<-] (0.05,-0.05) -- (0.5,-0.5) node[near end,below right]{unstable};
   \end{tikzpicture}
-  \caption{Bifurcation diagram for \#8}
+  \caption{Bifurcation diagram for \#8a}
   \label{fig:8-bifurcation-diagram}
 \end{figure}
 
 \subsection{9}
 \subsubsection*{Problem}
 Consider the model
-\begin{equation}
-  \label{eq:9-problem}
+\begin{equation*}
   u'=(\lambda - b) u-au^3,
-\end{equation}
+\end{equation*}
 where $a$ and $b$ are fixed positive constants and $\lambda$ is a parameter that
 varies.
 
@@ -173,7 +172,41 @@ varies.
 \end{enumerate}
 
 \subsubsection*{Solution}
-\todo[]
+Let $c=\lambda-b$, $f(u)=u'$ and define
+\begin{equation}
+  \label{eq:9-fu}
+    \begin{aligned}
+      f(u) = 0 \;\longrightarrow\;\;& cu-au^3=0 \\
+      & u(c-au^2), \\
+    \end{aligned}
+\end{equation}
+\begin{equation}
+  \label{eq:9-d-fu}
+  f'(u) = c-3au^2.
+\end{equation}
+The solutions to \cref{eq:9-fu} are $u_*=0,\,\pm\sqrt{c/a}$.
+\begin{enumerate}
+\item If $\lambda<b$, then $c<0$. Therefore the $\pm\sqrt{c/a}$ solutions are
+  not real, so the only equilibrium is $u_*=0$. We will use \cref{eq:9-d-fu} and
+  the derivative method to determine stability.
+\begin{equation*}
+  \begin{aligned}
+    f'(0) &= c.
+  \end{aligned}
+\end{equation*}
+Since $c<0$, $u_*=0$ is stable.
+\item If $\lambda>b$, then $c>0$. All solution are real in this case. We will use
+  \cref{eq:9-d-fu} and the derivative method to determine stability.
+  \begin{equation*}
+    \begin{aligned}
+      f'(0) &= c, \\
+      f'(\pm\sqrt{c/a}) &= c-3\cancel{a}\frac{c}{\cancel{a}} \\
+      &= -2c.
+    \end{aligned}
+  \end{equation*}
+  Since $c>0$, $u_*=0$ is unstable and $u_*=\pm\sqrt{c/a}$ are stable.
+\item Reference the bifurcation diagram in \cref{fig:9-bifurcation-diagram}.
+\end{enumerate}
 
 \begin{figure}
   \centering
@@ -191,7 +224,7 @@ varies.
     \draw[dashed] (2,{sqrt(2)}) -- (2,{-sqrt(2)}) node[below right,midway]{$b$};
 
   \end{tikzpicture}
-  \caption{Bifurcation diagram for \#9a}
+  \caption{Bifurcation diagram for \#9}
   \label{fig:9-bifurcation-diagram}
 \end{figure}
 
