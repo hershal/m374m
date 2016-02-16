@@ -245,15 +245,15 @@ unstable branches.
 Reference \cref{fig:13-bifurcation-diagram}.
 \begin{figure}
   \centering
-  \begin{tikzpicture}[domain=-.3:3,label/.style={
+  \begin{tikzpicture}[domain={-1+2*ln(2)}:4,label/.style={
         postaction={decorate,transform shape,
           decoration={markings, mark=at position .5 with \node #1;}}}]
     \draw[<-] (0,3.25) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$a$};
 
-    \draw[->,thick,label={[below]{stable}}] plot({\x+1},{e-pow(e,-\x)});
-    \draw[->,thick,label={[above]{unstable}}] plot({\x+1},{pow(e,-\x)});
+    \draw[->,thick,label={[below]{stable}}] plot({\x},{exp(-(\x-1)/2)});
+    \draw[->,thick,label={[above]{unstable}}] plot({\x},{e-exp(-(\x-1)/2)});
     \draw[dashed] (0,{e}) -- (4,{e});
-    \draw[fill] (.7,{e/2}) circle (2pt) node[right]{unstable};
+    \draw[fill] ({-1+2*ln(2)},{e/2}) circle (2pt) +(0.25,0) node[right]{unstable};
   \end{tikzpicture}
   \caption{Bifurcation diagram for \#13}
   \label{fig:13-bifurcation-diagram}
