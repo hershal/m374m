@@ -213,7 +213,8 @@ Since $c<0$, $u_*=0$ is stable.
   \centering
   \begin{tikzpicture}[domain=2:4,label/.style={
         postaction={decorate,transform shape,
-          decoration={markings, mark=at position .5 with \node #1;}}}]
+          decoration={markings, mark=at position .5 with \node #1;}}},
+      x=2cm,y=1cm]
     \draw[<-] (0,3) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$\lambda$};
 
     \draw[->,thick,label={[above]{stable}}] plot(\x,{sqrt(\x)})
@@ -247,7 +248,8 @@ Reference \cref{fig:13-bifurcation-diagram}.
   \centering
   \begin{tikzpicture}[domain={-1+2*ln(2)}:4,label/.style={
         postaction={decorate,transform shape,
-          decoration={markings, mark=at position .5 with \node #1;}}}]
+          decoration={markings, mark=at position .5 with \node #1;}}},
+      x=2cm,y=1.5cm]
     \draw[<-] (0,3.25) node [left] {$u_*$} -- (0,0) -- (4,0) node [below] {$a$};
 
     \draw[->,thick,label={[below]{stable}}] plot({\x},{exp(-(\x-1)/2)});
