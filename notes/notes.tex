@@ -1298,4 +1298,184 @@ Reference fig. 8.11.
     & \text{pop decays to extinction for any}\; h>4/3 \\
   \end{aligned}
 \end{equation}
+
+\section{Dynamical Systems in 2D}
+\todo[Write section!]
+\section{Phas Diagrams for Linear Systems}
+\subsection{Definition}
+By a linear dynamical system for $x=x(t)$, and $y=y(t)$, we mean
+\begin{equation}
+  \begin{aligned}
+    \od{x}{t} &= ax+by \\
+    \od{y}{t} &= cx+dy \\
+  \end{aligned}
+\end{equation}
+
+Where $a,b,c,d$ are constants.
+
+Introducing $V= \begin{pmatrix} x \\ y \end{pmatrix}$ and $A = \begin{pmatrix} a
+  & b \\ c & d \\ \end{pmatrix}$, then the above becomes $$\od{v}{t}=Av.$$
+
+\subsection{Equilibria}
+Equlibrium solutions $v(t)=v_*$ (const) satisfy $$Av_*=0.$$
+
+\begin{itemize}
+\item If $\det A\ne0$, then $v_*=\begin{pmatrix} x_* \\
+      y_* \end{pmatrix}=0$ is the only equlibrium.
+\item If $\det A=0$, then $v_*=\hat{v}$ is an equilibrium solution for any null
+  vector $\hat{v}$ of A.
+
+  \begin{equation}
+    \begin{aligned}
+      \dot{x}&=x-y \quad& A&=
+      \begin{pmatrix}
+        1 & -1 \\ 2 -2 \\
+      \end{pmatrix}
+      \quad A\hat{v} = 0 \\
+      \dot{y} &= 2x-2y \quad& \hat{v} &= \alpha
+      \begin{pmatrix}
+        1 \\ 1
+      \end{pmatrix},\; \alpha\;\text{free}
+    \end{aligned}
+  \end{equation}
+\end{itemize}
+
+$
+\begin{pmatrix}
+  x_* \\ y_* \\
+\end{pmatrix}
+$ is an equilibrium solution for any $\alpha$.
+
+\subsection{General Solution}
+We consider a non-degenerate linear system
+\begin{equation} \text{(IVP)}\;\left\{
+  \begin{aligned}
+    \od{v}{t} &= Av, \quad& t&\ge0 \\
+    v(t_0)=v_0 \\
+  \end{aligned} \right.
+\end{equation}
+
+Where $\det A\ne0, v_*=0$ only equilibrium. Assuming solution in the form
+$v(t)=e^{\lambda t}\hat{u}$, ($\lambda$, $\hat{u}$ constants), we gets
+
+\begin{equation}
+  \begin{aligned}
+    \od{}{t}(e^{\lambda t}\hat{u}) &= A(e^{\lambda t}\hat{u}) \\
+    e^{\lambda t}\lambda\hat{u} &= e^{\lambda t}A\hat{u} \\
+    A\hat{u} &= \lambda\hat{u}
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \left[ \text{\parbox{12em}{\centering $v(t)=e^{\lambda t}\hat{u}$ is a solution}}
+ \right] \Leftrightarrow
+  \left[ \parbox{12em}{\centering \text{$\lambda$ is an eigenvalue of $A$} \\
+      \text{$\hat{u}$ is an eigenvector of $A$}} \right]
+\end{equation}
+
+Hence general solution of system can be built from eigenvalue/eigenvectors of
+$det A\ne0$ implies $\lambda\ne0$.
+
+\subsection{Case I}
+Suppose $A$ has real, distinct eigenvalues $\lambda_1\ne\lambda_2$ with
+eigenvectors $\hat{u}_1,\hat{u}_2$. Then general solution isfy
+
+$$v(t)= C_1e^{\lambda_1 t}\hat{u_1} + C_2e^{\lambda_1 t}\hat{u_1}$$ where
+$C_1,C_2$ are aribtrary constants.
+
+\begin{itemize}
+\item If $\lambda_1<0$ and $\lambda_2<0$, then equilibrium $v_*=0$ is
+  asymptotically stable. Reference fig. 11.1.
+\item If $\lambda_1>0$ and $\lambda_2<0$, then equilibrium $v_*=0$ is
+  asymptotically unstable. Reference fig. 11.2. This solution is called
+  ``hyperbolic'' or a ``saddle''.
+\item If $\lambda_1>0$ and $\lambda_2>0$, then equilibrium $v_*=0$ is
+  asymptotically unstable. Reference fig. 11.3.
+\end{itemize}
+
+\subsection{Example}
+
+\begin{equation}
+  \begin{aligned}
+    \od{x}{y} &= x+y,\quad& \od{y}{t} &=4x-2y, \quad t\ge0 \\
+    x(0) &= 2, \quad& y(0) &= -3.
+  \end{aligned}
+\end{equation}
+
+The eigenvalues and eigenvectors take the form
+$$A = \begin{pmatrix} 1 & 1 \\ 4 & -2 \\ \end{pmatrix}$$
+Where $$\det(A-\lambda I)=0.$$
+
+\begin{equation}
+  \det \begin{pmatrix}
+    1-\lambda & 1 \\
+    4 & -2-\lambda \\
+  \end{pmatrix}
+\end{equation}
+$$(1-\lambda)(-2-\lambda)-4=0$$
+$$\lambda_1=2,\quad \lambda_2=-3.$$
+
+\begin{equation}
+  \begin{aligned}
+    A\hat{u}_1 &= \lambda_1\hat{u}_1 \\
+    (A-\lambda_1I)\hat{u}_1 &= 0 \\
+    \begin{pmatrix}
+      -1 & 1 \\ 4 & -4 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      \hat{x} \\ \hat{y} \\
+    \end{pmatrix} &=
+    \begin{pmatrix}
+      0 \\ 0
+    \end{pmatrix} \\
+    \hat{u}_1 &= \hat{y}
+    \begin{pmatrix}
+      1 \\ 1
+    \end{pmatrix}, \quad \hat{y}\;\text{free}
+  \end{aligned}
+\end{equation}
+
+Take $\hat{u}_1=\begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+\begin{equation}
+  \begin{aligned}
+    A\hat{u}_2 &= \lambda_2\hat{u}_2 \\
+    (A-\lambda_2I)\hat{u}_2 &= 0 \\
+    \begin{pmatrix}
+      4 & 4 \\ 1 & 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      \hat{x} \\ \hat{y} \\
+    \end{pmatrix} &=
+    \begin{pmatrix}
+      0 \\ 0
+    \end{pmatrix} \\
+    \hat{u}_2 &= \hat{y}
+    \begin{pmatrix}
+      -1/4 \\ 1
+    \end{pmatrix}, \quad \hat{y}\;\text{free}
+  \end{aligned}
+\end{equation}
+
+Take $\hat{u}_2=\begin{pmatrix} -1 \\ 4 \end{pmatrix}$.
+
+\begin{equation}
+  \begin{aligned}
+    x(t) &= C_1e^{2t}-C_2e^{-3t} \\
+    y(t) &= C_1e^{2t}-4C_2e^{-3t} \\
+  \end{aligned}
+\end{equation}
+
+The phase diagram looks like fig. 11.4 and is hyperbolic.
+
+The initial condition $x(0)=2$, $y(y)=-3$ makes the above a linear system.
+Solving that system yields $C_1=1$, $C_2=-1$. Therefore
+
+\begin{equation}
+  \begin{aligned}
+    x(t) &= e^{2t}+e^{-3t} \\
+    y(t) &= e^{2t}-4e^{-3t} \\
+  \end{aligned}
+\end{equation}
+
+Reference fig. 11.5.
 \end{document}
