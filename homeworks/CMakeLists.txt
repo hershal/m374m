@@ -1,4 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
+SET(LATEX_COMPILER_FLAGS
+  "-interaction=nonstopmode"
+  "--enable-write18"
+CACHE STRING "Flags passed to latex."
+)
 add_subdirectory(hw1)
 add_subdirectory(hw2)
 add_subdirectory(hw3)
