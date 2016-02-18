@@ -31,6 +31,7 @@
 %        system is defined in the file plant.m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+pkg load odepkg
 
 % Define global constants
 global c h ;
