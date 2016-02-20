@@ -185,6 +185,7 @@ The phase diagram is plotted in \cref{fig:3-phase-diagram}.
 %   \end{axis}
 % \end{tikzpicture}
 
+\newpage
 \subsection{5$^2$}
 \subsubsection*{Problem}
 Find the linearization of the system
@@ -197,9 +198,37 @@ Find the linearization of the system
 about the equilibrium point $(1,1)$. Draw the nullclines and indicate the
 direction of the orbits in each region separated by the nullclines. Can you
 conclude anything baout the stability of the critical point?
+\subsubsection*{Remarks}
+Instead of the linearization, find all equilibria; sketch the direction of
+solution curves in a small region around each equilibrium in the phase plane.
 \subsubsection*{Solution}
-\todo[]
-
+Let
+\begin{equation}
+  \begin{aligned}
+    f(x,y) &= y-x \\
+    g(x,y) &= -y+\frac{5x^2}{4+x^2} \\
+  \end{aligned}
+\end{equation}
+We must solve $f(x,y)=0$ and $g(x,y)=0$ to obtain the equilibria of the system.
+Since this system is nonlinear we may solve using substitution.
+\begin{equation}
+  y - x = 0 \implies y = x
+\end{equation}
+From this result,
+\begin{equation}
+  \begin{aligned}
+    -y+\frac{5x^2}{4+x^2} &= 0 \\
+    -x+\frac{5x^2}{4+x^2} &= 0 \\
+    \frac{5x^2}{4+x^2} &= x \\
+    5x^2 &= x(4+x^2) \\
+    5x &= 4+x^2 \\
+    x^2-5x+4 &= 0 \\
+    (x-5)(x-1) &= 0 \\
+    \implies x &= 1, 4. \\
+  \end{aligned}
+\end{equation}
+We may conclude that the equilibria are $(1,1)$, $(4,4)$.
+\todo[find the solution curves]
 \section{\S~2.2}
 \subsection{1a}
 \subsubsection*{Problem}
