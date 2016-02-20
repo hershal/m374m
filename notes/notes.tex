@@ -1477,4 +1477,294 @@ Solving that system yields $C_1=1$, $C_2=-1$. Therefore
 \end{equation}
 
 Reference fig. 11.5.
+
+\subsection{Case II}
+Suppose $A$ has real, repeated eigenvalues $\lambda_1=\lambda_2=\lambda$. In
+this case, one of the following holds:
+\begin{enumerate}
+\item $A$ has two independent eigenvectors $\hat{u_1}, \hat{u_2}$ and the
+  general solution is
+$$v(t)=C_1e^{\lambda t}\hat{u_1}+C_2e^{\lambda t}\hat{u_2}.$$
+\label{itm:case-2-item-1}
+\item A has only one independent eigenvector $\hat{u}$ and the general solution
+  is $$v(t)=C_1e^{\lambda t}\hat{u}+C_2e^{\lambda t}(t\hat{u}+\hat{w}),$$ where
+  $\hat{w}$ is any solution of $(A-\lambda I)\hat{w}=\hat{u}$.
+\label{itm:case-2-item-2}
+\end{enumerate}
+
+In \cref{case_2-item-1}, the equilibrium $v_*=0$ is asympotitally stable (node)
+if $\lambda<0$; unstable (node) if $\lambda>0$. Reference fig. 11.6.
+
+In \cref{case-2-item-2}, the equlibrium $v_*=0$ is asympotitally stable (node)
+if $\lamdba<0$; unstable (node) if $\lambda>0$. Reference fig. 11.7.
+
+\subsubsection{Example 1}
+\begin{equation}
+  A =
+  \begin{pmatrix}
+    2 & 0 \\ 0 & 2 \\
+  \end{pmatrix}
+\quad \lambda_1 = \lambda_2 = 2 = \lambda.
+\end{equation}
+
+\begin{equation}
+  (A-\lambda I)\hat{u}=0 \longrightarrow
+  \begin{pmatrix}
+    0 & 0 \\ 0 & 0 \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \hat{x} \\ \hat{y}
+  \end{pmatrix} =
+  \begin{pmatrix}
+    0 \\ 0
+  \end{pmatrix}
+\end{equation}
+This has no pivots, \todo[something free?]
+
+\begin{equation}
+  \hat{u} =
+  \begin{pmatrix}
+    \hat{x} & \hat{y}
+  \end{pmatrix} =
+  \hat{x}
+  \begin{pmatrix}
+    1 \\ 0
+  \end{pmatrix} +
+  \hat{y}
+  \begin{pmatrix}
+    0 \\ 1
+  \end{pmatrix}
+\end{equation}
+\todo[missed the rest of that blackboard]
+
+\subsubsection{Example 2}
+\begin{equation}
+  A =
+  \begin{pmatrix}
+    2 & 0 \\ 1 & 2 \\
+  \end{pmatrix}
+\quad \lambda_1 = \lambda_2 = 2 = \lambda.
+\end{equation}
+
+\begin{equation}
+  (A-\lambda I)\hat{u}=0 \longrightarrow
+  \begin{pmatrix}
+    0 & 0 \\ 1 & 0 \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \hat{x} \\ \hat{y}
+  \end{pmatrix} =
+  \begin{pmatrix}
+    0 \\ 0
+  \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+  \hat{u} =
+  \begin{pmatrix}
+    0 & \hat{y}
+  \end{pmatrix} =
+  \hat{y}
+  \begin{pmatrix}
+    0 \\ 1
+  \end{pmatrix}, \hat{y}\;\text{free}.
+\end{equation}
+
+$\exists$ only one independent eigenvector: $\hat{u}=
+\begin{pmatrix}
+  0 \\ 1
+\end{pmatrix}$.
+
+To construct the general solution, we need to find $\hat{w}$.
+\begin{equation}
+  \begin{aligned}
+    (A-\lambda I)\hat{w}&=\hat{u}
+  \end{aligned}
+\begin{pmatrix}
+    0 & 0 \\ 1 & 0 \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    \hat{x} \\ \hat{y}
+  \end{pmatrix} =
+  \begin{pmatrix}
+    0 \\ 1
+  \end{pmatrix}
+\end{equation}
+$\hat{x}=1$, $\hat{y}$ is free.
+
+\begin{equation}
+  \hat{w} =
+  \begin{pmatrix}
+    1 \\ \hat{y}
+  \end{pmatrix} =
+  \begin{pmatrix}
+    1 \\ 0
+  \end{pmatrix} +
+  \hat{y}\begin{pmatrix}
+    0 \\ 1
+  \end{pmatrix}
+\end{equation} where $\hat{y}$ is free.
+
+\begin{equation}
+  \hat{y} =0 \rightarrow \hat{w}=
+  \begin{pmatrix}
+    1 \\ 0
+  \end{pmatrix}.
+\end{equation}
+
+\subsection{Case III}
+Suppose $A$ has complex eigenvalues $\lambda_1=\alpha+i\beta$,
+$\lambda_2=\alpha-i\beta$, $\beta\ne0$ with eigenvectors
+$\hat{u_1}=\hat{\gamma}+i\hat{\eta}, \hat{u_2}=\hat{\gamma}-i\hat{\eta}$. Then
+the general solution
+\begin{equation}
+  v(t) = C_1e^{\alpha t}[(\cos\beta t)\hat{\gamma} - \sin\beta t)\hat{\eta}] +
+  C_2e^{\alpha t}[(\sin\beta t)\hat{\gamma} - \cos\beta t)\hat{\eta}].
+\end{equation}
+
+\begin{itemize}
+\item The equilibrium $v_*=9$ is asympotitally stable (spiral) if $\alpha<0$;
+  unstable (spiral) if $\alpha>0$. Reference fig. 11.8.
+\item The equilibrium $v_*=9$ is neutrally stable (spiral) if $\alpha=0$; all
+  non-equilibrium solutions are closed periodic curves about the equilibrium.
+  Reference fig. 11.9.
+\end{itemize}
+
+\subsubsection{Example}
+\begin{equation}
+  \od{x}{t} = 4x-5y,\quad \od{y}{t}=2x-2y.
+\end{equation}
+
+\begin{equation}
+  \begin{pmatrix}
+    4 & -5 \\ 2 & -2
+  \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+  \lambda_1=1+i,\quad \lambda_2=1-i
+\end{equation}
+This implies
+\begin{equation}
+  \alpha=1,\quad \beta=1
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    (A-\lambda_1I)\hat{u_1} &= 0 \\
+    \begin{pmatrix}
+      3-i & -5 \\ 2 & -3-i \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      \hat{x} & \hat{y}
+    \end{pmatrix} &=
+    \begin{pmatrix}
+      0 & 0
+    \end{pmatrix} \\
+    \begin{pmatrix}
+      3-i & -5 \\ 0 & 0 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      \hat{x} & \hat{y}
+    \end{pmatrix} &=
+    \begin{pmatrix}
+      0 & 0
+    \end{pmatrix} \\
+    (3-i)\hat{x}-5\hat{y}&=0 \\
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    \hat{x} = \frac{5}{3-i},\quad \hat{y}&=\frac{3+i}{3+i}\frac{5}{3-1}\hat{y} \\
+    &=\hat{3+i}{2}\hat{y}
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    \hat{u_1} =
+    \begin{pmatrix}
+      \frac{3+i}{2}\hat{y} \\
+      \hat{y} \\
+    \end{pmatrix} =
+    \hat{y}
+    \begin{pmatrix}
+      \frac{3+i}{2} \\ 1
+    \end{pmatrix}, \hat{y}\;\text{free}.
+  \end{aligned}
+\end{equation}
+
+Take
+\begin{equation}
+  \hat{u_1} =
+  \begin{pmatrix}
+    \frac{3+i}{2} \\ 1
+  \end{pmatrix} =
+  \begin{pmatrix}
+    \frac{3}{2} \\ 1
+  \end{pmatrix} +
+  i\begin{pmatrix}
+    \frac{1}{2} \\ 0
+  \end{pmatrix} =
+  \hat{\gamma} + i\hat{\eta}
+\end{equation}
+
+$\hat{u_2}$ is conjugate of
+$\hat{u_1}\rightarrow\hat{u_2}=\hat{\gamma}-i\hat{\eta}$
+$$\therefore \alpha=1,\quad \beta=1,\quad \hat{\gamma}=
+\begin{pmatrix}
+  \frac{3}{2} \\ 1
+\end{pmatrix},\quad \hat{\eta} =
+\begin{pmatrix}
+  \frac{1}{2} \\ 0
+\end{pmatrix}
+$$
+
+The phase diagram is shown in fig. 11.10.
+
+The general solution
+
+\begin{equation}
+  v(t) = C_1e^{t}[(\cos t)
+  \begin{pmatrix}
+    \frac{3}{2} \\ 1
+  \end{pmatrix} - (\sin t)
+  \begin{pmatrix}
+    \frac{1}{2} \\ 0
+  \end{pmatrix}
+] + C_2e^{t}[
+(\sin t)
+  \begin{pmatrix}
+    \frac{3}{2} \\ 1
+  \end{pmatrix} - (\cos t)
+  \begin{pmatrix}
+    \frac{1}{2} \\ 0
+  \end{pmatrix}
+]
+\end{equation}
+\todo[check this8]
+\section{Phase Diagrams For Linear Systems Continued}
+Recall
+
+\begin{equation} \text{(IVP)} \quad
+  \left\{
+  \begin{aligned}
+    \od{v}{t}&=Av,\quad t&\ge t_0, \\
+    v(t_0) &= u_0 \\
+  \end{aligned} \right.
+\end{equation}
+$$v =
+\begin{pmatrix}
+  x \\ y
+\end{pmatrix}, A =
+\begin{pmatrix}
+  a & b \\ c & d
+\end{pmatrix}
+$$
+And $$\det A \ne 0$$
+\todo[some other condition]
+
+
+
 \end{document}
