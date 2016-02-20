@@ -79,7 +79,7 @@ $\therefore F(x,t,g)=0$ is unit-free.
 
 \subsection{Definition}
 Let $Q = {q_1, \ldots, q_m}$ be a set of quantities involving a set $D =
-{D_1,...,D_n}$ of dimensions so that
+{D_1,\ldots,D_n}$ of dimensions so that
 
 \begin{equation}
   \begin{aligned}
@@ -125,7 +125,7 @@ $m = 3 | Q = {x, t, g}$, $n = 2 | D = {L, T}$.
 All dimensionless combinations of $q_1,\ldots,q_m$ can be found from the null
 vectors of $A$. That is,
 
-$$Z = q_1^{v_1}, q_2^{v_2}, \cdots, q_n^{v_n}$$ where $v_1, \ldots, v_m$
+$$Z = q_1^{v_1}, q_2^{v_2}, \ldots, q_n^{v_n}$$ where $v_1, \ldots, v_m$
 arbitrary. Then
 \begin{equation}
   \begin{aligned}
@@ -140,8 +140,8 @@ Find all dimensionless combinations of $x, t, g$.
 \begin{equation}
   \begin{aligned}
     Z &= x^{v_1}t^{v_2}g^{v_3} \\
-    [Z] &= [x]^{v_1}[t]^{v_2}[g]^{v_3} \\
-    &= L^{v_1}T^{v_2}(LT^{-2})^{v_3} \\
+    [Z] &= {[x]}^{v_1}{[t]}^{v_2}{[g]}^{v_3} \\
+    &= L^{v_1}T^{v_2}{(LT^{-2})}^{v_3} \\
     &= L^{v_1+v_3} T^{v_2-2v_3} \\
     \implies [Z] = 1 & \rightleftarrows  v_1+v_3=0, v_2-2v^3=0
   \end{aligned}
@@ -310,7 +310,7 @@ Scale for $t$:
 \begin{equation}
   \begin{aligned}
     t_c &= \eta^{\alpha_1}\mu^{\alpha_2}\lambda^{\alpha_3} \\
-    &= T^{-\alpha_1}(L^{-1}T^{-2})^{\alpha_2}L^{\alpha_3} \\
+    &= T^{-\alpha_1}{(L^{-1}T^{-2})}^{\alpha_2}L^{\alpha_3} \\
     \implies L^0T^1 &= L^{-\alpha_2+\alpha_3}T^{\alpha_1-2\alpha_2} \\
   \end{aligned}
 \end{equation}
@@ -616,8 +616,8 @@ successful pairing of $pA$'s and $qB$'s. We assume
 The second parameter turns out to be
 \begin{equation}
   \begin{aligned}
-    &\left(\text{total \# A's}\right)^p \cdot \left(\text{total \# B's}\right)^q \\
-    = &(Va)^p(Vb)^q \\
+    &{\left(\text{total \# A's}\right)}^p \cdot {\left(\text{total \# B's}\right)}^q \\
+    = &{(Va)}^p{(Vb)}^q \\
     = & \left(\text{reaction const}\right)V^{p+q} a^p b^q \\
   \end{aligned}
 \end{equation}
@@ -630,13 +630,13 @@ From this we get
   \begin{aligned}
     \left(\text{consumption rate of }A\right) &= \left(\frac{\text{\# }A}{\text{successful pairing}}\right)
     \left(\frac{\text{\# successful pairing}}{\text{time}}\right) \\
-    &= (p) (ka^pb^q) \\
+    &= (p) (ka^{p} b^q) \\
   \end{aligned}
 \end{equation}
 
 Similarly,
 \begin{equation}
-  \left(\text{consumption rate of }A\right) = (q)(ka^pb^q)
+  \left(\text{consumption rate of }A\right) = (q)(ka^p b^q)
 \end{equation}
 This is the Law of Mass Action. Now, conservation of mass is applied to chemical
 $A$ in tank states
@@ -1139,9 +1139,9 @@ Let $$\lambda_*=\pd{f}{u}(u_*,h)=3u_*^2-h.$$ Recall
 
   For $h=0$, consider $f(u,0)=u^3$. Reference fig. 8.2. Therefore $u_*=0$ is
   unstable if $h=0$.
-\item $u_*=+\sqrt{h},\, h>0$, then $\lambda_*=3u_*^2-h=2h.$
+\item $u_*=+\sqrt{h},\, h>0$, then $\lambda_*=3u_*^2-h=2h$.
   $\therefore u_*=+\sqrt{h}$ is unstable for $h>0$.
-\item $u_*=-\sqrt{h},\, h>0$, then $\lambda_*=3u_*^2-h=2h.$
+\item $u_*=-\sqrt{h},\, h>0$, then $\lambda_*=3u_*^2-h=2h$.
   $\therefore u_*=-\sqrt{h}$ is unstable for $h>0$.
 \end{enumerate}
 
@@ -1374,7 +1374,7 @@ $v(t)=e^{\lambda t}\hat{u}$, ($\lambda$, $\hat{u}$ constants), we gets
 \end{equation}
 
 Hence general solution of system can be built from eigenvalue/eigenvectors of
-$det A\ne0$ implies $\lambda\ne0$.
+$\det A\ne0$ implies $\lambda\ne0$.
 
 \subsection{Case I}
 Suppose $A$ has real, distinct eigenvalues $\lambda_1\ne\lambda_2$ with
@@ -1393,8 +1393,7 @@ $C_1,C_2$ are aribtrary constants.
   asymptotically unstable. Reference fig. 11.3.
 \end{itemize}
 
-\subsection{Example}
-
+\subsubsection{Example}
 \begin{equation}
   \begin{aligned}
     \od{x}{y} &= x+y,\quad& \od{y}{t} &=4x-2y, \quad t\ge0 \\
