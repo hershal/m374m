@@ -347,11 +347,90 @@ $x$ be the amount of herbicide in the crop, and let $y$ be the amount of
 herbicide in the soil. Suppose herbicide is transferred from the soil to the
 crop at rate $\beta y$ and transferred from the crop to the soil at rate $\alpha
 x$; further, assume that the chemical degrades in the soil at rate $\gamma y$.
-Set up a modelfor the amounts of herbicide int he crop and in soil. Sketch a
+Set up a model for the amounts of herbicide in the crop and in soil. Sketch a
 phase plane diagram indicating how the system evolves in time.
+\subsubsection*{Remarks}
+Assume $\alpha$, $\beta$, and $\gamma$ are arbitrary positive constants; account
+for gains and losses in $x$ and $y$ with appropriate signs in the model
+equations.
 \subsubsection*{Solution}
-\todo[]
-
+Let
+\begin{equation}
+  \label{eq:2.2.5-model}
+  \begin{aligned}
+    \od{x}{t} &= -\alpha x + \beta y \\
+    \od{y}{t} &= \alpha x - (\beta + \gamma)y. \\
+  \end{aligned}
+\end{equation}
+Since \cref{eq:2.2.5-model} is a linear system, it may be placed in matrix form.
+\begin{equation*}
+  \implies A = \begin{pmatrix}
+    -\alpha & \beta \\ \alpha & -(\beta+\gamma) \\
+  \end{pmatrix}
+\end{equation*}
+Since $\det(A) \ne 0$, the system has one equilibrium at $(0,0)$. We may
+categorize the solution based on its eigenvalues, which may be obtained by
+solving $\det(A-\lambda I)=0$.
+\begin{equation}
+  \label{eq:2.2.5-eigenvalue-equation}
+  \begin{aligned}
+    \det(A-\lambda I) &=
+    \begin{vmatrix}
+      -\alpha-\lambda & \beta \\ \alpha & -(\beta+\gamma)-\lambda \\
+    \end{vmatrix} \\
+    0 &= (-\alpha-\lambda)(-(\beta+\gamma)-\lambda) - \beta\alpha \\
+    &= (-\alpha-\lambda)(-(\beta+\gamma+\lambda)) - \beta\alpha \\
+    &= (\alpha+\lambda)(\beta+\gamma+\lambda) - \beta\alpha \\
+    &= \cancel{\alpha\beta} + \alpha\gamma + \alpha\lambda + \beta\lambda +
+    \gamma\lambda + \lambda^2 - \cancel{\alpha\beta} \\
+    &= \lambda^2 + (\alpha+\beta+\gamma)\lambda + \alpha\gamma \\
+    \implies \lambda &= \frac{-(\alpha+\beta+\gamma)\pm\sqrt{{(\alpha+\beta+\gamma)}^2-4(\alpha\gamma)}}{2} \\
+  \end{aligned}
+\end{equation}
+At this point we may categorize the eigenvalues and thus the solution based on
+the discriminant in \cref{eq:2.2.5-eigenvalue-equation}. We will determine if
+the eigenvalues are positive, negative, or zero.
+\begin{equation}
+  \label{eq:2.2.5-positive-illustration}
+  \begin{aligned}
+    & {(\alpha+\beta+\gamma)}^2-4(\alpha\gamma) \\
+    \longleftrightarrow\quad& \alpha^2 + 2\alpha\beta + \beta^2 + 2\beta\gamma +
+    \gamma^2 - 2\alpha\gamma \\
+    \longleftrightarrow\quad& \alpha^2 - 2\alpha\gamma + \gamma^2 + \beta^2 +
+    2\alpha\beta + 2\beta\gamma \\
+    \longleftrightarrow\quad& {(\alpha-\gamma)}^2 + \gamma^2 + \beta^2 + 2\alpha\beta +
+    2\beta\gamma \\
+  \end{aligned}
+\end{equation}
+\Cref{eq:2.2.5-positive-illustration,eq:2.2.5-eigenvalue-equation} illustrate
+that the system is guaranteed to have two distinct, real eigenvalues since
+${(\alpha-\gamma)}^2$ is guaranteed greater than zero. We must now determine if
+the eigenvalues are positive, negative, or zero. The negative condition of the
+quadratic equation in \cref{eq:2.2.5-eigenvalue-equation} is guaranteed
+negative. We will determine the sign of the second eigenvalue (the positive
+condition of the quadratic equation). We'll do this by the assume-and-verify
+method. Assume $\lambda_2<0$:
+\begin{equation*}
+  \begin{aligned}
+    \frac{-(\alpha+\beta+\gamma)+\sqrt{{(\alpha+\beta+\gamma)}^2-4(\alpha\gamma)}}{2} &<0 \\
+    -(\alpha+\beta+\gamma)+\sqrt{{(\alpha+\beta+\gamma)}^2-4(\alpha\gamma)} &<0 \\
+     \sqrt{{(\alpha+\beta+\gamma)}^2-4(\alpha\gamma)} &> (\alpha+\beta+\gamma) \\
+  \end{aligned}
+\end{equation*}
+We may square both sides and retain the inequality since we know both sides are
+positive.
+\begin{equation}
+  \begin{aligned}
+    {(\alpha+\beta+\gamma)}^2-4(\alpha\gamma) &> {(\alpha+\beta+\gamma)}^2 \\
+    -4(\alpha\gamma) &< 0 \\
+    \implies \alpha\gamma &> 0 \quad\checkmark
+  \end{aligned}
+\end{equation}
+Therefore $\lambda_1,\lambda_2<0$; both eigenvalues are distinct, real, and
+negative. The solution converges to the equlibrium $(0,0)$. Since we cannot
+directly obtain the eigenvectors of the system, a general phase portrait of the
+solution curves is illustrated in \todo[figure].
+\newpage
 \section{Programming Minilab}
 \todo[]
 
