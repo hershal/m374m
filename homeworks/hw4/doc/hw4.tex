@@ -108,8 +108,10 @@ This implies that one equilibrium is $(0,0)$. Furthermore,
     \implies x &= 1, 4. \\
   \end{aligned}
 \end{equation}
-We may conclude that the equilibria are $(1,1)$, $(4,4)$. Reference the phase
-diagram in \cref{fig:2.1.5-phase-diagram}. \todo[why is 0,0 not an eq?]
+We may conclude that the equilibria are $(0,0)$, $(1,1)$, and $(4,4)$. The
+stability has been determined via test points and the phase diagram in
+\cref{fig:2.1.5-phase-diagram}. From these datum we may conclude that $(0,0)$ is
+stable, $(1,1)$ is unstable, and $(4,4)$ is stable.
 
 \begin{figure}
   \centering
@@ -127,7 +129,13 @@ diagram in \cref{fig:2.1.5-phase-diagram}. \todo[why is 0,0 not an eq?]
           mark=between positions 0.4 and 0.6 step 5em with {\arrow [scale=1.5]{stealth}}
         }, postaction=decorate] table {2.1.5-\i-\j.mat};
       }
-      \addplot3[gray, quiver={u={y-x}, v={-y+(5*x^2)/(4+x^2)}, scale arrows=0.1}, -stealth,samples=15]{0};
+      \addplot3[gray, quiver={u={y-x}, v={-y+(5*x^2)/(4+x^2)}, scale arrows=0.05}, -stealth,samples=15]{0};
+      \addplot3[gray, dashed, very thin] coordinates {(-2,4,0) (8,4,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(4,-2,0) (4,8,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(-2,1,0) (8,1,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(1,-2,0) (1,8,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(-2,0,0) (8,0,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(0,-2,0) (0 ,8,0)};
     \end{axis}
   \end{tikzpicture}
   \caption{Phase Diagram for \S~2.1\#5}
