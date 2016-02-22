@@ -423,6 +423,211 @@ solution curves is illustrated in \cref{fig:2.2.5-phase-diagram}.
 
 \newpage
 \section{Programming Minilab}
-\todo[]
+A simple model for the relationship dynamics between two people X and Y is
+\begin{equation}
+  \label{eq:minilab-problem}
+  \begin{aligned}
+    \dot{x} &= ax+by,\quad x(0)=x_0 \\
+    \dot{y} &= cx+dy,\quad y(0)=y_0, \\
+  \end{aligned}
+\end{equation}
+where $x(t)$ is the intensity of X's feelings (for Y), and $y(t)$ is the
+intensity of Y's feelings (for X), where positive values indicate love, and
+negative values indicate hate. The constants $a$, $b$, $c$ and $d$ can take any
+value and characterize their personalities: $a > 0$ and $b > 0$ means X is eager
+and responsive, respectively; $a < 0$ and $b < 0$ means X is cautious and
+manipulative, respectively. Similar for Y in $c$ and $d$. Here we perform a
+qualitative analysis to understand the ultimate fate of a relationship depending
+on the personality types.
+
+\subsubsection*{Problem}
+\begin{enumerate}
+\item Consider the case of $a = 0$, $b > 0$, and $c < 0$, $d = 0$: so X is
+  responsive and Y is manipulative, and neither is eager or cautious. In words,
+  X warms up when Y is warm, cools down when Y is cool, and has no
+  self-amplifying or self-suppressing tendencies. Y behaves analogously, but
+  cools down when X is warm, and warms up when X is cool. Show that, if
+  $(x_0,y_0)\ne(0,0)$, then the relationship evolves as a never-ending cycle of
+  love and hate. Illustrate the behavior of the system on a phase diagram.
+\item Consider the case of $\abs{a} = d < 0$ and $\abs{b} = c > 0$, so that X
+  and Y are both cautious and responsive with identical characteristics. Show
+  that if $\abs{a} > b$ (more cautious than responsive), then the relationship
+  always fizzles out to mutual apathy. On the other hand, if $\abs{a} < b$ (more
+  responsive than cautious), then the relationship is explosive: it will
+  generally end up in extreme mutual love or mutual hatred depending on the
+  initial feelings. What set of initial feelings lead to mutual love? What about
+  mutual hatred? For each case, illustrate the behavior on a phase diagram.
+\item Numerically simulate the model equation in \cref{eq:minilab-problem} and
+  produce solution curves for various $(x_0,y_0)$. Although the results do not
+  depend on specific magnitudes, use values of $a$, $b$, $c$ and $d$ from the
+  set ${−2, −1, 0, 1, 2}$ to illustrate the different cases.
+\end{enumerate}
+
+\subsubsection*{Solution}
+\begin{enumerate}
+\item
+\end{enumerate}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.9\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=12cm, height=12cm, domain=-1:1, xmin=-1, xmax=1,
+        ymin=-1, ymax=1, xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$x$, ylabel=$y$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 1 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-1-1-u-\i.mat};
+        }
+        \addplot3[gray, quiver={u={3*y}, v={-4*x}, scale arrows=0.08}, -stealth,samples=15]{0};
+        % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
+        % \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0,1,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Phase Diagram}
+    \label{fig:minilab-1-1-phase-diagram}
+  \end{subfigure} \\
+  \begin{subfigure}{0.49\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
+        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$t$, ylabel=$x$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-1-1-x-\i.mat};
+        }
+        \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$x$ vs $t$}
+    \label{fig:minilab-1-1-x}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
+        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$t$, ylabel=$y$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-1-1-y-\i.mat};
+        }
+        \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$y$ vs $t$}
+    \label{fig:minilab-1-1-y}
+  \end{subfigure}
+  \caption{Minilab Part 1 Results}
+  \label{fig:minilab-1-1}
+\end{figure}
+
+% 2-1
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.9\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=12cm, height=12cm, domain=-1:1, xmin=-1, xmax=1,
+        ymin=-1, ymax=1, xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$x$, ylabel=$y$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 1 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-1-u-\i.mat};
+        }
+        \addplot3[gray, quiver={u={3*y}, v={-4*x}, scale arrows=0.08}, -stealth,samples=15]{0};
+        % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
+        % \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0,1,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Phase Diagram}
+    \label{fig:minilab-2-1-phase-diagram}
+  \end{subfigure} \\
+  \begin{subfigure}{0.49\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
+        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$t$, ylabel=$x$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-1-x-\i.mat};
+        }
+        \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$x$ vs $t$}
+    \label{fig:minilab-2-1-x}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
+        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$t$, ylabel=$y$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-1-y-\i.mat};
+        }
+        \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$y$ vs $t$}
+    \label{fig:minilab-2-1-y}
+  \end{subfigure}
+  \caption{Minilab Part 2 Results, $\abs{a}<b$}
+  \label{fig:minilab-2-1}
+\end{figure}
+
+% 2-2
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.9\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=12cm, height=12cm, domain=-1:1, xmin=-1, xmax=1,
+        ymin=-1, ymax=1, xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$x$, ylabel=$y$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 1 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-2-u-\i.mat};
+        }
+        \addplot3[gray, quiver={u={3*y}, v={-4*x}, scale arrows=0.08}, -stealth,samples=15]{0};
+        % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
+        % \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0,1,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Phase Diagram}
+    \label{fig:minilab-2-2-phase-diagram}
+  \end{subfigure} \\
+  \begin{subfigure}{0.49\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
+        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$t$, ylabel=$x$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-2-x-\i.mat};
+        }
+        \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$x$ vs $t$}
+    \label{fig:minilab-2-2-x}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \begin{tikzpicture}
+      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
+        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+        view={0}{90}, xlabel=$t$, ylabel=$y$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-2-y-\i.mat};
+        }
+        \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$y$ vs $t$}
+    \label{fig:minilab-2-2-y}
+  \end{subfigure}
+  \caption{Minilab Part 2 Results, $\abs{a}>b$}
+  \label{fig:minilab-2-2}
+\end{figure}
+
 
 \end{document}
