@@ -1,4 +1,4 @@
-#!/usr/bin/octave
+#!/usr/bin/env octave
 # -*- mode: octave -*-
 
 pkg load odepkg;
