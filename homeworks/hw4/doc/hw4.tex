@@ -190,8 +190,39 @@ the solution.
     &&\implies \vec{v_2} = \begin{pmatrix}1\\-1\end{pmatrix}y.
   \end{aligned}
 \end{equation*}
-The general solution is unstable with a saddle equilibrium. Reference \todo[figure].
-$$\boxed{\begin{pmatrix}x\\y\end{pmatrix}(t)=C_1\begin{pmatrix}1\\1\end{pmatrix}e^{-2t}+C_2\begin{pmatrix}1\\-1\end{pmatrix}e^{4t}}$$
+$$\boxed{\begin{pmatrix}x(t)\\y(t)\end{pmatrix}=C_1\begin{pmatrix}1\\1\end{pmatrix}e^{-2t}+C_2\begin{pmatrix}1\\-1\end{pmatrix}e^{4t}}$$
+The general solution is unstable with a saddle equilibrium. Reference
+\cref{fig:2.2.1a-phase-diagram}.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[height=16cm, width=16cm,
+      domain=-1:1,
+      xmin=-1, xmax=1, ymin=-1, ymax=1,
+      xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+      view={0}{90},
+      xlabel=$x$,
+      ylabel=$y$]
+      \foreach \i in {1,...,6}{
+        \foreach \j in {1,...,6}
+        \addplot3[decoration={
+          markings,
+          mark=between positions 0.1 and 0.9 step 5em with {\arrow [scale=1.5]{stealth}}
+        }, postaction=decorate] table {2.2.1a-\i-\j.mat};
+      }
+      \addplot3[gray, quiver={u={x-3*y}, v={-3*x+y}, scale arrows=0.05}, -stealth,samples=15]{0};
+      % \addplot3[gray, dashed, very thin] coordinates {(-2,4,0) (8,4,0)};
+      % \addplot3[gray, dashed, very thin] coordinates {(4,-2,0) (4,8,0)};
+      % \addplot3[gray, dashed, very thin] coordinates {(-2,1,0) (8,1,0)};
+      % \addplot3[gray, dashed, very thin] coordinates {(1,-2,0) (1,8,0)};
+      % \addplot3[gray, dashed, very thin] coordinates {(-2,0,0) (8,0,0)};
+      % \addplot3[gray, dashed, very thin] coordinates {(0,-2,0) (0 ,8,0)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Phase Diagram for \S~2.2\#1a}
+  \label{fig:2.2.1a-phase-diagram}
+\end{figure}
 
 \newpage
 \subsection{1f}
