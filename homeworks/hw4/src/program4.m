@@ -79,7 +79,6 @@ for i=1:Npoints
   maxu = max(maxu, max(max(usoln(:,1)), max(usoln(:,2))));
   clear tsoln usoln ;
 end
-hold off;
 ustep= (maxu-minu)/20;
 [x,y] = meshgrid(minu:ustep:maxu);
 quiver(x, y, a*x+b*y, c*x+d*y);
