@@ -14,7 +14,7 @@ for i=1:length(x0)
     [t, u] = ode45(f_2_1_5, [0,3], [x0(i), y0(j)], vopt);
     ## plot(u(:,1),u(:,2));
     u = [u zeros(size(u,1),1)];
-    dlmwrite(sprintf("2.1.5-%i-%i.mat", i, j), u, " ");
+    dlmwrite(sprintf("../resources/2.1.5-%i-%i.mat", i, j), u, " ");
     clear t, u;
   endfor
 endfor
