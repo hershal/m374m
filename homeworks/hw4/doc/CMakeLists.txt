@@ -6,7 +6,7 @@ add_custom_target (hw4_copy_resources)
 foreach(resource ${hw4_resources})
   add_custom_command(TARGET hw4_copy_resources
     DEPENDS ${resource}
-    COMMAND ${CMAKE_COMMAND} -E copy  ${resource} ./)
+    COMMAND ${CMAKE_COMMAND} -E copy  ${resource} ${CMAKE_CURRENT_BINARY_DIR})
 endforeach()
 
 add_latex_document (
