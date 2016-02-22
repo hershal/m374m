@@ -460,12 +460,56 @@ on the personality types.
 \item Numerically simulate the model equation in \cref{eq:minilab-problem} and
   produce solution curves for various $(x_0,y_0)$. Although the results do not
   depend on specific magnitudes, use values of $a$, $b$, $c$ and $d$ from the
-  set ${−2, −1, 0, 1, 2}$ to illustrate the different cases.
+  set ${-2, -1, 0, 1, 2}$ to illustrate the different cases.
 \end{enumerate}
 
 \subsubsection*{Solution}
 \begin{enumerate}
 \item
+  \label{itm:minilab-part-1-sol}
+  In this case we may assume
+  \begin{equation*}
+    \begin{aligned}
+      \dot{x} &= by \\
+      \dot{y} &= cx \\
+    \end{aligned}
+  \end{equation*}
+  This is a linear system, so we may place it into matrix form and analyze the
+  eigenvalues in order to categorize the solution.
+  \begin{equation*}
+    0=\begin{vmatrix} \lambda & b \\ c & \lambda \end{vmatrix} = \lambda^2-bc
+  \end{equation*}
+  \begin{equation*}
+    \implies \lambda = \sqrt{bc}.
+  \end{equation*}
+  Since $b<0$, $\lambda$ is complex. Thus we obtain a spiral solution.
+  Furthermore, there is no real component of $\lambda$, so the solution remains
+  in a never-ending cycle.
+\item In this case we may assume $a=d$, $c=b$. Similar to the step in
+  \cref{itm:minilab-part-1-sol}, we may analyze the eigenvalues of the linear
+  system in order to categorize its solution.
+  \begin{equation*}
+    \begin{vmatrix} a-\lambda & b \\ c & d-\lambda \end{vmatrix} = (a-\lambda)^2-b^2
+  \end{equation*}
+  \begin{equation*}
+    \begin{aligned}
+      (a-\lambda)^2-b^2 &= 0 \\
+      (a-\lambda)^2 &= b^2 \\
+      a-\lambda &= \pm b
+      \implies \lambda &= a\pm b \\
+    \end{aligned}
+  \end{equation*}
+  From this result we have two independent eigenvalues $\lambda_1$, $\lambda_2$
+  which correspond to the negative and positive case of the RHS, respectively.
+  Since $a<0$, $\lambda_1$ is guaranteed negative, we'll analyze $\lambda_2$.
+  When $\abs{a}>b$, $\lambda_2>0$, which leads the solution to be unstable,
+  resulting in an explosive relationship. Contrary, when $\abs{a}<b$, the
+  solution is stable, resulting in an apathetic reslationship. This occurs
+  regardless of the initial condition.
+\item The diagrams in \cref{fig:minilab-1-1,fig:minilab-2-1,fig:minilab-2-2}
+  were computed with $[a b c d]={[0 3 -3 0], [-4 3 3 -4], [-2 3 3 -2]}$, in that
+  order.
+
 \end{enumerate}
 
 \begin{figure}
