@@ -139,7 +139,7 @@ stable, $(1,1)$ is unstable, and $(4,4)$ is stable.
     \end{axis}
   \end{tikzpicture}
   \caption{Phase Diagram for \S~2.1\#5}
-  \label{fig:2.2.1a-phase-diagram}
+  \label{fig:2.1.5-phase-diagram}
 \end{figure}
 
 \section{\S~2.2}
@@ -212,12 +212,8 @@ The general solution is unstable with a saddle equilibrium. Reference
         }, postaction=decorate] table {2.2.1a-\i-\j.mat};
       }
       \addplot3[gray, quiver={u={x-3*y}, v={-3*x+y}, scale arrows=0.05}, -stealth,samples=15]{0};
-      % \addplot3[gray, dashed, very thin] coordinates {(-2,4,0) (8,4,0)};
-      % \addplot3[gray, dashed, very thin] coordinates {(4,-2,0) (4,8,0)};
-      % \addplot3[gray, dashed, very thin] coordinates {(-2,1,0) (8,1,0)};
-      % \addplot3[gray, dashed, very thin] coordinates {(1,-2,0) (1,8,0)};
-      % \addplot3[gray, dashed, very thin] coordinates {(-2,0,0) (8,0,0)};
-      % \addplot3[gray, dashed, very thin] coordinates {(0,-2,0) (0 ,8,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0,1,0)};
     \end{axis}
   \end{tikzpicture}
   \caption{Phase Diagram for \S~2.2\#1a}
