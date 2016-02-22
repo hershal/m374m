@@ -64,6 +64,8 @@ The phase diagram is plotted in \cref{fig:3-phase-diagram}.
       ylabel=$y$]
       \addplot3[black, contour gnuplot={number=20, labels=false, draw color=black}]{y^3+x^2};
       \addplot3[gray, quiver={u={y^2}, v={-2/3*x}, scale arrows=0.1}, -stealth,samples=15]{0};
+      \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0 ,1,0)};
     \end{axis}
   \end{tikzpicture}
   \caption{Phase Diagram for \S~2.1\#3}
@@ -73,13 +75,14 @@ The phase diagram is plotted in \cref{fig:3-phase-diagram}.
 \newpage
 \subsection{5$^2$}
 \subsubsection*{Problem}
-Find the linearization of the system
+Find the linearization of \cref{eq:2-1-5-problem} about the equilibrium point
+$(1,1)$. Draw the nullclines and indicate the direction of the orbits in each
+region separated by the nullclines. Can you conclude anything about the
+stability of the critical point?
 \begin{equation}
+  \label{eq:2-1-5-problem}
   x'=y-x, \qquad y'=-y+\frac{5x^2}{4+x^2}
 \end{equation}
-about the equilibrium point $(1,1)$. Draw the nullclines and indicate the
-direction of the orbits in each region separated by the nullclines. Can you
-conclude anything about the stability of the critical point?
 \subsubsection*{Remarks}
 Instead of the linearization, find all equilibria; sketch the direction of
 solution curves in a small region around each equilibrium in the phase plane.
@@ -268,14 +271,14 @@ the solution.
     &&\implies \vec{v_2} = \begin{pmatrix}i\\1\end{pmatrix}y.
   \end{aligned}
 \end{equation*}
-The general solution is stable with a spiral equilibrium. Reference
-\cref{fig:2.2.1f-phase-diagram}.
 $$
-\boxed{\begin{pmatrix}x\\y\end{pmatrix}(t)=C_1e^{-2t}\left[\begin{pmatrix}0\\1\end{pmatrix}\cos(-3t)
+\boxed{\begin{pmatrix}x(t)\\y(t)\end{pmatrix}=C_1e^{-2t}\left[\begin{pmatrix}0\\1\end{pmatrix}\cos(-3t)
   -\begin{pmatrix}-1\\0\end{pmatrix}\sin(-3t)\right]+
 C_2e^{-2t}\left[\begin{pmatrix}0\\1\end{pmatrix}\cos(3t)
   -\begin{pmatrix}1\\0\end{pmatrix}\sin(3t)\right]}
 $$
+The general solution is stable with a spiral equilibrium. Reference
+\cref{fig:2.2.1f-phase-diagram}.
 
 \begin{figure}
   \centering
@@ -507,7 +510,7 @@ on the personality types.
   solution is stable, resulting in an apathetic reslationship. This occurs
   regardless of the initial condition.
 \item The diagrams in \cref{fig:minilab-1-1,fig:minilab-2-1,fig:minilab-2-2}
-  were computed with $[a b c d]={[0 3 -3 0], [-4 3 3 -4], [-2 3 3 -2]}$, in that
+  were computed with $[a, b, c, d]={[0, 3, -3, 0], [-4, 3, 3, -4], [-2, 3, 3, -2]}$, in that
   order.
 
 \end{enumerate}
@@ -615,7 +618,7 @@ on the personality types.
     \caption{$y$ vs $t$}
     \label{fig:minilab-2-1-y}
   \end{subfigure}
-  \caption{Minilab Part 2 Results, $\abs{a}<b$}
+  \caption{Minilab Part 2 Results, $\abs{a}>b$}
   \label{fig:minilab-2-1}
 \end{figure}
 
@@ -667,7 +670,7 @@ on the personality types.
     \caption{$y$ vs $t$}
     \label{fig:minilab-2-2-y}
   \end{subfigure}
-  \caption{Minilab Part 2 Results, $\abs{a}>b$}
+  \caption{Minilab Part 2 Results, $\abs{a}<b$}
   \label{fig:minilab-2-2}
 \end{figure}
 
