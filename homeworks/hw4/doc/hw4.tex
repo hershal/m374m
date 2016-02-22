@@ -13,24 +13,15 @@
 \subsubsection*{Problem}
 For the system
 \begin{equation}
-  \begin{aligned}
-    x'&=y^2 \\
-    y'&=-\frac{2}{3}x, \\
-  \end{aligned}
+    x'=y^2, \qquad y'=-\frac{2}{3}x,
 \end{equation}
 find critical points, nullclines, and the direction of the orbits in the regions
 separated by the nullclines. Next, find the equations of the orbits and plot the
 phase diagram. Is the origin stable or unstable?
 \subsubsection*{Solution}
-Let
-\begin{equation}
-  \begin{aligned}
-    f(x,y) &= y^2 \\
-    g(x,y) &= -\frac{2}{3}x.
-  \end{aligned}
-\end{equation}
-This is a coupled system. We must solve $f(x,y)=0$ and $g(x,y)=0$ to obtain the
-critical points/equilibria and nullclines of the system.
+Let $f(x,y) = x'$, $g(x,y) = y'$. This is a coupled system. We must solve
+$f(x,y)=0$ and $g(x,y)=0$ to obtain the critical points/equilibria and
+nullclines of the system.
 \begin{multicols}{2}
   \begin{equation*}
     \begin{aligned}
@@ -51,8 +42,8 @@ must solve the ODE.
 \begin{equation}
   \begin{aligned}
     \od{y}{t} &= -\frac{2}{3}x \\
-    \od{y}{t} \od{t}{x} &= -\frac{2}{3}x \od{t}{x} \\
-    \od{y}{x} &= -\frac{2}{3}\frac{x}{y^2} \\
+    \frac{\dd{y}}{\cancel{\dd{t}}} \frac{\cancel{\dd{t}}}{\dd{x}} &=
+    -\frac{2}{3}x \od{t}{x} \\
     \int 3y^2 \dd{y} &= \int -2x^2 \dd{x} \\
     y^3 &= -x^2 + C \\
     \implies y^3 + x^2 &= C
@@ -83,10 +74,7 @@ The phase diagram is plotted in \cref{fig:3-phase-diagram}.
 \subsubsection*{Problem}
 Find the linearization of the system
 \begin{equation}
-  \begin{aligned}
-    x'&=y-x \\
-    y'&=-y+\frac{5x^2}{4+x^2} \\
-  \end{aligned}
+  x'=y-x, \qquad y'=-y+\frac{5x^2}{4+x^2}
 \end{equation}
 about the equilibrium point $(1,1)$. Draw the nullclines and indicate the
 direction of the orbits in each region separated by the nullclines. Can you
@@ -95,15 +83,9 @@ conclude anything baout the stability of the critical point?
 Instead of the linearization, find all equilibria; sketch the direction of
 solution curves in a small region around each equilibrium in the phase plane.
 \subsubsection*{Solution}
-Let
-\begin{equation}
-  \begin{aligned}
-    f(x,y) &= y-x \\
-    g(x,y) &= -y+\frac{5x^2}{4+x^2}. \\
-  \end{aligned}
-\end{equation}
-We must solve $f(x,y)=0$ and $g(x,y)=0$ to obtain the equilibria of the system.
-Since this system is nonlinear we may solve using substitution.
+Let $f(x,y) = x'$, $g(x,y) = y'$. We must solve $f(x,y)=0$ and $g(x,y)=0$ to
+obtain the equilibria of the system. Since this system is nonlinear we may solve
+using substitution.
 \begin{equation}
   y - x = 0 \implies y = x
 \end{equation}
@@ -112,8 +94,14 @@ From this result,
   \begin{aligned}
     -y+\frac{5x^2}{4+x^2} &= 0 \\
     -x+\frac{5x^2}{4+x^2} &= 0 \\
-    \frac{5x^2}{4+x^2} &= x \\
-    5x^2 &= x(4+x^2) \\
+    x\left(\frac{5x}{4+x^2}-1 \right) &= 0 \\
+    \implies x = 0 \\
+\end{aligned}
+\end{equation}
+This implies that one equilibrium is $(0,0)$. Furthermore,
+\begin{equation}
+  \begin{aligned}
+    \frac{5x}{4+x^2} -1 &= 0 \\
     5x &= 4+x^2 \\
     x^2-5x+4 &= 0 \\
     (x-5)(x-1) &= 0 \\
@@ -154,10 +142,7 @@ for the system; characterize the equilibria as to type (node, etc.) and
 stability.
 \begin{equation}
   \label{eq:1a-problem}
-  \begin{aligned}
-    x'=f(x,y)&=x-3y\\
-    y'=g(x,y)&=-3x+y,\\
-  \end{aligned}
+  x'=f(x,y)=x-3y,\qquad y'=g(x,y)=-3x+y
 \end{equation}
 \subsubsection*{Solution}
 We must solve $f(x,y)=0$ and $g(x,y)=0$ to obtain the equilibria of the system.
@@ -208,10 +193,7 @@ for the system; characterize the equilibria as to type (node, etc.) and
 stability.
 \begin{equation}
   \label{eq:1f-problem}
-  \begin{aligned}
-    x'=f(x,y)&=-2x-3y\\
-    y'=g(x,y)&=3x-2y,\\
-  \end{aligned}
+  x'=f(x,y)=-2x-3y,\qquad y'=g(x,y)=3x-2y
 \end{equation}
 \subsubsection*{Solution}
 We must solve $f(x,y)=0$ and $g(x,y)=0$ to obtain the equilibria of the system.
