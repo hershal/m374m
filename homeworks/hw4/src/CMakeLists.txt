@@ -10,7 +10,6 @@ endforeach()
 
 add_custom_target(hw4_generate_resources
   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${hw4_generator_timestamps})
-set_target_properties(hw4_generate_resources PROPERTIES OUTPUT_LOCATION ${CMAKE_CURRENT_BINARY_DIR})
 
 foreach(generator ${hw4_generators})
   add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${generator}.timestamp
