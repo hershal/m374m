@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 2.8)
 set(hw4_generators
   generate_2_1_5 generate_2_1_5 generate_2_2_1a
   generate_2_2_1f generate_2_2_5 generate_minilab)
