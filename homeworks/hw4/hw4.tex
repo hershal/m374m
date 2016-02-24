@@ -131,7 +131,7 @@ stable, $(1,1)$ is unstable, and $(4,4)$ is stable.
         \addplot3[decoration={
           markings,
           mark=between positions 0.4 and 0.6 step 5em with {\arrow [scale=1.5]{stealth}}
-        }, postaction=decorate] table {2.1.5-\i-\j.mat};
+        }, postaction=decorate] table {src-bin/2.1.5-\i-\j.mat};
       }
       \addplot3[gray, quiver={u={y-x}, v={-y+(5*x^2)/(4+x^2)}, scale arrows=0.05}, -stealth,samples=15]{0};
       \addplot3[gray, dashed, very thin] coordinates {(-2,4,0) (8,4,0)};
@@ -213,7 +213,7 @@ The general solution is unstable with a saddle equilibrium. Reference
         \addplot3[decoration={
           markings,
           mark=between positions 0.1 and 0.9 step 5em with {\arrow [scale=1.5]{stealth}}
-        }, postaction=decorate] table {2.2.1a-\i-\j.mat};
+        }, postaction=decorate] table {src-bin/2.2.1a-\i-\j.mat};
       }
       \addplot3[gray, quiver={u={x-3*y}, v={-3*x+y}, scale arrows=0.05}, -stealth,samples=15]{0};
       \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
@@ -295,7 +295,7 @@ The general solution is stable with a spiral equilibrium. Reference
         \addplot3[decoration={
           markings,
           mark=between positions 0.1 and 0.9 step 5em with {\arrow [scale=1.5]{stealth}}
-        }, postaction=decorate] table {2.2.1f-\i-\j.mat};
+        }, postaction=decorate] table {src-bin/2.2.1f-\i-\j.mat};
       }
       \addplot3[gray, quiver={u={-2*x-3*y}, v={3*x-2*y}, scale arrows=0.05}, -stealth,samples=15]{0};
       \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
@@ -413,7 +413,7 @@ solution curves is illustrated in \cref{fig:2.2.5-phase-diagram}.
         \addplot3[decoration={
           markings,
           mark=between positions 0.1 and 0.9 step 5em with {\arrow [scale=1.5]{stealth}}
-        }, postaction=decorate] table {2.2.5-\i-\j.mat};
+        }, postaction=decorate] table {src-bin/2.2.5-\i-\j.mat};
       }
       \addplot3[gray, quiver={u={-2*x+3*y}, v={2*x-(3+4)*y}, scale arrows=0.01}, -stealth,samples=15]{0};
       \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
@@ -523,7 +523,7 @@ on the personality types.
         view={0}{90}, xlabel=$x$, ylabel=$y$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 1 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-1-1-u-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-1-u-\i.mat};
         }
         \addplot3[gray, quiver={u={3*y}, v={-4*x}, scale arrows=0.05}, -stealth,samples=15]{0};
         % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
@@ -540,7 +540,7 @@ on the personality types.
         view={0}{90}, xlabel=$t$, ylabel=$x$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-1-1-x-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-1-x-\i.mat};
         }
         \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
       \end{axis}
@@ -555,7 +555,7 @@ on the personality types.
         view={0}{90}, xlabel=$t$, ylabel=$y$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-1-1-y-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-1-y-\i.mat};
         }
         \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
       \end{axis}
@@ -572,12 +572,14 @@ on the personality types.
   \centering
   \begin{subfigure}{0.9\textwidth}
   \begin{tikzpicture}
-      \begin{axis}[width=12cm, height=12cm, domain=-2:2, xmin=-2, xmax=2,
-        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+      \begin{axis}[width=12cm, height=12cm,
+        domain=-2:2,
+        xmin=-2, xmax=2, restrict x to domain=-2:2,
+        ymin=-2, ymax=2, restrict y to domain=-2:2,
         view={0}{90}, xlabel=$x$, ylabel=$y$]
         \foreach \i in {1,...,4} {
-          \addplot3[decoration={markings, mark=between positions 0.1 and 1 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-1-u-\i.mat};
+          \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-2-1-u-\i.mat};
         }
         \addplot3[gray, quiver={u={-4*x+3*y}, v={3*x-4*y}, scale arrows=0.05}, -stealth,samples=15]{0};
         % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
@@ -589,12 +591,14 @@ on the personality types.
   \end{subfigure} \\
   \begin{subfigure}{0.49\textwidth}
   \begin{tikzpicture}
-      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
-        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+      \begin{axis}[width=8cm, height=8cm,
+        domain=0:6,
+        xmin=0, xmax=6, restrict x to domain=0:6,
+        ymin=-2, ymax=2, restrict y to domain=-2:2,
         view={0}{90}, xlabel=$t$, ylabel=$x$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-1-x-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-2-1-x-\i.mat};
         }
         \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
       \end{axis}
@@ -604,12 +608,14 @@ on the personality types.
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
   \begin{tikzpicture}
-      \begin{axis}[width=8cm, height=8cm, domain=0:6, xmin=0, xmax=6,
-        ymin=-2, ymax=2, % xtick={-1,-0.5,0,0.5,1}, ytick={-1,-0.5,0,0.5,1},
+      \begin{axis}[width=8cm, height=8cm,
+        domain=0:6,
+        xmin=0, xmax=6, restrict x to domain=0:6,
+        ymin=-2, ymax=2, restrict y to domain=-2:2,
         view={0}{90}, xlabel=$t$, ylabel=$y$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-1-y-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-2-1-y-\i.mat};
         }
         \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (8,0,0)};
       \end{axis}
@@ -630,7 +636,7 @@ on the personality types.
         view={0}{90}, xlabel=$x$, ylabel=$y$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 1 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-2-u-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-2-2-u-\i.mat};
         }
         \addplot3[gray, quiver={u={-2*x + 3*y}, v={-2*x + 3*y}, scale arrows=0.05}, -stealth,samples=15]{0};
       \end{axis}
@@ -645,7 +651,7 @@ on the personality types.
         view={0}{90}, xlabel=$t$, ylabel=$x$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-2-x-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-2-2-x-\i.mat};
         }
         \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (10,0,0)};
       \end{axis}
@@ -660,7 +666,7 @@ on the personality types.
         view={0}{90}, xlabel=$t$, ylabel=$y$]
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
-            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {minilab-2-2-y-\i.mat};
+            {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-2-2-y-\i.mat};
         }
         \addplot3[gray, dashed, very thin] coordinates {(0,0,0) (10,0,0)};
       \end{axis}

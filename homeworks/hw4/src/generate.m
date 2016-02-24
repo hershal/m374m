@@ -14,9 +14,8 @@ function generate(f, problem)
     for j=1:length(y0)
       [t, u] = ode45(f, [t0, tf], [x0(i), y0(j)], vopt);
       u = [u zeros(size(u,1),1)];
-      dlmwrite(sprintf("../resources/%s-%i-%i.mat", problem, i, j), u, " ");
+      dlmwrite(sprintf("%s-%i-%i.mat", problem, i, j), u, " ");
       clear t, u;
     endfor
   endfor
-
 endfunction
