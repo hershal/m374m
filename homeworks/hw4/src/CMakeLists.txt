@@ -12,9 +12,5 @@ add_custom_target(hw4_generate_resources
   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${hw4_generator_timestamps})
 
 foreach(generator ${hw4_generators})
-  add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${generator}.timestamp
-    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${generator}.m ${CMAKE_CURRENT_SOURCE_DIR}/generate.m
-    COMMAND "octave" "-p" "${CMAKE_CURRENT_SOURCE_DIR}" ${CMAKE_CURRENT_SOURCE_DIR}/${generator}.m
-    COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_CURRENT_BINARY_DIR}/${generator}.timestamp
-    )
+  add_generator(${generator})
 endforeach()
