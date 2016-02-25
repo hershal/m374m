@@ -14,28 +14,27 @@
   \subsubsection*{Problem}
   Assume a physical law modeling a blast wave from an atomic explosion in the
   form
-  \begin{equation}
+  \begin{equation*}
     g(t,r,\rho,E,P)=0,
-  \end{equation}
+  \end{equation*}
   where $t$ is time, $r$ is the blast radius, $\rho$ is density of the
   atom\footnote{$ML^{-3}$}, $E$ is the energy released during the explosion, and
   $P$ is the ambient air pressure. By inspection, find two independent
   dimensionless parameters formed from $t$, $r$, $\rho$, $E$, and $P$. We will
   name the two dimensionless parameters $\pi_1$ and $\pi_2$ and assume the law
   is equivalent to
-  \begin{equation}
+  \begin{equation*}
     f(\pi_1,\pi_2)=0.
-  \end{equation}
+  \end{equation*}
   Does it still follow that $r$ varies like the two-fifths power of $t$?
 
   \subsubsection*{Remarks}
-  Find the reduced form of $g(t,r,\rho,E,P)=0$ for $P\ne0$. In special case when
-  $P=0$, deduce that $r=C{(Et^2/\rho)}^{1/5}$ as before.
+  Find the reduced form of $g(t,r,\rho,E,P)=0$. In special case when $P=0$,
+  deduce that $r=C{(Et^2/\rho)}^{1/5}$ as before.
 
   \subsubsection*{Solution}
-  We will find the  $g(t,r,\rho,E,P)=0$ where $P\ne0$. Utilizing the
-  mapping in \cref{fig:4-var-mappings}, we obtain the relation in
-  \cref{eq:4-p-ne-step-1}.
+  We will find the $g(t,r,\rho,E,P)=0$ where $P\ne0$. Utilizing the mapping in
+  \cref{fig:4-var-mappings}, we obtain the following relation.
 
   \begin{figure}
     \centering
@@ -50,38 +49,31 @@
     \caption{Variable mappings for \#4}
 \label{fig:4-var-mappings}
   \end{figure}
-
-  \begin{equation}
-    \label{eq:4-p-ne-step-1}
+  \begin{equation*}
     \begin{aligned}
-      C &= {(T)}^a{(L)}^b{(ML^{-3})}^c{(ML^2T^{-2})}^d{(ML^{-1}T^{-2})}^e \\
-        &= M^{c+d+e}L^{b-3c+2d-e}T^{a-2d-2e} \\
+      C &= {[t]}^a {[r]}^b {[\rho]}^c {[E]}^d {[P]}^e \\
+      &= {(T)}^a{(L)}^b{(ML^{-3})}^c{(ML^2T^{-2})}^d{(ML^{-1}T^{-2})}^e \\
+      &= M^{c+d+e}L^{b-3c+2d-e}T^{a-2d-2e} \\
     \end{aligned}
-  \end{equation}
-
+  \end{equation*}
   We may now isolate the exponents for each dimension.
-
-  \begin{equation}
-    \label{eq:4-p-ne-step-2}
+  \begin{equation*}
     \begin{aligned}
       c + d + e &= 0 \\
       b - 3c + 2d - e &= 0 \\
       a - 2d - 2e &= 0 \\
     \end{aligned}
-  \end{equation}
-
+  \end{equation*}
   The resulting dimension matrix takes the form
-
-  \begin{equation}
+  \begin{equation*}
     \begin{pmatrix}
       0 & 0 & 1 & 1 & 1 \\
       0 & 1 & -3 & 2 & -1 \\
       1 & 0 & 0 & -2 & -2 \\
     \end{pmatrix}
-  \end{equation}
-
-  Which yields the homogenous system
-  \begin{equation}
+  \end{equation*}
+  Which yields the homogeneous system
+  \begin{equation*}
     \begin{pmatrix}
       1 & 0 & 0 & -2 & -2 \\
       0 & 1 & 0 & 5 & 2 \\
@@ -91,11 +83,9 @@
       a \\ b \\ c \\ d \\ e
     \end{pmatrix}
     = 0
-  \end{equation}
-
-  Which may be solved by ``standard methods for solving linear systems.''
-
-  \begin{equation}
+  \end{equation*}
+  This homogeneous system be solved by ``standard methods for solving linear systems.''
+  \begin{equation*}
     \begin{pmatrix}
       a \\ b \\ c \\ d \\ e
     \end{pmatrix}
@@ -108,85 +98,70 @@
       2 \\ -2 \\ -1 \\ 0 \\ 1
     \end{pmatrix}
     e
-  \end{equation}
-
-  Thus we may name two linearly independent solutions which involve $P$, namely
-  $d=0,\;e=1$ and $d=1,\;e=1$ (since $P\ne0$).
-
-  \begin{multicols}{2}
-    \begin{equation}
-      \label{eq:4-p-ne-sol-1}
-      \boxed{
-        \implies \pi_1 = t^2r^{-2}\rho^{-1}P
-      }
-    \end{equation}
-
-    \begin{equation}
-      \label{eq:4-p-ne-sol-2}
-      \boxed{
-        \implies \pi_2 = t^4r^{-7}\rho^{-2}EP
-      }
-    \end{equation}
-  \end{multicols}
-
-  Furthermore, we also have a solution where $P=0$, as is the case when
-  $d=1,\;e=0$.
-
+  \end{equation*}
+  Thus there are two linearly independent solutions which take the form
   \begin{equation}
-    \pi_3 = t^2r^{-5}\rho^{-1}E
-  \end{equation}
-
-  Solving for $r$ confirms that $r$ varies like two-fifths the power of $t$
-
-  \begin{equation} \boxed{
+    \label{eq:4-p-ne-sol}
+    \boxed{
       \begin{aligned}
-        \pi_3 &= t^{2} r^{-5} \rho^{-1} E  \\
-        r^5 &= \pi_3\left(\frac{Et^2}{\rho}\right) \\
-        \implies r &= \pi_3{\left(\frac{Et^2}{\rho}\right)}^{1/5} \\
+        \implies \pi_1 &= t^2r^{-2}\rho^{-1}P, \\
+        \implies \pi_2 &= t^2r^{-5}\rho^{-1}E. \\
       \end{aligned}
     }
   \end{equation}
 
-  \subsubsection*{Check}
-  We will verify the dimensions in the case where $P\ne0$ in
-  \cref{eq:4-p-ne-sol-1,eq:4-p-ne-sol-2}.
+  In the special case when $P=0$, we may illustrate how $r$ varies with $t$. We
+  will use the Pi Theorem to obtain the relation.
+  \begin{equation*}
+    \begin{aligned}
+      & g(t,r,\rho,E,P) = 0 \\
+      \leftrightarrow\quad& f(\pi_1, \pi_2) = 0 \\
+      \leftrightarrow\quad& \pi_2 = \tilde{f}(\pi_1) \\
+      \implies\quad& t^2r^{-5}\rho^{-1}E = \tilde{f}(t^2r^{-2}\rho^{-1}P) \\
+    \end{aligned}
+  \end{equation*}
+  When $P=0$, this turns into
+  \begin{equation*}
+    t^2r^{-5}\rho^{-1}E = \tilde{f}(0)
+  \end{equation*}
+  Where $\tilde{f}(0)$ is some dimensionless constant $C$. At this point we may
+  solve for $r$ to confirm the relation.
+  \begin{equation*}
+    \begin{aligned}
+      t^2r^{-5}\rho^{-1}E &= \tilde{f}(0) \\
+      t^2r^{-5}\rho^{-1}E &= C \\
+    \end{aligned}
+  \end{equation*}
 
-  \begin{equation}
+  \begin{equation*}
+    \boxed{\implies r = C^{1/5}{\left(\frac{Et^2}{\rho}\right)}^{1/5}}
+  \end{equation*}
+
+  \subsubsection*{Check}
+  We will verify the dimensions for $\pi_1$ and $\pi_2$.
+
+  \begin{equation*}
     \begin{aligned}
       \pi_1 &= t^2r^{-2}\rho^{-1}P \\
       [\pi_1] &= {[t]}^2{[r]}^{-2}{[\rho]}^{-1}[P] \\
-      0 &= T^2L^{-2}{(ML^{-3})}^{-1}(ML^{-1}T^{-2}) \\
+      1 &= T^2L^{-2}{(ML^{-3})}^{-1}(ML^{-1}T^{-2}) \\
       &= T^2L^{-2}M^{-1}L^{3}ML^{-1}T^{-2} \\
       &= M^{-1+1}L^{-2+3+(-1)}T^{2+(-2)} \\
       &= \cancel{M^{-1+1}}\cancel{L^{-2+3+(-1)}}\cancel{T^{2+(-2)}} \\
-      \implies 0 &= 0 \quad\checkmark \\
+      \implies 1 &= 1 \quad\checkmark \\
     \end{aligned}
-  \end{equation}
-
-  \begin{equation}
+  \end{equation*}
+  \begin{equation*}
     \begin{aligned}
-      \pi_2 &= t^4r^{-7}\rho^{-2}EP \\
-      [\pi_2] &= {[t]}^4{[r]}^{-7}{[\rho]}^{-2}[E][P] \\
-      0 &= T^4L^{-7}{(ML^{-3})}^{-2}(ML^2T^{-2})(ML^{-1}T^{-2}) \\
-      &= T^4L^{-7}M^{-2}L^{6}ML^2T^{-2}ML^{-1}T^{-2} \\
-      &= M^{-2+1+1}L^{-7+6+2+(-1)}T^{4+(-2)+(-2)} \\
-      &= \cancel{M^{-2+1+1}}\cancel{L^{-7+6+2+(-1)}}\cancel{T^{4+(-2)+(-2)}} \\
-      \implies 0 &= 0 \quad\checkmark \\
-    \end{aligned}
-  \end{equation}
-
-  We will verify the dimensions in the case where $P=0$.
-  \begin{equation}
-    \begin{aligned}
-      \pi_3 &= t^{2} r^{-5} \rho^{-1} E  \\
-      [\pi_3] &= {[t]}^{2} {[r]}^{-5} {[\rho]}^{-1} [E] \\
-      0 &= T^2 L^{-5} {(ML^{-3})}^{-1} (ML^2T^{-2}) \\
+      \pi_2 &= t^{2} r^{-5} \rho^{-1} E  \\
+      [\pi_2] &= {[t]}^{2} {[r]}^{-5} {[\rho]}^{-1} [E] \\
+      1 &= T^2 L^{-5} {(ML^{-3})}^{-1} (ML^2T^{-2}) \\
       &= T^2 L^{-5} M^{-1}L^{3} ML^2T^{-2} \\
       &= M^{-1+1} L^{-5+3+2} T^{2+(-2)} \\
       &= \cancel{M^{-1+1}} \cancel{L^{-5+3+2}} \cancel{T^{2+(-2)}} \\
-      \implies 0 &= 0 \quad\checkmark \\
+      \implies 1 &= 1 \quad\checkmark \\
     \end{aligned}
-  \end{equation}
+  \end{equation*}
 
 \subsection{5}
   \subsubsection*{Problem}
