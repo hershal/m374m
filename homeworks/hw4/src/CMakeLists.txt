@@ -12,5 +12,5 @@ add_custom_target(hw4_generate_resources
   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${hw4_generator_timestamps})
 
 foreach(generator ${hw4_generators})
-  add_generator(${generator})
+  add_generator(${generator} ${CMAKE_CURRENT_SOURCE_DIR}/generate.m)
 endforeach()
