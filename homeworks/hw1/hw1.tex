@@ -495,6 +495,7 @@
     \end{equation*}
   \end{enumerate}
 
+\newpage
 \subsection{14$^3$}
   \subsubsection*{Problem}
   A perfect gas in equilibrium has specific energy\footnote{$L^2T^{-2}$} $E$,
@@ -502,11 +503,10 @@
   Derive a functional relationship of the form $E=f(T,k)$.
 
   \subsubsection*{Remarks}
-  Assuming a law $F(E,T,k)=0$, derive an equivalent reduce law and show that
+  Assuming a law $F(E,T,k)=0$, derive an equivalent reduced law and show that
   $E=Tck$ for some constant $c$.
 
   \subsubsection*{Solution}
-
   \begin{figure}
     \centering
     \begin{tabularx}{0.5\textwidth}{XXX}
@@ -518,52 +518,43 @@
     \caption{Variable mappings for \#14}
 \label{fig:14-var-mappings}
   \end{figure}
-
   Given the physical relationship $F(E,T,k)=0$ and the variable mappings in
   \cref{fig:14-var-mappings}, we may derive an equivalent dimensionless physical
   relationship between $E$, $T$, and $k$.
-
-  \begin{equation}
+  \begin{equation*}
     \begin{aligned}
       \pi &= E^a T^b k^c \\
-      &= {(L^2T^{-2})}^a {(\Theta)}^{b} {(L^2T^{-2}\Theta^{-1})}^c = 1\\
+      [\pi] &= {[E]}^a {[T]}^b {[k]}^c \\
+      1 &= {(L^2T^{-2})}^a {(\Theta)}^{b} {(L^2T^{-2}\Theta^{-1})}^c \\
     \end{aligned}
-  \end{equation}
-
+  \end{equation*}
   By inspection we can clearly see that $a=1$, $b=-1$, and $c=-1$. Thus
-
-  \begin{equation}
-    \pi = \frac{E}{Tk}
-  \end{equation}
-
+  \begin{equation*}
+    \pi = \frac{E}{Tk}.
+  \end{equation*}
   This makes the equivalent dimensionless physical relationship
-
-  \begin{equation}
-    g\left(\frac{E}{Tk}\right) = 0
-  \end{equation}
-
-  Which means that the physical law must take the form
-
-  \begin{equation}
+  \begin{equation*}
+    g\left(\frac{E}{Tk}\right) = 0.
+  \end{equation*}
+  By the Pi Theorem, the physical law must take the form
+  \begin{equation*}
     \frac{E}{Tk} = c
-  \end{equation}
-
+  \end{equation*}
   Solving for $E$ gives us
-
-  \begin{equation}
+  \begin{equation*}
     \boxed{
       \begin{aligned}
-        E &= Tck \\
-        E &= f(T,k) \\
+        E &= Tck, \\
+        E &= f(T,k). \\
       \end{aligned}
     }
-  \end{equation}
+  \end{equation*}
 
   \subsubsection*{Check}
   Utilizing the dimensions from the mapping in \cref{fig:14-var-mappings}, we
   may verify by inspection.
 
-  \begin{equation}
+  \begin{equation*}
     \begin{aligned}
       E &= Tck \\
       [E] &= [T][k] \\
@@ -571,9 +562,9 @@
        &= L^2T^{-2} \cancel{\Theta^{-1}} \cancel{\Theta} \\
       \implies L^2T^{-2} &= L^2T^{-2} \quad\checkmark \\
     \end{aligned}
-  \end{equation}
+  \end{equation*}
 
-
+\newpage
 \section{Programming Minilab}
 A model for an ideal pendulum released from rest is
 
