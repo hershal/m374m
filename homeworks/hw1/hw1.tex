@@ -280,43 +280,38 @@
     \caption{Variable mappings for \#9}
 \label{fig:9-var-mappings}
   \end{figure}
-
   The physical equation for the digestion process is given in \cref{eq:9-phy}.
-
   \begin{equation}
     \label{eq:9-phy}
-    f(Y,C,T,V,r)
+    f(Y,C,T,V,r)=0
   \end{equation}
-
   Applying the mapping from \cref{fig:9-var-mappings} gives an equivalent
   dimensionless equation. We will use $V$ instead of $L^3$ for simplicity.
-
-  \begin{equation}
-    \label{eq:9-var}
+  \begin{equation*}
     \begin{aligned}
-      \Pi &= Y^a C^b T^c V^d r^e \\
+      1 &= {[Y]}^a {[C]}^b {[T]}^c {[V]}^d {[r]}^e \\
       &= {(MT^{-1})}^a {(MV^{-1})}^b {(T)}^c {(V)}^d {(MT^{-1}V)}^e \\
       &= M^{a+b+e}V^{-a+c-e}T^{-b+c-e} \\
     \end{aligned}
-  \end{equation}
-
-  From \cref{eq:9-var}, we can solve the exponents such that $\Pi$ is
-  dimensionless.
-
-  \begin{equation}
-    \label{eq:9-exp-eqs}
+  \end{equation*}
+  We may now isolate the expnents for each dimension.
+  \begin{equation*}
     \begin{aligned}
       a + b + e &= 0 \\
       -a + c - e &= 0 \\
       -b + d - e &= 0 \\
     \end{aligned}
-  \end{equation}
-
-  \Cref{eq:9-exp-eqs} can be rewritten in echelon form and solved by ``standard
-  methods for solving linear systems''.
-
-  \begin{equation}
-    \label{eq:9-matrix}
+  \end{equation*}
+  The resulting dimension matrix takes the form
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 1 & 0 & 0 & 1 \\
+      -1 & 0 & 1 & 0 & -1 \\
+      0 & -1 & 0 & 1 & -1 \\
+    \end{pmatrix}
+  \end{equation*}
+  Which yields the homogeneous system
+  \begin{equation*}
     \begin{pmatrix}
       1 & 0 & 0 & 1 & 0 \\
       0 & 1 & 0 & -1 & 1 \\
@@ -325,10 +320,11 @@
     \begin{pmatrix}
       a \\ b \\ c \\ d \\ e
     \end{pmatrix}
-  \end{equation}
-
+  \end{equation*}
+  This homogeneous system may be solved by standard methods for solving linear
+  systems.
   \begin{equation}
-    \label{eq:9-exp-sol}
+    \label{eq:9-matrix}
     \implies
     \begin{pmatrix}
       a \\ b \\ c \\ d \\ e
@@ -341,55 +337,40 @@
       0 \\ -1 \\ 1 \\ 0 \\ 1
     \end{pmatrix}e
   \end{equation}
-
-  From \cref{eq:9-exp-sol} we may now show that $Y$ must be proportional to $V$
-  in two linearly independent solutions. The two cases in particular are when
-  $d=1,\; e=0$ and $d=1,\; e=1$. We must utilize $d$ in each case to maintain $Y$'s
-  proportionality to $V$.
-
-  \begin{multicols}{2}
-    \begin{equation}
-      \label{eq:9-sol-1}
-      \boxed{
-      \begin{aligned}
-        \Pi &= Y^{-1} C^{1} T^{-1} V^1 r^0 \\
-        \implies Y &= \Pi\;\frac{CV}{T} \\
-      \end{aligned}
-      }
-    \end{equation}
-
-    \begin{equation}
-      \label{eq:9-sol-2}
-      \boxed{
-      \begin{aligned}
-        \Pi &= Y^{-1} C^{0} T^{0} V^1 r^0 \\
-        \implies Y &= \Pi\; Vr \\
-      \end{aligned}
-      }
-    \end{equation}
-  \end{multicols}
+  Thus there are two linearly independent solutions to the dimension matrix.
+  By the Pi Theorem, we may reduce \cref{eq:9-phy} to
+  \begin{equation}
+    \tilde{f}(\pi_1, \pi_2) = 0
+  \end{equation}
+  where $\pi_1$ and $\pi_2$ are two linearly independent dimensionless variables
+  which may be obtained from \cref{eq:9-matrix}. We may use one of the
+  dimensionless variables $\pi_1$ to show that $Y$ is proportional to $V$.
+  \begin{equation*}
+    \begin{aligned}
+      &\tilde{f}(\pi_1,\pi_2)= 0 \\
+      \leftrightarrow\quad& \pi_1 = \hat{f}(\pi_2) \\
+      \leftrightarrow\quad& \frac{CV}{TY} = \hat{f}(\pi_2) \\
+    \end{aligned}
+  \end{equation*}
+  Where $\hat{f}(\pi_2)$ is a dimensionless function. If $C$ and $T$ remain
+  constant, then
+  \begin{equation}
+    \label{eq:9-prop}
+    \boxed{
+      \implies CV = TY\hat{f}(\pi_2)
+    }
+  \end{equation}
+  Thus $Y$ is proportional to $V$.
 
   \subsubsection*{Check}
-  We will verify that the dimensions in \cref{eq:9-sol-1} are correct.
+  We will verify that the dimensions in \cref{eq:9-prop} are correct.
 
   \begin{equation}
     \begin{aligned}
-      [Y] &= \frac{[C][V]}{[T]} \\
-      MT^{-1} &= \frac{MV^{-1}V}{T} \\
-      MT^{-1} &= MV^{-1}VT^{-1} \\
-      MT^{-1} &= M\cancel{V^{-1}}\cancel{V}T^{-1} \\
-      \implies MT^{-1} &= MT^{-1} \quad\checkmark \\
-    \end{aligned}
-  \end{equation}
-
-  We will verify that the dimensions in \cref{eq:9-sol-2} are correct.
-
-  \begin{equation}
-    \begin{aligned}
-      [Y] &= [V] [r] \\
-      MT^{-1} &= V MT^{-1}V^{-1} \\
-      MT^{-1} &= \cancel{V} MT^{-1} \cancel{V^{-1}} \\
-      \implies MT^{-1} &= MT^{-1} \quad\checkmark \\
+      [T][Y] &= [C][V] \\
+      TMT^{-1} &= MV^{-1}V \\
+      \cancel{T}M\cancel{T^{-1}} &= M\cancel{V^{-1}}\cancel{V} \\
+      \implies M &= M \quad\checkmark \\
     \end{aligned}
   \end{equation}
 
