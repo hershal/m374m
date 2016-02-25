@@ -598,18 +598,17 @@ for length and time, respectively.
 \subsection{}
 \label{sec:minilab-part-1}
   \subsubsection*{Problem}
-  For the initial conditions $\theta_0=3\pi/8$ and interval $t\in[0,2.5]$,
-  superimpose plots of $\theta$ versus $t$ for different values of $g$ and $\ell$,
-  say, $(g,\ell)=(10, 0.25), (10, 0.5), (10, 1)$. Based on the general solution
-  $\theta = f(t,g,\ell,\theta_0)$, briefly explain why different values of $g$ and
-  $\ell$ produce different curves.
+  For the initial conditions $\theta_0=3\pi/8$ and interval $t\in[0,2.5]$, plot
+  $\theta$ versus $t$ for different values of $g$ and $\ell$, say,
+  $(g,\ell)=(10, 0.25)$, $(10, 0.5)$, and $(10, 1)$. Based on the general
+  solution $\theta = f(t,g,\ell,\theta_0)$, explain why different values of $g$
+  and $\ell$ produce different curves.
 
   \subsubsection*{Solution}
   Reference \cref{fig:minilab-part-1-solution}. It seems that different values of $g$ and
-  $\ell$ produce the same curve with different scaling. Based on the general
-  solution, $\theta$ is inversely proportional to the square root of $\ell$.
-  Thus when $\ell$ varies between $0.25$ to $1$, the curve halves in frequency.
-
+  $\ell$ produce the same curve with different scaling. A plot of $\theta$ vs.
+  $t$ is equivalent to a plot of $f(t,g,\ell,\theta_0)$ vs. $t$. Therefore,
+  different values of $g$, $\ell$ produce different curves due to this relation.
   \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -638,13 +637,15 @@ for length and time, respectively.
   $\ell$, would we still get this same curve?
 
   \subsubsection*{Solution}
-  Reference \cref{fig:minilab-part-2-solution}. Dimensional analysis of the quantity
-  $t\sqrt{g/\ell}$ reveals that $t\sqrt{g/\ell}$ is dimensionless. This means
-  that the plot of $\theta$ vs. $t\sqrt{g/\ell}$ effectively re-scales the
-  dimensions in \cref{fig:minilab-part-1-solution} to produce \cref{fig:minilab-part-2-solution}.
-  Since the pendulum with the smallest length has the fastest frequency, its
-  curve is the longest. Furthermore, changing $\theta_0$ in addition to $g$ and
-  $\ell$ should produce the same curve since angles are dimensionless.
+  Reference \cref{fig:minilab-part-2-solution}. Based on
+  \cref{eq:minilab-general-solution}, a plot of $\theta$ vs. $t\sqrt{g/\ell}$ is
+  equivalent to a plot of $\tilde{f}(t\sqrt{g/\ell}, \;\theta_0)$ vs
+  $t\sqrt{g/\ell}$. Let $s = t\sqrt{g/\ell}$. Then $\tilde{f}(t\sqrt{g/\ell},
+  \;\theta_0)$ vs $t\sqrt{g/\ell}$ is equivalent to $\tilde{f}(s, \;\theta_0)$
+  vs $s$. Therefore, the plots of $\theta$ vs. $t\sqrt{g/\ell}$ are identical.
+  If one were to change $\theta_0$ in addition to $g$ and $\ell$, different
+  plots would result since a change in $\theta_0$ affects $g$, $\ell$, and $t$,
+  the latter of which would remain constant if just $g$ and $\ell$ were changed.
 
   \begin{figure}
     \centering
