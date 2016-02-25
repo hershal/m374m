@@ -167,7 +167,12 @@
 \subsection{5}
   \subsubsection*{Problem}
   A physical system is described by a law $f(E,P,A)=0$, where $E$, $P$, and $A$
-  are energy, pressure, and area, respectively. Show that $PA^{3/2}/E=\text{const}$.
+  are energy, pressure, and area, respectively. Show that
+  \begin{equation}
+    \label{eq:5-problem}
+    \frac{PA^{3/2}}{E} = C,
+  \end{equation}
+  where $C$ is some constant.
 
   \subsubsection*{Solution}
   \begin{figure}
@@ -182,24 +187,71 @@
 \label{fig:5-var-mappings}
   \end{figure}
 
-  We may substitute the mappings in \cref{fig:5-var-mappings} into the given
-  equation to define the relationship in fundamental dimensions.
-
-  \begin{equation}
-    \label{eq:5-substitution}
-    \boxed{
+  The Pi Theorem states that if there is a physical law $F(E, P, A)$, then there
+  must be an equivalent physical law $f(\pi_1, \ldots, \pi_k)$ relating some $k$
+  number of independent dimensionless quantities $\pi_1,\ldots,\pi_k$. We will
+  first determine the number of independent dimensionless quantities which may
+  be formed from $E$, $P$, and $A$. Utilizing the mapping in
+  \cref{fig:5-var-mappings}, we obtain the following relation.
+  \begin{equation*}
     \begin{aligned}
-      k &= \frac{PA^{3/2}}{E} \\
-      [k] &= \frac{[P]{[A]}^{3/2}}{[E]} \\
-      0 &= \frac{ML^{-1}T^{-2}{(L^2)}^{3/2}}{ML^2T^{-2}} \\
-      &= \frac{ML^2T^{-2}}{ML^2T^{-2}} \\
-      \implies 0 &= 0 \\
+      1 &= {[E]}^a{[P]}^b{[A]}^c \\
+      &= {(ML^2T^{-2})}^a{(ML^{-1}T^{-2})}^b{(L^2)}^c \\
+      &= M^{a+b}L^{2a-b+2c}T^{-2a-2b} \\
     \end{aligned}
-    }
+  \end{equation*}
+  We may now isolate the exponents for each dimension.
+  \begin{equation*}
+    \begin{aligned}
+      a + b &= 0 \\
+      2a - b + 2c &= 0 \\
+      -2a - 2b + 2c &= 0 \\
+    \end{aligned}
+  \end{equation*}
+  The resulting dimension matrix takes the form
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 1 & 0 \\
+      2 & -1 & 2 \\
+      -2 & -2 & 0 \\
+    \end{pmatrix}
+  \end{equation*}
+  Which yields the homogeneous system
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 0 & \frac{2}{3} \\
+      0 & 1 & -\frac{2}{3} \\
+      0 & 0 & 0 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      a \\ b \\ c \
+    \end{pmatrix} = 0
+  \end{equation*}
+  This homogeneous system may be solved by standard methods for solving linear
+  systems.
+  \begin{equation}
+    \label{eq:5-linear-soln}
+    \begin{pmatrix}
+      a \\ b \\ c \
+    \end{pmatrix} =
+    \begin{pmatrix}
+      -1 \\
+      1 \\
+      0 \\
+    \end{pmatrix}\frac{2c}{3}
   \end{equation}
+  Thus there is one linearly independent solution, which we may name $\pi_1$.
 
-  Thus, by dimensional analysis we can conclude that $PA^{3/2}/E=k$, where $k$
-  is some dimensionless constant.
+  Now we may show that \cref{eq:5-problem} holds true. By the Pi Theorem, there
+  must exist a physical law $f(\pi_1)=0$ which is equivalent to $F(E,P,A)=0$. If
+  we assume that \cref{eq:5-problem} is true, then there must be some $\pi_1=C$
+  which is a root of $f$. By inspecting \cref{eq:5-problem,eq:5-linear-soln}, we
+  may solve for $c$, which results in $c=3/2$. This implies
+  \begin{equation*}
+    \pi_1 = \frac{PA^{3/2}}{A},
+  \end{equation*}
+  which is a valid dimensionless root of $f$. Thus, by dimensional analysis and
+  the Pi Theorem, we may confirm \cref{eq:5-problem} is valid.
 
   \newpage
 \subsection{9$^2$}
