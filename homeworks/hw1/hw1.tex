@@ -398,35 +398,101 @@
 
   \subsubsection*{Solution}
   \begin{enumerate}
-  \item We will first analyze \cref{eq:13-1-question}. $F$ is some dimensionless
-    quantity. We will verify that the dimensions match up
-
+  \item
+    \begin{figure}
+      \centering
+      \begin{tabularx}{0.5\textwidth}{XXX}
+        Variable & Dimension & Exponent \\ \midrule
+        $d$ & $L$ & a \\
+        $h$ & $L$ & b \\
+        $\tau$ & $L$ & c \\
+        $g$ & $L^3M^{-1}T^{-2}$ & d \\
+        $v$ & $LT^{-1}$ & e \\
+      \end{tabularx}
+      \caption{Variable mappings for \#13}
+\label{fig:13-var-mappings}
+    \end{figure}
+    We assume that there is a relation between the physical quantities
     \begin{equation}
+      \label{eq:13-phy}
+      f(d,h,\tau,g,v) = 0
+    \end{equation}
+    By the Pi Theorem there must be a relation between some number of
+    dimensionless quantities which is equivalent to \cref{eq:13-phy}.
+    \begin{equation*}
       \begin{aligned}
-        [v] &= {[g]}^{1/2}{[h]}^{1/2} \\
-        LT^{-1} &= LT^{-2}T \\
-        \implies LT^{-1} &= LT^{-1}. \quad \checkmark \\
+        1 &= {[d]}^a {[h]}^b {[\tau]}^c {[g]}^d {[v]}^e \\
+        &= L^{a}L^{b}L^{c}L^{c}{(L^3M^{-1}T^{-2})}^{d}{(LT^{-1})}^{e} \\
+        &= M^{d}L^{a+b+c+d+e}T^{-2d-e} \\
       \end{aligned}
-    \end{equation}
+    \end{equation*}
+    We may now isolate the exponents for each dimension
+    \begin{equation*}
+      \begin{aligned}
+        d &= 0 \\
+        a + b + c + 3d + e &= 0 \\
+        -2d - e &= 0 \\
+      \end{aligned}
+    \end{equation*}
+    Which may be rewritten as simply
+    \begin{equation*}
+      a + b + c = 0
+    \end{equation*}
+    By inspection, the resulting solution is in the form
+    \begin{equation*}
+      \begin{pmatrix}
+        a \\ b \\ c \\
+      \end{pmatrix} =
+      \begin{pmatrix}
+        -1 \\ 1 \\ 0
+      \end{pmatrix}b +
+      \begin{pmatrix}
+        -1 \\ 0 \\ 1
+      \end{pmatrix}c.
+    \end{equation*}
+    From this result we obtain two linearly independent solutions: When
+    $(b,c)=(-1,0),(-1,1)$ we obtain $d/h$ and $\tau/h$, respectively. This result
+    corresponds to \cref{eq:13-1-question} so that
+    \begin{equation*}
+      f(d,h,\tau,g,v) = 0 \Longleftrightarrow F\left(\frac{d}{h},\frac{\tau}{h}\right) = 0.
+    \end{equation*}
 
-    Assuming that $\tau/h$ is small, the law becomes
-    \begin{equation} \boxed {
-        \label{eq:13-1-new-law}
-        v=\sqrt{gh}\; F\left(\frac{d}{h}\right).
-      }
-    \end{equation}
-
-  \item Since $d/h$ is approximately constant, we can model the quantity by the
-    given constant ($d/h=1.5$) in \cref{eq:13-1-new-law}.
-
+    Furthermore, by the Pi Theorem,
+    \begin{equation*}
+      \begin{aligned}
+        F\left(\frac{d}{h},\frac{\tau}{h}\right) &= 0 \\
+        G\left(\frac{d}{h}\right) = \frac{\tau}{h}
+      \end{aligned}
+    \end{equation*}
+    If we assume that $\tau/h$ is small and may be neglected, then we may also
+    assume that $\tau/h \ll 1$, or $\tau/h \approx 0$.
+    \begin{equation*}
+      G\left(\frac{d}{h}\right) = 0
+    \end{equation*}
+    So that the law becomes
     \begin{equation} \boxed{
-        \begin{aligned}
-          v &= \sqrt{gh}(1.5) \\
-          &= \sqrt{9.8\cdot0.05}(1.5) \\
-          \implies v &= 1.05 \text{ m/s}
-        \end{aligned}
+        \label{eq:13-1-new-law}
+        v=\sqrt{gh}\; G\left(\frac{d}{h}\right).
       }
     \end{equation}
+
+  \item The experiment plotted the equation
+    \begin{equation*}
+      \frac{v}{\sqrt{gh}} = G\left(\frac{d}{h}\right),
+    \end{equation*}
+    where $g$, $h$, and $d$ are constants as given by the original question. If
+    the plot of $v/\sqrt{gh}$ vs. $d/h$ is approximately $1.5$, then that
+    implies that $G$ is approximately $1.5$. Therefore
+    \begin{equation*}
+      \begin{aligned}
+        v &= \sqrt{gh}\;G\left(\frac{d}{h}\right) \\
+        &= \sqrt{gh}\;(1.5) \\
+        &= \sqrt{9.8\cdot0.05}\;(1.5) \\
+        \end{aligned}
+    \end{equation*}
+    \begin{equation*}
+      \boxed{\implies v = 1.05\;\text{m/s}.}
+    \end{equation*}
   \end{enumerate}
 
 \subsection{14$^3$}
