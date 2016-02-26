@@ -31,9 +31,9 @@
         a_{11}p_1+\cdots+a_{1m}p_m &= 0. \\
       \end{aligned}
     \end{equation*}
-    This system may be represented by a matrix $A$, which has exactly
-    $m-\text{rk}(A)$ independent solutions which form a null space for $A$.
-    These independent solutions form appropriate dimesionless $\pi_i$.
+    This system may be represented by a matrix $A$, which has $m-\text{rk}(A)$
+    independent solutions forming a null space for $A$. These independent
+    solutions form appropriate dimesionless $\pi_i$.
   \item[Pi Function Manipulation] We (theoretically) may solve a system
     $f(\pi_1, \pi_2)$ for either $\pi_i$, resulting in a new relation
     $\pi_1=\tilde{f}(\pi_2)$. In the case when there is only one $\pi$, solving
@@ -49,6 +49,34 @@
     ($\od{\bar{y}}{\bar{x}}=\od{\bar{y}}{x}\frac{\dd{x}}{\dd{\bar{y}}}$). When a
     term is assumed to be ``small'', pick scales which do not involve constants
     within that term.
+
+  \item[Stability of Equilibria] Given an IVP where $\od{u}{t}=f(u)$,
+    $u(t_0)=u_0$, where $f(u)$, $f'(u)$ are continuous. Equilibria are
+    determined by solving $f(u)=0$. Complex solutions do not make sense in this
+    context.
+  \item[Derivative Method for Stability] Let $\lambda_*=f'(u_*)$. Then
+    $\lambda_*<0\implies u_*$ stable; $\lambda_*>0\implies u_*$ unstable;
+    $\lambda_*=0$ no conclusion.
+  \item[2D Dynamical Systems] Let $f(x,y) = x'$, $g(x,y) = y'$. Solve $f(x,y)=0$
+    and $g(x,y)=0$ to obtain the equilibria of the system. If nonlinear, solve
+    by substitution (coupled) or separately (uncoupled). If linear, put system
+    into matrix $A$. If $\det A \ne 0$, then equilibrium is $(0,0)$. The
+    eigenvalues of $A$ obtained by $\det(A-\lambda I)$ or
+    $\lambda^2-(\text{tr}\,A)\lambda+\det A$, where $\text{tr}\,A$ is the sum of
+    the main diagonal of $A$, characterize the solution.
+    \begin{description}
+    \item[Two Eigenvalues] Eigenvectors are linearly independent;
+      $x(t)=c_1\vec{v_1}e^{\lambda_1 t}+c_2\vec{v_2}e^{\lambda_2 t}$.
+    \item[One Eigenvalue] Solution depends on number of linearly independent
+      eigenvectors: if two, $x(t)=(c_1\vec{v_1}+c_2\vec{v_2}e^{\lambda t})$. If
+      one, $x(t)=(c_1\vec{v}+c_2\vec{w}+c_2\vec{v}t)e^{\lambda t}$ where
+      $(A-\lambda I)\vec{w}=\vec{v}$.
+    \item[Complex Eigenvalues] Eigenvalues take the form $\lambda_i = \alpha \pm
+      i\beta$, then eigenvectors are complex $\vec{w}\pm i\vec{v}$, resulting in
+      $x(t)=(\vec{w}+i\vec{v})e^{(\alpha+i\beta)t}$, or $x(t)=c_1e^{\alpha
+        t}(\vec{w}\cos\beta t-\vec{v}\sin\beta t) + c_2e^{\alpha
+        t}(\vec{w}\sin\beta t-\vec{v}\cos\beta t)$.
+    \end{description}
    \end{description}
  \end{multicols}
 \end{document}
