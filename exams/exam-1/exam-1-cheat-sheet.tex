@@ -39,8 +39,16 @@
     $\pi_1=\tilde{f}(\pi_2)$. In the case when there is only one $\pi$, solving
     $f(\pi)=0$ for $\pi$ intuitively describes the roots of $f$, namely $\pi=C$
     where $C$ may be some number of constants.
-  \item[Scaling] If you are given a scale $x_c$, then $\bar{x}=\frac{x}{x_c}$ is
-    the scaled $x$. In general, $\od{x}{t}=\frac{t_c}{x_c}\od{\bar{x}}{\bar{t}}$.
-  \end{description}
-\end{multicols}
+  \item[Non-Dimensionalization] Given some IVP in the form $\od{y}{x}=f(x,y)$
+    where $f(x,y)$ depends on some constants. To non-dimensionalize the problem,
+    we choose dimensionless independent and dependent variables; select a
+    characteristic $y$ and $x$ scale $y_c$ and $x_c$ formed from the constants
+    in the problem (involves solving a nonhomogenous system). Then you may
+    recast $\od{y}{x}$ using $\bar{y}=\frac{y}{y_c}$ and $\bar{x}=\frac{x}{x_c}$
+    as $\od{\bar{y}}{\bar{x}}=\frac{x_c}{y_c}\od{y}{x}$ using the chain rule
+    ($\od{\bar{y}}{\bar{x}}=\od{\bar{y}}{x}\frac{\dd{x}}{\dd{\bar{y}}}$). When a
+    term is assumed to be ``small'', pick scales which do not involve constants
+    within that term.
+   \end{description}
+ \end{multicols}
 \end{document}
