@@ -61,9 +61,13 @@ Find the general solution of the following differential equations:
 
   Solving this results in $r=\pm i\omega$ so that the complementary equation
   takes the form.
+  \begin{equation*}
+    u_c = c_1e^{i\omega t} + c_2e^{-i\omega t}
+  \end{equation*}
+  Alteratively, using Euler's Theorem,
   \begin{equation}
     \label{eq:1n-hom-sol}
-    \implies u_c = c_1e^{i\omega t}c_2e^{-i\omega t}
+    \implies u_c = c_1\cos \omega t + c_2\sin \omega t.
   \end{equation}
 
   In our case, the particular solution takes the form\footnote{The $t$ appears
@@ -99,7 +103,7 @@ Find the general solution of the following differential equations:
   \cref{eq:1n-hom-sol,eq:1n-nonhom-sol}.
   \begin{equation*}
     \boxed{
-      u = c_1e^{i\omega t}c_2e^{-i\omega t} + \frac{t}{2\omega}\sin\omega t
+      u = c_1\cos \omega t + c_2\sin \omega t + \frac{t}{2\omega}\sin\omega t
     }
   \end{equation*}
 \end{enumerate}
