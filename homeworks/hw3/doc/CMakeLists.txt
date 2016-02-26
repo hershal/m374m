@@ -12,7 +12,7 @@ endforeach()
 
 add_latex_document (
   hw3.tex MANGLE_TARGET_NAMES
-  DEPENDS hw3_copy_resources macros.sty
+  DEPENDS hw3_copy_resources homework-macros.sty
   CONFIGURE hw3.tex
   DEFAULT_PDF
 )
