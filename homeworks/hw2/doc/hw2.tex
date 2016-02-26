@@ -738,7 +738,7 @@ Now we may rewrite \cref{eq:minilab-tank} in dimensionless form
 \end{equation*}
 Or more concisely,
 \begin{equation*} \boxed{
-    \od{\bar{c}}{\bar{t}} = 1 - \bar{c} - \beta\bar{c}^2,
+    \od{\bar{c}}{\bar{t}} = (1 - \bar{c}) - \beta\bar{c}^2,
     \quad \beta = \frac{V \gamma c_{\text{in}}}{\eta} \quad c(0)=0.
     }
 \end{equation*}
@@ -755,10 +755,11 @@ is this condition reasonably met? That is, in which scenario can $\gamma$ be
 regarded as ``small''?
 
 \subsubsection*{Solution}
-$\gamma$ may be regarded as small when the reaction rate is small compared to
-the flow rate, that is, $\gamma \ll \frac{\eta}{V}$. The second operating
-scenario allows this condition to be met, while the first scenario does not.
-Therefore, $\gamma$ may be considered ``small'' under the second scenario.
+When the reaction rate is small compared to the flow rate, we may regard $\beta
+\ll 1$. This implies that $\gamma \ll \frac{\eta}{Vc_\text{in}}$. The second
+operating scenario allows this condition to be met, while the first scenario
+does not. Therefore, $\gamma$ may be considered ``small'' under the second
+scenario.
 
 \subsection{}
 \subsubsection*{Problem}
