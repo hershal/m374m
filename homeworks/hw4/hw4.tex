@@ -148,6 +148,11 @@ stable, $(1,1)$ is unstable, and $(4,4)$ is stable.
       \addplot3[gray, dashed, very thin] coordinates {(1,-2,0) (1,8,0)};
       \addplot3[gray, dashed, very thin] coordinates {(-2,0,0) (8,0,0)};
       \addplot3[gray, dashed, very thin] coordinates {(0,-2,0) (0 ,8,0)};
+      \addplot3[only marks] table {
+        0 0 0
+        1 1 0
+        4 4 0
+      };
     \end{axis}
   \end{tikzpicture}
   \label{fig:2.1.5-phase-diagram}
@@ -227,6 +232,9 @@ The general solution is unstable with a saddle equilibrium. Reference
       \addplot3[gray, quiver={u={x-3*y}, v={-3*x+y}, scale arrows=0.05}, -stealth,samples=15]{0};
       \addplot3[gray, dashed, very thin] coordinates {(-2,0,0) (2,0,0)};
       \addplot3[gray, dashed, very thin] coordinates {(0,-2,0) (0,2,0)};
+      \addplot3[only marks] table {
+        0 0 0
+      };
     \end{axis}
   \end{tikzpicture}
   \label{fig:2.2.1a-phase-diagram}
@@ -309,6 +317,9 @@ The general solution is stable with a spiral equilibrium. Reference
       \addplot3[gray, quiver={u={-2*x-3*y}, v={3*x-2*y}, scale arrows=0.05}, -stealth,samples=15]{0};
       \addplot3[gray, dashed, very thin] coordinates {(-2,0,0) (2,0,0)};
       \addplot3[gray, dashed, very thin] coordinates {(0,-2,0) (0,2,0)};
+      \addplot3[only marks] table {
+        0 0 0
+      };
     \end{axis}
   \end{tikzpicture}
   \label{fig:2.2.1f-phase-diagram}
@@ -427,6 +438,9 @@ solution curves is illustrated in \cref{fig:2-2-5-phase-diagram}.
       \addplot3[gray, quiver={u={-2*x+3*y}, v={2*x-(3+4)*y}, scale arrows=0.01}, -stealth,samples=15]{0};
       \addplot3[gray, dashed, very thin] coordinates {(-2,0,0) (2,0,0)};
       \addplot3[gray, dashed, very thin] coordinates {(0,-2,0) (0,2,0)};
+      \addplot3[only marks] table {
+        0 0 0
+      };
     \end{axis}
   \end{tikzpicture}
   \label{fig:2-2-5-phase-diagram}
@@ -537,6 +551,9 @@ on the personality types.
         \addplot3[gray, quiver={u={3*y}, v={-4*x}, scale arrows=0.05}, -stealth,samples=15]{0};
         % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
         % \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0,1,0)};
+        \addplot3[only marks] table {
+          0 0 0
+        };
       \end{axis}
     \end{tikzpicture}
     \label{fig:minilab-1-1-phase-diagram}
@@ -593,6 +610,9 @@ on the personality types.
         \addplot3[gray, quiver={u={-4*x+3*y}, v={3*x-4*y}, scale arrows=0.05}, -stealth,samples=15]{0};
         % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
         % \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0,1,0)};
+        \addplot3[only marks] table {
+          0 0 0
+        };
       \end{axis}
     \end{tikzpicture}
     \caption{Phase Diagram}
@@ -648,6 +668,9 @@ on the personality types.
             {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-2-2-u-\i.mat};
         }
         \addplot3[gray, quiver={u={-2*x + 3*y}, v={-2*x + 3*y}, scale arrows=0.05}, -stealth,samples=15]{0};
+        \addplot3[only marks] table {
+          0 0 0
+        };
       \end{axis}
     \end{tikzpicture}
     \label{fig:minilab-2-2-phase-diagram}
