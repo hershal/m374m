@@ -54,23 +54,3 @@
   title=\lstname,
   columns=fullflexible,
 }
-
-\makeatletter
-\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
-  \hskip -\arraycolsep{}
-  \let\@ifnextchar\new@ifnextchar{}
-  \array{#1}}
-\makeatother
-
-\relpenalty=10000
-\binoppenalty=10000
-
-\newcommand{\Alpha}{A}
-\newcommand{\Beta}{B}
-\newcommand{\Epsilon}{E}
-\newcommand{\Eta}{H}
-\newcommand{\todo}[1][]{{\huge\color{red}TODO {#1}}}
-
-\newcommand{\pd}[3][]{\ensuremath{\frac{\partial^{#1} {#2}}{\partial {#3}^{#1}}}}
-\newcommand{\od}[3][]{\ensuremath{\frac{\mathrm{d}^{#1} {#2}}{\mathrm{d}{#3}^{#1}}}}
-\newcommand{\abs}[1]{\ensuremath{\left|{#1}\right|}}
