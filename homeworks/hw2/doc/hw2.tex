@@ -336,9 +336,9 @@ Solving this system yields
   \end{pmatrix}
   d
 \end{equation*}
-Since the rebound force is small compared to the damping force, we may assume
-that $-kx\ll -ax\abs{x'}$. This implies that we'd like to avoid terms involving $k$, so we
-pick the case when $d=0$. Our length scale turns into
+Since the rebound force is small compared to the damping force, we'd like to
+avoid terms involving $k$, so we pick the case when $d=0$. Our length scale
+turns into
 \begin{equation}
   \label{eq:4-length-scale}
   \implies x_c = \sqrt{\frac{mV}{a}}
@@ -469,16 +469,13 @@ We may scale the initial conditions based on \cref{eq:4-dxbar-in-terms-of-dx}.
     \implies \bar{x}(0) &= 0 \\
   \end{aligned}
 \end{equation}
-If the rebound force is very small, we expect $k\ll a$
 \begin{equation*} \boxed{
     \od[2]{\bar{x}}{\bar{t}} = -\bar{x}\od{\bar{x}}{\bar{t}} - \beta\bar{x},
     \quad\beta=\frac{k}{Va},\quad \bar{x}(0)=0,
     \quad\od{\bar{x}}{\bar{t}}(0) = 1
   }
 \end{equation*}
-
-%% \subsubsection*{Check}
-%% \todo
+We expect the rebound force term to be small when $\beta\ll 1$.
 
 \newpage
 \subsection{9}
