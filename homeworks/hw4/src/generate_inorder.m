@@ -1,7 +1,7 @@
 #!/usr/bin/env octave
 # -*- mode: octave -*-
 
-function generate_inorder(f, problem, points = [-1, -0.5, 0; -1, -1, 0], tf = [4.4, 3, 3])
+function generate_inorder(f, problem, points = [], tf = [])
   pkg load odepkg;
 
   vopt = odeset ("InitialStep", 1e-1, "MaxStep", 1e-2, "RelTol", 1e-3, "AbsTol", 1e-3);
