@@ -8,11 +8,39 @@
 
 \begin{multicols}{2}
   \begin{description}
-  \item[Pi Theorem] Given a physically meaningful equation
-    $f(q_1,q_2,\ldots,q_n)=0$ where $q_i$ are of $n$ physical variables, the
-    above equation may be restated as $\tilde{f}(\pi_1,\pi_2,\ldots,\pi_m)$
-    where $\pi_i$ are dimensionless parameters constructed by
-    $\pi_i=q_1^{\alpha_1}q_2^{\alpha 2}\cdots q_n^{\alpha_n}$
+  \item[Pi Theorem] Given a physical equation $f(q_1,\ldots,q_n)=0$ where $q_i$
+    are of $n$ physical variables, the above equation may be restated as
+    $\tilde{f}(\pi_1,\ldots,\pi_m)$ where $\pi_i$ are dimensionless parameters
+    constructed by $\pi_i=q_1^{\alpha_1}\cdots q_n^{\alpha_n}$
+  \item[Proof of Pi Theorem] The general argument is exactly the same as the
+    construction of dimensionless variables for $q$ physical quantities and $L$
+    fundamental dimensions
+    \begin{equation*}
+        \begin{aligned}
+          \pi &= q_1^{p_1}\cdots q_m^{p_m} \\
+          [\pi] &= {(L_1^{a_{11}}\cdots L_n^{a_{n1}})}^{p_1}\cdots
+          {(L_1^{a_{1m}}\cdots L_n^{a_{nm}})}^{p_1} \\
+          1 &= L_1^{a_{11}p_1+\cdots+a_{1m}p_m}\cdots L_n^{a_{11}p_1+\cdots+a_{1m}p_m} \\
+        \end{aligned}
+    \end{equation*}
+    Which turns into a homogenous system
+    \begin{equation*}
+      \begin{aligned}
+        a_{11}p_1+\cdots+a_{1m}p_m &= 0 \\
+        &\;\;\vdots \\
+        a_{11}p_1+\cdots+a_{1m}p_m &= 0. \\
+      \end{aligned}
+    \end{equation*}
+    This system may be represented by a matrix $A$, which has exactly
+    $m-\text{rk}(A)$ independent solutions which form a null space for $A$.
+    These independent solutions form appropriate dimesionless $\pi_i$.
+  \item[Pi Function Manipulation] We (theoretically) may solve a system
+    $f(\pi_1, \pi_2)$ for either $\pi_i$, resulting in a new relation
+    $\pi_1=\tilde{f}(\pi_2)$. In the case when there is only one $\pi$, solving
+    $f(\pi)=0$ for $\pi$ intuitively describes the roots of $f$, namely $\pi=C$
+    where $C$ may be some number of constants.
+  \item[Scaling] If you are given a scale $x_c$, then $\bar{x}=\frac{x}{x_c}$ is
+    the scaled $x$. In general, $\od{x}{t}=\frac{t_c}{x_c}\od{\bar{x}}{\bar{t}}$.
   \end{description}
 \end{multicols}
 \end{document}
