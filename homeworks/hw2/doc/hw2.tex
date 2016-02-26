@@ -483,11 +483,14 @@ We expect the rebound force term to be small when $\beta\ll 1$.
 
 The temperature $T=T(t)$ of a chemical sample in a furnace at time $t$ is
 governed by the initial value problem
-$$\od{T}{t}=qe^{-A/T}-k(T-T_f),\quad T(0)=T_0,$$ where $T_0$ is the initial
-temperature of the sample, $T_f$ is the temperature in the furnace, and $q$,
-$k$, and $A$ are positive constants. The first term on the right side is the
-heat generation term, and the seond is the heat loss term given by Newton's law
-of cooling.
+\begin{equation}
+  \label{eq:9-problem}
+  \od{T}{t}=qe^{-A/T}-k(T-T_f),\quad T(0)=T_0,
+\end{equation}
+where $T_0$ is the initial temperature of the sample, $T_f$ is the temperature
+in the furnace, and $q$, $k$, and $A$ are positive constants. The first term on
+the right side is the heat generation term, and the seond is the heat loss term
+given by Newton's law of cooling.
 \begin{enumerate}
 \item What are the dimensions of the constants $q$, $k$, and $A$?
 \item Reduce the problem to dimensionless form using $T_f$ as the temperature
@@ -560,87 +563,35 @@ of cooling.
       1 \\ -1 \\ 0 \\ 1 \\
     \end{pmatrix}d.
   \end{equation*}
-
-  We now have many time scales to explore. We'll examine cases when
-  $(c,d)=(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
-  \begin{equation*}
-      (0,0) \implies
-      \begin{pmatrix}
-        -1 \\ 0 \\ 0 \\ 0 \\
-      \end{pmatrix} \implies t_c =\frac{1}{k}
-  \end{equation*}
-
-  \begin{equation*}
-      (0,1) \implies
-      \begin{pmatrix}
-        0 \\ -1 \\ 0 \\ 1 \\
-      \end{pmatrix} \implies t_c =\frac{T_f}{q}
-  \end{equation*}
-
-  \begin{equation*}
-      (1,0) \implies
-      \begin{pmatrix}
-        0 \\ -1 \\ 1 \\ 0 \\
-      \end{pmatrix} \implies t_c =\frac{A}{q}
-  \end{equation*}
-
-  \begin{equation*}
-      (1,1) \implies
-      \begin{pmatrix}
-        1 \\ -2 \\ 1 \\ 1 \\
-      \end{pmatrix} \implies t_c =\frac{kAT_f}{q^2}
-  \end{equation*}
-
   If we assume the heat loss is large compared to the heat generated, then we
-  would like to be able to delete the $qe^{-A/T}$ term from the original
-  equation. To that end, we'll enumerate the cases here.
-
+  would like to choose scales which involve $k$ and $T_f$. We will pick the case
+  when $(c,d)=(0,0)$.
   \begin{equation}
-    \label{eq:case-0-0}
-    %% t_c = \frac{1}{k} \implies
-    \od{\bar{T}}{\bar{t}} =
-    \frac{qe^{-A/(\bar{T}T_f)}}{kT_f} - (\bar{T}-1)
+    \label{eq:9-t-scale}
+    \implies t_c  = \frac{1}{k}
   \end{equation}
-
+  Additionally, we are given
   \begin{equation}
-    \label{eq:case-0-1}
-    %% t_c = \frac{T_f}{q} \implies
-    \od{\bar{T}}{\bar{t}} =
-    e^{-A/(\bar{T}T_f)}-\frac{kT_f}{q}(\bar{T}-1)
+    \label{eq:9-T-scale}
+    \implies T_c  = T_f.
   \end{equation}
-
-  \begin{equation}
-    \label{eq:case-1-0}
-    %% t_c = \frac{A}{q} \implies
-    \od{\bar{T}}{\bar{t}} =
-    \frac{A}{T_f}e^{-A/(\bar{T}T_f)}-\frac{Ak}{q}(\bar{T}-1)
-  \end{equation}
-
-  \begin{equation}
-    \label{eq:case-1-1}
-    %% t_c = \frac{kAT_f}{q^2} \implies
-    \od{\bar{T}}{\bar{t}} =
-    \frac{kA}{q^2}\left(qe^{-A/(\bar{T}T_f)}-kT_f(\bar{T}-1) \right)
-  \end{equation}
-
-  \Cref{eq:case-1-0,eq:case-1-1} are not viable solutions since the heat
-  generation term cannot be easily removed, so we are left with
-  \cref{eq:case-0-0,eq:case-0-1}. Since we would like to delete the heat
-  generation terms, the original equation implies that $q \ll k$ and/or
-  $e^{-A/T} \ll k$. Since $e^{-A/T}$ shrinks faster than $q$ ,
-  \cref{eq:case-0-1} would work for us since it isolates $A$ to the first term
-  on the right of the equation.
-
+  Now we may use the scales obtained in \cref{eq:9-t-scale,eq:9-T-scale} to
+  non-dimensionalize \cref{eq:9-problem}.
+  \begin{equation*}
+    \begin{aligned}
+      \od{\bar{T}}{\bar{t}} &= \frac{t_c}{T_c}\od{T}{t} \\
+      &= \frac{1}{kT_f}(qe^{-A/\bar{T}T_f} - k(\bar{T}T_f-T_f)) \\
+      &= \frac{1}{kT_f}(qe^{-A/\bar{T}T_f} - kT_f(\bar{T}-1)) \\
+      &= \frac{q}{kT_f}e^{-A/\bar{T}T_f} - (\bar{T}-1)
+    \end{aligned}
+  \end{equation*}
   \begin{equation*} \boxed{
-      \od{\bar{T}}{\bar{t}} =
+      \implies \od{\bar{T}}{\bar{t}} =
       e^{-\alpha/(\bar{T})}-\beta(\bar{T}-1), \quad \alpha = \frac{A}{T_f},
-      \quad \beta = \frac{kT_f}{q} \quad T(0) = T_0/T_f
+      \quad \beta = \frac{kT_f}{q}, \quad T(0) = T_0/T_f.
     }
   \end{equation*}
 \end{enumerate}
-
-%% \subsubsection*{Check}
-%% \todo
 
 \newpage
 \section{Programming Minilab}
