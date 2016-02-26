@@ -503,7 +503,7 @@ on the personality types.
   This is a linear system, so we may place it into matrix form and analyze the
   eigenvalues in order to categorize the solution.
   \begin{equation*}
-    0=\begin{vmatrix} \lambda & b \\ c & \lambda \end{vmatrix} = \lambda^2-bc
+    0=\begin{vmatrix} -\lambda & b \\ c & -\lambda \end{vmatrix} = \lambda^2-bc
   \end{equation*}
   \begin{equation*}
     \implies \lambda = \sqrt{bc}.
@@ -526,10 +526,10 @@ on the personality types.
   \end{equation*}
   From this result we have two independent eigenvalues $\lambda_1$, $\lambda_2$
   which correspond to the negative and positive case of the RHS, respectively.
-  Since $a<0$, $\lambda_1$ is guaranteed negative, we'll analyze $\lambda_2$.
-  When $\abs{a}>b$, $\lambda_2>0$, which leads the solution to be unstable,
-  resulting in an explosive relationship. Contrary, when $\abs{a}<b$, the
-  solution is stable, resulting in an apathetic reslationship. This occurs
+  Since $a<0$, $\lambda_1=a-b$ is guaranteed negative, we'll analyze
+  $\lambda_2=a+b$. When $\abs{a}>b$, $\lambda_2<0$, which leads the solution to
+  be stable, resulting in an apathetic relationship. Contrary, when $\abs{a}<b$,
+  the solution is unstable, resulting in an explosive reslationship. This occurs
   regardless of the initial condition.
 \item The diagrams in \cref{fig:minilab-1-1,fig:minilab-2-1,fig:minilab-2-2}
   were computed with $[a, b, c, d]$=$[0, 3, -3, 0]$, $[-4, 3, 3, -4]$,
