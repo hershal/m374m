@@ -1,14 +1,13 @@
 #!/usr/bin/env octave
 # -*- mode: octave -*-
 
-function generate(f, problem, points = [-2, 0, 2; -2, 0, 2])
+function generate(f, problem, points = [-2, 0, 2; -2, 0, 2], tf=6)
   pkg load odepkg;
 
   vopt = odeset ("InitialStep", 1e-2, "MaxStep", 1e-2, "RelTol", 1e-3, "AbsTol", 1e-3);
   x0 = points(1, :);
   y0 = points(2, :);
   t0 = 0;
-  tf = 6;
 
   for i=1:length(x0)
     for j=1:length(y0)
