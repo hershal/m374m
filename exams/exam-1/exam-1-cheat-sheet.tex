@@ -43,9 +43,11 @@
     where $f(x,y)$ depends on some constants. To non-dimensionalize the problem,
     we choose dimensionless independent and dependent variables; select a
     characteristic $y$ and $x$ scale $y_c$ and $x_c$ formed from the constants
-    in the problem (involves solving a nonhomogenous system). Then you may
-    recast $\od{y}{x}$ using $\bar{y}=\frac{y}{y_c}$ and $\bar{x}=\frac{x}{x_c}$
-    as $\od{\bar{y}}{\bar{x}}=\frac{x_c}{y_c}\od{y}{x}$ using the chain rule
+    in the problem, i.e. $[x]={[q_1]}^{a_1}\cdots {[q_n]}^{a_n}$. This results
+    in a nonhomogenous linear system with so-called dimension matrix $A$ which
+    we may solve for $a_i$. Then we may recast $\od{y}{x}$ using
+    $\bar{y}=\frac{y}{y_c}$ and $\bar{x}=\frac{x}{x_c}$ as
+    $\od{\bar{y}}{\bar{x}}=\frac{x_c}{y_c}\od{y}{x}$ using the chain rule
     ($\od{\bar{y}}{\bar{x}}=\od{\bar{y}}{x}\frac{\dd{x}}{\dd{\bar{y}}}$). When a
     term is assumed to be ``small'', pick scales which do not involve constants
     within that term.
