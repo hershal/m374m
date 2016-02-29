@@ -11,7 +11,7 @@ function generate_inorder(f, problem, points = [], tf = [])
 
   assert(length(x0) == length(y0));
 
-  ## figure(1); clf; hold on; axis([-1 1 -1 1])
+  ## figure(1); clf; hold on;
   for i=1:length(x0)
     [t, u] = ode45(f, [t0, tf(i)], [x0(i), y0(i)], vopt);
     u = [u zeros(size(u,1),1)];
