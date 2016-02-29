@@ -1,0 +1,78 @@
+  \item[Pi Theorem] Given a physical equation $f(q_1,\ldots,q_n)=0$ where $q_i$
+    are of $n$ physical variables, the above equation may be restated as
+    $\tilde{f}(\pi_1,\ldots,\pi_m)$ where $\pi_i$ are dimensionless parameters
+    constructed by $\pi_i=q_1^{\alpha_1}\cdots q_n^{\alpha_n}$
+  \item[Proof of Pi Theorem] The general argument is exactly the same as the
+    construction of dimensionless variables for $q$ physical quantities and $L$
+    fundamental dimensions
+    \begin{equation*}
+        \begin{aligned}
+          \pi &= q_1^{p_1}\cdots q_m^{p_m} \\
+          [\pi] &= {(L_1^{a_{11}}\cdots L_n^{a_{n1}})}^{p_1}\cdots
+          {(L_1^{a_{1m}}\cdots L_n^{a_{nm}})}^{p_1} \\
+          1 &= L_1^{a_{11}p_1+\cdots+a_{1m}p_m}\cdots L_n^{a_{11}p_1+\cdots+a_{1m}p_m} \\
+        \end{aligned}
+    \end{equation*}
+    Which turns into a homogenous system
+    \begin{equation*}
+      \begin{aligned}
+        a_{11}p_1+\cdots+a_{1m}p_m &= 0 \\
+        &\;\;\vdots \\
+        a_{11}p_1+\cdots+a_{1m}p_m &= 0. \\
+      \end{aligned}
+    \end{equation*}
+    This system may be represented by a matrix $A$, which has $m-\text{rk}(A)$
+    independent solutions forming a null space for $A$. These independent
+    solutions form appropriate dimesionless $\pi_i$.
+  \item[Pi Function Manipulation] We (theoretically) may solve a system
+    $f(\pi_1, \pi_2)$ for either $\pi_i$, resulting in a new relation
+    $\pi_1=\tilde{f}(\pi_2)$. In the case when there is only one $\pi$, solving
+    $f(\pi)=0$ for $\pi$ intuitively describes the roots of $f$, namely $\pi=C$
+    where $C$ may be some number of constants.
+  \item[Non-Dimensionalization] Given some IVP in the form $\od{y}{x}=f(x,y)$
+    where $f(x,y)$ depends on some constants. To non-dimensionalize the problem,
+    we choose dimensionless independent and dependent variables; select a
+    characteristic $y$ and $x$ scale $y_c$ and $x_c$ formed from the constants
+    in the problem, i.e. $[x]={[q_1]}^{a_1}\cdots {[q_n]}^{a_n}$. This results
+    in a nonhomogenous linear system with so-called dimension matrix $A$ which
+    we may solve for $a_i$. Then we may recast $\od{y}{x}$ using
+    $\bar{y}=\frac{y}{y_c}$ and $\bar{x}=\frac{x}{x_c}$ as
+    $\od{\bar{y}}{\bar{x}}=\frac{x_c}{y_c}\od{y}{x}$ using the chain rule
+    ($\od{\bar{y}}{\bar{x}}=\od{\bar{y}}{x}\frac{\dd{x}}{\dd{\bar{y}}}$). When a
+    term is assumed to be ``small'', pick scales which do not involve constants
+    within that term.
+
+  \item[Stability of Equilibria] Given an IVP where $\od{u}{t}=f(u)$,
+    $u(t_0)=u_0$, where $f(u)$, $f'(u)$ are continuous. Equilibria are
+    determined by solving $f(u)=0$. Complex solutions do not make sense in this
+    context.
+  \item[Derivative Method for Stability] Let $\lambda_*=f'(u_*)$. Then
+    $\lambda_*<0\implies u_*$ stable; $\lambda_*>0\implies u_*$ unstable;
+    $\lambda_*=0$ no conclusion.
+  \item[2D Dynamical Systems] Let $f(x,y) = x'$, $g(x,y) = y'$. Solve $f(x,y)=0$
+    and $g(x,y)=0$ to obtain the equilibria of the system. If nonlinear, solve
+    by substitution (coupled) or separately (uncoupled). If linear, put system
+    into matrix $A$. If $\det A \ne 0$, then equilibrium is $(0,0)$. The
+    eigenvalues of $A$ obtained by $\det(A-\lambda I)$ or
+    $\lambda^2-(\text{tr}\,A)\lambda+\det A$, where $\text{tr}\,A$ is the sum of
+    the main diagonal of $A$, characterize the solution.
+    \begin{description}
+    \item[Two Eigenvalues] Eigenvectors are linearly independent;
+      $x(t)=c_1\vec{v_1}e^{\lambda_1 t}+c_2\vec{v_2}e^{\lambda_2 t}$.
+    \item[One Eigenvalue] Solution depends on number of linearly independent
+      eigenvectors: if two, $x(t)=(c_1\vec{v_1}+c_2\vec{v_2}e^{\lambda t})$. If
+      one, $x(t)=(c_1\vec{v}+c_2\vec{w}+c_2\vec{v}t)e^{\lambda t}$ where
+      $(A-\lambda I)\vec{w}=\vec{v}$.
+    \item[Complex Eigenvalues] Eigenvalues take the form $\lambda_i = \alpha \pm
+      i\beta$, then eigenvectors are complex $\vec{w}\pm i\vec{v}$, resulting in
+      $x(t)=(\vec{w}+i\vec{v})e^{(\alpha+i\beta)t}$, or $x(t)=c_1e^{\alpha
+        t}(\vec{w}\cos\beta t-\vec{v}\sin\beta t) + c_2e^{\alpha
+        t}(\vec{w}\sin\beta t-\vec{v}\cos\beta t)$.
+    \end{description}
+  \item[Linearization] Given a nonlinear system $x'=f(x,y)$, $y'=g(x,y)$, the
+    linearization is in the form
+    \begin{equation*}
+      \begin{pmatrix} x' \\ y' \end{pmatrix} =
+      \begin{pmatrix} f_x & f_y \\ g_x & g_y \\ \end{pmatrix}
+      \begin{pmatrix} x \\ y \end{pmatrix}.
+    \end{equation*}
