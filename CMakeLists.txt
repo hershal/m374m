@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 project(m374m)
+set(common_dir ${CMAKE_CURRENT_SOURCE_DIR}/common)
 add_subdirectory(homeworks)
 add_subdirectory(notes)
 add_subdirectory(exams)

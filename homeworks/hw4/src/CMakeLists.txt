@@ -13,7 +13,7 @@ add_custom_target(hw4_generate_resources
   ${CMAKE_CURRENT_BINARY_DIR}/generate_2_1_3.timestamp)
 
 foreach(generator ${hw4_generators})
-  add_generator(${generator} ${CMAKE_CURRENT_SOURCE_DIR}/generate.m)
+  add_generator(${generator} ${common_dir}/generate.m)
 endforeach()
 
-add_generator(generate_2_1_3 ${CMAKE_CURRENT_SOURCE_DIR}/generate_inorder.m)
+add_generator(generate_2_1_3 ${common_dir}/generate_inorder.m)
