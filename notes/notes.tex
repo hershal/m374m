@@ -1765,6 +1765,142 @@ $$
 And $$\det A \ne 0$$
 \todo[some other condition]
 
+\newpage
+\section{Nonlinear Systems}
+Continued from previous (missed) lecture. More on equilibra, closed orbits.
+\subsection{Setup}
+We consider the system
+\begin{equation} \text{(IVP)} \quad
+  \left\{
+  \begin{aligned}
+    \od{x}{t}&=f(x,y),\quad t\ge t_0, \\
+    \od{y}{t}&=g(x,y), \\
+    x(t_0) &= u_0,\quad y(t_0)=y_0 \\
+  \end{aligned} \right.
+\end{equation}
+\subsection{Lyanpunov Theorem}
+Let $(x_*,y_*)$ be an isolated equilibrium of (IVP). Suppose there exists a
+function $E(x,y)$ such that
+\begin{itemize}
+\item $E(x,y)$ has a strict local minimum at $(x_*,y_*)$.
+\item $E_x f + E_y g$ does not change sign in some disc $D$ centered at $(x_*,y_*)$.
+\end{itemize}
+Then
+\begin{enumerate}[a)]
+\item $E_x f + E_y g<0,\;\forall(x,y)\in D,\;(x,y)\ne(x_*,y_*)$ $\implies$
+  $(x_*,y_*)$ asy.\ stable.
+\item $E_x f + E_y g\le0,\;\forall(x,y)\in D$ $\implies$ $(x_*,y_*)$ neutrally
+  stable.
+\item $E_x f + E_y g=0,\;\forall(x,y)\in D$ $\implies$ $(x_*,y_*)$ is stable center;
+  $\exists$ family of closed orbits around equilibrium $(x_*,y_*)$.
+\end{enumerate}
+Typically type of $E$ function is associated with some kind of energy or
+distance from the equilibrium. Theorem does not state where to get $E$, however,
+just that if we may find one, then it has the above properties.
 
+\subsection{Idea}
+If $E(x,y)$ has a strict local minimum at $(x_*,y_*)$, then we have the
+following picture: Reference fig. 13.1. Let $(x(t), y(t))$ be an arbitrary
+non-equilibrium solution starting in $D$. In case (a), we have
+\begin{equation}
+  \begin{aligned}
+    \od{}{t}E(x(t),y(t))&=E_x(x(t),y(t))\od{x}{t}+E_y(x(t),y(t))\od{y}{t} \\
+    &= E_x f + E_y g \\
+    &<\forall t\ge t_0
+  \end{aligned}
+\end{equation}
 
+$\therefore E(x(t),y(t))$ continually decreases in time and $(x(t),y(t))$
+continually moves toward $(x_*,y_*)$. In case (c), we have
+$\od{}{t}E(x(t),y(t))=E_x f + E_y g=0,\;\forall t\ge t_0$
+$\therefore\;E(x(t),y(t)) = E(x_0,y_0)$ is constant in time
+$\therefore\;(x(t),y(t))$moves along a level set of $E$ and hence must be a
+closed orbit.
+
+In case (b), we get $E(x(t),y(t))\le E(x_0,y_0)\;\forall t\ge t_0$; hence all
+solution curves must remain in region enclosed by initial level set.
+
+\subsection{Example}
+Consider a model of a pendulum with gravity $G$, angle $\theta$, with a mass $M$
+attached to a string of length $L$. Reference fig. 13.2.
+
+\begin{equation*}
+  \begin{aligned}
+    mL\ddot{\theta}+mG\sin\theta=0 \\
+    \dot{\theta_{(0)}}=\omega_0,\;\theta_{(0)}=\theta_0 \\
+  \end{aligned}
+\end{equation*}
+First-order form: Let $x=\theta$, $y=\dot{\theta}$. Then
+$$\dot{x}=f(x,y)=y,\quad \dot{y}=g(x,y)=\frac{G}{L}\sin x$$
+Equilibrium:
+$$y=0,\quad -\frac{G}{L}\sin x=0$$ where $x=n\pi,\;n=0,\pm1,\ldots$
+
+$(x_*,y_*)=(n\pi,0)$. This means the pendulum is at the down or up position with
+zero velocity. This means that the pendulum is either straight down with zero
+velocity or balanced straight up.
+
+\subsubsection*{Jacobain analysis}
+\begin{equation*}
+A =
+\begin{bmatrix}
+  f_x & f_y \\ g_x & g_y \\
+\end{bmatrix} =
+\begin{bmatrix}
+  0 & 1 \\ -\frac{G}{L}\cos x & 0 \\
+\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+  A_* =
+  \begin{bmatrix}
+    0 & 1 \\ -\frac{G}{L}\cos x & 0 \\
+  \end{bmatrix}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    \det (A - \lambda I) &=
+    \begin{vmatrix}
+      -\lambda & 1 \\ -\frac{G}{L}\cos x & -\lambda \\
+    \end{vmatrix} \\
+    0 &= \lambda^2 + \frac{G}{L}\cos{n\pi}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \lambda_{1,2}&=\pm\sqrt{-\frac{G}{L}\cos{n\pi}} \\
+    &= \pm \sqrt{\frac{G}{L}{(-1)}^{n+1}}  \\
+    &= (-1)^n
+  \end{aligned}
+\end{equation*}
+
+\begin{itemize}
+\item $n$ odd $\longrightarrow$ $\lambda^*_{1,2}=\pm\sqrt{\frac{G}{L}}$
+  $\longrightarrow$ $(x_*,y_*)=(n\pi,0)$ unstable saddle
+\item $n$ even $\longrightarrow$ $\lambda^*_{1,2}=\pm i\sqrt{\frac{G}{L}}$
+  $\longrightarrow$ no conclusion
+\end{itemize}
+
+\subsubsection*{Lyanpunov analysis}
+To analyze case with $n$ even, we consider total energy as a possible Lyanpunov
+function.
+
+\begin{equation*}
+  \begin{aligned}
+    E &= \text{Kinetic Energy} + \text{Potential Energy} \\
+    &= \frac{1}{2}mv^2 + mGh \\
+    &= \frac{1}{2}{(L\dot{\theta})}^2 + mG(L-L\cos\theta) \\
+    E(x,y) &= \frac{1}{2}mL^2y^2 + mG(L-L\cos\theta). \\
+  \end{aligned}
+\end{equation*}
+
+\begin{enumerate}
+\item Local minimum condition $E_x=mGL\sin x$, $E_y=mL^2y$. Furthermore,
+  $E_{xx}=0$, $E_{yy}=mL^2$. $(x_*,y_*)=(n\pi,0),\;n\;\text{even}$ $\implies$
+  $E_x=0,\;E_y=0$, $E_{xx}>0,\;E_{xx}E_{yy}-{(E_{xy})}^2>0$. $\therefore$
+  $(x_*,y_*)$, $n$ even is a local minimum of $E$.
+\item Sign condition $E_x f + E_y g = (mGL\sin x)y + (mL^2y)(-\frac{G}{L}\sin
+  x)=0$ $\forall (x,y)$. $\therefore$ we are in case (c) of theorem.
+\item Conclusion. $(x_*,y_*)$, $n$ even stable contours; there is a family of
+  closed orbits around each.
+\end{enumerate}
 \end{document}
