@@ -5,17 +5,18 @@
 \date{Due 2016--03--02}
 
 \usepackage{homework-macros}
+{\tikzexternalize}
 
 \begin{document}
 \maketitle
 \section{\S~2.4}
 \subsection{1e$^1$}
 \subsubsection*{Problem}
-Consider the system in \cref{eq:2.4.1-problem}. Determine the nature and
+Consider the system in \cref{eq:2.4.1e-problem}. Determine the nature and
 stability properties of the critical points and sketch the phase diagram.
 \begin{equation}
-  \label{eq:2.4.1-problem}
-  x'=x^2+y^2-4\quad y'=y-2x
+  \label{eq:2.4.1e-problem}
+  x'=x^2+y^2-4,\quad y'=y-2x
 \end{equation}
 
 \subsubsection*{Remarks}
@@ -23,8 +24,125 @@ Find all equilibrium solutions; sketch phase diagrams in a small region around
 each.
 
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{equation}
+  \label{eq:2.4.1e-let}
+  f(x,y)=x^2+y^2-4,\quad g(x,y)=y-2x.
+\end{equation}
+Since \cref{eq:2.4.1e-let} is a nonlinear system, we may obtain equilibria by
+substitution.
+\begin{equation*}
+  \begin{aligned}
+    f(x,y) &= 0 \\
+    y - 2x &= 0 \\
+    \implies y &= 2x
+  \end{aligned}
+\end{equation*}
+Furthermore,
+\begin{equation*}
+  \begin{aligned}
+    g(x,y) &= 0 \\
+    x^2+y^2-4 &= 0 \\
+    x^2 + {(2x)}^2 - 4 &= 0 \\
+    5x^2 &= 4 \\
+    \implies x &= \pm\frac{2}{\sqrt{5}}.
+  \end{aligned}
+\end{equation*}
+From this result the critical points for the system are
+$(2/\sqrt{5},4/\sqrt{5})$ and $(-2/\sqrt{5},-4/\sqrt{5})$. We turn to the
+linearization of \cref{eq:2.4.1e-let} about each of the critical points to
+characterize the stability of the critical points. The linearization of
+\cref{eq:2.4.1e-let} may be obtained by first computing the Jacobian matrix. In
+general,
+\begin{equation*}
+  J =
+  \begin{pmatrix}
+    f_x(x,y) & f_y(x,y) \\
+    g_x(x,y) & g_y(x,y) \\
+  \end{pmatrix}
+\end{equation*}
+So that for our problem,
+\begin{equation*}
+  J =
+  \begin{pmatrix}
+    2x & 2y \\ -2 & 1 \\
+  \end{pmatrix}
+\end{equation*}
+We'll start by examining $J(2/\sqrt{5},4/\sqrt{5})$.
+\begin{equation*}
+  J\left(\frac{2}{\sqrt{5}},\frac{4}{\sqrt{5}}\right) =
+  \begin{pmatrix}
+    \frac{4}{\sqrt{5}} & \frac{8}{\sqrt{5}} \\ -2 & 1 \\
+  \end{pmatrix}
+\end{equation*}
+The eigenvalues of this system characterize the solution.
+\begin{equation*}
+  \lambda^2 - \left(\frac{4}{\sqrt{5}}+1\right)\lambda + \frac{20}{\sqrt{5}} = 0
+\end{equation*}
+\begin{equation*}
+  \lambda = \frac{\left(\frac{4}{\sqrt{5}}+1\right) \pm
+    \sqrt{{\left(\frac{4}{\sqrt{5}}+1\right)}^2-4\left(\frac{20}{\sqrt{5}}\right)}}{2}
+\end{equation*}
+\begin{equation*}
+  \implies \lambda_1 = 1.3944 - 2.6457i, \quad \implies \lambda_2 = 1.3944 + 2.6457i
+\end{equation*}
+Thus $(2/\sqrt{5},4/\sqrt{5})$ is an unstable spiral. Now we'll examine
+$J(-2/\sqrt{5},-4/\sqrt{5})$.
+\begin{equation*}
+  J\left(-\frac{2}{\sqrt{5}},-\frac{4}{\sqrt{5}}\right) =
+  \begin{pmatrix}
+    -\frac{4}{\sqrt{5}} & -\frac{8}{\sqrt{5}} \\ -2 & 1 \\
+  \end{pmatrix}
+\end{equation*}
+The eigenvalues of this system characterize the solution.
+\begin{equation*}
+  \lambda^2 - \left(-\frac{4}{\sqrt{5}}+1\right)\lambda - \frac{20}{\sqrt{5}} = 0
+\end{equation*}
+\begin{equation*}
+  \lambda = \frac{\left(-\frac{4}{\sqrt{5}}+1\right) \pm
+    \sqrt{{\left(-\frac{4}{\sqrt{5}}+1\right)}^2-4\left(-\frac{20}{\sqrt{5}}\right)}}{2}
+\end{equation*}
+\begin{equation*}
+  \implies \lambda_1 = 2.6222, \quad \implies \lambda_2 = -3.4110
+\end{equation*}
+Thus $(-2/\sqrt{5},-4/\sqrt{5})$ is a saddle.
 
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[height=16cm, width=16cm,
+      domain=-2.5:2.5,
+      restrict x to domain=-2.5:2.5, xmin=-2.5, xmax=2.5,
+      restrict y to domain=-2.5:2.5, ymin=-2.5, ymax=2.5,
+      view={0}{90},
+      xlabel=$x$,
+      ylabel=$y$]
+        \foreach \i in {1,...,4} {
+          \addplot3[decoration={
+          markings,
+          mark=between positions 0.4 and 0.6 step 5em with {\arrow [scale=1.5]{stealth}}
+        }, postaction=decorate] table {src-bin/2.4.1e-1-\i.mat};
+        \addplot3[decoration={
+          markings,
+          mark=between positions 0.4 and 0.6 step 5em with {\arrow [scale=1.5]{stealth}}
+        }, postaction=decorate] table {src-bin/2.4.1e-2-\i.mat};
+      }
+      \addplot3[gray, quiver={u={x^2+y^2-4}, v={y-2*x}, scale arrows=0.05}, -stealth,samples=20]{0};
+      \addplot3[gray, dashed, very thin] coordinates {(-2.5,-1.7889,0) (2.5,-1.7889,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(-0.89443,-2.5,0) (-0.89443,2.5,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(-2.5,1.7889,0) (2.5,1.7889,0)};
+      \addplot3[gray, dashed, very thin] coordinates {(0.89443,-2.5,0) (0.89443,2.5,0)};
+      \addplot3[only marks] table {
+        -0.89443 -1.7889 0
+        0.89443 1.7889 0
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \label{fig:2.4.1e-phase-diagram}
+  \caption{Phase Diagram for \S~2.4\#1e}
+\end{figure}
+
+\newpage
 \subsection{4f$^2$}
 \subsubsection*{Problem}
 Consider the system in \cref{eq:2.4.4-problem}. Find the values of $\mu$ where
@@ -41,6 +159,7 @@ and stability of each in terms of $\mu$.
 \subsubsection*{Solution}
 \todo{}
 
+\newpage
 \subsection{8$^3$}
 Consider the dynamical equation in \cref{eq:2.4.8-problem}. If $p(0,0)$ and $h(0)$
 are positive, prove that the origin is an asymptotically stable critical point.
