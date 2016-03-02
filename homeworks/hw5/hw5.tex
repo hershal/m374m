@@ -390,7 +390,42 @@ depending on $a$ and $b$.
     }
   \end{equation*}
   Reference \cref{fig:minilab-1-1,fig:minilab-2-1} for nullclines.
-\item todo{}
+\newpage
+\item If $b=1/2$, then $x_*=1/2$ and $y_*=2/(4a+1)$. We may linearize
+  \cref{eq:minilab-a-let} along these points using the Jacobian matrix about
+  $(1/2, 2/(4a+1))$.
+  \begin{equation*}
+    J\left(\frac{1}{2},\frac{2}{4a+1}\right) =
+    \begin{pmatrix}
+      -1 + \frac{2}{a+1} & a+\frac{1}{4} \\
+      -\frac{2}{a+1} & -a-\frac{1}{4} \\
+    \end{pmatrix}
+  \end{equation*}
+  The eigenvalues of this matrix characterize the solution.
+  \begin{equation*}
+    \lambda^2 - \left(-1-\frac{2}{a+1}-a-\frac{1}{4}\right)\lambda +
+    \left(-1+-\frac{2}{a+1}\right)\left(-a-\frac{1}{4}\right) -
+    \left(a+\frac{1}{4}\right)\left(-\frac{2}{a+1}\right)
+  \end{equation*}
+  Or simplified,
+  \begin{equation*}
+    \lambda^2 - \left(-\frac{5}{4}-a+\frac{2}{a+1}\right)\lambda + \left(a+\frac{1}{4}\right)=0.
+  \end{equation*}
+  \begin{equation}
+    \label{eq:minilab-2-lambda}
+    \implies \lambda = \frac{\left(-\frac{5}{4}-a+\frac{2}{a+1}\right)
+      \pm\sqrt{{\left(-\frac{5}{4}-a+\frac{2}{a+1}\right)}^2-(4a+1)}}{2}
+  \end{equation}
+  Observe that
+  \begin{equation}
+    \label{eq:minilab-2-observation}
+    \abs{-\frac{5}{4}-a+\frac{2}{a+1}} >
+    \abs{\sqrt{\left(-\frac{5}{4}-a+\frac{2}{a+1}\right)^2-(4a+1)}}
+  \end{equation}
+  \todo[not sure what to do from here]
+  % From \cref{eq:minilab-2-lambda,eq:minilab-2-observation} we know that the
+  % solution changes stability between an unstable
+
 \item \todo{}
 \item Reference \cref{fig:minilab-1-1,fig:minilab-2-1}. The closed orbit is a
   limit cycle. As $a$ increases, the orbit ``radius'' seems to decrease until it
