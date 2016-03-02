@@ -264,6 +264,43 @@ which may be solved by our standard methods.
 Introduce $y=x'$ and rewrite as a first-order system.
 
 \subsubsection*{Solution}
-\todo{}
+As per the remark, we may observe
+\begin{equation*}
+  \implies x'=y
+\end{equation*}
+Furthermore,
+\begin{equation*}
+  \begin{aligned}
+    y' &= x'' \\
+    \implies y' &= -p(x,y)y - h(x)x \\
+  \end{aligned}
+\end{equation*}
+Let
+\begin{equation}
+  \label{eq:2.5.8-let}
+  f(x,y) = y,\quad g(x,y) = -p(x,y)y - h(x)x.
+\end{equation}
+\Cref{eq:2.5.8-let} is a first-order linear system. We'll construct a matrix to
+analyze this linear system.
+\begin{equation*}
+  A =
+  \begin{pmatrix}
+    0 & 1 \\ -h(x) & -p(x,y) \\
+  \end{pmatrix}
+\end{equation*}
+We may obtain the eigenvalues of $A$ to characterize the solution.
+$$\lambda^2 + p(x,y)\lambda + h(x)$$
+\begin{equation}
+  \label{eq:2.4.8-lambda}
+  \implies \lambda = \frac{-p\pm\sqrt{p^2-4h(x)}}{2}
+\end{equation}
+Observe that
+\begin{equation}
+  \label{eq:2.4.8-discriminant}
+  \abs{p} < \abs{\sqrt{p^2-4h}}
+\end{equation}
+Note that $p(x,y),h(x)>0$. From \cref{eq:2.4.8-lambda,eq:2.4.8-discriminant} we
+may conclude that \cref{eq:2.4.8-problem} is a stable node if $p^2-4h>0$
+($\implies \lambda_i<0$) and a stable spiral if $p^2-4h<0$ ($\implies\alpha_i<0$).
 
 \end{document}
