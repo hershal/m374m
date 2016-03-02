@@ -1903,4 +1903,119 @@ function.
 \item Conclusion. $(x_*,y_*)$, $n$ even stable contours; there is a family of
   closed orbits around each.
 \end{enumerate}
+
+\newpage
+\section{Case Study: Evolution of an Epidemic}
+\subsection{Problem}
+Use dynamical system tools to study a simple model for the spread of an illness.
+Consider a population $\mathbb{P}=\mathbb{S} \cup \mathbb{I} \cup \mathbb{R}$
+where $\mathbb{S}=$ persons susceptible to illness; $\mathbb{I}=$ persons with
+illness; and $\mathbb{R}=$persons recovered from/immune to illness. Let
+$S(t)=$ number of people in $\mathbb{S}$; $I(t)=$ number of people in
+$\mathbb{I}$; $R(t)=$ number of people in $\mathbb{R}$. Additionally, define
+$[S]=[I]=[R]=$ person; and $[t]=$ time in weeks.
+\subsection{Basic Model}
+\begin{description}
+\item [Plain SIR] This model describes how people transfer from one group to
+  another. Healty people may become sick at rate $r_1$, and once they become
+  ill, they may become immune at rate $r_2$. Reference fig. 14.1. We may define
+  the infection rate
+  \begin{equation*}
+    r_1 = \frac{\text{\# infections}}{\text{week}}.
+  \end{equation*}
+  Assuming the illness spreads by contact between one $S$-person and one
+  $I$-person, we write
+  \begin{equation*}
+    r_1=(\text{\# possible}\;S, I\;\text{contacts})\frac{{\left( \frac{\text{\# infections}}{\text{\# possible}\;S, I\;\text{contacts}} \right)}}{\text{week}}.
+  \end{equation*}
+  Assume constant $a=\text{\# infections per contact per week}>0$.
+  Then
+  \begin{equation*}
+    \implies r_1 = aSI.
+  \end{equation*}
+  We may do the same with the recovery/immunity rate $r_2$ so that
+  \begin{equation*}
+    r_2 = \frac{\text{\# recoveries}}{\text{week}}.
+  \end{equation*}
+  Assuming only an ill person may recover or become immune, we write
+  \begin{equation*}
+    r_2 = (\text{\# ill people})\frac{\left( \frac{\text{\# recoveries}}{\text{\# ill}} \right)}{\text{week}}.
+  \end{equation*}
+  Assume constant $b=\text{fraction recovered per week}>0$. Then
+  \begin{equation*}
+    \implies r_2 = bI.
+  \end{equation*}
+  Our model becomes
+  \begin{equation*}
+    \dot{S}=-r_1,\quad \dot{I}=r_1-r_2,\quad\dot{R}=r_2,
+  \end{equation*}
+  or alternatively,
+  \begin{equation*}
+    \dot{S}=-aSI,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI.
+  \end{equation*}
+\item [SIR with Re-susceptibility and Vaccination] We may use the same reasoning
+  for $r_1$ and $r_2$, but include an $r_3$ and $r_4$ which describe the
+  re-susceptibility and vaccination rates, respectively. Reference fig. 14.2.
+  \begin{equation*}
+    \begin{aligned}
+      r_3 &= \mu R \\
+      r_4 &= vs
+    \end{aligned}
+  \end{equation*}
+  Where $\mu,v>0$. The equations describing this system become
+  \begin{equation*}
+    \dot{S}=-aSI+\mu R-vS,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI-\mu R-vS.
+  \end{equation*}
+\end{description}
+\subsubsection{Analysis of Plain SIR}
+Given
+\begin{equation*}
+  \dot{S}=-aSI+\mu R-vS,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI-\mu R-vS,
+\end{equation*}
+we begin with an initial number of healthy, ill, and no recovered peoples so that
+\begin{equation*}
+  S(0)=S_0\ge0,\quad I(0)=I_0\ge0,\quad R(0)=0.
+\end{equation*}
+Let $S_0+I_0=N=$ population size. The case of interest is when $S_0=N-1$,
+$I_0=1$. Assume $N$ is large. Will this single infected person spread the
+illness to the entire population? What does ths solution of this system look
+like? Note $S$, $I$ evolve independent of $R$. Thus we really have a 2-D system
+for $S$ and $I$. We may get $R$ from $S$ and $I$ using the $\dot{R}$ equation or
+using the fact that the total population is conserved, i.e.
+$\dot{S}+\dot{I}+\dot{R}=0$ for $t\ge0$. Therefore $R(t)=N-S(t)-I(t)$. Let
+\begin{equation*}
+  f(x,y)=-aSI+\mu R-vS,\quad g(x,y)=aSI-bI.
+\end{equation*}
+We first compute the equilibria for this system.
+\begin{equation*}
+  \begin{aligned}
+    -aSI&=0\\\implies S=0\;&\text{or}\;I=0.
+  \end{aligned}
+  \end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    aSI-bI&=0 \\
+    (aS-b)I&=0 \\
+    \implies S=\frac{b}{a}\;&\text{or}\;I=0.
+  \end{aligned}
+\end{equation*}
+Therefore, $S=b/a$, $I=0$ or more generally, $S$ arbitrary, $I=0$. Now we'll
+examin the stability and behavior of solutions. The Jacobian for this purpose is
+not applicable since $\det J=0$. Furthermore, the Lyapunov Theorem is also not
+applicable since the equilibria of this system are not isolated. Reference fig.
+14.3. Given $S_0=N-1$, $I_0=1$, we may identify two basic cases:
+\begin{enumerate}
+\item $b/a<N$, $\implies a<aN/b$. This is called the ``basic reproduction
+  number''. Reference fig. 14.4. This is when an outbreak occurs; the infected
+  group grows before shrinking.
+\item $b/a\ge N$, $\implies a\ge aN/b$. Reference fig. 14.5. No outbreak occurs;
+  the infected group monotonically shrinks.
+\end{enumerate}
+Solution curve details:
+\begin{equation*}
+  \od{I}{S} = \frac{\dot{I}}{\dot{S}}=-1+\frac{b}{aS}
+\end{equation*}
+\begin{equation*}
+  I-I_0=-(S-S_0)+\frac{b}{a}\ln \left( \frac{S}{S_0} \right)
+\end{equation*}
 \end{document}
