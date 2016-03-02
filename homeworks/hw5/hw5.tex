@@ -402,30 +402,34 @@ depending on $a$ and $b$.
     \end{pmatrix}
   \end{equation*}
   The eigenvalues of this matrix characterize the solution.
+  % \begin{equation*}
+  %   \lambda^2 - \left(-1-\frac{2}{a+1}-a-\frac{1}{4}\right)\lambda +
+  %   \left(-1+-\frac{2}{a+1}\right)\left(-a-\frac{1}{4}\right) -
+  %   \left(a+\frac{1}{4}\right)\left(-\frac{2}{a+1}\right)
+  % \end{equation*}
+  % Or simplified,
   \begin{equation*}
-    \lambda^2 - \left(-1-\frac{2}{a+1}-a-\frac{1}{4}\right)\lambda +
-    \left(-1+-\frac{2}{a+1}\right)\left(-a-\frac{1}{4}\right) -
-    \left(a+\frac{1}{4}\right)\left(-\frac{2}{a+1}\right)
-  \end{equation*}
-  Or simplified,
-  \begin{equation*}
-    \lambda^2 - \left(-\frac{5}{4}-a+\frac{2}{a+1}\right)\lambda + \left(a+\frac{1}{4}\right)=0.
+    \lambda^2 - \left(-\frac{5}{4}-a+\frac{2}{4a+1}\right)\lambda + \left(a+\frac{1}{4}\right)=0.
   \end{equation*}
   \begin{equation}
     \label{eq:minilab-2-lambda}
-    \implies \lambda = \frac{\left(-\frac{5}{4}-a+\frac{2}{a+1}\right)
-      \pm\sqrt{{\left(-\frac{5}{4}-a+\frac{2}{a+1}\right)}^2-(4a+1)}}{2}
+    \implies \lambda = \frac{\left(-\frac{5}{4}-a+\frac{2}{4a+1}\right)
+      \pm\sqrt{{\left(-\frac{5}{4}-a+\frac{2}{4a+1}\right)}^2-(4a+1)}}{2}
   \end{equation}
   Observe that
   \begin{equation}
     \label{eq:minilab-2-observation}
-    \abs{-\frac{5}{4}-a+\frac{2}{a+1}} >
-    \abs{\sqrt{\left(-\frac{5}{4}-a+\frac{2}{a+1}\right)^2-(4a+1)}}
+    \abs{-\frac{5}{4}-a+\frac{2}{4a+1}} >
+    \abs{\sqrt{{\left(-\frac{5}{4}-a+\frac{2}{4a+1}\right)}^2-(4a+1)}}.
   \end{equation}
-  \todo[not sure what to do from here]
-  % From \cref{eq:minilab-2-lambda,eq:minilab-2-observation} we know that the
-  % solution changes stability between an unstable
-
+  In addition, solving ${\left(-\frac{5}{4}-a+\frac{2}{4a+1}\right)}^2-(4a+1)=0$
+  shows that the right side of \cref{eq:minilab-2-observation} is negative from
+  $-0.0212116$ until $1.93543$. This information combined with the information
+  from \cref{eq:minilab-2-lambda,eq:minilab-2-observation} implies that the
+  solution changes stability between an unstable center to a stable one at
+  $a=a_{\#}$. Solving $\left(-\frac{5}{4}-a+\frac{2}{4a+1}\right)=0$ for $a$
+  implies that $a_{\#}=0.116025$; that is, the solution change from unstable to
+  stable at $a=a_{\#}=0.116025$.
 \item \todo{}
 \item Reference \cref{fig:minilab-1-1,fig:minilab-2-1}. The closed orbit is a
   limit cycle. As $a$ increases, the orbit ``radius'' seems to decrease until it
