@@ -303,4 +303,48 @@ Note that $p(x,y),h(x)>0$. From \cref{eq:2.4.8-lambda,eq:2.4.8-discriminant} we
 may conclude that \cref{eq:2.4.8-problem} is a stable node if $p^2-4h>0$
 ($\implies \lambda_i<0$) and a stable spiral if $p^2-4h<0$ ($\implies\alpha_i<0$).
 
+\newpage
+\section{Programming Minilab}
+In the biochemical process of glycolysis, living cells obtain energy by breaking
+down sugar. Various intermediate compounds are involved, and the overall process
+requires that some of these be intercon- verted from one type to the other,
+while experiencing some gains and losses. A simple model for the dynamics of two
+of these compounds is, in non-dimensional form,
+\begin{equation}
+  \label{eq:minilab-problem}
+  \begin{aligned}
+    \od{x}{t} &= -x+ay+x^2y,&\quad x(0)&=x_0 \\
+    \od{x}{t} &= b-ay-x^2y,&\quad y(0)&=y_0 \\
+  \end{aligned}
+\end{equation}
+Here $x(t)$ is the concentration of compound $X$ (adenosine diphosphate), $y(t)$
+is the concentration of compound $Y$ (fructose-6-phosphate), and $a$ and $b$ are
+positive constants that describe the reaction kinetics. Here we perform a
+qualitative analysis to understand the behavior of solutions of this system
+depending on $a$ and $b$.
+\subsubsection*{Problem}
+\begin{enumerate}[(a)]
+\item Sketch the nullclines and show that the system has only one equilibrium
+  solution $(x_∗, y_∗)$ for any $a > 0$ and $b > 0$. Explicitly find the
+  equilibrium.
+\item \label{item:minilab-part-2} For simplicity, assume $b = 1/2$ is fixed.
+  Determine the stability of the equilibrium in terms of $a > 0$. Show that the
+  equilibrium is unstable for $0 < a < a_{\#}$, and asymptotically stable for $a >
+  a_{\#}$, for an appropriate constant $a_{\#}$.
+\item \label{item:minilab-part-3} Consider a shaded region $R$ of the phase
+  plane, where the circular hole is centered at $(x_∗, y_∗)$. Show that the
+  straight edges of $R$ can be chosen such that the direction field along these
+  edges either points inward or along the edge. Using the result in
+  \cref{item:minilab-part-2}, and the Poincar\'{e}-Bendixson Theorem, deduce that
+  the system must contain a closed orbit in $R$ for any $0 < a < a_{\#}$. Give
+  explicit locations for the vertices of $R$.
+\item Using $b = 1/2$, illustrate the behavior of the system in the cases $0 < a
+  < a_{\#}$ and $a > a_{\#}$. Is the closed orbit predicted in
+  \cref{item:minilab-part-3} a stable limit cycle? What happens to the closed
+  orbit as $a$ is increased toward $a_{\#}$? Does there appear to be a periodic
+  solution for $a > a_{\#}$?
+\end{enumerate}
+\subsubsection*{Solution}
+\todo{}
+
 \end{document}
