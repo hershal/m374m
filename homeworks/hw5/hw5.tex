@@ -344,10 +344,53 @@ depending on $a$ and $b$.
   orbit as $a$ is increased toward $a_{\#}$? Does there appear to be a periodic
   solution for $a > a_{\#}$?
 \end{enumerate}
+\newpage
 \subsubsection*{Solution}
-\todo{}
 \begin{enumerate}[(a)]
-\item \todo[figure]
+\item
+  Let
+  \begin{equation}
+    \label{eq:minilab-a-let}
+    f(x,y)=-x+ay+x^2y,\quad g(x,y)=b-ay-x^2y.
+  \end{equation}
+  We may obtain equilibria by solving $f(x,y)=0$ and $g(x,y)=0$ in \cref{eq:minilab-a-let}.
+  \begin{equation}
+    \label{eq:minilab-a-y1}
+    \begin{aligned}
+      f(x,y) &= 0 \\
+      -x+ay+x^2y &= 0 \\
+      y(a+x^2) &= x \\
+      y &= \frac{x}{a+x^2} \\
+    \end{aligned}
+  \end{equation}
+  And
+  \begin{equation}
+    \label{eq:minilab-a-y2}
+    \begin{aligned}
+      g(x,y) &= 0 \\
+      b-ay-x^2y &= 0 \\
+      y(a+x^2) &= b \\
+      y &= \frac{b}{a+x^2} \\
+    \end{aligned}
+  \end{equation}
+  We may set \cref{eq:minilab-a-y1} equal to \cref{eq:minilab-a-y2} to find $x$.
+  \begin{equation*}
+    \begin{aligned}
+      y &= y \\
+      \frac{x}{a+x^2} &= \frac{b}{a+x^2} \\
+    \end{aligned}
+  \end{equation*}
+  \begin{equation*}
+    \boxed{\implies x = b}
+  \end{equation*}
+  From this result,
+  \begin{equation*}
+    \boxed{
+      \implies y = \frac{b}{a+b^2}
+    }
+  \end{equation*}
+  Reference \cref{fig:minilab-1-1,fig:minilab-2-1} for nullclines.
+\item todo{}
 \item \todo{}
 \item Reference \cref{fig:minilab-1-1,fig:minilab-2-1}. The closed orbit is a
   limit cycle. As $a$ increases, the orbit ``radius'' seems to decrease until it
