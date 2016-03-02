@@ -3,7 +3,7 @@ set(hw5_inorder_generators
   generate_2_4_1e)
 
 set(hw5_generators
-  "")
+  generate_minilab)
 
 set(hw5_generator_timestamps)
 foreach(generator ${hw5_inorder_generators} ${hw5_generators})
