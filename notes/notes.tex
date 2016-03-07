@@ -1786,7 +1786,7 @@ function $E(x,y)$ such that
 \item $E_x f + E_y g$ does not change sign in some disc $D$ centered at $(x_*,y_*)$.
 \end{itemize}
 Then
-\begin{enumerate}[a)]
+\begin{enumerate}[(a)]
 \item $E_x f + E_y g<0,\;\forall(x,y)\in D,\;(x,y)\ne(x_*,y_*)$ $\implies$
   $(x_*,y_*)$ asy.\ stable.
 \item $E_x f + E_y g\le0,\;\forall(x,y)\in D$ $\implies$ $(x_*,y_*)$ neutrally
@@ -2018,4 +2018,174 @@ Solution curve details:
 \begin{equation*}
   I-I_0=-(S-S_0)+\frac{b}{a}\ln \left( \frac{S}{S_0} \right)
 \end{equation*}
+
+\newpage
+\section{Perturbation Methods}
+\subsection{Definition}
+An eq is called perturbed  if it contains a small parameter $\epsilon>0$. It is
+called regularly perturbed if
+\begin{equation*}
+  \text{(Eq)}_{\epsilon=0} \;\text{is of same type as} \; \text{(Eq)}_{\epsilon>0},
+\end{equation*}
+and singularly perturbed if
+\begin{equation*}
+  \text{(Eq)}_{\epsilon=0} \;\text{is not of same type as} \; \text{(Eq)}_{\epsilon>0},
+\end{equation*}
+We week to understand behavior of solutions and derive approximate solution
+formlas valid near $\epsilon=0$.
+\subsection{Examples}
+\subsubsection{Example 1}
+\begin{equation*}
+  \begin{aligned}
+    x^2+\epsilon x -1 = 0, \\
+    0\le\epsilon\ll1
+  \end{aligned}
+\end{equation*}
+$\epsilon>0$, quad equation; $\epsilon=0$ quad equation. Then regularly
+perturbed.
+\subsubsection{Example 2}
+\begin{equation*}
+  \begin{aligned}
+    \epsilon x^2+x-1=0, \\
+    0\le\epsilon\ll1
+  \end{aligned}
+\end{equation*}
+$\epsilon>0$, quad equation; $\epsilon=0$ linear equation. Then singularly
+perturbed.
+\subsubsection{Example 3}
+\begin{equation*}
+  \begin{aligned}
+    4\ddot{x}+\epsilon\dot{x}+x=0,\quad t\ge0 \\
+    \dot{x}(0)=v_0,\quad x(0)=x_0,
+    0\le\epsilon\ll1
+  \end{aligned}
+\end{equation*}
+$\epsilon>0$, second-order IVP; $\epsilon=0$ second-order IVP. Then regularly
+perturbed.
+
+\subsubsection{Example 4}
+\begin{equation*}
+  \begin{aligned}
+    \epsilon\ddot{x}+4\dot{x}+1=0,\quad t\ge0 \\
+    \dot{x}(0)=v_0,\quad x(0)=x_0,
+    0\le\epsilon\ll1
+  \end{aligned}
+\end{equation*}
+$\epsilon>0$, second-order IVP; $\epsilon=0$ first-order IVP. Then singularly
+perturbed.
+
+\subsection{General Properties}
+For regularly perturbed equations, we expect:
+\begin{enumerate}
+\item solutions are well-behaved as $\epsilon\downarrow 0$
+\item smaller $\epsilon\implies$ smaller effect on solution
+\end{enumerate}
+For singularly perturbed equations, we expect:
+\begin{enumerate}
+\item solutions are ill-behaved as $\epsilon\downarrow 0$
+\item smaller $\epsilon\implies$ bigger effect on solution
+\end{enumerate}
+
+\subsubsection{Example 1}
+\begin{equation*}
+  \begin{aligned}
+    x^2+\epsilon x-1=0,\quad t\ge0 \\
+    0\le\epsilon\ll1
+  \end{aligned}
+\end{equation*}
+Construct series representation of solution. Illustrate behavior as
+$\epsilon\downarrow 0$.
+
+Exact solution:
+
+\begin{description}
+\item[Exact Solution]
+\begin{equation}
+  \label{eq:perturbation-general-prop-x-equation}
+  x = \frac{-\epsilon\pm\sqrt{\epsilon+4}}{2},\quad \epsilon\ge0
+\end{equation}
+\item[Series Expansion] Let $f(\epsilon)=\sqrt{\epsilon^2+4}$. Taylor
+  expansion about $\epsilon=0$.
+  \begin{equation}
+    \label{eq:perturbation-general-prop-series-expan}
+    \begin{aligned}
+      f(\epsilon) &= f(0)+\epsilon f'(0) + \frac{\epsilon^2}{2!}f''(0) +
+      \frac{\epsilon^3}{3!}f'''(x)+\cdots
+      &= 2 + 0 + \frac{\epsilon^2}{4}+0-\frac{\epsilon^4}{64}
+    \end{aligned}
+  \end{equation}
+  Substituting \cref{eq:perturbation-general-prop-series-expan} into
+  \cref{eq:perturbation-general-prop-x-equation} yields
+  \begin{equation*}
+    \label{eq:perturbation-general-prop-taylor-x}
+    x = \frac{-\epsilon\pm(2+\frac{\epsilon^2}{4}-\frac{\epsilon^4}{64}+\cdots)}{2}
+  \end{equation*}
+  so that
+  \begin{equation}
+    \label{eq:perturbation-general-prop-taylor-x-pm}
+    \begin{aligned}
+      x_+(\epsilon)&=1-\frac{\epsilon}{2} + \frac{\epsilon^2}{8} -
+      \frac{\epsilon^4}{128}+\cdots \\
+      x_-(\epsilon)&=-1-\frac{\epsilon}{2} - \frac{\epsilon^2}{8} +
+      \frac{\epsilon^4}{128}+\cdots
+    \end{aligned}\end{equation}
+\end{description}
+Reference fig. 15.1.
+
+\subsubsection{Example 2}
+\begin{equation*}
+  \begin{aligned}
+    \epsilon x^2+ x-1=0,\\
+    0\le\epsilon\ll1.
+  \end{aligned}
+\end{equation*}
+Illustrate behavior of solutions.
+
+Series expansion looks like
+\begin{equation*}
+  \begin{aligned}
+    f(\epsilon) &= f(0) + \epsilon f'(0) + \frac{\epsilon^2}{2!}f''(0)+\cdots \\
+    &= 1 + 2\epsilon - 2\epsilon^2 + 4\epsilon^4 + \cdots
+  \end{aligned}
+\end{equation*}
+Substituting into \cref{eq:perturbation-general-prop-x-equation} yields
+\begin{equation*}
+  x = \frac{-1\pm(1+2\epsilon-2\epsilon^2+4\epsilon^3+\cdots)}{2\epsilon},\quad \epsilon>0
+\end{equation*}
+Then
+\begin{equation*}
+  \begin{aligned}
+    x_+(\epsilon) &= 0 + 1 - \epsilon + 2\epsilon^2+\ldots, \quad \epsilon>0 \\
+    x_-(\epsilon) &= -\frac{1}{\epsilon}-1+\epsilon-2\epsilon^2+\ldots,\quad\epsilon>0 \\
+    x&=0,\quad \epsilon=0
+  \end{aligned}
+\end{equation*}
+Reference fig. 15.2.
+
+\subsection{Notation}
+Let $f(\epsilon),g(\epsilon)$ be defined for $\epsilon>0$, we say
+\begin{enumerate}
+\item $f(\epsilon)= 0(g(\epsilon))$ as $\epsilon\downarrow0$ if
+$$\lim_{\epsilon\downarrow0}\abs{\frac{f(\epsilon)}{g(\epsilon)}}=0,$$ meaning
+that $f\rightarrow0$ faster than $g\rightarrow0$
+\item $f(\epsilon)=1(g(\epsilon))$ as $\epsilon\downarrow0$ if there is a
+  constant $M>0$ and interval $(0,c)$ such that $\abs{f(\epsilon)}\le
+  M\abs{g(\epsilon)},\;\forall\epsilon\in(0,c)$. An alternate sufficient
+  condition
+  is $$\lim_{\epsilon\downarrow0}\abs{\frac{f(\epsilon)}{g(\epsilon)}}\;\text{finite}$$.
+\end{enumerate}
+
+\subsection{Examples}
+\subsubsection{Example 1}
+Compare $\epsilon^3\sin\epsilon$ with $\epsilon^3$, $\epsilon^4$, $\epsilon^5$.
+$$\lim_{\epsilon\downarrow0}\abs{\frac{\epsilon^3\sin\epsilon}{\epsilon^3}}=0.$$
+Therefore $\epsilon^3\sin\epsilon=0(\epsilon^3)$; but we can also say
+$\epsilon^3\sin\epsilon=1(\epsilon^3)$.
+\subsubsection{Example 2}
+$$\lim_{\epsilon\downarrow0}\abs{\frac{\epsilon^3\sin\epsilon}{\epsilon^4}}=1.$$
+$\epsilon^3\sin\epsilon\ne0(\epsilon^3)$, but $\epsilon^3\sin\epsilon=1(\epsilon^3)$
+\subsubsection{Example 3}
+$$\lim_{\epsilon\downarrow0}\abs{\frac{\epsilon^3\sin\epsilon}{\epsilon^4}}=1.$$
+$\epsilon^3\sin\epsilon\ne0(\epsilon^3)$, but $\epsilon^3\sin\epsilon\ne1(\epsilon^3)$
+
 \end{document}
