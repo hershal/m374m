@@ -372,7 +372,7 @@ Notice $c>b>a>0$ implies $\beta>\alpha>\gamma>0$.
   \end{equation*}
   Since the steady state solutions are parallel to the coordinate axes,
   $\od{E}{t}=0$, and thus $E(u)$ is constant. \todo{Talk about $F(u)$}
-\item Solving $E(u)=0$ for $u_3^2$ yields $u_3^2=1-u_1^2-u_2^2$, which we may
+\item \label{itm:minilab-c} Solving $E(u)=0$ for $u_3^2$ yields $u_3^2=1-u_1^2-u_2^2$, which we may
   insert into $F(u)$.
   \begin{equation*}
     \begin{aligned}
@@ -384,6 +384,19 @@ Notice $c>b>a>0$ implies $\beta>\alpha>\gamma>0$.
     \end{aligned}
   \end{equation*}
   Since $\beta>\alpha>\gamma>0$, the solution curves model ellipses near $(0,0,1)$.
+\item Similar to \cref{itm:minilab-c}, we may solve $E(u)=0$ for $u_1$ and
+  substitute $u_1$ in $F(u)$.
+  \begin{equation*}
+    \begin{aligned}
+      F(u) &= \alpha \pm \delta \\
+      \alpha \pm \delta &= \alpha u_1^2+\beta u_2^2+\gamma u_3^2 \\
+      &= \alpha(1-u_2^2-u_3^2)+\beta u_2^2 + \gamma u_3^2 \\
+      &= \alpha-\alpha u_2^2-\alpha u_3^2+\beta u_2^2 + \gamma u_3^2 \\
+      \implies \alpha \pm \delta &= \alpha - u_2^2(\beta-\alpha) - u_3^2(\gamma-\alpha) \\
+    \end{aligned}
+  \end{equation*}
+  Since $\beta>\alpha>\gamma>0$, the solution curves model hyperbolas near
+  $(1,0,0)$.
 \end{enumerate}
 \todo{}
 
