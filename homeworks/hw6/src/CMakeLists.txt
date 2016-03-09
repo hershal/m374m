@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-set(hw6_inorder_generators generate_2_6_4_2b)
+set(hw6_inorder_generators generate_2_6_4_2b generate_2_6_3_5)
 
 set(hw6_generators generate_minilab)
 
