@@ -5,6 +5,13 @@
 \date{Due 2016--03--09}
 
 \usepackage{homework-macros}
+\usepackage{changepage,ifthen}
+\newcommand\skiptooddpage{
+   \checkoddpage
+   \ifthenelse{\boolean{oddpage}}
+      {\null\clearpage\null\clearpage}
+      {\null\clearpage}
+}
 \tikzexternalize
 
 \begin{document}
@@ -253,7 +260,7 @@ Reference \cref{fig:2.6.4.2b-phase-diagram}.
   \label{fig:2.6.4.2b-phase-diagram}
 \end{figure}
 
-\newpage
+\skiptooddpage{}
 \section{Programming Minilab}
 Consider a uniform, rectangular rigid body of mass $m$ and dimensions $a$, $b$ and $c$. In
 the absence of an applied torque, the rotational motion of the body is described by
