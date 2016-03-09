@@ -322,6 +322,58 @@ Notice $c>b>a>0$ implies $\beta>\alpha>\gamma>0$.
 \end{enumerate}
 \newpage
 \subsubsection*{Solution}
+\begin{enumerate}[(a)]
+\item In this system, we may compute $\dot{u}$ directly.
+  \begin{equation*}
+    K =
+    \begin{pmatrix}
+      \alpha & 0 & 0 \\
+      0 & \beta & 0 \\
+      0 & 0 & \gamma \\
+    \end{pmatrix},
+    \quad u = \begin{pmatrix} u_1 \\ u_2 \\ u_3 \\ \end{pmatrix}.
+  \end{equation*}
+  \begin{equation*}
+    \begin{aligned}
+      \dot{u} &= u \times (Ku) \\
+      &= \begin{pmatrix} u_1 \\ u_2 \\ u_3 \end{pmatrix} \times
+      \begin{pmatrix} \alpha u_1 \\ \beta u_2 \\ \gamma u_3 \end{pmatrix} \\
+      &= \begin{vmatrix}
+        \vec{\imath} & \vec{\jmath} & \vec{k} \\
+        u_1 & u_2 & u_3 \\
+        \alpha u_1 & \beta u_2 & \gamma u_3 \\
+      \end{vmatrix} \\
+      &=
+      \begin{pmatrix}
+        (\gamma-\beta)u_2u_3 \\
+        (\alpha-\gamma)u_1u_3 \\
+        (\beta-\alpha)u_1u_2 \\
+      \end{pmatrix} \\
+      \implies \dot{u} &=
+      \begin{pmatrix}
+        \eta_1u_2u_3 \\
+        \eta_2u_1u_3 \\
+        \eta_3u_1u_2 \\
+      \end{pmatrix}
+    \end{aligned}
+  \end{equation*}
+  ``Steady state'' implies $\dot{u}=0$, and $\abs{u_0}=1$, as written in the
+  problem statement. Combined with the result obtained in the computation of
+  $\dot{u}=u\times(Ku)$, the only possible steady states are when $u_*=$
+  $(\pm1,0,0)$, $(0,\pm1,0)$, $(0,0,\pm1)$.
+\item When a function is constant its derivative is zero.
+  \begin{equation*}
+    \begin{aligned}
+      \od{E}{t} &= \pd{E}{u_1}\od{u_1}{t} + \pd{E}{u_2}\od{u_2}{t} + \pd{E}{u_3}\od{u_3}{t} \\
+      &= 2u_1\dot{u_1} + 2u_2\dot{u_2} + 2u_3\dot{u_3} \\
+      &= 2u_1u_2u_3 + 2u_1u_2u_3 + 2u_1u_2u_3 \\
+      &= 6u_1u_2u_3 \\
+    \end{aligned}
+  \end{equation*}
+  Since the steady state solutions are parallel to the coordinate axes,
+  $\od{E}{t}=0$, and thus $E(u)$ is constant. \todo{Talk about $F(u)$}
+
+\end{enumerate}
 \todo{}
 
 \end{document}
