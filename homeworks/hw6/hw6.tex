@@ -146,7 +146,80 @@ Characterize the stability of equilibria in terms of the parameter $\lambda>0$
 and $\eta>0$.
 
 \subsection*{Solution}
-\todo{}
+Let
+\begin{equation*}
+  \begin{aligned}
+    \od{h}{\tau} = \lambda m(1-h), \\
+    \od{m}{\tau} = \eta h(1-m) - m. \\
+  \end{aligned}
+\end{equation*}
+We'll first determine the equilibria.
+\begin{equation*}
+  \begin{aligned}
+    0 &= \lambda m(1-h) \\
+    m&=0,\quad h=1.
+  \end{aligned}
+\end{equation*}
+When $m=0$,
+\begin{equation*}
+  \begin{aligned}
+    0 &= \eta h(1-m)-m \\
+    &= \eta h \\
+    \implies h=0.
+  \end{aligned}
+\end{equation*}
+When $h=1$,
+\begin{equation*}
+  \begin{aligned}
+    0 &= \eta h(1-m)-m \\
+    &= \eta(1-m)-m \\
+    &= \eta - \eta m - m \\
+    \eta &= m(1+\eta) \\
+    \implies m &= \frac{\eta}{1+\eta}.
+  \end{aligned}
+\end{equation*}
+The equilibria are $(0,0)$, $(1,\frac{\eta}{1+\eta})$. Now we'll determine the
+stability of each by computing the Jacobian.
+\begin{equation*}
+  J =
+  \begin{pmatrix}
+    -m \lambda  & (1-h) \lambda  \\
+    (1-m) \eta  & -h \eta -1 \\
+  \end{pmatrix}
+\end{equation*}
+About $(0,0)$,
+\begin{equation*}
+  J(0,0) =
+  \begin{pmatrix}
+    0 & \lambda \\
+    \eta & -1 \\
+  \end{pmatrix}
+\end{equation*}
+so that
+\begin{equation*}
+  \begin{aligned}
+    \det{J} &= -\lambda\eta \\
+    \tr{J} &= -1.
+  \end{aligned}
+\end{equation*}
+This indicates that $(0,0)$ is a saddle point.
+
+About $(1,\frac{\eta}{1+\eta})$,
+\begin{equation*}
+  J(1,\frac{\eta}{1+\eta}) =
+  \begin{pmatrix}
+    -m \lambda  & (1-h) \lambda  \\
+    (1-m) \eta  & -h \eta -1 \\
+  \end{pmatrix}
+\end{equation*}
+so that
+\begin{equation*}
+  \begin{aligned}
+    \det{J} &= \lambda\eta \\
+    \tr{J} &= -1-\eta-\frac{\eta\lambda}{1+\eta}. \\
+  \end{aligned}
+\end{equation*}
+This indicates that $(1,\frac{\eta}{1+\eta})$ is stable.
 
 \newpage
 \section{Programming Minilab}
