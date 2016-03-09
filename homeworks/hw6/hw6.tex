@@ -496,12 +496,27 @@ Notice $c>b>a>0$ implies $\beta>\alpha>\gamma>0$.
     \begin{aligned}
       \od{E}{t} &= \pd{E}{u_1}\od{u_1}{t} + \pd{E}{u_2}\od{u_2}{t} + \pd{E}{u_3}\od{u_3}{t} \\
       &= 2u_1\dot{u_1} + 2u_2\dot{u_2} + 2u_3\dot{u_3} \\
-      &= 2u_1u_2u_3 + 2u_1u_2u_3 + 2u_1u_2u_3 \\
-      &= 6u_1u_2u_3 \\
+      &= 2\eta_1u_1u_2u_3 + 2\eta_2u_1u_2u_3 + 2\eta_3u_1u_2u_3 \\
+      \implies \od{E}{t}&= 0.
     \end{aligned}
   \end{equation*}
   Since the steady state solutions are parallel to the coordinate axes,
-  $\od{E}{t}=0$, and thus $E(u)$ is constant. \todo{Talk about $F(u)$}
+  $\od{E}{t}=0$, and thus $E(u)$ is constant. We may draw the same conclusion
+  for $F(u)$.
+  \begin{equation*}
+    \begin{aligned}
+      \od{F}{t} &= \alpha\pd{E}{u_1}\od{u_1}{t} + \beta\pd{E}{u_2}\od{u_2}{t} + \gamma\pd{E}{u_3}\od{u_3}{t} \\
+      &= 2\alpha u_1\dot{u_1} + 2\beta u_2\dot{u_2} + 2\gamma u_3\dot{u_3} \\
+      &= 2\alpha(\gamma-\beta)u_1u_2u_3 + 2\beta(\alpha-\beta)u_1u_2u_3 + 2\gamma(\beta-\alpha)u_1u_2u_3 \\
+      &= 2u_1u_2u_3 (\cancel{\alpha\gamma}-\cancel{\alpha\beta}+\cancel{\alpha\beta}-\cancel{\beta\gamma}+
+      \cancel{\beta\gamma}-\cancel{\alpha\gamma}) \\
+      \implies \od{F}{t} &= 0.
+    \end{aligned}
+  \end{equation*}
+  Since the solutions do not change and $\abs{u_0}=1$, then every solution must
+  lie on the unit sphere. Furthermore, if every solution lies on the unit sphere
+  and $\od{F}{t}=0$, then $F(u(t))=F(u_0)$. Finally, $\beta>\alpha>\gamma>0$,
+  immplies that $F(u_0)$ must lie between $\gamma$ and $\beta$, inclusive.
 \item \label{itm:minilab-c} Solving $E(u)=0$ for $u_3^2$ yields $u_3^2=1-u_1^2-u_2^2$, which we may
   insert into $F(u)$.
   \begin{equation*}
