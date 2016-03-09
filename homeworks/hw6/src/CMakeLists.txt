@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 set(hw6_inorder_generators generate_2_6_4_2b)
 
-set(hw6_generators "")
+set(hw6_generators generate_minilab)
 
 set(hw6_generator_timestamps)
 foreach(generator ${hw6_inorder_generators} ${hw6_generators})
