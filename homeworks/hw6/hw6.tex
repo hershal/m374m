@@ -38,7 +38,102 @@ two-variable system for S, I. For concreteness, assume $N>b/a$ and $\mu=b/2$;
 characterize the stability of equilibria in terms of the parameter $aN/b>1$.
 
 \subsection*{Solution}
-\todo{}
+Let
+\begin{equation*}
+  \begin{aligned}
+    S' &= -aSI+\mu(N-S-I) \\
+    I' &= aSI-bI \\
+  \end{aligned}
+\end{equation*}
+First we'll find the nullclines. The $S$-nullcline can be found by setting $S'=0$.
+\begin{equation*}
+  \begin{aligned}
+    0 &= S' \\
+    &= -aSI+\mu(N-S-I) \\
+    &= -aSI+\mu N- \mu S-\mu I \\
+    &= I(-aS-\mu) + \mu N - \mu S \\
+    I(aS+\mu) &= \mu N - \mu S \\
+    \implies I &= \frac{\mu N - \mu S}{aS+\mu} \\
+  \end{aligned}
+\end{equation*}
+Next we'll find the $I$-nullcline by setting $I'=0$.
+\begin{equation*}
+  \begin{aligned}
+    0 &= I' \\
+    &= I(aS-b) \\
+    \implies I = 0 \\
+  \end{aligned}
+\end{equation*}
+Now we'll find the equilibria.
+\begin{equation*}
+  \begin{aligned}
+    0 &= aSI-bI \\
+    &= I(aS-b) \\
+    \implies I&=0, \quad S=\frac{b}{a}
+  \end{aligned}
+\end{equation*}
+We'll use $I=0$ to find a corresponding $S$.
+\begin{equation*}
+  \begin{aligned}
+    I &= \frac{\mu N - \mu S}{aS+\mu} \\
+    0 &= \frac{\mu N - \mu S}{aS+\mu} \\
+    0 &= \mu (N - S) \\
+    \implies S &= N \\
+  \end{aligned}
+\end{equation*}
+So one equilibrium is $(N,0)$. We'll find the second equilibrium using $S=b/a$.
+\begin{equation*}
+  \begin{aligned}
+    I &= \frac{\mu N - \mu S}{aS+\mu} \\
+    &= \frac{\mu N - \mu \frac{b}{a}}{\cancel{a}\frac{b}{\cancel{a}}+\mu} \\
+    \implies I &= \frac{\mu N - \mu \frac{b}{a}}{b+\mu} \\
+  \end{aligned}
+\end{equation*}
+Thus the second equilibrium is $\left(b/a,\frac{\mu(N-b/a)}{b+\mu}\right)$. Next
+we'll identify the stablity of each equilibrium using the Jacobian.
+\begin{equation*}
+  J =
+  \begin{pmatrix}
+    -a i-\mu  & -a s-\mu  \\
+    a i & a s-b \\
+  \end{pmatrix}
+\end{equation*}
+About $(N,0)$ the Jacobian becomes
+\begin{equation*}
+  J(N,0) =
+  \begin{pmatrix}
+    -\mu  & -a N-\mu  \\
+    0 & a N-b \\
+  \end{pmatrix}
+\end{equation*}
+so that
+\begin{equation*}
+  \begin{aligned}
+    \det{J} &= b \mu - a N \mu = \mu(b-aN)\\
+    \tr{J} &= a N - b - \mu = aN-\frac{3b}{2}. \\
+  \end{aligned}
+\end{equation*}
+Since $aN>b$, the determinant is less than zero, so $(N,0)$ is a saddle point.
+Therefore, the disease-free equilibrium is unstable.
+
+About $\left(b/a,\frac{\mu(N-b/a)}{b+\mu}\right)$, the Jacobian becomes
+\begin{equation*}
+  J\left(b/a,\frac{\mu(N-b/a)}{b+\mu}\right) =
+  \begin{pmatrix}
+    -\frac{a \left(n-\frac{b}{a}\right) \mu }{b+\mu }-\mu  & -b-\mu  \\
+    \frac{a \left(n-\frac{b}{a}\right) \mu }{b+\mu } & 0 \\
+  \end{pmatrix}
+\end{equation*}
+so that
+\begin{equation*}
+  \begin{aligned}
+    \det{J} &= a \mu  N-b \mu = \mu(aN-b)\\
+    \tr{J} &= -\frac{a \mu  \left(N-\frac{b}{a}\right)}{b+\mu}-\mu. \\
+  \end{aligned}
+\end{equation*}
+Since $aN>b$, the determinant is greater than zero. Furthermore since $N>b/a$,
+the trace is less than zero, making the nonzero
+$\left(b/a,\frac{\mu(N-b/a)}{b+\mu}\right)$ solution a stable equilibrium.
 
 \newpage
 \section{\S~2.6.4}
