@@ -372,7 +372,18 @@ Notice $c>b>a>0$ implies $\beta>\alpha>\gamma>0$.
   \end{equation*}
   Since the steady state solutions are parallel to the coordinate axes,
   $\od{E}{t}=0$, and thus $E(u)$ is constant. \todo{Talk about $F(u)$}
-
+\item Solving $E(u)=0$ for $u_3^2$ yields $u_3^2=1-u_1^2-u_2^2$, which we may
+  insert into $F(u)$.
+  \begin{equation*}
+    \begin{aligned}
+      F(u) &= \gamma + \delta \\
+      \gamma + \delta &= \alpha u_1^2+\beta u_2^2+\gamma u_3^2 \\
+      &= \alpha u_1^2+\beta u_2^2+\gamma (1-u_1^2-u_2^2) \\
+      &= \alpha u_1^2+\beta u_2^2+\gamma - \gamma u_1^2 - \gamma u_2^2 \\
+      \implies \gamma + \delta &= \gamma + u_1^2(\alpha-\gamma) + u_2^2(\beta-\gamma) \\
+    \end{aligned}
+  \end{equation*}
+  Since $\beta>\alpha>\gamma>0$, the solution curves model ellipses near $(0,0,1)$.
 \end{enumerate}
 \todo{}
 
