@@ -1,5 +1,4 @@
-
-function dudt = F(t,u)
+function dudt = rigidbody(t,u)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Evaluates du/dt for the rigid body model
@@ -12,7 +11,7 @@ function dudt = F(t,u)
 %          u = system vector (3x1 array) where
 %              u(1)=u1, u(2)=u2, u(3)=u3.
 %
-% Output:  dudt = derivative of system vector (3x1 array), 
+% Output:  dudt = derivative of system vector (3x1 array),
 %                 where dudt(1)=du1/dt, etc.
 %
 % Note: Matlab's ODE solvers require us to include the
@@ -21,10 +20,10 @@ function dudt = F(t,u)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Access global constants from main prog
-global m a b c ;        
+global m a b c ;
 
 % Initialize output array dudt
-dudt = zeros(3,1) ; 
+dudt = zeros(3,1) ;
 
 % Assemble constants
 alpha = 12/(m*a^2 + m*c^2) ;
@@ -38,4 +37,3 @@ eta3  = beta - alpha ;
 dudt(1) = eta1*u(2)*u(3) ;
 dudt(2) = eta2*u(3)*u(1) ;
 dudt(3) = eta3*u(1)*u(2) ;
- 
