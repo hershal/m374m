@@ -397,6 +397,70 @@ Notice $c>b>a>0$ implies $\beta>\alpha>\gamma>0$.
   \end{equation*}
   Since $\beta>\alpha>\gamma>0$, the solution curves model hyperbolas near
   $(1,0,0)$.
+\item
+  \begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.95\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \begin{axis}[width=7cm, height=7cm,
+          domain=0:0.5,
+          xmin=0, xmax=0.5, restrict x to domain=0:0.5,
+          ymin=-0.4, ymax=0.4, restrict y to domain=-0.4:0.4,
+          view={0}{90}, xlabel=$t$, ylabel=$u_1$]
+          \foreach \i in {1,...,4} {
+            \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+              {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-1-u1-\i.mat};
+          }
+          % \addplot3[gray, quiver={u={-x+.1*y+y*x^2}, v={.5-.1*y-y*x^2)}, scale arrows=0.05}, -stealth,samples=15]{0};
+          % \addplot3[gray, dashed, very thin] coordinates {(0.5,0,0) (0.5,2.5,0)};
+          % \addplot3[gray, dashed, very thin] coordinates {(0,1.4286,0) (1.5,1.4286,0)};
+          % \addplot3[only marks] table {
+          % 0.5 1.4286 0
+          % };
+        \end{axis}
+      \end{tikzpicture}
+      \caption{$u_1$ vs $t$ for various $u_{1,0}$, $u_{2,0}$, $u_{3,0}$}
+      \label{fig:minilab-results-u1}
+    \end{subfigure} \\
+    \begin{subfigure}[b]{0.49\textwidth}
+      \begin{tikzpicture}
+        \begin{axis}[width=7cm, height=7cm,
+          domain=0:0.5,
+          xmin=0, xmax=0.5, restrict x to domain=0:0.5,
+          ymin=-0.2, ymax=0.2, restrict y to domain=-0.2:0.2,
+          view={0}{90}, xlabel=$t$, ylabel=$u_2$]
+          \foreach \i in {1,...,4} {
+            \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+              {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-1-u2-\i.mat};
+          }
+          % \addplot3[gray, dashed, very thin] coordinates {(0,0.5,0) (40,0.5,0)};
+        \end{axis}
+      \end{tikzpicture}
+      \label{fig:minilab-results-u2}
+      \caption{$u_2$ vs $t$ for various $u_{1,0}$, $u_{2,0}$, $u_{3,0}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+      \begin{tikzpicture}
+        \begin{axis}[width=7cm, height=7cm,
+          domain=0:0.5,
+          xmin=0, xmax=0.5, restrict x to domain=0:0.5,
+          ymin=0.95, ymax=1.05, restrict y to domain=0.95:1.05,
+          view={0}{90}, xlabel=$t$, ylabel=$u_3$]
+          \foreach \i in {1,...,4} {
+            \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
+              {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-1-u3-\i.mat};
+          }
+          % \addplot3[gray, dashed, very thin] coordinates {(0,1.4286,0) (40,1.4286,0)};
+        \end{axis}
+      \end{tikzpicture}
+      \caption{$u_3$ vs $t$ for various $u_{1,0}$, $u_{2,0}$, $u_{3,0}$}
+      \label{fig:minilab-results-u3}
+    \end{subfigure}
+    \caption{Minilab Part (e) Results}
+    \label{fig:minilab-results}
+  \end{figure}
+
 \end{enumerate}
 \todo{}
 
