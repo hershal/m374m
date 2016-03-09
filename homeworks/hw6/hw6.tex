@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\title{M374M Homework 5 \\
+  \normalsize{\S~2.6.3 \#5$^1$, \S~2.6.4 \#2ab$^2$}}
+\author{Hershal Bhave (hb6279)}
+\date{Due 2016--03--09}
+
+\usepackage{homework-macros}
+\tikzexternalize
+
+\begin{document}
+\maketitle
+\section{\S~2.6.3}
+\subsection{5$^1$}
+\subsubsection*{Problem}
+Beginning with the SIR model, assume that recovered individuals can lose their
+immunity and become susceptible again after an average recovery period of time
+$\mu$. That is, the rate recovered individuals become susceptible is $\mu R$.
+Draw a compartmental diagram and formulate a two-dimensional system of model
+equations for S and I. Then:
+\begin{enumerate}[(a)]
+\item Find the two equilibria
+\item Sketch the nullclines and the vector field
+\item Identify the type of equilibria
+\item Show that the disease-free equilibrium is unstable
+\item Determine the stabilty of the nonzero equilibrium
+\end{enumerate}
+
+\subsection*{Remarks}
+Use the condition $\text{S} + \text{I} + \text{R} = \text{N}$ to get a
+two-variable system for S, I. For concreteness, assume $N>b/a$ and $\mu=b/2$;
+characterize the stability of equilibria in terms of the parameter $aN/b>1$.
+
+\subsection*{Solution}
+\todo{}
+
+\newpage
+\section{\S~2.6.4}
+\subsection{2a$^2$}
+\subsubsection*{Problem}
+\begin{equation}
+  \label{eq:2.6.4.2-problem}
+  \begin{aligned}
+    \od{h}{t} = ab\left( \frac{M_T}{H_T} \right)m(1-h)-rh, \\
+    \od{m}{t}=ach(1-m)-\mu m. \\
+  \end{aligned}
+\end{equation}
+Beginning with \cref{eq:2.6.4.2-problem}, nondimensionalize these equations by
+rescaling time by taking $\tau = \mu t$. Obtain
+\begin{equation*}
+  \begin{aligned}
+    \od{h}{\tau} = \lambda m(1-h) - \epsilon h, \\
+    \od{m}{\tau} = \eta h(1-m) - m,
+  \end{aligned}
+\end{equation*}
+where
+\begin{equation*}
+  \eta=\frac{r}{\mu},\quad \lambda=\frac{ab}{\mu}\frac{M_T}{H_T},\quad\eta=\frac{ac}{\mu}.
+\end{equation*}
+
+\subsubsection*{Remarks}
+Characterize the stability of equilibria in terms of the parameter $\lambda>0$
+and $\eta>0$.
+
+\subsection*{Solution}
+\todo{}
+
+\subsection{2a$^2$}
+\subsubsection*{Problem}
+Assuming $\eta$ is very small, neglect the $\eta h$ term in the host equation
+and draw the phase portrait. Include the equilibria, nullclines, direction
+field, and local stability analysis for the equilibria.
+
+\subsubsection*{Remarks}
+Characterize the stability of equilibria in terms of the parameter $\lambda>0$
+and $\eta>0$.
+
+\subsection*{Solution}
+\todo{}
+
+\newpage
+\section{Programming Minilab}
+Consider a uniform, rectangular rigid body of mass $m$ and dimensions $a$, $b$ and $c$. In
+the absence of an applied torque, the rotational motion of the body is described by
+the system
+\begin{equation}
+  \label{eq:minilab-problem}
+  \dot{u}=u\times(Ku),\quad u(0)=u_0
+\end{equation}
+where $u = (u_1, u_2, u_3)$ is the angular momentum vector as seen in the body
+frame, $K = \text{diag}(\alpha, \beta, \gamma)$ is a diagonal matrix of inertia
+parameters, and $\times$ is the vector cross product. Here we study the steady
+states of the above system and their stability. We assume $u \ne 0$; without
+loss of generality we suppose $\abs{u_0}=1$. The angular velocity or spin vector
+is given by $\omega = Ku$ and the parameters are defined by
+\begin{equation*}
+  \alpha = \frac{12}{m(a^2+c^2)},\quad\beta = \frac{12}{m(a^2+b^2)},\quad \gamma = \frac{12}{m(b^2+c^2)},
+\end{equation*}
+Notice $c>b>a>0$ implies $\beta>\alpha>\gamma>0$.
+
+\begin{enumerate}[(a)]
+\item Show that \cref{eq:minilab-problem} takes the form
+  \begin{equation*}
+    \dot{u_1}=\eta_1u_2u_3,\quad\dot{u_2}=\eta_2u_3u_1,\quad\dot{u_3}=\eta_3u_1u_2.
+  \end{equation*}
+  where
+  \begin{equation*}
+    \eta_1=\gamma-\beta,\quad\eta_2=\alpha-\gamma,\quad\eta_3=\beta-\alpha
+  \end{equation*}
+  Deduce that the only possible steady states are $u_*=$ $(\pm1,0,0)$,
+  $(0,\pm1,0)$, $(0,0,\pm1)$. Hence the only possible steady spin vectors
+  $\omega_*$ are parallel to a coordinate axis.
+\item Show that the functions
+  \begin{equation*}
+    E(u) = u_1^2+u_2^2+u_3^2,\quad F(u)=\alpha u_1^2+\beta u_2^2+\gamma u_3^2
+  \end{equation*}
+  are constant along every solution of \cref{eq:minilab-problem}. Since $E(u(t))
+  = E(u_0) = 1$, conclude that every solution evolves on the unit sphere.
+  Moreover, conclude that every solution satisfies $F(u(t)) = F(u_0)$, where
+  $\gamma\le F(u_0)\le\beta$.
+\item For any $u_0$ near the equilibrium $(0, 0, 1)$, we have $F (u_0) \ge
+  \gamma$, say $F (u_0) = \gamma + \delta$ for some small $\delta\ge0$. Using
+  the equations $E(u) = 1$ and $F(u) = \gamma + \delta$, show that solution
+  curves near $(0, 0, 1)$ are ellipses on the sphere around this point. Hence
+  $(0, 0, 1)$ is a neutrally stable center. (The same result holds for $(0, 0,
+  −1)$ and also $(0, \pm1, 0)$.)
+\item For any $u_0$ near the equilibrium $(1, 0, 0)$, the value $F(u_0)$ is near
+  $\alpha$, but may be larger or smaller, so $F(u_0) = \alpha\pm\delta$ for some
+  small $\delta\ge0$. Using the equations $E(u) = 1$ and $F(u) =
+  \alpha\pm\delta$, show that solution curves near $(1, 0, 0)$ are hyperbolas on
+  the sphere around this point. Hence $(1, 0, 0)$ is an unstable saddle. (The
+  same result holds for $(−1, 0, 0)$.)
+\item Simulate the model equation in \cref{eq:minilab-problem} and produce
+  solution curves for various $u_0$. Using $m = 2\text{kg}$, $c = 0.24\text{m}$,
+  $b = 0.16\text{m}$ and $a = 0.03\text{m}$, illustrate the behavior of the
+  system for initial conditions near the different equilibria. Find a book with
+  dimensions $c > b > a$ (the more different the better) and verify your results
+  by direct experiment! Can you get th e book to steadily spin about the axis
+  parallel to edge $b$? What about $a$ or $c$?
+\end{enumerate}
+\newpage
+\subsubsection*{Solution}
+\todo{}
+
+\end{document}
