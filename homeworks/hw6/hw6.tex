@@ -135,6 +135,36 @@ Since $aN>b$, the determinant is greater than zero. Furthermore since $N>b/a$,
 the trace is less than zero, making the nonzero
 $\left(b/a,\frac{\mu(N-b/a)}{b+\mu}\right)$ solution a stable equilibrium.
 
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[height=16cm, width=16cm,
+      domain=-2:30,
+      restrict x to domain=0:30, xmin=5, xmax=30,
+      ymin=-2, ymax=4,
+      xtick={0}, ytick={0},
+      view={0}{90},
+      xlabel=$S$,
+      ylabel=$I$]
+      \foreach \i in {1,...,6} {
+        \addplot3[decoration={
+          markings,
+          mark=between positions 0.1 and 0.9 step 5em with {\arrow [scale=1.5]{stealth}}
+        }, postaction=decorate] table {src-bin/2.6.3.5-\i.mat};
+      }
+      \addplot3[gray, quiver={u={-.2*x*y+1.5*(20-x-y)}, v={.2*x*y-3*y}, scale arrows=0.05}, -stealth,samples=40]{0};
+      \addplot3[only marks] table {
+        15 1.667 0
+        20 0 0
+      };
+      \addplot3[gray,dashed,very thin,samples y=1] (x, {(20*1.5-x*1.5)/(.2*x+1.5)}, 0);
+      \addplot3[gray,dashed,very thin,samples y=1] (x, 0, 0);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Phase Diagram for \S~2.6.3\#5}
+  \label{fig:2.6.3.5-phase-diagram}
+\end{figure}
+
 \newpage
 \section{\S~2.6.4}
 \subsection{2a$^2$}
