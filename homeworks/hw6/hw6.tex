@@ -159,6 +159,9 @@ Reference \cref{fig:2.6.3.5-phase-diagram}.
         15 1.667 0
         20 0 0
       };
+      \node[above right] at(axis cs:15,1.667,0) {$\left(b/a,\frac{\mu(N-b/a)}{b+\mu}\right)$};
+      \node[above right] at(axis cs:20,0,0) {$(N,0)$};
+      \draw (20, 0, 0) node[above right] {$(N,0)$};
       \addplot3[gray,dashed,very thin,samples y=1] (x, {(20*1.5-x*1.5)/(.2*x+1.5)}, 0);
       \addplot3[gray,dashed,very thin,samples y=1] (x, 0, 0);
     \end{axis}
