@@ -62,8 +62,77 @@ Characterize the stability of equilibria in terms of the parameter $\lambda>0$
 and $\eta>0$.
 
 \subsection*{Solution}
-\todo{}
+We may non-dimensionalize \cref{eq:2.6.4.2-problem} by multiplying by
+$\od{t}{\tau}$.
+\begin{equation*}
+  \begin{aligned}
+    \frac{\dd{h}}{\cancel{\dd{t}}}\frac{\cancel{\dd{t}}}{\dd{\tau}} &=
+    \od{t}{\tau}\left[ab\left(\frac{M_T}{H_T}\right)m(1-h)-rh \right] \\
+    \od{h}{\tau} &= \frac{ab}{\mu}\left(\frac{M_T}{H_T}\right)m(1-h) -
+    \frac{r}{\mu}h \\
+    \implies \od{h}{\tau} &= \lambda m(1-h) - \eta h \\
+  \end{aligned}
+\end{equation*}
+and
+\begin{equation*}
+  \begin{aligned}
+    \frac{\dd{m}}{\cancel{\dd{t}}}\frac{\cancel{\dd{t}}}{\dd{\tau}} &= ach(1-m)-\mu m \\
+    \od{m}{\tau} &= \frac{ac}{\mu}h(1-m) - m \\
+    \implies \od{m}{\tau} &= \eta h(1-m) - m \\
+  \end{aligned}
+\end{equation*}
+where
+\begin{equation*}
+  \epsilon=\frac{r}{\mu},\quad \lambda=\frac{ab}{\mu}\frac{M_T}{H_T},\quad\eta=\frac{ac}{\mu}.
+\end{equation*}
+\newcommand{\otherequilibrium}{\left(\frac{\eta\lambda-\epsilon}{\eta(\lambda+\epsilon)},
+  \frac{\eta\lambda-\epsilon}{\eta\lambda+\lambda}\right)}
+Solving $\od{h}{\tau}=0$, $\od{m}{\tau}=0$ yields equilibria at $(0,0)$ and
+$\otherequilibrium$. To determine the stability of these equilibria we'll find
+the Jacobian and evaluate it at the equilibria.
+\begin{equation*}
+  J =
+  \begin{pmatrix}
+    -\epsilon-m\lambda & (1-h)\lambda \\
+    (1-m)\eta  & -h\eta-1 \\
+  \end{pmatrix}
+\end{equation*}
+About $(0,0)$,
+\begin{equation*}
+  J(0,0) =
+  \begin{pmatrix}
+    -\epsilon & \lambda \\
+    \eta & -1 \\
+  \end{pmatrix}
+\end{equation*}
+so that
+\begin{equation*}
+  \begin{aligned}
+    \det{J} &= \epsilon-\lambda\eta \\
+    \tr{J} &= -\epsilon-1. \\
+  \end{aligned}
+\end{equation*}
+This indicates that $(0,0)$ is stable if $\epsilon>\lambda\eta$ and unstable if
+$\epsilon<\lambda\eta$. About $\otherequilibrium$, which we'll rename as
+$(h_*,m_*)$,
+\begin{equation*}
+  J(h_*,m_*) =
+  \begin{pmatrix}
+    -\epsilon-m_*\lambda & (1-h_*)\lambda \\
+    (1-m_*)\eta  & -h_*\eta-1 \\
+  \end{pmatrix}
+\end{equation*}
+so that
+\begin{equation*}
+  \begin{aligned}
+    \det{J} &= \lambda(\eta(h-1)+(\eta+1)m)+\eta h\epsilon+\epsilon \\
+    \tr{J} &= -\eta h-\lambda m-\epsilon-1. \\
+  \end{aligned}
+\end{equation*}
+This indicates that $(h_*,m_*)$ is guaranteed stable for any $\lambda$, $\eta$,
+and $\epsilon$ as long as $h>1$.
 
+\newpage
 \subsection{2b$^2$}
 \subsubsection*{Problem}
 Assuming $\epsilon$ is very small, neglect the $\epsilon h$ term in the host equation
