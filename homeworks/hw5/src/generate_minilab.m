@@ -27,7 +27,7 @@ function dumpMinilab(prob, subprob)
     u2 = [tsoln usoln(:,2) zeros(size(usoln,1),1)];
     dlmwrite(sprintf("minilab-%i-%i-y-%i.mat", prob, subprob, i), u2, " ", "precision", "%.5f");
     ## figure(3); plot(usoln(:,1),usoln(:,2),'r-')  ; %plot u2 versus u1
-    uu = [usoln(:,1) usoln(:,2) zeros(size(usoln,1),1)]
+    uu = [usoln(:,1) usoln(:,2) zeros(size(usoln,1),1)];
     dlmwrite(sprintf("minilab-%i-%i-u-%i.mat", prob, subprob, i), uu, " ", "precision", "%.5f");
     clear tsoln usoln u1 u2 uu;
   end
