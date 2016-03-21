@@ -2188,4 +2188,151 @@ $\epsilon^3\sin\epsilon\ne0(\epsilon^3)$, but $\epsilon^3\sin\epsilon=1(\epsilon
 $$\lim_{\epsilon\downarrow0}\abs{\frac{\epsilon^3\sin\epsilon}{\epsilon^4}}=1.$$
 $\epsilon^3\sin\epsilon\ne0(\epsilon^3)$, but $\epsilon^3\sin\epsilon\ne1(\epsilon^3)$
 
+\section{Regularly Perturbed Algebraiac Equations}
+\subsection{Problem}
+Consider a regular perturbed algebraiac equation e.g.
+\begin{equation}
+  (\text{P}) \left\{
+    \begin{aligned}
+      x^2+e^{-\epsilon x} - 5 &= 0\\
+      0 \le \epsilon \ll 1
+    \end{aligned}
+  \right.
+\end{equation}
+We seek to construct an approximation $x^{a}_{(\epsilon)}$ to each solution.
+Reference \todo{FIG}
+\subsection{Standard Procedure}
+Assume solutions of $(\text{P})$ can be represented by a standard power series
+in $\epsilon$.
+
+\begin{equation*}
+  \begin{aligned}
+    x_{(\epsilon)}&=x_0+\epsilon x_1 + \epsilon^2x_2+\cdots \\
+    &= \mathcal{O}(1) + \mathcal{O}(\epsilon) \\
+  \end{aligned}
+\end{equation*}
+where $x_0, x_1,\ldots$ are unknown coefficients. Substituting into (P) gives
+\begin{equation*}
+  \begin{aligned}
+    x^2_{(\epsilon)}+e^{\epsilon x_{(\epsilon)}} - 5 &= 0,\quad 0\le\epsilon\ll1 \\
+    f(\epsilon) + g(\epsilon) -5 &= 0
+  \end{aligned}
+\end{equation*}
+Expanding $f(\epsilon)$, $g(\epsilon)$ about $\epsilon=0$ we get
+\begin{equation*}
+  \begin{aligned}
+    f(\epsilon) &= f(0) + \epsilon f'(0) + \frac{\epsilon^2}{2!}f''(0)+\cdots \\
+    &= x^2_{(0)} + \epsilon[2x(\epsilon)x'(\epsilon)]_{\epsilon=0} + \frac{\epsilon^2}{2}[2x'(\epsilon)x'(\epsilon)+2x(\epsilon)x''(\epsilon)]_{\epsilon=0} + \cdots
+    &= x_0^2+\epsilon[2x_0x_1] + \frac{\epsilon^2}{2}[2x_1^2 + 2x_02x_2] + \cdots
+  \end{aligned}
+\end{equation*}
+We may do the same for $g$.
+\begin{equation*}
+  \begin{aligned}
+    g(\epsilon) &= g(0) + \epsilon g'(0) + \frac{\epsilon^2}{2!}g''(0) + \cdots \\
+    &= e^0+\epsilon[e^{\epsilon x(\epsilon)}(-x(\epsilon)-\epsilon x'(\epsilon))]_{\epsilon=0} +
+    \frac{\epsilon^2}{2}[e^{-\epsilon x(\epsilon)}(-x(\epsilon)-\epsilon x'(\epsilon))^2 +
+    e^{-\epsilon x(\epsilon)}(-x'(\epsilon)-x'(\epsilon)-\epsilon x''(\epsilon))]_{\epsilon=0} \\
+    &= 1 + \epsilon[-x(0)]+\frac{\epsilon^2}{2}[x_0^2-2x_1] + \cdots \\
+  \end{aligned}
+\end{equation*}
+Substituting into \todo{something} gives
+\begin{equation*}
+  x_0 + 2\epsilon x_0x_1+\epsilon^2[x_1^2+2x_0x_1]+\cdots + 1 - \epsilon x_0 +
+  \epsilon^2[\frac{1}{2}x_0^2-x_1] + \cdots - 5 = 0
+\end{equation*}
+\begin{equation}
+  \label{eq:what-2}
+  [x_0^2+1-5]+\epsilon[2x_0x_1-x_0] + \epsilon^2[x_1^2+2x_0x_1+\frac{1}{2}x_0^2-x_1] + \cdots = 0
+\end{equation}
+where $0\le\epsilon\ll1$. In order for \cref{eq:what-2} to hold for all
+$0\le\epsilon\ll1$, each coefficient of $\epsilon^0,\epsilon^1,\ldots$ must
+vanish.
+\begin{equation*}
+  \begin{aligned}
+    \epsilon^0:&\quad x^2-4=0\longrightarrow x_0=\pm 2 \\
+    \epsilon^1:&\quad 2x_0x_1-x_0=9\longrightarrow x_1=\frac{x_0}{2x_0};\quad x_1=\frac{1}{2} \\
+    \epsilon^2:&\quad x_1^2+2x_0x_2+\frac{1}{2}x_0^2-x_1=9\longrightarrow x_2=\frac{x_1-\frac{1}{2}x_0^2-x_1^2}{2x_0};\quad x_2=\pm\frac{7}{16}.
+  \end{aligned}
+\end{equation*}
+A representation of the two solutions is
+\begin{equation*}
+  \begin{aligned}
+    x_1(\epsilon) &= 2 + \frac{1}{2}\epsilon - \frac{7}{16}\epsilon^2 + \cdots \\
+    x_2(\epsilon) &= -2 + \frac{1}{2}\epsilon + \frac{7}{16}\epsilon^2 + \cdots \\
+  \end{aligned}
+\end{equation*}
+An aproxiimatation up to $\mathcal{O}(\epsilon^2)$ terms isable
+\begin{equation*}
+  \begin{aligned}
+    x_1^a(\epsilon) & = 2+\frac{1}{2}\epsilon - \frac{7}{16}\epsilon^2\\
+    x_2^a(\epsilon) & = -2+\frac{1}{2}\epsilon + \frac{7}{16}\epsilon^2\\
+  \end{aligned}
+\end{equation*}
+where $0\le\epsilon\ll1$. Reference fig.
+
+\subsection{Generalized Procedure}
+Some solutions cannot be represented by a standard series and a more general
+form is required, i.e.
+\begin{equation*}
+  x(\epsilon) = x_0+\epsilon^{\alpha}x_1 + \epsilon^{2\alpha}x_2 + \cdots
+\end{equation*}
+Where $\alpha>0$ is determined by the problem.
+
+\subsubsection{Example}
+\begin{equation*} (\text{P}) \left\{
+  \begin{aligned}
+    (x-1)^2+\epsilon=0 \\
+    0\le\epsilon\ll1 \\
+  \end{aligned} \right.
+\end{equation*}
+
+\begin{equation*}
+  x(\epsilon) = x_0 + \epsilon x_1 + \epsilon^2 x_2 + \cdots
+\end{equation*}
+Substituting into $(P)$.
+\begin{equation*}
+  \begin{aligned}
+    (-1+x_0+\epsilon x_1+\epsilon^2 x_2+\cdots)^2 + \epsilon = 0 \\
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    \epsilon^0:&\quad (-1+x_0)^2=0\longrightarrow x_0=1 \\
+    \epsilon^1:&\quad 2(-1+x_0)x_1+1=0\longrightarrow (-1+x_0)x_1=-\frac{1}{2},\quad 0=-\frac{1}{2}
+  \end{aligned}
+\end{equation*}
+Cant solve for $x_1$ for $\epsilon_1$, so the standard series is not appropriate
+for this example. We'll try the generalized series.
+
+\begin{equation*}
+  x(\epsilon) = x_0 + \epsilon^{\alpha}x_1 + \epsilon^{2\alpha}x_2 + \cdots \\
+\end{equation*}
+Substituting into $(P)$.
+\begin{equation*}
+  (-1+x_0+\epsilon^{\alpha}x_1 + \epsilon^{2\alpha}x_2 + \cdots)+\epsilon=0
+\end{equation*}
+\begin{equation*}
+  (-1-x_0)^2+2(-1+x_0)x_1\epsilon^{\alpha} + [2(-1+x_0)x_2+x_1^2]\epsilon^{2\alpha} + \cdots + \epsilon=0
+\end{equation*}
+Collecting $\epsilon$, $\epsilon^{\alpha}$ terms leads to a contradiction as
+before; hence we try collecting $\epsilon$, $\epsilon^{2\alpha}$ terms which
+requires $2\alpha=1$ or $\alpha=1/2$. Now we can continue and solve for the
+coefficients.
+\begin{equation*}
+  \begin{aligned}
+    \epsilon^0&\quad (-1+x_0)^2=0\longrightarrow x_0=1 \\
+    \epsilon^{1/2}&\quad 2(-1+x_0)x_1=0 \longrightarrow 0=0\;\text{ok; no info}\\
+    \epsilon^{1}&\quad 2(-1+x_0)x_2+x_1^2+1=0 \longrightarrow x_1^2=-1\implies x_1=\pm i
+    \epsilon^{3/2}&\quad \cdots
+  \end{aligned}
+\end{equation*}
+A representation of the two solutions is
+\begin{equation*}
+  \begin{aligned}
+    x_1(\epsilon) &= 1+\epsilon^{1/2}i + \cdots \\
+    x_2(\epsilon) &= 1-\epsilon^{1/2}i + \cdots \\
+  \end{aligned}
+\end{equation*}
+This recovers the exact solution with just two terms.
 \end{document}
