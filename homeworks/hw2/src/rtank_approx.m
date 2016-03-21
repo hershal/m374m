@@ -16,11 +16,11 @@ function dudt = rtank_approx(t,u)
 % though it might not be used to evaluate dudt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- % Access global constants from main prog
-  global cin eta V gamma ;
+% Access global constants from main prog
+global cin eta V gamma ;
 
- % Initialize output variable dudt
-  dudt = 0 ;
+% Initialize output variable dudt
+dudt = 0 ;
 
- % Evaluate dudt for given t and u
-  dudt = 1 - u - ((V*gamma*cin)/eta)*u^2 ;
+% Evaluate dudt for given t and u
+dudt = 1 - u - ((V*gamma*cin)/eta)*u^2 ;
