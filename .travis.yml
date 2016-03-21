@@ -4,7 +4,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get install latexmk texlive-latex-recommended cmake
+  - sudo apt-get install latexmk texlive-latex-recommended cmake octave octave-odepkg
 
 script:
   - mkdir build && cd build && cmake .. && make -j32
