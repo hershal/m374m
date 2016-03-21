@@ -774,4 +774,30 @@ The simulations agree with the analysis in \cref{sec:minilab-second-problem}, as
 the nonlinear term seems to have negligible effects on the solution of the
 second scenario, as predicted. Reference
 \cref{fig:minilab-scenario-one,fig:minilab-scenario-two}.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=14cm, height=14cm,
+      domain=0:100, view={0}{90}, xlabel=$t$, ylabel=$c$]
+      \addplot3[very thin] table {src-bin/minilab-1-1.mat};
+      \addplot3[very thin, dashed] table {src-bin/minilab-1-2.mat};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Minilab Scenario 1}
+  \label{fig:minilab-scenario-one}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=14cm, height=14cm,
+      domain=0:100, view={0}{90}, xlabel=$t$, ylabel=$c$]
+      \addplot3[very thin] table {src-bin/minilab-2-1.mat};
+      \addplot3[very thin, dashed] table {src-bin/minilab-2-2.mat};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Minilab Scenario 2}
+  \label{fig:minilab-scenario-two}
+\end{figure}
 \end{document}
