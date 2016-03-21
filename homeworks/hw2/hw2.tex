@@ -5,13 +5,12 @@
 \date{Due 2016-02-08}
 
 \usepackage{homework-macros}
+\tikzexternalize
 
 \begin{document}
 \maketitle
-
 \section{\S~1.2}
 \subsection{1$^1$}
-
 \subsubsection*{Problem}
 Let $u=u(t),\;0 \le t \le b$, be a given smooth function. If
 $M=\text{max}\abs{u(t)}$, then $u$ can be scales by $M$ to obtain the
@@ -775,19 +774,4 @@ The simulations agree with the analysis in \cref{sec:minilab-second-problem}, as
 the nonlinear term seems to have negligible effects on the solution of the
 second scenario, as predicted. Reference
 \cref{fig:minilab-scenario-one,fig:minilab-scenario-two}.
-
-  \begin{figure}
-    \centering
-    \caption{Scenario One}
-    \scalebox{0.85}{\huge\input{prog2_fig1.tex}}
-    \label{fig:minilab-scenario-one}
-  \end{figure}
-
-  \begin{figure}
-    \centering
-    \caption{Scenario Two}
-    \scalebox{0.85}{\huge\input{prog2_fig2.tex}}
-    \label{fig:minilab-scenario-two}
-  \end{figure}
-
 \end{document}
