@@ -17,11 +17,10 @@ function dudt = F(t,u)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Access global constants from main prog
-global c h ;        
+global c h ;
 
 % Initialize output variable dudt
-dudt = 0 ; 
+dudt = 0 ;
 
 % Evaluate dudt for given t and u
 dudt = u*(1-u) - h*u/(1+c*u) ;
- 
