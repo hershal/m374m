@@ -1,0 +1,8 @@
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install latexmk texlive-latex-recommended cmake
+
+script:
+  - mkdir build && cd build && cmake .. && make -j32
