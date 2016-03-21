@@ -1,5 +1,5 @@
 % -*- mode: octave -*-
-function dudt = F(t,u)
+function dudt = plant(t,u)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Evaluates du/dt for the plant-herbivore model
