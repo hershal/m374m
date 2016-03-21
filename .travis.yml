@@ -4,10 +4,10 @@ sudo: required
 dist: trusty
 
 before_install:
-  - sudo apt-get update -qq
+  - sudo apt-get update -qq -y
 
 install:
-  - sudo apt-get --no-install-recommends install latexmk texlive-latex3 texlive-latex-recommended texlive-latex-extra texlive-fonts-extra cmake octave octave-odepkg
+  - sudo apt-get -y --no-install-recommends install latexmk texlive-latex3 texlive-latex-recommended texlive-latex-extra texlive-fonts-extra cmake octave octave-odepkg
 
 script:
   - mkdir build && cd build && cmake .. && make -j32
