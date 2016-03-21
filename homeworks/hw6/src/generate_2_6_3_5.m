@@ -12,7 +12,7 @@ points = [5 30 30   5  5  30
 tols = [5 6 7 8 2.8 1];
 rets = generate_inorder(f_2_6_3_5, problem, points, tols);
 
-figure(1); clf; hold on; axis([5 30 -2 4]);
-for i=1:size(rets)
-  plot(rets{i}(:,1), rets{i}(:,2))
-endfor
+## figure(1); clf; hold on; axis([5 30 -2 4]);
+## for i=1:size(rets)
+##   plot(rets{i}(:,1), rets{i}(:,2))
+## endfor
