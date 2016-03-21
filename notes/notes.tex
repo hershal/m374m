@@ -2335,4 +2335,105 @@ A representation of the two solutions is
   \end{aligned}
 \end{equation*}
 This recovers the exact solution with just two terms.
+
+\newpage
+\section{Case Study: Ballistic Targeting}
+\subsection{Problem}
+Consider aiming a weapon for a long range shot. Reference fig. 17.1. For a given
+firing speed $c$, we seek aiming angle $\theta$ such that the bullet will strike
+the target.
+
+\subsection{Model}
+\begin{equation*}
+  \begin{aligned}
+    \vec{r}(t) &= x(t)\vec{\imath} + y(t)\vec{\jmath} \\
+    \vec{\dot{r}}(t) &= \dot{x}(t)\vec{\imath} + \dot{y}(t)\vec{\jmath} \\
+    \vec{\ddot{r}}(t) &= \ddot{x}(t)\vec{\imath} + \ddot{y}(t)\vec{\jmath} \\
+  \end{aligned}
+\end{equation*}
+Where $\vec{r}(t)$ is the bullet position, $\vec{\dot{r}}(t)$ is the velocity,
+and $\vec{\ddot{r}}(t)$ is the acceleration. Assume only forces are gravity and
+air resistance. A basic model for high speed air resistance is
+
+\begin{equation}
+  \left( \text{\parbox{5em}{\centering $\vec{F}_{\text{air}}$ opposite direction of $\vec{\dot{F}}$}}
+  \right) \quad\text{and}\quad
+  \left( \parbox{5em}{\centering \text{$\abs{\vec{F}_{\text{air}}} so \abs{\vec{\dot{r}}}^2$}} \right)
+\end{equation}
+So that
+$$\vec{F}_{\text{air}} = \alpha\abs{\vec{\dot{r}}}^2\vec{\dot{r}}$$
+$$\vec{F}_{\text{air}} =
+-\alpha\sqrt{\dot{x}^2+\dot{y}^2}(\dot{x}\vec{\imath}+\dot{y}\vec{\jmath})$$
+When bullet path is nearly horizontal, we expect $\dot{x}\ge\abs{\dot{y}}$.
+Hence we replace $\sqrt{\dot{x}^2+\dot{y}^2}$ with $\dot{x}$. This gives
+$$\vec{F}_{\text{air}} = -\alpha\dot{x}(\dot{x}\vec{\imath}+\dot{y}\vec{\jmath}).$$
+Using Newton's Law, we get
+$$m\vec{\ddot{r}} = \vec{F}_{\text{grav}} + \vec{F}_{\text{air}}$$
+$$m(\ddot{x}\vec{\imath}+\ddot{y}\vec{\jmath}) = mg\vec{\jmath} -
+\alpha\dot{x}(\dot{x}\vec{\imath}+\dot{y}\vec{\jmath})$$
+Reference fig. 17.2 for a free-body diagram. This gives the system
+\begin{equation}
+  \label{eq:ballistic-system}
+  \begin{aligned}
+    \ddot{x} &= -\epsilon\dot{x}^2,&\quad \dot{x}(0)&=u_0,\;x(0)=0. \\
+    \ddot{y} &= -\epsilon\dot{x}\dot{y},&\quad \dot{y}(0)&=v_0,\;y(0)=0 \\
+    \epsilon &= \frac{\alpha}{m} \ge 0, &\quad c&=\sqrt{u_0^2+v_0^2}>0
+  \end{aligned}
+\end{equation}
+We seek $\theta$ such that the path $(x(t), y(t))$ intersects $(a,b)$ at some
+time $t\ge0$. We assume $a>0$, $u_0>0$.
+
+\subsection{Case 1}
+Assume $g=0$, $\epsilon=0$ (no gravity, no air).
+This turns \cref{eq:ballistic-system} into
+\begin{equation*}
+  \begin{aligned}
+    \ddot{x}&=0, &\quad \dot{x}(0)=u_0,\quad x(0)=0 \\
+    \ddot{y}&=0, &\quad \dot{y}(0)=v_0,\quad y(0)=0 \\
+  \end{aligned}
+\end{equation*}
+The solution looks like
+$$x(t) = u_0t, \quad y(t) = v_0t,\quad t\ge0.$$
+The strike occurs when $t=t_s$ defined by
+\begin{equation*}
+  \begin{aligned}
+    x(t_s) &= a, &\quad y(t_s)&=b \\
+    u_0t_s &= a, &\quad v_0t_s&=b \\
+  \end{aligned}
+\end{equation*}
+There is always one solution for any $a>0$ and $b$ arbitrary. This results in
+the weapon aimed directly at target. Reference fig. 17.4.
+
+\subsection{Case 2}
+Assume $g>0$, $\epsilon=0$ (gravity included, no air).
+This turns \cref{eq:ballistic-system} into
+\begin{equation*}
+  \begin{aligned}
+    \ddot{x}&=0, &\quad \dot{x}(0)=u_0,\quad x(0)=0 \\
+    \ddot{y}&=-g, &\quad \dot{y}(0)=v_0,\quad y(0)=0 \\
+  \end{aligned}
+\end{equation*}
+The solution looks like
+$$x(t) = u_0t, \quad y(t) = v_0t-\frac{1}{2}t^2g,\quad t\ge0.$$
+The strike occurs when $t=t_s$ defined by
+\begin{equation*}
+  \begin{aligned}
+    x(t_s) &= a, &\quad y(t_s)&=b \\
+    u_0t_s &= a, &\quad v_0t_s-\frac{1}{2}t_s^2g&=b \\
+    t_s &= \frac{a}{u_0}, &\quad \frac{b}{a}u_0+\left(\frac{ag}{2}\right)\frac{1}{u_0} =& v_0
+  \end{aligned}
+\end{equation*}
+With the initial speed condition $$u_0^2+v_0^2=c^2$$, solving for
+$(u_0,v_0),\;\theta$ may result in 2, 1, or no solutions depending on $a,b,c,g$.
+
+\subsection{Case 3}
+Assume $g>0$, $\epsilon>0$ ($\epsilon$ small) (gravity included, air included).
+This turns \cref{eq:ballistic-system} into
+\begin{equation*}
+  \begin{aligned}
+    \ddot{x}&=-\epsilon\dot{x}^2, &\quad \dot{x}(0)=u_0,\quad x(0)=0 \\
+    \ddot{y}&=-g, &\quad \dot{y}(0)=v_0,\quad y(0)=0 \\
+  \end{aligned}
+\end{equation*}
+Repeat analysis using approximate solutions for $x(t)$, $y(t)$.
 \end{document}
