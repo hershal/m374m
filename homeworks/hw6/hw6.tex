@@ -6,12 +6,6 @@
 
 \usepackage{homework-macros}
 \usepackage{changepage,ifthen}
-\newcommand\skiptooddpage{
-   \checkoddpage
-   \ifthenelse{\boolean{oddpage}}
-      {\null\clearpage\null\clearpage}
-      {\null\clearpage}
-}
 \tikzexternalize
 
 \begin{document}
