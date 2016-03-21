@@ -28,4 +28,3 @@ dudt = zeros(2,1) ;
 % Evaluate dudt for given t and u
 dudt(1) = a*u(1) + b*u(2) ;
 dudt(2) = c*u(1) + d*u(2) ;
- 
