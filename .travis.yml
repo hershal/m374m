@@ -7,7 +7,7 @@ before_install:
   - sudo apt-get update -qq -y
 
 install:
-  - sudo apt-get -y --no-install-recommends install latexmk texlive-latex3 texlive-latex-recommended texlive-latex-extra texlive-fonts-extra pgf cmake octave octave-odepkg
+  - sudo apt-get -y --no-install-recommends install latexmk texlive-latex3 texlive-latex-recommended texlive-latex-extra texlive-fonts-extra pgf cmake octave octave-odepkg gnuplot
 
 script:
   - mkdir build && cd build && cmake .. && make -j32
