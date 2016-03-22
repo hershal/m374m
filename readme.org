@@ -1,0 +1,19 @@
+* M374M
+This is a cool class.
+
+* TODOs
+** TODO Start all sections on odd pages
+I started this, but it messes up the table of contents on the notes document.
+There is a less hacky way to do this. The current solution works for homeworks
+but is generally not optimal. There is a better way.
+** TODO Get Travis CI working
+Need to test this offline with a vagrant install of travis' environment (use trusty).
+** TODO Properly separate between bound and stapled documents
+=twoside= messes up the margins for stapled documents, but would work better for
+bound documents. There is a better way to maintain this separation than using
+=geometry= tomanually change the margins.
+** TODO Clean up notes
+Please do this before the final... This will also help make the cheat sheets and
+understand the content.
+** TODO Add notes figures
+Will I ever get to this? There are so many figures...
