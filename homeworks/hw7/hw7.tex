@@ -5,6 +5,7 @@
 \date{Due 2016--03--25}
 
 \usepackage{homework-macros}
+\usepackage{xparse}
 \tikzexternalize
 
 \begin{document}
@@ -21,12 +22,41 @@ Let
 Expand $f$ in powers of $\epsilon$ up to $\mathcal{O}(\epsilon^2)$
 
 \subsubsection*{Remarks}
-Given $f(y,\epsilon)$ and $y(\epsilon)=y_0+\epsilon y_1 + \cdots$, let
-$F(\epsilon)=f(y(\epsilon), \epsilon)$. Find the Taylor expansion for
+Given $f(y,\epsilon)$ and $y(\epsilon)=y_0+\epsilon y_1+\cdots$, let
+$F(\epsilon)=f(y(\epsilon),\epsilon)$. Find the Taylor expansion for
 $F(\epsilon)$ up to the $\mathcal{O}(\epsilon^2)$ term.
 
 \subsubsection*{Solution}
-\todo{}
+The Taylor Series Expansion of $F(\epsilon)=f(y(\epsilon),\epsilon)$ is as
+follows
+\newcommand\nthdegree[1]{
+  \foreach \deg in {1,...,#1} {
+    \ifnum #1>0
+    \ensuremath{{'}}
+    \fi
+  }
+}
+% epsilon*y as a function at nth deriviative or variable at nth degree
+% [function/var][deriv degree/var number]
+\DeclareDocumentCommand\epsy{s O{0}} {
+  \IfBooleanTF #1
+  {\ensuremath{\epsilon\,y_{#2}}}
+  {\ensuremath{\epsilon\,y\nthdegree{#2}(\epsilon)}}
+}
+\begin{align*}
+  F(\epsilon)
+  &= f(0) + \epsilon f'(0) + \epsilon^2 f''(0) \\
+  &= 1 - \frac{3}{2}{\left[(1+\epsy^{-5/2}
+    (\epsy[1]))\right]}
+    _{\epsilon=0}\epsilon \\
+  &\quad- \frac{3}{2}
+    {\left[-\frac{5}{2}(1+\epsy^{-7/2})(\epsy[1])
+    + {(1+\epsy)}^{-5/2}(\epsy[2])\right]}_{\epsilon=0}\epsilon^2
+    + \mathcal{O}(\epsilon^3) \\
+  &= {\left[-\frac{3}{2}{(1+\epsy*)}^{-5/2}(\epsy*[1])\right]}\epsilon \\
+  &\quad- \frac{3}{2}{\left[-\frac{5}{2}{(1+\epsy*)}^{-7/2}(\epsy*[1])
+    + {(1+\epsy*)}^{5/2}(\epsy*[2])\right]}\epsilon^2 + \mathcal{O}(\epsilon^3) \\
+\end{align*}
 
 \subsubsection{7$^2$}
 \subsubsection*{Problem}
