@@ -2414,7 +2414,7 @@ The strike occurs when $t=t_s$ defined by
     t_s &= \frac{a}{u_0}, &\quad \frac{b}{a}u_0+\left(\frac{ag}{2}\right)\frac{1}{u_0} =& v_0
   \end{aligned}
 \end{equation*}
-With the initial speed condition $$u_0^2+v_0^2=c^2$$, solving for
+With the initial speed condition $$u_0^2+v_0^2=c^2,$$ solving for
 $(u_0,v_0),\;\theta$ may result in 2, 1, or no solutions depending on $a,b,c,g$.
 
 \subsection{Case 3}
@@ -2427,4 +2427,123 @@ This turns \cref{eq:ballistic-system} into
   \end{aligned}
 \end{equation*}
 Repeat analysis using approximate solutions for $x(t)$, $y(t)$.
+
+\section{Regularly Perturbed Differential Equations with Oscillatory Solutions}
+\subsection{Problem}
+Consider a system with oscillatory-type solution
+\begin{align*}
+  \ddot{x} &= -x-\epsilon x^3 && \\
+  \dot{x}(0) &=0 & x(0)&=1 \\
+  0 &\le\epsilon\ll1 && \\
+\end{align*}
+Reference figs. 18.1, 18.2. In this case,
+$$F_{\text{spring}}=-x-\epsilon x^3\quad m=1$$
+\begin{equation*}
+  \begin{aligned}
+    \epsilon=0:&\quad \text{solution of IVP is simple periodic motion} \\
+    0<\epsilon\le1:&\quad \text{expect solution to be slightly distorted periodic motion} \\
+  \end{aligned}
+\end{equation*}
+We seek to construct an approximate solution $x^a(t,\epsilon)$.
+
+\subsection{Standard Procedure}
+Assume solution of (IVP) can be represented as
+$$x(t,\epsilon)=x_0(t)+\epsilon x_1(t)+\epsilon^2 x_2(t)+\cdots$$
+Substituting into (IVP) gives
+\begin{align*}
+  \od[2]{}{t}x(t,\epsilon) + x(t,\epsilon) + \epsilon x^3(t,\epsilon) = 0, t\ge 0 & \text{ODE} \\
+  \od{}{t}x(0,t)=0,\quad x(0,\epsilon)-1=0 & \text{ICs}
+\end{align*}
+Let $f(t,\epsilon)=x^3(t,\epsilon)$. Expanding $f(t,\epsilon)$ in $\epsilon$
+about $\epsilon=0$ gives
+\begin{align*}
+  f(t,\epsilon)
+  &= f(t,0) + \epsilon f(t,0) + \frac{\epsilon}{2!}f''(t,0) + \cdots \\
+  &= {[x^3(t,\epsilon)]}_{\epsilon=0} + \epsilon {[3x^2(t,\epsilon)x'(t,\epsilon)]}_{\epsilon=0} + \cdots \\
+  &= x^3_0(t) + \epsilon[2x_0^2(t)x_1(t)] + \cdots \\
+\end{align*}
+Substituting into (ODE), (ICs) gives
+\begin{align*}
+  \text{ODE} &:\quad \od[2]{}{t}[x_0(t)+\epsilon x_1(t)+\cdots] +
+               [x_0(t)+\epsilon x_1(t)+\cdots] + \epsilon[x_0^3(t)+3\epsilon
+               x_0^2(t)x_1(t)+\cdots] \\
+  \text{ICs} &:\quad \od{}{t}{[x_0(t)+\epsilon x_1(t)+\cdots]}_{t=0}=0, \\
+             &\quad {[x_0(t)+\epsilon x_1(t)+\cdots]}_{t=0}-1=0 \\
+\end{align*}
+Collecting coefficients $\epsilon$ gives
+\todo{fix this}
+% \begin{equation}
+%   \begin{aligned}
+%     \epsilon_0 :\quad \left\{
+%       \begin{aligned}
+%         x_0 + x_0 = 0,\quadt\ge0 \\
+%         \dot{x_0}(0) =0, \quad x_0(0)-1=0 \\
+%       \end{aligned} \\
+%     \right. \epsilon_1 :\quad \left\{
+%       \begin{aligned}
+%         \ddot{x_1}+x_1 + x_0^3 =0,\quad t\ge0 \\
+%         \dot{x_1}(0)=0,\quad x(0)=0 \\
+%       \end{aligned}
+%     \right.
+%   \end{aligned}
+% \end{equation}
+
+Solution for $x_0(t)$.
+\begin{align*}
+  \text{ODE} &:\quad \ddot{x_0}+x_0=0
+\end{align*}
+Recurrence relations, etc. Reference picture from class. \todo{fill prev
+  equation}
+Solution for $x_1(t)$
+\begin{align}
+  \label{eq:ode}
+  \text{ODE} &:\quad \ddot{x_1} + x_1 =-x_0^3=-\cos^3t
+\end{align}
+Using the triple-angle formula
+$$\cos^3\theta=\frac{3}{4}\cos\theta+\frac{1}{4}\cos(3\theta)$$
+We get
+$$\ddot{x_1}+x_1=-\frac{3}{4}\cos t-\frac{1}{4}\cos(3t).$$
+The general solution is
+$$x_1(t)=x_1^H(t)+x_1^P(t)$$
+where $x_1^H(t)$ is the homogenous solution and $x_1^P(t)$ is a particular
+solution.
+
+\begin{align}
+  \label{eq:x1}
+  x_1^P &:\quad \ddot{x_1}^P +x_1^P = -\frac{1}{4}\cos(3t)-\frac{3}{4}\cos t
+\end{align}
+Using the method of undetermined coefficients, we assume
+$$x_1^P=A\cos(3t)+B\sin(3t) + t[D\cos t + E\sin t].$$
+The extra factors $D$ and $E$ appear because some of the terms of the assumption
+of $x_1^P$ appear in the actual $x_1^P$. Substituting \cref{eq:x1} into
+\cref{eq:ode}, expanding and matching terms gives
+\begin{align*}
+  A = \frac{1}{32},\quad B=0,\quad D=0,\quad E=\frac{-3}{8} \\
+  x_1^P(t)=\frac{1}{32}\cos(3t)-\frac{3}{8}t\sin t.
+\end{align*}
+Hence
+$$x_1(t)=C_1\cos t + C_2\sin t + \frac{1}{32}\cos(3t)-\frac{3}{8}t\sin t.$$
+\begin{align*}
+  \text{ICs} &:\quad x_1(0)=0\;\rightarrow\;C_1+\frac{1}{32}=0\;\rightarrow\;C_1=\frac{-1}{32} \\
+             &:\quad \dot{x_1}(0)=0 \rightarrow \cdots \rightarrow C_2=0
+\end{align*}
+A two-term approximation of the solution of (IVP) is
+\begin{align*}
+  x^a(t,\epsilon)
+  &= x_0(t) + \epsilon x_1(t) \\
+  &= \cos t + \epsilon\left[ \frac{1}{32}\cos(3t)-\frac{1}{32}\cos t - \frac{3}{8}t\sin t \right]
+\end{align*}
+\subsection{Remarks}
+\begin{enumerate}[(1)]
+\item Approximation is accurtae only when are successively small, i.e.
+$$\abs{x_0}\ge\epsilon\abs{x_1}\ge\epsilon^2\abs{x_2}\ge\epsilon^3\abs{x_3}\ge\cdots.$$
+\item Because $\abs{\cos t},\abs{\sin t}\le1$ and $t\sin t\le t$ we get
+$$\abs{x_0}\ge\epsilon\abs{x_1}.$$ This will hold when $\epsilon$ and $\epsilon
+t$ are small. Hence approximation is accurate only for moderate time intervals.
+The quality of approximation is non-uniform in $t$. Here $t\sin t$ is called a
+``secular'' term, which is an artifact of our method, not intrinsic to the
+system.
+\item It is possible to de better by using a more flexible series, as in the
+  next chapter \todo{ref to next chapter}.
+\end{enumerate}
 \end{document}
