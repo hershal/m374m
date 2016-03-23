@@ -25,3 +25,5 @@ Please do this before the final... This will also help make the cheat sheets and
 understand the content.
 ** TODO Add notes figures
 Will I ever get to this? There are so many figures...
+** TODO Separate homework macros and notes macros
+Homework subsections need new pages, but notes subsections do not.
