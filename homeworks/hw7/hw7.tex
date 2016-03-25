@@ -190,6 +190,54 @@ Find a two-term perturbation solution of \cref{eq:3.1.20-problem}.
 Find approximation of solution up to $\mathcal{O}(\epsilon)$ term.
 
 \subsubsection*{Solution}
-\todo{}
+Assume
+\begin{equation}
+  \label{eq:3.1.20-u}
+  u = u_0 + \epsilon u_1 + \cdots
+\end{equation}
+We may substitute \cref{eq:3.1.20-u} in the differential equation
+\begin{equation*}
+  u_0'+\epsilon u_1'+\cdots = \frac{1}{1+\epsilon(u_0+\epsilon u_1+\cdots)}
+  - u_0+\epsilon u_1+\cdots,
+\end{equation*}
+and collect powers of $\epsilon$ to obtain
+\begin{equation}
+  \begin{aligned}
+    \label{eq:3.1.20-diff-equations}
+    u_0' &= 1-u_0 \\
+    u_1' &= -u_1. \\
+  \end{aligned}
+\end{equation}
+In addition, substituting \cref{eq:3.1.20-u} into the initial condition of
+\cref{eq:3.1.20-problem} yields
+\begin{equation*}
+  u_0(0)+\epsilon u_1(0) = 0,
+\end{equation*}
+which implies
+\begin{equation}
+  \label{eq:3.1.20-initial-conditions}
+  \begin{aligned}
+    u_0(0) &= 0 \\
+    u_1(0) &= 0. \\
+  \end{aligned}
+\end{equation}
+The sequence of conditions in
+\cref{eq:3.1.20-diff-equations,eq:3.1.20-initial-conditions} respresent a set of
+linear initial value problems which may be solved individually to approximate
+the solution to \cref{eq:3.1.20-problem}. Solving the set in
+\cref{eq:3.1.20-diff-equations} with initial conditions in
+\cref{eq:3.1.20-initial-conditions} yields
+\begin{equation*}
+  \begin{aligned}
+    u_0 &= 1-e^{-t} \\
+    u_1 &= 0 \\
+  \end{aligned}
+\end{equation*}
+So that the final approximation is
+\begin{equation*}
+  \boxed{
+    u = 1-e^{-t}
+  }
+\end{equation*}
 
 \end{document}
