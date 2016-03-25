@@ -72,7 +72,7 @@ $\mathcal{O}(\delta)=\mathcal{O}(\epsilon^{1/3})$ term.
 \subsubsection*{Solution}
 Assume
 \begin{equation}
-  \label{eq:3.1.7-relation}
+  \label{eq:3.1.7-standard-relation}
   x=x_0+\epsilon x_1 + \epsilon^2x_2+\cdots.
 \end{equation}
 We'll slightly rewrite the problem equation to
@@ -80,33 +80,87 @@ We'll slightly rewrite the problem equation to
   \label{eq:3.1.7-rewrite}
   {(x+1)}^3-\epsilon x=0.
 \end{equation}
-Substituting \cref{eq:3.1.7-relation} into \cref{eq:3.1.7-rewrite} and expanding
+Substituting \cref{eq:3.1.7-standard-relation} into \cref{eq:3.1.7-rewrite} and expanding
 yields
 \begin{equation*}
-\label{eq:3.1.7-bad-eq}
-\begin{split}
-  (x_2^3+\cdots) \epsilon ^6+3 x_1 x_2^2 \epsilon ^5+3 x_2 \left(x_1^2+\left(x_0+1\right)
-    x_2\right) \epsilon ^4 \\
-  +\left(x_1^3+6 \left(x_0+1\right) x_2 x_1-x_2\right) \epsilon ^3
-  +\left(3 x_2 \left(x_0+1\right){}^2+3 x_1^2 \left(x_0+1\right)-x_1\right)
-  \epsilon ^2 \\
-  +\left(3 x_1 x_0^2+\left(6 x_1-1\right) x_0+3 x_1\right)
-  \epsilon +\left(x_0+1\right){}^3=0.
-\end{split}
+  \label{eq:3.1.7-bad-eq}
+  \begin{split}
+    (x_2^3+\cdots) \epsilon ^6+3 x_1 x_2^2 \epsilon ^5+3 x_2 \left(x_1^2+\left(x_0+1\right)
+      x_2\right) \epsilon ^4 \\
+    +\left(x_1^3+6 \left(x_0+1\right) x_2 x_1-x_2\right) \epsilon ^3
+    +\left(3 x_2 \left(x_0+1\right){}^2+3 x_1^2 \left(x_0+1\right)-x_1\right)
+    \epsilon ^2 \\
+    +\left(3 x_1 x_0^2+\left(6 x_1-1\right) x_0+3 x_1\right)
+    \epsilon +\left(x_0+1\right){}^3&=0.
+  \end{split}
 \end{equation*}
 Collecting the $\epsilon$ terms yields the system of equations
 \begin{align*}
   \label{eq:3.1.7-bad-system}
-  \epsilon_0 &:\quad \left(x_0+1\right){}^3=0, \\
-  \epsilon_1 &:\quad 3 x_1 x_0^2+\left(6 x_1-1\right) x_0+3 x_1=0, \\
-  \epsilon_2 &:\quad 3 x_2 \left(x_0+1\right){}^2+3 x_1^2 \left(x_0+1\right)-x_1=0, \\
-  \epsilon_3 &:\quad x_1^3+6 \left(x_0+1\right) x_2 x_1-x_2=0, \\
-  \epsilon_4 &:\quad 3 x_2 \left(x_1^2+\left(x_0+1\right) x_2\right)=0, \\
-  \epsilon_5 &:\quad 3 x_1 x_2^2=0 \\
-  \epsilon_6 &:\quad x_2^2+\cdots = 0 \\
+  \epsilon^0 &:\quad \left(x_0+1\right){}^3=0, \\
+  \epsilon^1 &:\quad 3 x_1 x_0^2+\left(6 x_1-1\right) x_0+3 x_1=0, \\
+  \epsilon^2 &:\quad 3 x_2 \left(x_0+1\right){}^2+3 x_1^2 \left(x_0+1\right)-x_1=0, \\
+  \epsilon^3 &:\quad x_1^3+6 \left(x_0+1\right) x_2 x_1-x_2=0, \\
+  \epsilon^4 &:\quad 3 x_2 \left(x_1^2+\left(x_0+1\right) x_2\right)=0, \\
+  \epsilon^5 &:\quad 3 x_1 x_2^2=0 \\
+  \epsilon^6 &:\quad x_2^2+\cdots = 0 \\
 \end{align*}
-Each equation gives us a better picture of the solution: $\epsilon_0\implies
-x_0=-1$; $\epsilon_1$ yields no insights; $\epsilon_2 \implies x_2=0$;
+$\epsilon_1$ implies a contradiction in $1=0$; thus we may not use a standard
+series in powers of $\epsilon$.
+
+Instead of the standardized series, we will attempt to use the generalized
+series in powers of $\epsilon^{1/3}$ from \cref{eq:3.1.7-generalized-relation}
+where $\alpha=1/3$ to gain insight into the solution of \cref{eq:3.1.7-rewrite}.
+\begin{equation}
+  \label{eq:3.1.7-generalized-relation}
+  x=x_0+\epsilon^{\alpha} x_1 + \epsilon^{2\alpha}x_2+\cdots
+\end{equation}
+Substituting \cref{eq:3.1.7-generalized-relation} into \cref{eq:3.1.7-rewrite}
+and expanding yields
+\begin{equation*}
+  \begin{split}
+    x_2^3 \epsilon ^2
+    +x_2 \left(3 x_1 x_2-1\right) \epsilon ^{5/3}
+    +\left(3 x_2 x_1^2-x_1+3 \left(x_0+1\right) x_2^2\right) \epsilon^{4/3} \\
+    +\left(x_1^3+6 x_2 x_1+x_0\left(6 x_1 x_2-1\right)\right) \epsilon
+    +3\left(x_0+1\right) \left(x_1^2+\left(x_0+1\right) x_2\right) \epsilon^{2/3} \\
+    +3\left(x_0+1\right){}^2 x_1 \epsilon^{1/3}
+    +\left(x_0+1\right){}^3&=0.
+  \end{split}
+\end{equation*}
+Collecting the $\epsilon$ terms yields the system of equations
+\begin{equation*}
+  \begin{aligned}
+    \epsilon^0 &:\quad \left(x_0+1\right){}^3=0 \\
+    \epsilon^{1/3} &:\quad 3 \left(x_0+1\right){}^2 x_1=0 \\
+    \epsilon^{2/3} &:\quad 3 \left(x_0+1\right) \left(x_1^2+\left(x_0+1\right) x_2\right)=0 \\
+    \epsilon^{1} &:\quad x_1^3+6 x_2 x_1+x_0 \left(6 x_1 x_2-1\right)=0 \\
+    \epsilon^{4/3} &:\quad 3 x_2 x_1^2-x_1+3 \left(x_0+1\right) x_2^2=0 \\
+    \epsilon^{5/3} &:\quad x_2 \left(3 x_1 x_2-1\right)=0 \\
+    \epsilon^{2} &:\quad x_2^3+\cdots=0 \\
+  \end{aligned}
+\end{equation*}
+Solving this system by ``standard methods for solving nonlinear systems''
+results in
+\begin{equation*}
+  \begin{aligned}
+    x_0 &= -1 \\
+    x_1 &= -1,\quad {(-1)}^{1/3},\quad -{(-1)}^{2/3} \\
+    x_2 &= -\frac{1}{3},\quad -\frac{1}{3}{(-1)}^{2/3},\quad \frac{1}{3}{(-1)}^{1/3}. \\
+  \end{aligned}
+\end{equation*}
+We may map the individual solutions of $x_n$ into
+\cref{eq:3.1.7-generalized-relation} to approximate the roots to
+\cref{eq:3.1.7-rewrite}.
+\begin{equation*}
+  \boxed{
+    \begin{aligned}
+      x &= -1 - \epsilon^{1/3} - \frac{1}{3}\epsilon^{2/3} \\
+      x &= -1 + {(-1)}^{1/3}\epsilon^{1/3} - \frac{1}{3}{(-1)}^{2/3}\epsilon^{2/3} \\
+      x &= -1 - {(-1)}^{2/3}\epsilon^{2/3} + \frac{1}{3}{(-1)}^{1/3}\epsilon^{2/3} \\
+    \end{aligned}
+  }
+\end{equation*}
 
 \subsubsection{9$^3$}
 \subsubsection*{Problem}
