@@ -240,4 +240,51 @@ So that the final approximation is
   }
 \end{equation*}
 
+\section{Programming Minilab}
+A basic problem in ballistics is to determine how to aim a given weapon in order
+for a bullet to strike a given target. Many factors are involved, such as
+gravity, wind, Coriolis, and bullet shape and spin effects, and all are
+important in long-range shots. Considering only gravity and air resistance, a
+simple model for the near-horizontal motion of a bullet is in
+\cref{eq:minilab-problem}.
+\begin{equation}
+  \label{eq:minilab-problem}
+  \begin{aligned}
+    m\ddot{d}&=-\alpha\dot{x}^2, & \dot{x}(0)&=u_0, & x(0)&=0 \\
+    m\ddot{y}&=-\alpha\dot{x}\dot{y}-mg, & \dot{y}(0)&=v_0, & y(0)&=0.
+  \end{aligned}
+\end{equation}
+Here $(x(t),\,y(t))$ is the bullet position, $t$ is time, $m$ is the bullet
+mass, $g$ is gravitational accelleration, $\alpha$ is a resistance coefficient,
+and $(u_0,v_0)$ is the bullet firing velocity; we assume $u_0^2+v_0^2=c^2$,
+where $c>0$ is a constant that depends on the weapon. The problem is to
+determine the aiming angle $\theta = \arctan(v_0/u_0)$ required for the bullet
+path to intersect a fixed target at $(a,b)$, where $a>0$ and $b$ is arbitrary.
+\subsubsection*{Problem}
+\begin{enumerate}[(a)]
+\item\label{itm:minilab-part-a} After dividing by $m$, consider the resulting
+  system with small parameter $\epsilon=\alpha/m\ge0$. In the case of
+  $\epsilon=0$, solve the system for $x(t)$ and $y(t)$ and show that the
+  targeting problem has zero, one, or two solutions for $theta$ depending on
+  $a$, $b$, $c$, and $g$. If $c=500\,\text{m/s}$ and $g=10\,\text{m/s$^2$}$,
+  what is the lowest aiming angle $\theta$ that can be used to strike a target
+  at $(a,b)=(500,2)$ meters? How much time is required for the impact? If $s$ si
+  the speed at impact, what is the ratio $s/c$?
+\item\label{itm:minilab-part-b} For the case of small $\epsilon>0$, find a
+  perturbation aproximation for $x(t)$ and $y(t)$ up to $\mathcal{O}(\epsilon)$
+  terms. Using this approximation, show that the targeting problem has zero,
+  one, or two solutions for $\theta$ depending on $a$, $b$, $c$, $g$, and
+  $\epsilon$. If $c=500\,\text{m/s}$ and $g=10\,\text{m/s$^2$}$, as before, and
+  $\epsilon=0.0005\,\text{m$^{-1}$}$, what is the lowest aiming angle $\theta$
+  that can be used to strike the target at $(a,b)=(500,2)$ meters? What is the
+  corresponding impact time and speed ratio $s/c$ now?
+\item Numerically simulate the model equations in \cref{eq:minilab-problem} and
+  confirm your results in \cref{itm:minilab-part-a,itm:minilab-part-b}.
+  Specifically, for the given vaules of the parameters and aiming angles, does
+  the bullet path intersect (approximately) the target at the times and speeds
+  as predicted?
+\end{enumerate}
+\newpage
+\subsection*{Solution}
+\todo{}
 \end{document}
