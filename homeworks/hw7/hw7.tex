@@ -331,5 +331,72 @@ path to intersect a fixed target at $(a,b)$, where $a>0$ and $b$ is arbitrary.
 \end{enumerate}
 \newpage
 \subsubsection*{Solution}
+\begin{enumerate}[(a)]
+\item Using \cref{eq:minilab-problem} and $\epsilon=\alpha/m$, Let
+  \begin{equation}
+    \label{eq:minilab-1-let}
+    \begin{aligned}
+      \ddot{x} &= -\epsilon\dot{x}^2, \\
+      \ddot{y} &= -\epsilon\dot{x}\dot{y}-g. \\
+    \end{aligned}
+  \end{equation}
+  In this case $\epsilon = 0$. We may solve for $x(t)$ and $y(t)$ directly.
+  \begin{equation*}
+    \begin{aligned}
+      \ddot{x} &= 0, \\
+      \ddot{y} &= -g.
+    \end{aligned}
+  \end{equation*}
+  First we will solve for $\dot{x}$.
+  \begin{equation*}
+    \begin{aligned}
+      \ddot{x} &= 0 \\
+      \od[2]{x}{t} &= 0 \\
+      \od{}{t}\int\dd{x} &= \int 0\, \dd{t} \\
+      \od{x}{t} = C. \\
+    \end{aligned}
+  \end{equation*}
+  We may invoke the initial condition so that
+  \begin{equation*}
+    \implies\od{x}{t} = u_0.
+  \end{equation*}
+  Now we will solve for $\dot{y}$.
+  \begin{equation*}
+    \begin{aligned}
+      \ddot{y} &= -g \\
+      \od[2]{y}{t} &= -g \\
+      \od{}{t}\int\dd{y} &= -g\dd{t} \\
+      \od{y}{t} &= -gt + C. \\
+    \end{aligned}
+  \end{equation*}
+  We may invoke the initial condition so that
+  \begin{equation*}
+    \implies \od{y}{t} = -gt + v_0.
+  \end{equation*}
+  Now we will solve for $x$.
+  \begin{equation*}
+    \begin{aligned}
+      \od{x}{t} &= u_0 \\
+      \int \dd{x} &= \int u_0 \dd{t} \\
+      x &= u_0t + C. \\
+    \end{aligned}
+  \end{equation*}
+  We may invoke the initial condition so that
+  \begin{equation*}
+    \implies x(t) = u_0 t.
+  \end{equation*}
+  Finally, we will solve for $y$.
+  \begin{equation*}
+    \begin{aligned}
+      \od{y}{t} &= -gt + v_0 \\
+      \int\dd{y} &= \int(-gt + v_0) \dd{t} \\
+      y &= -\frac{gt^2}{2} + v_0t + C
+    \end{aligned}
+  \end{equation*}
+  We may invoke the initial condition so that
+  \begin{equation*}
+    \implies y(t) = -\frac{gt^2}{2} + v_0t.
+  \end{equation*}
+\end{enumerate}
 \todo{}
 \end{document}
