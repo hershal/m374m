@@ -45,16 +45,15 @@ follows
 }
 \begin{align*}
   F(\epsilon)
-  &= f(0) + \epsilon f'(0) + \epsilon^2 f''(0) \\
-  &= 1 - \frac{3}{2}{\left[(1+\epsy^{-5/2} (\epsy[1]))\right]}
-    _{\epsilon=0}\epsilon \\
+  &= f(0) + \epsilon f'(0) + \frac{\epsilon^2}{2} f''(0) \\
+  &= 1 - \frac{3\epsilon}{2}{\left[(1+\epsy^{-5/2} (\epsy[1]))\right]}_{\epsilon=0} \\
   &\quad- \frac{3\epsilon^2}{4}
     {\left[-\frac{5}{2}(1+\epsy^{-7/2})(\epsy[1])
     + {(1+\epsy)}^{-5/2}(\epsy[2])\right]}_{\epsilon=0}
     + \mathcal{O}(\epsilon^3) \\
-  &= {\left[-\frac{3}{2}{(1+\epsy*)}^{-5/2}(\epsy*[1])\right]}\epsilon \\
+  &= 1 - \frac{3\epsilon}{2}{\left[{(1+\epsy*)}^{-5/2}(\epsy*[1])\right]} \\
   &\quad- \frac{3\epsilon^2}{4}{\left[-\frac{5}{2}{(1+\epsy*)}^{-7/2}(\epsy*[1])
-    + {(1+\epsy*)}^{5/2}(\epsy*[2])\right]} + \mathcal{O}(\epsilon^3) \\
+    + {(1+\epsy*)}^{-5/2}(\epsy*[2])\right]} + \mathcal{O}(\epsilon^3). \\
 \end{align*}
 
 \newpage
