@@ -2546,4 +2546,144 @@ system.
 \item It is possible to de better by using a more flexible series, as in the
   next chapter \todo{ref to next chapter}.
 \end{enumerate}
+
+\section{Singularly Perturbed Algebraic Equations}
+\subsection{Problem}
+Consider a singularly perturbed algebraic equationn
+\begin{equation*}\text{(P)} \left\{
+  \begin{aligned}
+    &\epsilon x^4-x-1=0 \\
+    &0<\epsilon\ll1 \\
+  \end{aligned} \right.
+\end{equation*}
+We seek to construct an approximate $x^a(\epsilon)$ to each root.
+
+\subsection{Remarks}
+\begin{enumerate}
+\item
+  Notice that
+  \begin{equation*}
+    \begin{aligned}
+      \epsilon>0 &\implies \text{(P) has 4 roots.} \\
+      \epsilon\downarrow0 &\implies \text{(P) has 1 root.} \\
+    \end{aligned}
+  \end{equation*}
+  Hence we expect 3 roots are singular in $\epsilon$ (``ill-behaved''); 1 root
+  is regular in $\epsilon$ (``well-behaved'').
+\item By construction, a regular series can only approximate the regular roots.
+  \begin{equation*}
+    x(\epsilon) = x_0 + \epsilon x_1 + \epsilon x^2 + \cdots
+  \end{equation*}
+  is well-defined as $\epsilon\downarrow0$; it does not allow for singular
+  behavior.
+  \begin{equation*}
+    \epsilon{(x_0+\epsilon x_1 + \cdots)}^4-(x_0+\epsilon x_1 + \cdots)-1=0
+  \end{equation*}
+  Where the $(x_0+\epsilon x_1 + \cdots)$ turns into
+  $(x_0^4+\epsilon4x_0^3x_1+\cdots)$. Collecting coefficients of $\epsilon$
+  yields
+  \begin{equation*}
+    \begin{aligned}
+      \epsilon_0 &:\quad -x_0-1=0 \rightarrow x_0=-1 \\
+      \epsilon_1 &:\quad x_0^4-x_1 \rightarrow x_1=x_0^4=1. \\
+    \end{aligned}
+  \end{equation*}
+  The approximation of the 1-regular-root case is
+  \begin{equation*}
+    x(\epsilon) = -1 + \epsilon + \cdots.
+  \end{equation*}
+\item A different approach is required to approximate all roots.
+\end{enumerate}
+\subsection{Procedure}
+Introduce a change of variables to make the problem regular (``balancing
+step''). Let
+\begin{equation*}
+  z=\epsilon^\alpha x,\quad x=\epsilon^{-\alpha}z,\quad \alpha\ge0.
+\end{equation*}
+Substituting into (P) yields
+\begin{equation*}
+  \begin{aligned}
+    \epsilon x^4-x-1=0 \\
+    \epsilon{(\epsilon^{-\alpha}z)}^4-(\epsilon^{-\alpha}z)-1=0 \\
+    \epsilon^{1-4\alpha}z^4-\epsilon^{\alpha}z-1=0 \\
+    z^4-\epsilon^{3\alpha-1}z-\epsilon^{4\alpha-1}=0 \\
+  \end{aligned}
+\end{equation*}
+We choose the smallest $\alpha$ to make the problem regular. This requires
+\begin{equation*}
+  \begin{aligned}
+    3\alpha-1&\ge0 \quad&\text{and}\quad 4\alpha-1&\ge0 \\
+    \alpha&\ge\frac{1}{3} \quad&\text{and}\quad \alpha&\ge\frac{1}{4} \\
+  \end{aligned}
+\end{equation*}
+$\therefore$ choose $\alpha=1/3$. Substituting $\alpha=1/3$ into the above yields
+\begin{equation*}
+  z^4-z-\epsilon^{1/3}=0
+\end{equation*}
+Hence we consider the regular problem
+\begin{equation*} (\text{P}_z)\left\{
+  \begin{aligned}
+    z^4-z-\delta=0 \\
+    0<\delta\ll1,\quad \delta=\epsilon^{1/3} \\
+  \end{aligned} \right.
+\end{equation*}
+Consider solutions of $(P_z)$ of the form
+\begin{equation*}
+  z(\delta)=z_0+\delta z_1 + \delta^2z_2 + \cdots
+\end{equation*}
+Substituting into $(P_z)$
+\begin{equation}
+  \label{eq:sing-pert-star}
+  z^4(\delta) - z(\delta) - \delta = 0
+\end{equation}
+Let $f(\delta) = z^4(\delta)$.
+\begin{equation*}
+  \begin{aligned}
+    f(\delta) &= f(0) + \delta f'(0) + \frac{\delta}{2}f''(\delta) + \cdots \\
+    &= \left[ z^4(\delta) \right]_{\delta=0} + \delta \left[
+      4z^3(\delta)+z'(\delta) \right]_{\delta=0} + \frac{\delta}{2}\left[
+      12z^2(\delta)z'(\delta)z'(\delta) + 4z^3(\delta)z''(\delta)
+    \right]_{\delta=0} \\
+    &= z_0^4+\delta(4z_0^3z_1) + \delta^2(6z_0z_1^2+2z_0^32z_2).
+  \end{aligned}
+\end{equation*}
+Substituting into \cref{eq:sing-pert-star} gives
+\begin{equation*}
+  \left[ z_0^4+\delta(4z_0^3z_1) + \delta^2(6z_0z_1^2+2z_0^32z_2) + \cdots \right]
+  -\left[ z_0 + \delta z_1 + \delta^2 z_2 + \cdots \right]
+  -\delta = 0.
+\end{equation*}
+Collecting coefficients in powers of $\delta$ yields
+\begin{equation*}
+  \begin{aligned}
+    \delta^0 &:\quad z_0^4-z_0=0
+    \\ &\rightarrow z_0(z_0^3-1)=0
+    \implies z_0=0,\,1,\,\frac{-1+i\sqrt{3}}{2},\,\frac{-1-i\sqrt{3}}{2} \\
+    \delta^1 &:\quad 4z_0^3z_1 - z_1-1=0
+    \\ &\rightarrow (4z_0^3-1)z_1-1=0
+    \implies z_1=-1,\,\frac{1}{3},\,\frac{1}{3},\,\frac{1}{3} \\
+    \delta^2 &:\quad 6z_0^2z_1^2+4z_0^3z_2-z_2=0
+    \\ &\rightarrow (4z_0^3-1)z_2=-6z_0^2z_1^2
+    \implies z_2=0,\,\frac{-2}{9},\,\frac{1+i\sqrt{3}}{9},\,\frac{10i\sqrt{3}}{9}
+  \end{aligned}
+\end{equation*}
+Zero for $z_0$ corresponds to regular root. The non-zero $z_0$ corresponds to
+singular roots. Approximations to roots of $(P_z)$ are
+\begin{equation*}
+  \begin{aligned}
+    z(\delta)^{(1)} &= 0 + \delta(-1) + \delta^2{0} + \cdots \\
+    z(\delta)^{(2)} &= 1 + \delta\left(\frac{1}{3}\right) + \delta^2{\frac{-2}{3}} + \cdots \\
+    z(\delta)^{(3)} &= \frac{-1+i\sqrt{3}}{2} + \delta\left( \frac{1}{3} \right) + \cdots \\
+    z(\delta)^{(4)} &= \frac{-1-i\sqrt{3}}{2} + \delta\left( \frac{1}{3} \right) + \cdots \\
+  \end{aligned}
+\end{equation*}
+Since $\delta=\epsilon^{1/3}$ and $x=\epsilon^{-\alpha}z$ ($\alpha=1/3$), we get approximations to the roots of $(P)$
+\begin{equation*}
+  \begin{aligned}
+    x(\epsilon)^{(1)} &= \frac{0}{\epsilon^{1/3}}-1+\epsilon^{1/3}\cdot0 + \cdots \\
+    x(\epsilon)^{(2)} &= \frac{1}{\epsilon^{1/3}} + \frac{1}{3} - \epsilon^{1/3}\cdot\frac{2}{9} + \cdots \\
+    x(\epsilon)^{(3)} &= \frac{-1+i\sqrt{3}}{2\epsilon^{1/3}} + \frac{1}{3} \\
+    x(\epsilon)^{(4)} &= \frac{-1-i\sqrt{3}}{2\epsilon^{1/3}} + \frac{1}{3}. \\
+  \end{aligned}
+\end{equation*}
 \end{document}
