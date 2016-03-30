@@ -1,4 +1,6 @@
 * M374M
+[[https://travis-ci.org/hershal/m374m][file:https://travis-ci.org/hershal/m374m.svg?branch=master]]
+
 This is a cool class.
 
 * TODOs
