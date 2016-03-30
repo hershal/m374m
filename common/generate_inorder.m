@@ -16,7 +16,7 @@ function ret = generate_inorder(f, problem, points = [], tf = [])
     [t, u] = ode45(f, [t0, tf(i)], [x0(i), y0(i)], vopt);
     u = [u zeros(size(u,1),1)];
     ret{i} = [u(:,1), u(:,2)];
-    dlmwrite(sprintf("%s-%i.mat", problem, i), u, " ", "precision", "%.5f");
+    dlmwrite(sprintf("%s-%i.mat", problem, i), u, " ", "precision", "%.4f");
     clear t, u;
   endfor
 endfunction

@@ -22,13 +22,13 @@ function dumpMinilab(prob, subprob)
     [tsoln,usoln]=ode45(@lovehate,[t0 tf],u0,vopt);
     ## figure(1); plot(tsoln,usoln(:,1),'b--') ; %plot u1 versus t
     u1 = [tsoln usoln(:,1) zeros(size(usoln,1),1)];
-    dlmwrite(sprintf("minilab-%i-%i-x-%i.mat", prob, subprob, i), u1, " ", "precision", "%.5f");
+    dlmwrite(sprintf("minilab-%i-%i-x-%i.mat", prob, subprob, i), u1, " ", "precision", "%.4f");
     ## figure(2); plot(tsoln,usoln(:,2),'k-.') ; %plot u2 versus t
     u2 = [tsoln usoln(:,2) zeros(size(usoln,1),1)];
-    dlmwrite(sprintf("minilab-%i-%i-y-%i.mat", prob, subprob, i), u2, " ", "precision", "%.5f");
+    dlmwrite(sprintf("minilab-%i-%i-y-%i.mat", prob, subprob, i), u2, " ", "precision", "%.4f");
     ## figure(3); plot(usoln(:,1),usoln(:,2),'r-')  ; %plot u2 versus u1
     uu = [usoln(:,1) usoln(:,2) zeros(size(usoln,1),1)];
-    dlmwrite(sprintf("minilab-%i-%i-u-%i.mat", prob, subprob, i), uu, " ", "precision", "%.5f");
+    dlmwrite(sprintf("minilab-%i-%i-u-%i.mat", prob, subprob, i), uu, " ", "precision", "%.4f");
     clear tsoln usoln u1 u2 uu;
   end
 endfunction
