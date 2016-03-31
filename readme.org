@@ -8,10 +8,6 @@ This is a cool class.
 I started this, but it messes up the table of contents on the notes document.
 There is a less hacky way to do this. The current solution works for homeworks
 but is generally not optimal. There is a better way.
-** TODO Get Travis CI working
-Need to test this offline with a vagrant install of travis' environment (use
-trusty). Please fix this after hw7, I'm getting so many emails about build
-failures...
 ** TODO Fix unaligned figures
 I manually tuned the figures in the past, but that's getting really annoying and
 time consuming. The =subcaption= package should've solved this but I still don't
