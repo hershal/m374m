@@ -19,3 +19,9 @@ function (add_generator generator)
     COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_CURRENT_BINARY_DIR}/${generator}.timestamp
     )
 endfunction()
+
+function (generate_revision)
+  add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/revision
+    COMMAND "git" "log" "--pretty=format:'%h'" "-n" "1" "--" ${CMAKE_CURRENT_SOURCE_DIR} ">" "${CMAKE_CURRENT_BINARY_DIR}/revision"
+    )
+endfunction()
