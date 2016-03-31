@@ -1,5 +1,5 @@
-
-function dudt = F(t,u)
+% -*- mode: octave -*-
+function dudt = mercury(t,u)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Evaluates du/dt for the Mercury model
@@ -11,7 +11,7 @@ function dudt = F(t,u)
 %          u = system vector (2x1 array) where
 %              u(1)=(umerc), u(2)=d(umerc)/dtheta.
 %
-% Output:  dudt = derivative of system vector (2x1 array), 
+% Output:  dudt = derivative of system vector (2x1 array),
 %                 where dudt(1)=du1/dt, etc.
 %
 % Note: Matlab's ODE solvers require us to include the
@@ -20,12 +20,11 @@ function dudt = F(t,u)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Access global constants from main prog
-global rho gamma c ;        
+global rho gamma c ;
 
 % Initialize output array dudt
-dudt = zeros(2,1) ; 
+dudt = zeros(2,1) ;
 
 % Evaluate dudt for given t and u
 dudt(1) = u(2) ;
 dudt(2) = -u(1) + (1/rho) + (gamma*u(1)*u(1)/rho) ;
- 
