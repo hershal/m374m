@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\title{M374M Homework 8 \\
+  \normalsize{\S~3.1 \#8a, \S~3.2 1$^1$ac} \\
+  Revision: \input{revision}}
+\author{Hershal Bhave (hb6279)}
+\date{Due 2016--04--01}
+
+\usepackage{homework-macros}
+\usepackage{xparse}
+\tikzexternalize
+
+\begin{document}
+\maketitle
+
+\section{\S~3.1}
+\subsection{8a}
+\subsubsection*{Problem}
+\subsubsection*{Solution}
+
+\section{\S~3.2}
+\subsection{1$^1$ac}
+\subsubsection*{Problem}
+\subsubsection*{Solution}
+\subsubsection*{Remarks}
+Find the leading-order term in expansion of each root.
+
+\section{Programming Minilab}
+One of the first successes of the theory of relativity was to predict the
+anomalous behavior of the orbit of Mercury (M) around the Sun (S). According to
+the relativistic theory, the orbital curve $r(\theta)$ satisfies
+\cref{eq:minilab-problem} where $u(\theta)=1/r(\theta)$ is the inverse of the
+radius, $\rho$ is a constant determined by the angular momentum of the system,
+$\gamma$ is a constant which quantifies relativistic effects, and $c$ is a
+constant which defined the initial radius. Here we study
+\cref{eq:minilab-problem} in the case corresponding to Newton's theory
+($\gamma=0$) and the case corresponding to Einstein's theory
+($0<\gamma\ll\rho^2$). Relevant physical dimensions are $[\rho]=L$,
+$[\gamma]=L^2$ and $[c]=1$. We assume $\rho>0$ and $0<c<1$.
+
+\begin{equation}
+  \label{eq:minilab-problem}
+  \begin{aligned}
+    &\od[2]{u}{\theta} + u = \frac{1}{\rho} + \frac{\gamma u^2}{\rho},&\quad
+    \theta&\ge\theta_0 \\
+    &\od{u}{\theta}(\theta_0) = 0, &\quad u(\theta_0)&=\frac{1+c}{\rho} \\
+  \end{aligned}
+\end{equation}
+
+\subsubsection*{Problem}
+\begin{enumerate}[(a)]
+\item Introduce the dimensionless variable $v=\rho u$ and shifted angle
+  $\phi=\theta-\theta_0$ and show that \cref{eq:minilab-problem} can be written
+  in the following form for an appropriate parameter $\epsilon$:
+  \begin{equation}
+    \label{eq:minilab-problem-part-a}
+    \od[2]{v}{\phi} + v = 1 + \epsilon v^2,\quad \phi\ge0,\quad
+    \od{v}{\phi}(0)=0,\quad v(0)=1+c
+  \end{equation}
+\item\label{itm:minilab-b} Solve \cref{eq:minilab-problem-part-a} in the
+  Newtonian case when $\epsilon=0$. Using the fact that
+  $r(\theta)=\rho/v(\theta-\theta_0)$, show that the smallest value of $r$ (the
+  perihelion of the orbit) occurs at the angle $\theta_p=\theta_0+2n\pi$, and
+  that the largest value of $r$ (the aphelion of the orbit) occurs at the angle
+  $\theta_0=\theta_p+\pi$. Does Newton's theory predict that the location of the
+  perihelion/aphelion change with each cycle of the orbit?
+\item\label{itm:minilab-c} Approximate \cref{eq:minilab-problem-part-a} in the
+  relativistic case when $0<\epsilon\ll1$. Use the Poincar\'{e}-Lindsted method
+  to develop at two-term approximation of the form
+  $$v(\phi)=v_0(s)+\epsilon v_1(s),\quad s=(\omega_0+\epsilon\omega_1)\phi.$$
+  You need only determine $v_0$, $\omega_0$, and $\omega_1$. Using the
+  approximation $r(\theta)=\rho/v_0(s)$, where
+  $s=(\omega_0+\epsilon\omega_1)\phi$ and $\phi=\theta-\theta_0$, show that the
+  smallest value of $r$ now occurs at
+  $\theta_p=\theta_0+2n\pi(1+\frac{\gamma}{\rho^2-\gamma})$, and that the
+  largest value of $r$ occurs at
+  $\theta_a=\theta_p+\pi(1+\frac{\gamma}{\rho^2-\gamma})$. Does Einstein's
+  theory predict that the location of the perihelion/aphelion change each cycle
+  of the orbit?
+\item Simulate the equations in \cref{eq:minilab-problem} for
+  $\theta_0=\frac{\pi}{4}$, $\phi=1$, and $c=0.7$. For each of the cases
+  $\gamma=0$, and $\gamma=0.01$, make a plot of the orbital curve
+  $(x,y)=(r(\theta\cos\theta),r(\theta)\sin\theta)$ for
+  $\theta\in[\theta_0,\,\theta_0+2n\pi]$  for about $n=10$ cycles. Do the
+  simulations agree with your analysis in \cref{itm:minilab-b,itm:minilab-c}?
+  Astronomical observations show that the perihelion/aphelion of Murcury advance
+  with each sysle of the orbit in agreement with the relativistic theory.
+\end{enumerate}
+
+\subsubsection*{Solution}
+\todo{}
+\end{document}
