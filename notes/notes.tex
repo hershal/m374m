@@ -2683,4 +2683,194 @@ Since $\delta=\epsilon^{1/3}$ and $x=\epsilon^{-\alpha}z$ ($\alpha=1/3$), we get
     x(\epsilon)^{(4)} &= \frac{-1-i\sqrt{3}}{2\epsilon^{1/3}} + \frac{1}{3}. \\
   \end{aligned}
 \end{equation*}
+
+\section{Case Study: Reaction With Fast Components}
+\subsection{Problem}
+Consider a model for a chemical reaction
+\begin{equation*}
+  \mathbb{B} + \mathbb{Y} \underset{k_2}{\stackrel{k_1}{\leftrightharpoons}} \mathbb{U} \stackrel{k_3}{\rightarrow} \mathbb{V}
+\end{equation*}
+
+$x,y,u,v = $concentrations of $\mathbb{X}, \mathbb{Y}, \mathbb{U}, \mathbb{V}$;
+$k_1,k_2,k_3 = $ rate constants. Analyze model in case when $k_1$ is large
+(``fast'') compared to $k_2$, $k_3$.
+\subsection{Model}
+\begin{equation*}
+  \begin{aligned}
+    \od{x}{t} &= -k_1xy+k_2u,&\quad x(0)&=a>0 \\
+    \od{y}{t} &= -k_1xy+k_2u,&\quad y(0)&=b>0 \\
+    \od{u}{t} &= k_1xy-k_2u-k_3u,&\quad u(0)&=0 \\
+    \od{v}{t} &= k_3u, &\quad v(0) &= 0
+  \end{aligned}
+\end{equation*}
+Let $\lambda = a-b$. Notice
+\begin{equation}
+  \label{eq:x-equation}
+  \dot{x}+\dot{y}=0 \;\rightarrow\;x(t)-y(t)=a-b.
+\end{equation}
+then
+\begin{equation}
+  \label{eq:y-equation}
+  y(t)=x(t)-\lambda,\quad t\ge0.
+\end{equation}
+In addition,
+\begin{equation}
+  \label{eq:v-equation}
+  \dot{v}k_3u \rightarrow v(t)\int_0^tk_3u(\hat{t})\dd{\hat{t}}.
+\end{equation}
+Hence \cref{eq:x-equation,eq:y-equation,eq:v-equation} reduces today
+\begin{equation}
+  \label{eq:xu-equation}
+  \begin{aligned}
+    \dot{x} &= -k_1x(x-\lambda) + k_2u, &\quad x(0)&=a \\
+    \dot{u} &= k_1x(x-\lambda) - (k_2+k_3)u, &\quad u(0)&=0. \\
+  \end{aligned}
+\end{equation}
+Let $\epsilon=1/k$ which we assume to be ``small'', $\eta=k_2$, and
+$\gamma=k_3$. Then
+\begin{equation}
+  \label{eq:xu-transformed}
+  \text{(IVP)}\quad \left\{
+    \begin{aligned}
+      \epsilon\dot{x} &= -x(x-\lambda)+\eta\epsilon u, &\quad x(0)&=a \\
+      \epsilon\dot{u} &= x(x-\lambda)-(\eta+\gamma)\epsilon u, &\quad u(0)&=0 \\
+    \end{aligned}
+\right.
+\end{equation}
+(IVP) is singularly perturbed when $k_1$ is large; expect boundary layer at
+$t=0$ due to $k_1$ reaction (very fast changes at $t=0$).
+\subsubsection{Outer Equations}
+When $t<\infty$,
+\begin{equation}
+  \label{eq:outer-equations}
+  \begin{aligned}
+    \epsilon\dot{x} &= -x(x-\lambda)+\eta\epsilon u
+    \epsilon\dot{u} &= x(x-\lambda)-(\eta+\gamma)\epsilon u.
+  \end{aligned}
+\end{equation}
+Let
+\begin{equation}
+  \label{eq:outer-series}
+  \begin{aligned}
+    x^{\text{out}}(t,\epsilon) &= x_0(t) + \epsilon x_1(t)+\cdots \\
+    u^{\text{out}}(t,\epsilon) &= u_0(t) + \epsilon u_1(t)+\cdots. \\
+  \end{aligned}
+\end{equation}
+Expanding \cref{eq:outer-equations} using \cref{eq:outer-series} results in
+\begin{equation*}
+  \epsilon^0:\quad \left\{
+    \begin{aligned}
+      0 &= -x_0(x_0-\lambda) \\
+      0 &= x_0(x_0-\lambda) \\
+    \end{aligned}
+\right.
+\end{equation*}
+This results in $x_0(t)\equiv0$ or $x_0(t)\equiv\lambda$, $t<\infty$. No info on
+$u_0(t)$; hence proceed to next order.
+\begin{equation*}
+  \epsilon^1:\quad \left\{
+    \begin{aligned}
+      \dot{x_0} &= -2x_0x_1+\lambda x_1+\eta u_0 \\
+      \dot{u_0} &= 2x_0x_1+\lambda x_1 - (\eta + \gamma) u_0 \\
+    \end{aligned}
+\right.
+\end{equation*}
+Adding $u_0$ and $x_0$ results in
+$$\dot{u_0}+\cancel{\dot{x_0}}=-\gamma u_0,$$
+Which results in
+\begin{equation*}
+  u_0(t) = c_1e^{-\gamma t}.
+\end{equation*}
+Thus, the leading-order outer approximations are
+\begin{equation*}
+  x^{\text{out}}(t,\epsilon) \equiv 0 \;\text{or}\; a,\quad u^{\text{out}}(t,\epsilon)=c_1e^{-\gamma t}.
+\end{equation*}
+Reference pic. 1.
+
+\subsubsection{Inner Equations}
+\begin{equation*}
+  \left\{
+    \begin{aligned}
+      \epsilon \od{x}{t} &= -x(x-\lambda) + \gamma\epsilon u \\
+      \epsilon \od{u}{t} &= x(x-\lambda)-(\eta + \gamma)\epsilon u \\
+      & x |_{t=0} = a,\quad u |_{t=0} = 0.
+    \end{aligned}
+  \right.
+\end{equation*}
+A change of variables in
+$$\tau=\epsilon^{-\alpha}t,\quad t=\epsilon^{\alpha}\tau,\quad \alpha\ge0.$$
+$\alpha=1$ makes the equations regular.
+\begin{equation*}
+  \label{eq:xu-deriv}
+  \left\{
+    \begin{aligned}
+      \epsilon \od{x}{\tau} &= -x(x-\lambda) + \gamma\epsilon u \\
+      \epsilon \od{u}{\tau} &= x(x-\lambda)-(\eta + \gamma)\epsilon u \\
+      & x |_{\tau=0} = a,\quad u |_{\tau=0} = 0.
+    \end{aligned}
+  \right.
+\end{equation*}
+Let
+\begin{equation}
+  \label{eq:xu-epsilon}
+  \begin{aligned}
+    x^{\text{in}}(\tau,\epsilon) &= x_0(\tau) + \epsilon x_1(\tau) + \cdots \\
+    u^{\text{in}}(\tau,\epsilon) &= u_0(\tau) + \epsilon u_1(\tau) + \cdots, \\
+  \end{aligned}
+\end{equation}
+then, substituting \cref{eq:xu-epsilon} into \cref{eq:xu-deriv} and collecting
+terms of $\epsilon$ with $\tau\ge0$ results in
+\begin{equation*}
+  \epsilon^0: \quad \left\{
+    \begin{aligned}
+      \od{x_0}{\tau} &= -x_0(x_0-\lambda), &\quad x_0(0) &= a \\
+      \od{u_0}{\tau} &= x_0(x_0-\lambda), &\quad u_0(0) &= a. \\
+    \end{aligned}
+  \right.
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    x_0 \text{equations} \rightarrow x_0(\tau) &=
+    \frac{a\lambda}{a+(\lambda-a)e^{-\lambda\tau}} \\
+    u_0 \text{equations} \rightarrow \od{u_0}{\tau} &=
+    -\od{x_0}{\tau} \rightarrow u_0(\tau) = -x_0(\tau) + \cancel{D}.
+  \end{aligned}
+\end{equation*}
+The leading-order inner approximation with $\tau=t/\epsilon$ is
+\begin{equation*}
+  \begin{aligned}
+    x^{\text{in}}(t,\epsilon) &= \frac{a\lambda}{a+(\lambda-a)e^{-\lambda t/\epsilon}} \\
+    u^{\text{in}}(t,\epsilon) &= a - \frac{a\lambda}{a+(\lambda-a)e^{-\lambda t/\epsilon}} \\
+  \end{aligned}
+\end{equation*}
+Reference pic. 2.
+
+\subsubsection{Matching}
+\begin{equation*}
+  \begin{aligned}
+    \text{HA}^{\text{in}}_x &= I^{\text{out}}_x \\
+    \lambda &= 0 or \boxed{\lambda}.
+  \end{aligned}
+\end{equation*}
+Therefore the outer solution must be $x^{\text{out}}(t,\epsilon)\equiv \lambda$.
+\begin{equation*}
+  \begin{aligned}
+    \text{HA}^{\text{in}}_u &= I^{\text{out}}_u \\
+    a-\lambda &= c_1
+  \end{aligned}
+\end{equation*}
+Therefore $c_1=a-\lambda$. In general, the leading-order composite approximation
+is
+\begin{equation*}
+  x(t,\epsilon) = x^{\text{out}}(t,\epsilon) + x^{\text{in}}(t,\epsilon) - I^{\text{out}}_x
+\end{equation*}
+so that in our case,
+\begin{equation*}
+  \begin{aligned}
+    x(t,\epsilon) &= \frac{a\lambda}{a_(\lambda-a)e^{-\lambda t/\epsilon}} \\
+    u(t,\epsilon) &= (a-\lambda)e^{-\gamma t} + \lambda -
+    \frac{a\lambda}{a_(\lambda-a)e^{-\lambda t/\epsilon}} \\
+  \end{aligned}
+\end{equation*}
+Reference pic. 3.
 \end{document}
