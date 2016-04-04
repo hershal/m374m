@@ -2684,7 +2684,7 @@ Since $\delta=\epsilon^{1/3}$ and $x=\epsilon^{-\alpha}z$ ($\alpha=1/3$), we get
   \end{aligned}
 \end{equation*}
 
-\section{Case Study: Reaction With Fast Components}
+\section{Case Study: Reaction With Fast\\ Components}
 \subsection{Problem}
 Consider a model for a chemical reaction
 \begin{equation*}
@@ -2706,7 +2706,7 @@ $k_1,k_2,k_3 = $ rate constants. Analyze model in case when $k_1$ is large
 Let $\lambda = a-b$. Notice
 \begin{equation}
   \label{eq:x-equation}
-  \dot{x}+\dot{y}=0 \;\rightarrow\;x(t)-y(t)=a-b.
+  \dot{x}+\dot{y}=0 \;\rightarrow\;x(t)-y(t)=a-b,
 \end{equation}
 then
 \begin{equation}
@@ -2718,25 +2718,23 @@ In addition,
   \label{eq:v-equation}
   \dot{v}k_3u \rightarrow v(t)\int_0^tk_3u(\hat{t})\dd{\hat{t}}.
 \end{equation}
-Hence \cref{eq:x-equation,eq:y-equation,eq:v-equation} reduces today
-\begin{equation}
-  \label{eq:xu-equation}
+Hence \cref{eq:x-equation,eq:y-equation,eq:v-equation} reduces to
+\begin{equation*}
   \begin{aligned}
     \dot{x} &= -k_1x(x-\lambda) + k_2u, &\quad x(0)&=a \\
     \dot{u} &= k_1x(x-\lambda) - (k_2+k_3)u, &\quad u(0)&=0. \\
   \end{aligned}
-\end{equation}
-Let $\epsilon=1/k$ which we assume to be ``small'', $\eta=k_2$, and
+\end{equation*}
+Let $\epsilon=1/k_1$ which we assume to be ``small'', $\eta=k_2$, and
 $\gamma=k_3$. Then
-\begin{equation}
-  \label{eq:xu-transformed}
+\begin{equation*}
   \text{(IVP)}\quad \left\{
     \begin{aligned}
       \epsilon\dot{x} &= -x(x-\lambda)+\eta\epsilon u, &\quad x(0)&=a \\
       \epsilon\dot{u} &= x(x-\lambda)-(\eta+\gamma)\epsilon u, &\quad u(0)&=0 \\
     \end{aligned}
 \right.
-\end{equation}
+\end{equation*}
 (IVP) is singularly perturbed when $k_1$ is large; expect boundary layer at
 $t=0$ due to $k_1$ reaction (very fast changes at $t=0$).
 \subsubsection{Outer Equations}
@@ -2800,7 +2798,7 @@ Reference pic. 1.
 A change of variables in
 $$\tau=\epsilon^{-\alpha}t,\quad t=\epsilon^{\alpha}\tau,\quad \alpha\ge0.$$
 $\alpha=1$ makes the equations regular.
-\begin{equation*}
+\begin{equation}
   \label{eq:xu-deriv}
   \left\{
     \begin{aligned}
@@ -2809,7 +2807,7 @@ $\alpha=1$ makes the equations regular.
       & x |_{\tau=0} = a,\quad u |_{\tau=0} = 0.
     \end{aligned}
   \right.
-\end{equation*}
+\end{equation}
 Let
 \begin{equation}
   \label{eq:xu-epsilon}
@@ -2830,9 +2828,9 @@ terms of $\epsilon$ with $\tau\ge0$ results in
 \end{equation*}
 \begin{equation*}
   \begin{aligned}
-    x_0 \text{equations} \rightarrow x_0(\tau) &=
+    x_0 \;\text{equations} \rightarrow x_0(\tau) &=
     \frac{a\lambda}{a+(\lambda-a)e^{-\lambda\tau}} \\
-    u_0 \text{equations} \rightarrow \od{u_0}{\tau} &=
+    u_0 \;\text{equations} \rightarrow \od{u_0}{\tau} &=
     -\od{x_0}{\tau} \rightarrow u_0(\tau) = -x_0(\tau) + \cancel{D}.
   \end{aligned}
 \end{equation*}
@@ -2849,7 +2847,7 @@ Reference pic. 2.
 \begin{equation*}
   \begin{aligned}
     \text{HA}^{\text{in}}_x &= I^{\text{out}}_x \\
-    \lambda &= 0 or \boxed{\lambda}.
+    \lambda &= 0 \;\text{or}\; \boxed{\lambda}.
   \end{aligned}
 \end{equation*}
 Therefore the outer solution must be $x^{\text{out}}(t,\epsilon)\equiv \lambda$.
@@ -2859,18 +2857,19 @@ Therefore the outer solution must be $x^{\text{out}}(t,\epsilon)\equiv \lambda$.
     a-\lambda &= c_1
   \end{aligned}
 \end{equation*}
-Therefore $c_1=a-\lambda$. In general, the leading-order composite approximation
+$\therefore c_1=a-\lambda$. In general, the leading-order composite approximation
 is
 \begin{equation*}
   x(t,\epsilon) = x^{\text{out}}(t,\epsilon) + x^{\text{in}}(t,\epsilon) - I^{\text{out}}_x
 \end{equation*}
-so that in our case,
-\begin{equation*}
-  \begin{aligned}
-    x(t,\epsilon) &= \frac{a\lambda}{a_(\lambda-a)e^{-\lambda t/\epsilon}} \\
-    u(t,\epsilon) &= (a-\lambda)e^{-\gamma t} + \lambda -
-    \frac{a\lambda}{a_(\lambda-a)e^{-\lambda t/\epsilon}} \\
-  \end{aligned}
+So in our case, the final composite approximation is
+\begin{equation*} \boxed{
+    \begin{aligned}
+      x(t,\epsilon) &= \frac{a\lambda}{a_(\lambda-a)e^{-\lambda t/\epsilon}} \\
+      u(t,\epsilon) &= (a-\lambda)e^{-\gamma t} + \lambda -
+      \frac{a\lambda}{a_(\lambda-a)e^{-\lambda t/\epsilon}}. \\
+    \end{aligned}
+  }
 \end{equation*}
-Reference pic. 3.
+% Reference pic. 3.
 \end{document}
