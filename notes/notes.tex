@@ -4,6 +4,7 @@
 \date{Updated \today}
 
 \usepackage{homework-macros}
+\usetikzlibrary{plotmarks}
 
 \begin{document}
 \maketitle
@@ -2783,7 +2784,31 @@ Thus, the leading-order outer approximations are
 \begin{equation*}
   x^{\text{out}}(t,\epsilon) \equiv 0 \;\text{or}\; a,\quad u^{\text{out}}(t,\epsilon)=c_1e^{-\gamma t}.
 \end{equation*}
-Reference pic. 1.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \begin{tikzpicture}[x=5cm,y=4cm]
+      \draw[<->] (0,1)node[left]{$x$} -- (0,0)node[below left]{$0$} -- (1,0)node[below]{$t$};
+      \draw[-,dashed] (0,.333) -- (.333,.333);
+      \draw[->] (.333,.333) -- node[above]{$x^{\text{out}}$} (1,.333);
+    \end{tikzpicture}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \begin{tikzpicture}[x=5cm,y=4cm,,label/.style={%
+   postaction={ decorate,transform shape,
+   decoration={ markings, mark=at position .5 with \node #1;}}}]
+      \draw[<->] (0,1)node[left]{$u$} -- (0,0)node[below left]{$0$} -- (1,0)node[below]{$t$};
+      \draw[-,dashed,domain=0:.333,variable=\x] plot ({\x},{.8*exp(-4*\x)});
+      \draw[->,domain=.333:1,variable=\x,label={[above]{$u^{\text{out}}$}}]
+      plot ({\x},{.8*exp(-4*\x)});
+    \end{tikzpicture}
+  \end{subfigure}
+\caption{Leading-order outer approximations of $x$ and $u$}
+\label{fig:leading-order-out}
+\end{figure}
+Reference \cref{fig:leading-order-out}.
 
 \subsubsection{Inner Equations}
 \begin{equation*}
@@ -2841,7 +2866,40 @@ The leading-order inner approximation with $\tau=t/\epsilon$ is
     u^{\text{in}}(t,\epsilon) &= a - \frac{a\lambda}{a+(\lambda-a)e^{-\lambda t/\epsilon}} \\
   \end{aligned}
 \end{equation*}
-Reference pic. 2.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \begin{tikzpicture}[x=5cm,y=4cm,label/.style={
+        postaction={ decorate,transform shape,
+          decoration={ markings, mark=at position .8 with \node #1;}}}]
+      \pgfmathsetmacro{\lambda}{.2}
+      \pgfmathsetmacro{\a}{.8}
+      \pgfmathsetmacro{\epsilon}{.03}
+      \draw[<->] (0,1)node[left]{$x$} -- (0,0)node[below left]{$0$} -- (1,0)node[below]{$t$};
+      \draw[-,domain=0:.667,variable=\x,label={[above]{$x^{\text{in}}$}}]
+      plot ({\x},{(\a*\lambda)/(\a+(\lambda-\a)*exp(-\lambda*\x/\epsilon))});
+      \draw[->,dashed] (.667,\lambda) -- (1,\lambda);
+    \end{tikzpicture}
+  \end{subfigure}
+  \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \begin{tikzpicture}[x=5cm,y=4cm,label/.style={
+        postaction={ decorate,transform shape,
+          decoration={ markings, mark=at position .8 with \node #1;}}}]
+      \pgfmathsetmacro{\lambda}{.2}
+      \pgfmathsetmacro{\a}{.8}
+      \pgfmathsetmacro{\epsilon}{.03}
+      \draw[<->] (0,1)node[left]{$u$} -- (0,0)node[below left]{$0$} -- (1,0)node[below]{$t$};
+      \draw[-,domain=0:.667,variable=\x,label={[above]{$u^{\text{in}}$}}]
+      plot ({\x},{\a-(\a*\lambda)/(\a+(\lambda-\a)*exp(-\lambda*\x/\epsilon))});
+      \draw[->,dashed] (.667,\a-\lambda) -- (1,\a-\lambda);
+    \end{tikzpicture}
+  \end{subfigure}
+  \caption{Leading-order inner approximations of $x$ and $u$}
+  \label{fig:leading-order-in}
+\end{figure}
+Reference \cref{fig:leading-order-in}.
 
 \subsubsection{Matching}
 \begin{equation*}
