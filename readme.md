@@ -2,9 +2,6 @@
 
 [![Build Status](https://travis-ci.org/hershal/m374m.svg?branch=master)](https://travis-ci.org/hershal/m374m)
 
-This is a cool class.
-Built documents are available below.
-
 <p align="center">
 <b><a href="http://r2labs.us/static/m374m/hw1.pdf">HW1</a></b>
 |
@@ -33,3 +30,5 @@ Built documents are available below.
 |
 <b><a href="http://r2labs.us/static/m374m/final-cheat-sheet.pdf">Final</a></b>
 </p>
+
+This is a cool class.
