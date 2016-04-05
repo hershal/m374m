@@ -15,6 +15,6 @@ install:
 script:
   - mkdir build && cd build && cmake .. && make -j32
   - ssh-keyscan -H r2labs.us > ~/.ssh/known_hosts
-  - scp homeworks/hw*/hw{0..12}.pdf static@r2labs.us:/srv/http/static/m374m/
+  - scp homeworks/hw*/hw+([0-9]).pdf static@r2labs.us:/srv/http/static/m374m/
   - scp notes/notes.pdf static@r2labs.us:/srv/http/static/m374m/
   - scp exams/*/*.pdf static@r2labs.us:/srv/http/static/m374m/
