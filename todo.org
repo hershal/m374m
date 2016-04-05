@@ -1,8 +1,3 @@
-* M374M
-[[https://travis-ci.org/hershal/m374m][file:https://travis-ci.org/hershal/m374m.svg?branch=master]]
-
-This is a cool class.
-
 * TODOs
 ** TODO Start all sections on odd pages
 I started this, but it messes up the table of contents on the notes document.
