@@ -252,6 +252,7 @@ This implies that $\lambda$ is always real and opposing signs. Therefore $(1,0)$
 is a saddle point regardless of $\mu$.
 
 \subsection{8$^3$}
+\subsubsection*{Problem}
 Consider the dynamical equation in \cref{eq:2.4.8-problem}. If $p(0,0)$ and $h(0)$
 are positive, prove that the origin is an asymptotically stable critical point.
 \begin{equation}
@@ -284,23 +285,31 @@ analyze this linear system.
 \begin{equation*}
   A =
   \begin{pmatrix}
-    0 & 1 \\ -h(x) & -p(x,y) \\
-  \end{pmatrix}
+    0 & 1 \\ -y\od{}{x}p(x,y)-(x\od{}{t}h(x)+h(x)) & -(y\od{}{y}p(x,y)+p(x,y)) \\
+  \end{pmatrix}.
 \end{equation*}
-We may obtain the eigenvalues of $A$ to characterize the solution.
-$$\lambda^2 + p(x,y)\lambda + h(x)$$
+At the equilibrium $(0,0)$,
+\begin{equation*}
+  A(0,0) =
+  \begin{pmatrix}
+    0 & 1 \\ -h(0) & -p(0,0) \\
+  \end{pmatrix}.
+\end{equation*}
+We may obtain the eigenvalues of $A(0,0)$ to characterize the equilibrium. Let
+$p=p(0)$ and $h=h(0)$.
+$$\lambda^2 + p\lambda + h$$
 \begin{equation}
   \label{eq:2.4.8-lambda}
-  \implies \lambda = \frac{-p\pm\sqrt{p^2-4h(x)}}{2}
+  \implies \lambda = \frac{-p\pm\sqrt{p^2-4h}}{2}
 \end{equation}
 Observe that
 \begin{equation}
   \label{eq:2.4.8-discriminant}
   \abs{p} < \abs{\sqrt{p^2-4h}}
 \end{equation}
-Note that $p(x,y),h(x)>0$. From \cref{eq:2.4.8-lambda,eq:2.4.8-discriminant} we
-may conclude that \cref{eq:2.4.8-problem} is a stable node if $p^2-4h>0$
-($\implies \lambda_i<0$) and a stable spiral if $p^2-4h<0$ ($\implies\alpha_i<0$).
+Note that $p(0,0)$, $h(0)>0$. From \cref{eq:2.4.8-lambda,eq:2.4.8-discriminant}
+we may conclude that $(0,0)$ is a stable node if $p^2-4h>0$ ($\implies
+\lambda_i<0$) and a stable spiral if $p^2-4h<0$ ($\implies\alpha_i<0$).
 
 \section{Programming Minilab}
 In the biochemical process of glycolysis, living cells obtain energy by breaking
