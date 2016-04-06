@@ -447,16 +447,18 @@ depending on $a$ and $b$.
   \begin{tikzpicture}
       \begin{axis}[width=12cm, height=12cm,
         domain=0:2.5,
-        xmin=0, xmax=1.5, restrict x to domain=0:1.5,
-        ymin=0, ymax=2.5, restrict y to domain=0:2.5,
+        xmin=0, xmax=1.5, restrict x to domain=0:2,
+        ymin=0, ymax=2.5, restrict y to domain=0:5,
         view={0}{90}, xlabel=$x$, ylabel=$y$]
+        \pgfmathsetmacro{\a}{.1}
+        \pgfmathsetmacro{\b}{.5}
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
             {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-1-u-\i.mat};
         }
-        \addplot3[gray, quiver={u={-x+.1*y+y*x^2}, v={.5-.1*y-y*x^2)}, scale arrows=0.05}, -stealth,samples=15]{0};
-        \addplot3[gray, dashed, very thin] coordinates {(0.5,0,0) (0.5,2.5,0)};
-        \addplot3[gray, dashed, very thin] coordinates {(0,1.4286,0) (1.5,1.4286,0)};
+        \addplot3[gray, quiver={u={-x+\a*y+y*x^2}, v={\b-\a*y-y*x^2)}, scale arrows=0.05}, -stealth,samples=15]{0};
+        \addplot3[gray,dashed,very thin,samples y=1,samples=100] (x, {x/(\a+x^2)}, 0);
+        \addplot3[gray,dashed,very thin,samples y=1,samples=100] (x, {\b/(\a+x^2)}, 0);
         \addplot3[only marks] table {
           0.5 1.4286 0
         };
@@ -508,18 +510,18 @@ depending on $a$ and $b$.
   \begin{tikzpicture}
       \begin{axis}[width=12cm, height=12cm,
         domain=0:2.5,
-        xmin=0, xmax=1.5, restrict x to domain=0:1.5,
-        ymin=0, ymax=2.5, restrict y to domain=0:2.5,
+        xmin=0, xmax=1.5, restrict x to domain=0:2,
+        ymin=0, ymax=2.5, restrict y to domain=0:5,
         view={0}{90}, xlabel=$x$, ylabel=$y$]
+        \pgfmathsetmacro{\a}{.2}
+        \pgfmathsetmacro{\b}{.5}
         \foreach \i in {1,...,4} {
           \addplot3[decoration={markings, mark=between positions 0.1 and 0.9 step 4em with
             {\arrow [scale=1.5]{stealth}} }, postaction=decorate] table {src-bin/minilab-1-2-u-\i.mat};
         }
-        \addplot3[gray, quiver={u={-x+.2*y+y*x^2}, v={.5-.2*y-y*x^2}, scale arrows=0.05}, -stealth,samples=20]{0};
-        % \addplot3[gray, dashed, very thin] coordinates {(-1,0,0) (1,0,0)};
-        % \addplot3[gray, dashed, very thin] coordinates {(0,-1,0) (0,1,0)};
-        \addplot3[gray, dashed, very thin] coordinates {(0.5,0,0) (0.5,2.5,0)};
-        \addplot3[gray, dashed, very thin] coordinates {(0,1.1111,0) (1.5,1.1111,0)};
+        \addplot3[gray, quiver={u={-x+\a*y+y*x^2}, v={\b-\a*y-y*x^2}, scale arrows=0.05}, -stealth,samples=20]{0};
+        \addplot3[gray,dashed,very thin,samples y=1,samples=100] (x, {x/(\a+x^2)}, 0);
+        \addplot3[gray,dashed,very thin,samples y=1,samples=100] (x, {\b/(\a+x^2)}, 0);
         \addplot3[only marks] table {
           0.5 1.1111 0
         };
