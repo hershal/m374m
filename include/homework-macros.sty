@@ -19,6 +19,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage[strict]{changepage}
+\usepackage[bindingoffset=0.0in]{geometry}
 
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{external}
@@ -57,4 +58,4 @@
 }
 
 \let\stdsection\section%
-\renewcommand{\section}{\skiptooddpage\stdsection}
+\renewcommand{\section}{\cleardoublepage\stdsection}
