@@ -1791,7 +1791,6 @@ Then
 Typically type of $E$ function is associated with some kind of energy or
 distance from the equilibrium. Theorem does not state where to get $E$, however,
 just that if we may find one, then it has the above properties.
-
 \subsection{Idea}
 If $E(x,y)$ has a strict local minimum at $(x_*,y_*)$, then we have the
 following picture: Reference fig. 13.1. Let $(x(t), y(t))$ be an arbitrary
@@ -1803,36 +1802,32 @@ non-equilibrium solution starting in $D$. In case (a), we have
     &<\forall t\ge t_0
   \end{aligned}
 \end{equation}
-
 $\therefore E(x(t),y(t))$ continually decreases in time and $(x(t),y(t))$
 continually moves toward $(x_*,y_*)$. In case (c), we have
 $\od{}{t}E(x(t),y(t))=E_x f + E_y g=0,\;\forall t\ge t_0$
 $\therefore\;E(x(t),y(t)) = E(x_0,y_0)$ is constant in time
 $\therefore\;(x(t),y(t))$moves along a level set of $E$ and hence must be a
 closed orbit.
-
 In case (b), we get $E(x(t),y(t))\le E(x_0,y_0)\;\forall t\ge t_0$; hence all
 solution curves must remain in region enclosed by initial level set.
-
 \subsection{Example}
 Consider a model of a pendulum with gravity $G$, angle $\theta$, with a mass $M$
 attached to a string of length $L$. Reference fig. 13.2.
-
 \begin{equation*}
   \begin{aligned}
     mL\ddot{\theta}+mG\sin\theta=0 \\
     \dot{\theta_{(0)}}=\omega_0,\;\theta_{(0)}=\theta_0 \\
   \end{aligned}
 \end{equation*}
-First-order form: Let $x=\theta$, $y=\dot{\theta}$. Then
-$$\dot{x}=f(x,y)=y,\quad \dot{y}=g(x,y)=\frac{G}{L}\sin x$$
-Equilibrium:
-$$y=0,\quad -\frac{G}{L}\sin x=0$$ where $x=n\pi,\;n=0,\pm1,\ldots$
 
+\subsubsection*{First-order form}
+Let $x=\theta$, $y=\dot{\theta}$. Then
+$$\dot{x}=f(x,y)=y,\quad \dot{y}=g(x,y)=\frac{G}{L}\sin x$$
+\subsubsection*{Equilibrium}
+$$y=0,\quad -\frac{G}{L}\sin x=0$$ where $x=n\pi,\;n=0,\pm1,\ldots$
 $(x_*,y_*)=(n\pi,0)$. This means the pendulum is at the down or up position with
 zero velocity. This means that the pendulum is either straight down with zero
 velocity or balanced straight up.
-
 \subsubsection*{Jacobain analysis}
 \begin{equation*}
 A =
