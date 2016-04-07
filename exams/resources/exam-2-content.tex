@@ -1,1 +1,31 @@
-\item
+\item[Stability of Equilibria of Nonlinear Systems in 2D] \hfill \\
+  \begin{enumerate}
+  \item Determine equilibria
+    \begin{itemize}
+    \item Direct Substitution
+    \item Coupled
+    \item Uncoupled
+    \end{itemize}
+  \item Linearize solution by Jacobian:
+    \begin{equation*}
+      J = \begin{pmatrix}
+        f_x & f_y \\ g_x & g_y \\
+      \end{pmatrix}
+    \end{equation*}
+  \item Eigenvalues of Jacobian about the equilibria characterize the respective
+    equilibria. Obtain eigenvalues by solving
+    $\lambda^2-\tr{J(x_*,y_*)}+\det{J(x_*,y_*)}$. Equilibrium is a node if
+    eigenvalues are real; spiral if complex.
+    \begin{itemize}
+    \item $\Re(\lambda_1) < \Re(\lambda_2) < 0 \implies$ asy.\ stable
+    \item $\Re(\lambda_1) > \Re(\lambda_2) > 0 \implies$ asy.\ unstable
+    \item $\Re(\lambda_1) < 0 < \Re(\lambda_2) \implies$ saddle
+    \item $\Re(\lambda_1) \equiv \Re(\lambda_2) \equiv 0$ no conclusion; use
+      other method (Lyanpunov)
+    \end{itemize}
+\end{enumerate}
+\item[SIR Model] \hfill \\
+  Plain SIR is $$\dot{S}=-aSI,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI.$$
+  SIR with re-susceptibility and vaccination is
+  $$\dot{S}=-aSI+\mu R-vS,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI-\mu R-vS.$$
+  Typically don't use $R$ since $R=N-S-I$ and omitting $R$ yields a 2D system.
