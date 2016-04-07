@@ -13,19 +13,55 @@
       \end{pmatrix}
     \end{equation*}
   \item Eigenvalues of Jacobian about the equilibria characterize the respective
-    equilibria. Obtain eigenvalues by solving
-    $\lambda^2-\tr{J(x_*,y_*)}+\det{J(x_*,y_*)}$. Equilibrium is a node if
-    eigenvalues are real; spiral if complex.
+    equilibria. Let $J_*=J(x_*,y_*)$; obtain eigenvalues by solving
+    $\lambda^2-\tr{J_*}+\det{J_*}$ or let $D={(\tr J_*)}^2-4\det J_*$ and
+    reference the table. Equilibrium is a node if $D\ge0$; spiral otherwise.
     \begin{itemize}
-    \item $\Re(\lambda_1) < \Re(\lambda_2) < 0 \implies$ asy.\ stable
-    \item $\Re(\lambda_1) > \Re(\lambda_2) > 0 \implies$ asy.\ unstable
-    \item $\Re(\lambda_1) < 0 < \Re(\lambda_2) \implies$ saddle
-    \item $\Re(\lambda_1) \equiv \Re(\lambda_2) \equiv 0$ no conclusion; use
-      other method (Lyanpunov)
+    \item $\det J(x_*,y_*)<0 \implies$ saddle point
+    \item $\det J(x_*,y_*)>0, \tr J(x_*,y_*)>0 \implies$ asy.\ unstable
+    \item $\det J(x_*,y_*)>0, \tr J(x_*,y_*)<0 \implies$ asy.\ stable
+    \item $\det J(x_*,y_*)>0, \tr J(x_*,y_*)=0 \implies$ center point
     \end{itemize}
-\end{enumerate}
+  \end{enumerate}
 \item[SIR Model] \hfill \\
   Plain SIR is $$\dot{S}=-aSI,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI.$$
   SIR with re-susceptibility and vaccination is
   $$\dot{S}=-aSI+\mu R-vS,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI-\mu R-vS.$$
   Typically don't use $R$ since $R=N-S-I$ and omitting $R$ yields a 2D system.
+\item[Two-Dimensional Nonlinear Systems] \hfill\\
+  \begin{enumerate}
+  \item Find Nullclines
+    \begin{enumerate}
+    \item Find $f(x,y)=0$ and $g(x,y)=0$ in isolation
+    \end{enumerate}
+  \item Find Equilibria
+    \begin{enumerate}
+    \item This is when the nullclines cross.
+    \item Find zeros using $f$ and $g$ equations together
+    \end{enumerate}
+  \item Identify Equilibria Stability
+    \begin{enumerate}
+    \item Linearize system if not linear
+    \item Equilibrium is a node if eigenvalues are real; spiral if complex.
+      \begin{itemize}
+      \item $\Re(\lambda_1) < \Re(\lambda_2) < 0 \implies$ asy.\ stable
+      \item $\Re(\lambda_1) > \Re(\lambda_2) > 0 \implies$ asy.\ unstable
+      \item $\Re(\lambda_1) < 0 < \Re(\lambda_2) \implies$ saddle
+      \item $\Re(\lambda_1) \equiv \Re(\lambda_2) \equiv 0$ no conclusion; use
+        other method (Lyanpunov)
+      \end{itemize}
+    \end{enumerate}
+  \end{enumerate}
+\item[Two-Dimensional Linear Systems] \hfill \\
+  \begin{enumerate}
+  \item Find equilibria. If $\det A\ne0$, then equilibrium is null space of
+    coefficient matrix. Otherwise $(0,0)$ is only equilibrium.
+  \item Find eigenvalues $\lambda_1$, $\lambda_2$ to characterize solution
+  \item Find eigenvectors $\hat{u_1}$, $\hat{u_2}$ to draw nullclines
+  \item General solution is in the form $v(t)=C_1e^{\lambda_1
+      t}\hat{u_1}+C_2e^{\lambda_2 t}\hat{u_2}$. If eigenvalues are complex use
+    Euler's formula where $\lambda_n=\alpha\pm i\beta$ and
+    $\hat{u_n}=\hat{\gamma}\pm i\hat{\eta}$: General solution is $v(t) =
+    C_1e^{\alpha t}[(\cos\beta t)\hat{\gamma} - \sin\beta t)\hat{\eta}] +
+    C_2e^{\alpha t}[(\sin\beta t)\hat{\gamma} - \cos\beta t)\hat{\eta}].$
+  \end{enumerate}
