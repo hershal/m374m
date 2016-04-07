@@ -1963,8 +1963,7 @@ A =
 \begin{equation*}
   \begin{aligned}
     \lambda_{1,2}&=\pm\sqrt{-\frac{G}{L}\cos{n\pi}} \\
-    &= \pm \sqrt{\frac{G}{L}{(-1)}^{n+1}}  \\
-    &= (-1)^n
+    &= \pm\sqrt{\frac{G}{L}{(-1)}^{n+1}}  \\
   \end{aligned}
 \end{equation*}
 
@@ -2053,7 +2052,7 @@ $[S]=[I]=[R]=$ person; and $[t]=$ time in weeks.
   \begin{equation*}
     \begin{aligned}
       r_3 &= \mu R \\
-      r_4 &= vs
+      r_4 &= vS
     \end{aligned}
   \end{equation*}
   Where $\mu,v>0$. The equations describing this system become
@@ -2072,7 +2071,7 @@ we begin with an initial number of healthy, ill, and no recovered peoples so tha
 \end{equation*}
 Let $S_0+I_0=N=$ population size. The case of interest is when $S_0=N-1$,
 $I_0=1$. Assume $N$ is large. Will this single infected person spread the
-illness to the entire population? What does ths solution of this system look
+illness to the entire population? What does the solution of this system look
 like? Note $S$, $I$ evolve independent of $R$. Thus we really have a 2-D system
 for $S$ and $I$. We may get $R$ from $S$ and $I$ using the $\dot{R}$ equation or
 using the fact that the total population is conserved, i.e.
@@ -2094,10 +2093,10 @@ We first compute the equilibria for this system.
   \end{aligned}
 \end{equation*}
 Therefore, $S=b/a$, $I=0$ or more generally, $S$ arbitrary, $I=0$. Now we'll
-examin the stability and behavior of solutions. The Jacobian for this purpose is
-not applicable since $\det J=0$. Furthermore, the Lyapunov Theorem is also not
-applicable since the equilibria of this system are not isolated. Reference fig.
-14.3. Given $S_0=N-1$, $I_0=1$, we may identify two basic cases:
+examine the stability and behavior of solutions. The Jacobian for this purpose
+is not applicable since $\det J=0$. Furthermore, the Lyapunov Theorem is also
+not applicable since the equilibria of this system are not isolated. Reference
+fig. 14.3. Given $S_0=N-1$, $I_0=1$, we may identify two basic cases:
 \begin{enumerate}
 \item $b/a<N$, $\implies a<aN/b$. This is called the ``basic reproduction
   number''. Reference fig. 14.4. This is when an outbreak occurs; the infected
