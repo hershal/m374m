@@ -933,6 +933,7 @@ $$f(u)=u^3-8u^2 = u^2(u-8)$$ Reference figs. 5.8--5.10.
 Does $f(u)=u-e^{-u}$ have any roots? Reference figs. 5.11, 5.12.
 
 \section{Stability of Equilibria}
+\label{sec:stability-of-equilibria}
 \subsubsection*{Recall}
 We consider the system where $f(u)$, $f'(u)$ continuous.
 \begin{equation} \text{(IVP)} \quad
@@ -1293,7 +1294,112 @@ Reference fig. 8.11.
 \end{equation}
 
 \section{Dynamical Systems in 2D}
-\todo{Write section!}
+\subsection{Setup}
+A dynamical system for variables
+$$x=x(t),\quad y=y(t)$$
+is
+\begin{equation*}
+  \text{(IVP)}\quad\left\{
+    \begin{aligned}
+      \od{x}{t} &= f(x,y),&\quad x(t_0) &= x_0 \\
+      \od{y}{t} &= f(y,y),&\quad y(t_0) &= y_0 \\
+    \end{aligned}
+  \right.
+\end{equation*}
+where $t>t_0$.
+
+We seek to understand the qualitative behavior of solutions for different $(x_0,
+y_0)$. Solutions may be viewed in two ways:
+\begin{itemize}
+\item $x$ vs $t$, $y$ vs $t$ graphs (``time view'')
+\item motion of a point $(x,y)(t)$ in the x-y plane (``phase view;'' also called
+  ``orbit'')
+\end{itemize}
+
+\subsection{Solvability Theorem}
+Consider (IVP) and assume $f$, $g$, $f_x$, $f_y$, $g_x$, $g_y$ are all
+continuous in $x$, $y$. Then:
+\begin{itemize}
+\item $\exists$ unique solution $(x,y)(t)$ for any given $t_0$ and $(x_0,y_0)$.
+\item Solution is defined for $t$ in some interval $[t_0,T)$, where $T$ depends
+  on $(x_0, y_0)$.
+\item Either $T=\infty$ or $T$ is finite. If finite, then $|x(t)|$ or $|y(t)|$
+  $\longrightarrow$ $\infty$ as $t\rightarrow\infty$
+\item For a given $t_0$, solutions with different $(x_0,y_0)$ cannot intersect
+  simultaneously in $x$ or $y$.
+\end{itemize}
+
+\subsubsection*{Remarks}
+The path of the orbit curves in the phase view are either identical or disjoint;
+they may not cross paths.
+
+\subsection{Definition}
+An equilibrium solution or critical point of (IVP) is a solution in the form
+$$x(t)=x_*(t),\quad y(t)=y_*,\quad t\in[t_0,\infty)$$
+Notice that
+\begin{equation*}
+  \left[(x_*,y_*)\;\text{is an equilibrium solution}\right] \longleftrightarrow
+  \left[
+    \begin{aligned}
+      f(x_*,y_*)&=0 \\
+      g(x_*,y_*)&=0 \\
+    \end{aligned}
+ \right]
+\end{equation*}
+Stability classification is the same as \cref{sec:stability-of-equilibria}. In
+general, the same themes that exist in 1-variable cases are true for
+multi-variable cases.
+
+\subsection{Example}
+Sketch the portrait of solution curves (orbits) in the $xy$-plane.
+\begin{equation*}
+  \od{x}{t} = y-3, \quad \od{y}{t}=-x+4
+\end{equation*}
+let $f(x,y)=\od{x}{t}$, $g(x,y)=\od{y}{t}$.
+
+\subsubsection*{Nullcline Curves}
+\begin{multicols}{2}
+  \begin{equation*}
+    \begin{aligned}
+      f(x,y) &= 0 \\
+      y-3 &= 0 \\
+      \implies y&=3 \\
+    \end{aligned}
+  \end{equation*}
+  \break
+  \begin{equation*}
+    \begin{aligned}
+      g(x,y) &= 0 \\
+      -x+4 &= 0 \\
+      \implies x&=4 \\
+    \end{aligned}
+  \end{equation*}
+\end{multicols}
+These $x$ and $y$ values are called the $x$ and $y$ ``nullclines'',
+respectively. A plot of the vector field for this system, as shown in fig. 10.9,
+reveals that the equilibrium solution is neutrally stable.
+
+\subsubsection*{Solution Curve Shapes}
+The shape of the solution curves in the $xy$ plane is described by the equation
+\begin{equation*}
+  \begin{aligned}
+    \od{x}{y} &= \frac{\od{y}{t}}{\od{x}{t}} = \frac{g(x,y)}{f(x,y)} \\
+    &= \frac{-x+4}{y-3} \\
+  \end{aligned}
+\end{equation*}
+Solving this ODE will give the general shape of the solution curves
+\begin{equation*}
+  \begin{aligned}
+    \od{y}{x} &= \frac{-x+4}{y-3} \\
+    (y-3)\dd{y} &= (-x+4)\dd{x} \\
+    \frac{1}{2}y^2+3y &= -\frac{1}{2}x^2+4x + C \\
+    y^2 + 6y &= -x^2 + 8x + 2C \\
+    {(y-3)}^2 - 6y &= -{(x-4)}^2 + 16 + 2C \\
+    {(x-4)}^2 + {(y-3)}^2 = D. \\
+  \end{aligned}
+\end{equation*}
+From this result, we may observe that every solution curve traces out a circle
+around the equilibrium.
 
 \section{Phase Diagrams for Linear Systems}
 \subsection{Definition}
