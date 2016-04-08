@@ -23,11 +23,13 @@
     \item $\det J(x_*,y_*)>0, \tr J(x_*,y_*)=0 \implies$ center point
     \end{itemize}
   \end{enumerate}
-\item[SIR Model] \hfill \\
-  Plain SIR is $$\dot{S}=-aSI,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI.$$
-  SIR with re-susceptibility and vaccination is
+
+\item[SIR Model] Plain SIR
+  is $$\dot{S}=-aSI,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI.$$ SIR with
+  re-susceptibility and vaccination is
   $$\dot{S}=-aSI+\mu R-vS,\quad\dot{I}=aSI-bI,\quad\dot{R}=bI-\mu R-vS.$$
   Typically don't use $R$ since $R=N-S-I$ and omitting $R$ yields a 2D system.
+
 \item[Two-Dimensional Nonlinear Systems] \hfill\\
   \begin{enumerate}
   \item Find Nullclines
@@ -52,6 +54,7 @@
       \end{itemize}
     \end{enumerate}
   \end{enumerate}
+
 \item[Two-Dimensional Linear Systems] \hfill \\
   \begin{enumerate}
   \item Find equilibria. If $\det A\ne0$, then equilibrium is null space of
@@ -62,6 +65,51 @@
       t}\hat{u_1}+C_2e^{\lambda_2 t}\hat{u_2}$. If eigenvalues are complex use
     Euler's formula where $\lambda_n=\alpha\pm i\beta$ and
     $\hat{u_n}=\hat{\gamma}\pm i\hat{\eta}$: General solution is $v(t) =
-    C_1e^{\alpha t}[(\cos\beta t)\hat{\gamma} - \sin\beta t)\hat{\eta}] +
-    C_2e^{\alpha t}[(\sin\beta t)\hat{\gamma} - \cos\beta t)\hat{\eta}].$
+    C_1e^{\alpha t}[(\cos\beta t)\hat{\gamma} - (\sin\beta t)\hat{\eta}] +
+    C_2e^{\alpha t}[(\sin\beta t)\hat{\gamma} - (\cos\beta t)\hat{\eta}]$.
   \end{enumerate}
+
+\item[Perturbation Methods] A perturbed equation is regular if
+  $\text{(Eq)}_{\epsilon=0}$ is of same type as $\text{(Eq)}_{\epsilon>0}$.
+
+\item[Regularly Perturbed w/ Algebraic Solutions] \hfill \\
+  \begin{enumerate}
+  \item Pick an $\alpha>0$ and let $x(\epsilon) = x_0+\epsilon^{\alpha}x_1 +
+    \epsilon^{2\alpha}x_2 + \cdots$.
+  \item Substitute into the original equation. Taylor expand nonlinear
+    expresions to obtain a polynomial approximation in terms of $\epsilon$.
+    Remember to use the chain and product rule and derive in terms of
+    $\epsilon$.
+    E.g.\ for $f(\epsilon)={x(\epsilon)}^2$,
+    \begin{align*}
+      f(\epsilon)
+      &= f(0) + \epsilon f'(0) + \frac{\epsilon^2}{2!}f''(0)+\cdots \\
+      &= x^2_{0} + \epsilon{[2x(\epsilon)x'(\epsilon)]}_{\epsilon=0} +
+        \frac{\epsilon^2}{2}{[2x'(\epsilon)x'(\epsilon)+2x(\epsilon)x''(\epsilon)]}_{\epsilon=0}
+        + \cdots \\
+      &= x_0^2+\epsilon[2x_0x_1] + \frac{\epsilon^2}{2}[2x_1^2 + 2x_0 2x_2] + \cdots \\
+    \end{align*}
+  \item Collect powers of $\epsilon$
+  \item Solve each independent $\epsilon^n$ equation.
+  \end{enumerate}
+
+\item[Regularly Perturbed w/ Differential Solutions] \hfill \\
+  \begin{enumerate}
+  \item Pick an $\alpha>0$ and let $x(t,\epsilon) =
+    x_0(t)+\epsilon^{\alpha}x_1(t) + \epsilon^{2\alpha}x_2(t) + \cdots$.
+  \item Substitute into the original equation (IVP + ICs). Taylor expand
+    nonlinear expresions to obtain a polynomial approximation in terms of
+    $\epsilon$. Remember to use the chain and product rule and derive in terms
+    of $\epsilon$. E.g.\ for $f(t,\epsilon)=x{(t,\epsilon)}^3$
+    \begin{align*}
+      f(t,\epsilon)
+      &= f(t,0) + \epsilon f(t,0) + \frac{\epsilon}{2!}f''(t,0) + \cdots \\
+      &= {[x^3(t,\epsilon)]}_{\epsilon=0} + \epsilon {[3{x(t,\epsilon)}^2x'(t,\epsilon)]}_{\epsilon=0} + \cdots \\
+      &= x^3_0(t) + \epsilon[3x_0^2(t)x_1(t)] + \cdots \\
+    \end{align*}
+  \item Collect powers of $\epsilon$
+  \item Solve each independent $\epsilon^n$ ODE.\@
+  \end{enumerate}
+
+\item[Taylor Series]
+  $$f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}{(x-a)}^2+\frac{f^{(3)}(a)}{3!}{(x-a)}^3+\cdots$$
