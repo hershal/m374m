@@ -111,5 +111,26 @@
   \item Solve each independent $\epsilon^n$ ODE.\@
   \end{enumerate}
 
+\item[Singularly Perturbed Algebraic Solutions] \hfill \\
+  \begin{enumerate}
+  \item Given a singularly perturbed algebraic equation (P), introduce a change
+    of variables to make the problem regular, i.e. $z=\epsilon^\alpha x$,
+    $x=\epsilon^{-\alpha}z$, $\alpha\ge0$. Substitute into (P) and choose the
+    smallest $\alpha$ to make the problem regular. E.g.
+    \begin{align*}
+      \epsilon x^4-x-1&=0 \\
+      \epsilon{(\epsilon^{-\alpha}z)}^4-(\epsilon^{-\alpha}z)-1&=0 \\
+      \epsilon^{1-4\alpha}z^4-\epsilon^{\alpha}z-1&=0 \\
+      z^4-\epsilon^{3\alpha-1}z-\epsilon^{4\alpha-1}&=0 \\
+    \end{align*}
+    Choose smallest $\alpha$:
+    \begin{align*}
+      3\alpha-1&\ge0 \quad&\text{and}\quad 4\alpha-1&\ge0 \\
+      \alpha&\ge\frac{1}{3} \quad&\text{and}\quad \alpha&\ge\frac{1}{4} \\
+    \end{align*}
+    $\therefore$ choose $\alpha=1/3$.
+  \item Solve like regularly perturbed algebraic equation.
+  \end{enumerate}
+
 \item[Taylor Series]
   $$f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}{(x-a)}^2+\frac{f^{(3)}(a)}{3!}{(x-a)}^3+\cdots$$
