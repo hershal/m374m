@@ -1,17 +1,8 @@
 \item[Stability of Equilibria of Nonlinear Systems in 2D] \hfill \\
   \begin{enumerate}
-  \item Determine equilibria
-    \begin{itemize}
-    \item Direct Substitution
-    \item Coupled
-    \item Uncoupled
-    \end{itemize}
+  \item Determine equilibria (coupled, uncoupled, direct substitution)
   \item Linearize solution by Jacobian:
-    \begin{equation*}
-      J = \begin{pmatrix}
-        f_x & f_y \\ g_x & g_y \\
-      \end{pmatrix}
-    \end{equation*}
+      $J = \begin{pmatrix} f_x & f_y \\ g_x & g_y \\ \end{pmatrix}$
   \item Eigenvalues of Jacobian about the equilibria characterize the respective
     equilibria. Let $J_*=J(x_*,y_*)$; obtain eigenvalues by solving
     $\lambda^2-\tr{J_*}+\det{J_*}$ or let $D={(\tr J_*)}^2-4\det J_*$ and
@@ -77,10 +68,9 @@
   \item Pick an $\alpha>0$ and let $x(\epsilon) = x_0+\epsilon^{\alpha}x_1 +
     \epsilon^{2\alpha}x_2 + \cdots$.
   \item Substitute into the original equation. Taylor expand nonlinear
-    expresions to obtain a polynomial approximation in terms of $\epsilon$.
-    Remember to use the chain and product rule and derive in terms of
-    $\epsilon$.
-    E.g.\ for $f(\epsilon)={x(\epsilon)}^2$,
+    expresions in terms of $\epsilon$. Remember to use the chain and product
+    rule and derive in terms of $\epsilon$. E.g.\ for
+    $f(\epsilon)={x(\epsilon)}^2$,
     \begin{align*}
       f(\epsilon)
       &= f(0) + \epsilon f'(0) + \frac{\epsilon^2}{2!}f''(0)+\cdots \\
@@ -98,9 +88,9 @@
   \item Pick an $\alpha>0$ and let $x(t,\epsilon) =
     x_0(t)+\epsilon^{\alpha}x_1(t) + \epsilon^{2\alpha}x_2(t) + \cdots$.
   \item Substitute into the original equation (IVP + ICs). Taylor expand
-    nonlinear expresions to obtain a polynomial approximation in terms of
-    $\epsilon$. Remember to use the chain and product rule and derive in terms
-    of $\epsilon$. E.g.\ for $f(t,\epsilon)=x{(t,\epsilon)}^3$
+    nonlinear expresions in terms of $\epsilon$. Remember to use the chain and
+    product rule and derive in terms of $\epsilon$. E.g.\ for
+    $f(t,\epsilon)=x{(t,\epsilon)}^3$
     \begin{align*}
       f(t,\epsilon)
       &= f(t,0) + \epsilon f(t,0) + \frac{\epsilon}{2!}f''(t,0) + \cdots \\
@@ -126,7 +116,7 @@
     Choose smallest $\alpha$:
     \begin{align*}
       3\alpha-1&\ge0 \quad&\text{and}\quad 4\alpha-1&\ge0 \\
-      \alpha&\ge\frac{1}{3} \quad&\text{and}\quad \alpha&\ge\frac{1}{4} \\
+      \alpha&\ge1/3 \quad&\text{and}\quad \alpha&\ge1/4 \\
     \end{align*}
     $\therefore$ choose $\alpha=1/3$.
   \item Solve like regularly perturbed algebraic equation.
@@ -134,3 +124,27 @@
 
 \item[Taylor Series]
   $$f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}{(x-a)}^2+\frac{f^{(3)}(a)}{3!}{(x-a)}^3+\cdots$$
+
+\item[Poincar\'e-Lindstedt Method] \hfill
+  \begin{enumerate}
+  \item Introduce a distorted time scale in the perturbation series. Let
+    $y(t,\epsilon)=y_0(s) + \epsilon y_1(s) + \cdots$ where $s=\omega t$ with
+    $\omega = \omega_0 + \epsilon\omega_1 + \cdots$. Usually we let
+    $\omega_0=1$.
+  \item Let $\od{y}{t}=\od{y}{s}\od{s}{t}=\left[\od{y_0}{s} +
+      \epsilon\od{y_1}{s} + \cdots\right] \omega(\epsilon)$ and
+    $\od[2]{y}{t}=\left[\od[2]{y_0}{s} +
+      \epsilon\od[2]{y_1}{s}\right]{\omega(\epsilon)}^2$. Refactor the ODE and
+    ICs with this relation.
+  \item Taylor expand each nonlinear expression. E.g.
+    \begin{align*}
+      \left[ \od[2]{y_0}{s}+\epsilon\od[2]{y_1}{s} \right]{\omega(\epsilon)}^2
+      &= f(s,0)+\epsilon\od{f}{\epsilon}(s,0) +
+        \frac{\epsilon^2}{2}\od[2]{f}{\epsilon}(s,0) \\
+      &= \omega_0^2 \od[2]{y_0}{s} + \epsilon(2\omega_0\omega_1\od[2]{y_0}{s} +
+        \omega_0^2\od[2]{y_1}{s}) \
+    \end{align*}
+  \item Collect powers of $\epsilon$
+  \item Solve each $\epsilon^n$ equation. Choose $\omega_m$ to ensure no secular
+    terms.
+  \end{enumerate}
