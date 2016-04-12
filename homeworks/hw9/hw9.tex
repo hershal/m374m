@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\title{M374M Homework 9 \\
+  \normalsize{\S~3.3 \#1$^1$g, \S~3.4 3$^1$} \\
+  Revision: \input{revision}}
+\author{Hershal Bhave (hb6279)}
+\date{Due 2016--04--15}
+
+\usepackage{homework-macros}
+\tikzexternalize%
+
+\begin{document}
+\maketitle
+
+\section{\S~3.3}
+\subsection{1$^1$g}
+\subsubsection*{Problem}
+\subsubsection*{Solution}
+\subsubsection*{Remarks}
+Assume boundary layer is on left side of interval and find leading-order
+composite approximation.
+
+\section{\S~3.4}
+\subsection{3$^1$}
+\subsubsection*{Problem}
+\subsubsection*{Solution}
+\subsubsection*{Remarks}
+Assume boundary layer is on left side of interval and find leading-order
+composite approximation.
+
+\section{Programming Minilab}
+Due to surface tension, a liquid-gas interface will rise up or dip down at a
+solid boundary to form a meniscus, which is responsible for the so-called
+capillary effect in narrow tubes. In the planar case, the shape of the interface
+or meniscus curve $y(x)$ is described by
+\begin{equation}
+  \label{eq:minilab-problem}
+  \begin{aligned}
+    \frac{\sigma}{\rho g}\od[2]{y}{x} = y {\left[ 1 + {\left( \od{y}{x}
+          \right)}^2 \right]}^{3/2},\quad 0\le x\le L \\
+    \od{y}{x}(0) = 0,\quad \od{y}{x}(L) = \tan\gamma.
+  \end{aligned}
+\end{equation}
+where $\rho$ is the density of the liquid, $g$ is the gravitational
+acceleration, and $\rho$ and $\gamma$ are the surface tension and wetting angle
+constants associated with the interface. Here we develop an approximate solution
+of \cref{eq:minilab-problem} under the assumption that $0<\frac{\sigma}{\rho
+  g}\ll L^2$. For this problem we expect a boundary layer at $x=L$, and we will
+see that $\od{y}{x}$ is regular, by $\od[2]{y}{x}$ behaves singularly.
+
+\subsection{a}
+\label{sec:minilab-part-a}
+\subsubsection*{Problem}
+introduce the dimensionless variables $h=y/L$ and $s=x/L$ and show that
+\cref{eq:minilab-problem} can be written in the following form for an
+appropriate parameter $0<\epsilon\ll1$.
+\begin{equation}
+  \label{eq:minilab-problem-part-a}
+  \begin{aligned}
+    \epsilon\od[2]{h}{s} = h{\left[ 1+{\left( \od{h}{s} \right)}^2
+      \right]}^{3/2},\quad 0\le s\le1, \\
+    \od{h}{s}(0) = 0,\quad \od{h}{s}(1) = \tan\gamma
+  \end{aligned}
+\end{equation}
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{b}
+\label{sec:minilab-part-b}
+\subsubsection*{Problem}
+Find the leading-order approximation.
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{c}
+\label{sec:minilab-part-c}
+\subsubsection*{Problem}
+For the inner approximation, consider the change of variables
+$\tau=\epsilon^{-\alpha}(s-a)$ and $u=\epsilon^{-\beta}h$. Show that
+$\alpha=1/2$ and $\beta=1/2$ leads to the regular system
+\begin{equation}
+  \label{eq:minilab-problem-part-b}
+  \od[2]{u}{\tau} = u{\left[ 1+{\left( \od{u}{\tau} \right)}^2 \right]}^{3/2},
+  \quad \tau\le0,\quad \od{u}{\tau}=\tan\gamma.
+\end{equation}
+
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{d}
+\label{sec:minilab-part-d}
+\subsubsection*{Problem}
+By matching the results from \cref{sec:minilab-part-b,sec:minilab-part-c},
+construct a leading-order composite approximation for $h(s)$, and hence fro the
+meniscus curve $y(x)$. Use the approximation to find an expression for the
+meniscus height $\ell=y(L)$. Show that $\od{y}{x}$ remains bounded at all
+points as $\epsilon\downarrow0$, but that $\od[2]{y}{x}$ grows unbounded at
+$x=L$ as $\epsilon\downarrow0$.
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{e}
+\subsubsection*{Problem}
+Simulate the equations in \cref{eq:minilab-problem} for $\sigma=0.05$,
+$\rho=1000$, $g=10$, $l=0.07$, and $\gamma=\pi/3$ in kg-m-s units. Superimpose
+plots of the curve $y(x)$ produced by the simulation and by your approximation
+from \cref{sec:minilab-part-d}. Is your prediction of the meniscus height $\ell$
+in (approximate) agreement with the simulation?
+\subsubsection*{Solution}
+\todo{}
+
+\end{document}
