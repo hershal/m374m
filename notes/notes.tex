@@ -3031,4 +3031,328 @@ So in our case, the final composite approximation is
   }
 \end{equation*}
 % Reference pic. 3.
+
+\section{Calculus of Variations}
+\subsection{Definition}
+By a function space $\mathcal{V}$ we mean a set of functions. $\mathcal{V}$ is
+linear if
+\begin{equation*}
+  u,v\in\mathcal{V} \longrightarrow \alpha u+\beta v,\quad \forall \alpha,\beta\in\mathbb{R}
+\end{equation*}
+
+\subsection{Examples}
+\begin{enumerate}
+\item $C^n[a,b]$ spaces, $n\ge0$.
+  \begin{align*}
+    C^0[a,b] &= \{y:[a,b]\rightarrow\mathbb{R}\;|\; y(x)\;\text{continuous}\} \\
+    C^1[a,b] &= \{y:[a,b]\rightarrow\mathbb{R}\;|\; y(x),y'(x)\;\text{continuous}\} \\
+             &\;\;\vdots \\
+  \end{align*}
+  \begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{.3\textwidth}
+      \centering
+      \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+          postaction={ decorate,transform shape,
+            decoration={ markings, mark=at position .8 with \node #1;}}}]
+        \draw[<->] (0,1) -- (0,0) -| (0.2,0)node[below]{$a$} |- (0.8,0)node[below]{$b$} -- (1,0);
+        \draw[shift={(0.2,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw[shift={(0.8,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw (0.2,0.2) to[out=75,in=-120] (0.8,0.8);
+        \fill[radius=2pt] (0.2,0.2) circle [] (0.8,0.8) circle[];
+      \end{tikzpicture}
+      \caption{$y\in C^1$}
+    \end{subfigure}
+    \begin{subfigure}[b]{.3\textwidth}
+      \centering
+      \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+          postaction={ decorate,transform shape,
+            decoration={ markings, mark=at position .8 with \node #1;}}}]
+        \draw[<->] (0,1) -- (0,0) -| (0.2,0)node[below]{$a$} |- (0.8,0)node[below]{$b$} -- (1,0);
+        \draw[shift={(0.2,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw[shift={(0.8,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw (0.2,0.2) to[out=75,in=270] (0.4,0.8);
+        \draw (0.4,0.8) to[out=-46,in=100] (0.6,0.4);
+        \draw (0.6,0.4) to[out=80,in=180] (0.8,0.8);
+        \fill[radius=2pt] (0.2,0.2) circle [] (0.4,0.8) circle [] (0.6,0.4) circle [] (0.8,0.8) circle [];
+      \end{tikzpicture}
+      \caption{$y\in C^0,y\cancel{\in}C^1$}
+    \end{subfigure}
+    \begin{subfigure}[b]{.3\textwidth}
+      \centering
+      \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+          postaction={ decorate,transform shape,
+            decoration={ markings, mark=at position .8 with \node #1;}}}]
+        \draw[<->] (0,1) -- (0,0) -| (0.2,0)node[below]{$a$} |- (0.8,0)node[below]{$b$} -- (1,0);
+        \draw[shift={(0.2,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw[shift={(0.8,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw (0.2,0.2) -- (0.6,0.6);
+        \draw (0.6,0.4) -- (0.8,0.4);
+        \draw[radius=2pt] (0.6,0.4) circle;
+        \fill[radius=2pt] (0.2,0.2) circle [] (0.6,0.6) circle [] (0.8,0.4) circle [];
+      \end{tikzpicture}
+      \caption{$y\cancel{\in}C^0$}
+    \end{subfigure}
+    \caption{Examples of $C^n$ space categorization}
+    \label{fig:cn-space-categorization}
+  \end{figure}
+  In addition, $C^n[a,b]$ spaces are linear and nested.
+  \begin{equation*}
+    C^0[a,b] \supset C^1[a,b] \supset C^1[a,b] \supset \cdots
+  \end{equation*}
+\item Subsets of $C^n[a,b]$ spaces
+  \begin{equation*}
+    \mathcal{V} = \{y\in C^0[a,b]\;|\;y(a)=0\}
+  \end{equation*}
+  \begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+        postaction={ decorate,transform shape,
+          decoration={ markings, mark=at position .8 with \node #1;}}}]
+      \draw[<->] (0,1) -- (0,0) -- (0.2,0)node[below]{$a$} -- (0.8,0)node[below]{$b$} -- (1,0);
+      \draw[shift={(0.2,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw[shift={(0.8,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw (0.2,0) -- (0.5,0.5);
+      \draw (0.5,0.5) to[out=-45,in=180] (0.8,0.3);
+      \fill[radius=2pt] (0.2,0) circle;
+    \end{tikzpicture}
+    \caption{$y\in \mathcal{V}$}
+    \label{fig:v-equation-1}
+  \end{figure}
+  Reference \cref{fig:v-equation-1}. Is $\mathcal{V}$ linear? Check membership conditions:
+  \begin{align*}
+    u,v\in C^0
+    &\stackrel{?}{\longrightarrow} \alpha u+\beta v \in C^0,\quad
+      \forall \alpha,\beta\in\mathbb{R} &\quad &\text{Yes; because}\;C^0\;\text{is linear} \\
+    (u(a)=0\,,v(a)=0)
+    &\stackrel{?}{\longrightarrow} (\alpha u+\beta
+    v)_{(a)}=0,\quad \forall \alpha\beta\in\mathbb{R} &\quad &\text{Yes}\\
+    &\therefore\; \mathcal{V}\;\text{is linear.}
+  \end{align*}
+\item
+  \begin{equation*}
+    \mathcal{V} = \{y\in C^1[a,b]\;|\;y(b)=1\}.
+  \end{equation*}
+    \begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+        postaction={ decorate,transform shape,
+          decoration={ markings, mark=at position .8 with \node #1;}}}]
+      \draw[<->] (0,1) -- (0,0.5)node[left]{$1$} -- (0,0) -- (0.2,0)node[below]{$a$} -- (0.8,0)node[below]{$b$} -- (1,0);
+      \draw[shift={(0.2,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw[shift={(0.8,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw[shift={(0,0.5)}](2pt,0pt) -- (-2pt,0pt);
+      \draw (0.2,.8) to[out=-45,in=180] (0.8,0.5);
+      \fill[radius=2pt] (0.8,0.5) circle;
+    \end{tikzpicture}
+    \caption{$y\in \mathcal{V}$}
+    \label{fig:v-equation-2}
+  \end{figure}
+  Reference \cref{fig:v-equation-2}. Is $\mathcal{V}$ linear or not? Check conditions:
+  \begin{align*}
+    (u(a)=0\,,v(a)=0)
+    &\stackrel{?}{\longrightarrow} (\alpha u+\beta
+    v)_{(a)}=0,\quad \forall \alpha\beta\in\mathbb{R} &\quad &\text{No}\\
+    &\therefore\; \mathcal{V}\;\text{is not linear.}
+  \end{align*}
+\end{enumerate}
+\subsection{Definition}
+By a functional $F$ on a space $\mathcal{V}$, we mean a rule of the type:
+\begin{equation*}
+  F: \mathcal{V} \rightarrow \mathbb{R}.
+\end{equation*}
+\begin{equation*}
+  y\in\mathcal{V},\quad F(y)\in\mathbb{R}
+\end{equation*}
+where $y\in\mathcal{V}$ is a graph and $F(y)\in\mathbb{R}$ is a number.
+$F:\mathcal{V}\rightarrow\mathbb{R}$ is called linear if $\mathcal{V}$ is linear
+and
+\begin{align*}
+  F(\alpha u+\beta v) = \alpha F(u) + \beta F(v), &\quad \forall u,v\in\mathbb{V} \\
+                                                  &\quad \forall \alpha,\beta\in\mathbb{R} \\
+\end{align*}
+\subsection{Examples}
+\begin{enumerate}
+\item
+  \begin{equation*}
+    v=C^0[0,1],\quad F(y)=\int_0^1y(x)\dd{x}.
+  \end{equation*}
+  \begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+          decorate,transform shape, decoration={ markings, mark=at position .8
+            with \node #1;}}}]
+      \draw[<->] (0,1) -- (0,0) -- (0.2,0)node[below]{$a$} -- (0.8,0)node[below]{$b$} -- (1,0);
+      \draw[shift={(0.2,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw[shift={(0.8,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw (0.2,0) -- (0.5,0.5);
+      \draw (0.5,0.5) to[out=-45,in=180] (0.8,0.3);
+      \fill[radius=2pt] (0.2,0) circle;
+    \end{tikzpicture}
+    \caption{$y\in \mathcal{V}$}
+    \label{fig:v-equation-3}
+  \end{figure}
+  Reference \cref{fig:v-equation-3}. $F:\mathcal{V}\rightarrow\mathbb{R}$ is
+  linear since $\mathcal{V}$ is linear and
+  \begin{align*}
+    F(\alpha u+\beta v) &= \int_0^1\alpha u(x)+\beta v(x) \dd{x} \\
+                        &= \alpha \int_0^1u(x)\dd{x} + \beta\int_0^1v(x) \dd{x} \\
+                        &= \alpha F(u) + \beta F(v),&\quad &\forall u,v\in\mathcal{V} \\
+    &&\quad&\forall \alpha,\beta\in\mathbb{R} \\
+  \end{align*}
+\item
+  \begin{equation*}
+    \mathcal{V} = C^1[0,1]\quad F(y)=\int_0^1{(y'(x))}^2\dd{x}.
+  \end{equation*}
+\end{enumerate}
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{.3\textwidth}
+      \centering
+      \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+          postaction={ decorate,transform shape,
+            decoration={ markings, mark=at position .8 with \node #1;}}}]
+        \draw[<->] (0,1.1) -- (0,0) -| (0,0)node[below]{$0$} |- (1,0)node[below]{$1$} -- (1.1,0);
+        \draw[shift={(1,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw[domain=0:1,variable=\x] plot ({\x},{.5-(\x-.5)^2});
+      \end{tikzpicture}
+      \caption{$y\in\mathcal{V}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{.3\textwidth}
+      \centering
+      \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+          postaction={ decorate,transform shape,
+            decoration={ markings, mark=at position .8 with \node #1;}}}]
+        \draw[<->] (0,1.1) -- (0,0) -| (0,0)node[below]{$0$} |- (1,0)node[below]{$1$} -- (1.1,0);
+        \draw[shift={(1,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw[domain=0:.5,variable=\x] plot ({\x},{-2*(\x-.5)});
+      \end{tikzpicture}
+      \caption{$y'(x)$}
+    \end{subfigure}
+    \begin{subfigure}[b]{.3\textwidth}
+      \centering
+      \begin{tikzpicture}[x=4cm,y=3cm,label/.style={
+          postaction={ decorate,transform shape,
+            decoration={ markings, mark=at position .8 with \node #1;}}}]
+        \draw[<->] (0,1.1) -- (0,0) -| (0,0)node[below]{$0$} |- (1,0)node[below]{$1$} -- (1.1,0);
+        \draw[shift={(1,0)}](0pt,2pt) -- (0pt, -2pt);
+        \draw[domain=0:1,variable=\x] plot ({\x},{(-2*(\x-.5))^2});
+      \end{tikzpicture}
+      \caption{${(y'(x))}^2$}
+    \end{subfigure}
+    \caption{}
+    \label{fig:cn-nonlinear}
+  \end{figure}
+  $\therefore F:\mathcal{V}\rightarrow\mathbb{R}$ is not linear.
+
+\subsection{Definition}
+Let $F:\mathcal{V}\rightarrow\mathbb{R}$ be given. An element
+$y_*\in\mathcal{V}$ is called an absolute minimizer of $F$ in $\mathcal{V}$ if
+$$F(y)\ge F(y_*),\quad \forall y\in\mathcal{V}$$
+or an absolute maximizer if
+$$F(y)\le F(y_*),\quad \forall y\in\mathcal{V}.$$
+
+\subsection{Examples}
+\begin{enumerate}
+\item
+  \begin{equation*}
+    \mathcal{V} = \{v\in C^0[0,1]\;|\; y(0)=0\},\quad F(y)=\int_0^1{y(x)}^2\dd{x}
+  \end{equation*}
+  Does $F$ have an absolute minimum in $\mathcal{V}$? By inspection:
+  \begin{enumerate}[(i)]
+  \item $F(y)\ge0,\quad \forall y\in\mathcal{V}$
+  \item $F(y)=0$ when $y(x)\equiv0$
+  \item $y(x)\equiv0$ is in $\mathcal{V}$
+  \end{enumerate}
+  $\therefore F$ has an absolute minimum in $\mathcal{V}$.
+
+  What about an absolute max in $\mathcal{V}$? Consider simple graphs
+  $\hat{y}(x)=cx$ where $c$ is arbitrary.
+
+  \begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+          decorate,transform shape, decoration={ markings, mark=at position .8
+            with \node #1;}}}]
+      \draw[<->] (0,1.1) -- (0,0) -- (0,0)node[below]{$0$} -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw (0,0) -- (1,1);
+      \fill[radius=2pt] (0,0) circle;
+    \end{tikzpicture}
+    \caption{$\hat{y}(x)=cx\in\mathcal{V}$, $c$ arbitrary}
+    \label{fig:v-equation-3}
+  \end{figure}
+
+  \begin{enumerate}[(i)]
+  \item $\hat{y}(x)=cx$ is in $\mathcal{V}$
+  \item $F(\hat{y})=\int_0^1{\hat{y}(x)}^2\dd{x} = \int_0^1c^2x^2\dd{x}=c^2/3$
+  \item $F(\hat{y})\rightarrow\infty$ as $c\rightarrow\infty$
+  \end{enumerate}
+  $\therefore$ no absolute maximizer in $\mathcal{V}$.
+\item
+  \begin{equation*}
+    \mathcal{V} = \{y\in C^0[0,1] \;|\; y(1)=1\},\quad F(y)=\int_0^1{y(x)}^2\dd{x}
+  \end{equation*}
+  Does $F$ have an absolute minimum in $\mathcal{V}$? By inspection:
+  \begin{enumerate}[(i)]
+  \item $F(y)\ge0,\quad \forall y\in\mathcal{V}$
+  \item We can make $F$ arbitrarily small, but cannot achieve $F=0$ with
+    $y\in\mathcal{V}$.
+  \end{enumerate}
+  $\therefore$ no absolute minimizer in $\mathcal{V}$.
+
+  What about an absolute maximimum in $\mathcal{V}$? No (similar to other
+  example).
+\item
+  \begin{equation*}
+    \mathcal{V} = \{y\in C^2[0,1] \;|\; y(0)=0,\quad y(1)=3\},\quad
+    F(y)=\int_0^1y'(x)\cos(y(x))-{(y(x)-3x)}^4\dd{x}
+  \end{equation*}
+  Does $F$ have an absolute maximimum in $\mathcal{V}$? Notice
+  \begin{enumerate}[(a)]
+  \item $F$ can be simplified
+    \begin{align*}
+      F(y) &= \int_0^1[\sin(y(x))]'-{(y(x)-3x)}^4 \dd{x} \\
+           &= [\sin(y(x))]_{x=0}^{x=1} - \int_0^1{(y(x)-3x)}^4\dd{x} \\
+           &= \sin(y(1)) - \sin(y(0)) - \int_0^1{(y(x)-3x)}^4\dd{x} \\
+           &= 3 - 0 - \int_0^1{(y(x)-3x)}^4\dd{x} \\
+    \end{align*}
+  \item $F$ has an upper bound
+    \begin{equation*}
+      F(y)=\sin(3) - \int_0^1{(y(x)-3x)}^4\dd{x} < \eta,\quad \forall y\in\mathcal{V}.
+    \end{equation*}
+  \item $F(y)=\eta$ when $y(x)=3x$ and $y(x)=3x$ is in $\mathcal{V}$.
+    $\therefore y(x)=3x$ is an absolute minimizer of $F$ in $\mathcal{V}$.
+  \end{enumerate}
+  Absolute minimum in $\mathcal{V}$? Consider simple graphs
+  $\hat{y}(x)=3x+cx(1-x)$, where $c$ is arbitrary.
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[yscale=.25,x=4cm,y=3cm,label/.style={ postaction={
+          decorate,transform shape, decoration={ markings, mark=at position .8
+            with \node #1;}}}]
+      \pgfmathsetmacro{\c}{5}
+      \draw[<->] (0,4) -- (0,3)node[left]{$3$} -- (0,0) --
+        (0,0)node[below]{$0$} -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw[shift={(1,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw[shift={(0,3)}](2pt,0pt) -- (-2pt, 0pt);
+      \draw (1,3) node[circle,fill,inner sep=1pt]{};
+      \draw (0,0) node[circle,fill,inner sep=1pt]{};
+      \draw[domain=0:1,variable=\x] plot ({\x},{3*\x+\c*\x*(1-\x)});
+    \end{tikzpicture}
+    \caption{$\hat{y}=3x+cx(1-x)\in\mathcal{V}$, $c$ arbitrary}
+    \label{fig:v-equation-4}
+  \end{figure}
+  Notice:
+  \begin{enumerate}[(i)]
+  \item $\hat{y}(x)$ is in $\mathcal{V}$
+  \item
+    \begin{align*}
+      F(\hat{y}) &= \eta - \int_0^1{(\hat{y}(x)-3x)}^4\dd{x} \\
+      &= \eta - \int_0^1c^4x^4{(1-x)}^4\dd{x} \\
+      &= \eta - \frac{c^4}{630}.
+    \end{align*}
+  \item $F(\hat{y})\rightarrow -\infty$ as $c\rightarrow\infty$
+  \end{enumerate}
+  $\therefore$ no absolute minimizer in $\mathcal{V}$.
+\end{enumerate}
 \end{document}
