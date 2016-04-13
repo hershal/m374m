@@ -3364,7 +3364,6 @@ $C^n$-norm of $y\in\mathcal{V}$ we mean $||y||^*_{C^n}=\max_{a\le x\le
 radius $\delta>0$ of $y\in\mathcal{V}$ we mean
 $N_{C^n}(y,\delta)=\{u\in\mathcal{V} \;|\; {||u-v||}_{C^n}<\delta\}$
 
-
 \subsection{Examples}
 \begin{enumerate}
 \item
@@ -3379,23 +3378,18 @@ $N_{C^n}(y,\delta)=\{u\in\mathcal{V} \;|\; {||u-v||}_{C^n}<\delta\}$
   \end{equation*}
   So $||u-v||$ never $>\delta$. See pic. 1.
 \item
-  \begin{equation*}
-    \mathcal{V} = \{y\in C^1[0,1]\;|\;y(0)=0\} \subset C^1[0,1].
-  \end{equation*}
-\end{enumerate}
+    $\mathcal{V} = \{y\in C^1[0,1]\;|\;y(0)=0\} \subset C^1[0,1].$
 See pic. 2 and 3.
-
 \begin{equation*}
   ||y||_C^1 = \max_{0\le x\le1} |y(x)| + \max_{0\le x\le1} |y'(x)| = 4+3 = 7
 \end{equation*}
-\begin{equation*}
-  \begin{aligned}
-    N_{C^1}(y,\delta)&=\{u\in\mathcal{V}\;|\;||u-y||_C^1<\delta\} \\
+\begin{align*}
+  N_{C^1}(y,\delta)&=\{u\in\mathcal{V}\;|\;||u-y||_C^1<\delta\} \\
     &= \left( \text{\parbox{15em}{\centering all funcs in $\mathcal{V}$ s.t.
-          $||u-y||_C^1\le\delta_0$ and $||u'-y'||_C^1\le\delta_1$ where
-          $\delta_0+\delta_1<\delta$}} \right)
-  \end{aligned}
-\end{equation*}
+      $||u-y||_C^1\le\delta_0$ and $||u'-y'||_C^1\le\delta_1$ where
+      $\delta_0+\delta_1<\delta$}} \right)
+\end{align*}
+\end{enumerate}
 See pic. 4, 5, and 6. End.
 
 \subsection{Definition}
