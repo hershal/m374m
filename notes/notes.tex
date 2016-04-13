@@ -3355,4 +3355,124 @@ $$F(y)\le F(y_*),\quad \forall y\in\mathcal{V}.$$
   \end{enumerate}
   $\therefore$ no absolute minimizer in $\mathcal{V}$.
 \end{enumerate}
+
+\section{Local Minimum/Maximum of Functionals}
+\subsection{Definition}
+Let $\mathcal{V}\subset C^n[a,b],\quad n\ge0$ be a function space. By the
+$C^n$-norm of $y\in\mathcal{V}$ we mean $||y||^*_{C^n}=\max_{a\le x\le
+  b}|y(x)|+\cdots+\max_{a\le x\le b}|y^{(n)}(x)|$. By the $C^n$ neighborhood of
+radius $\delta>0$ of $y\in\mathcal{V}$ we mean
+$N_{C^n}(y,\delta)=\{u\in\mathcal{V} \;|\; {||u-v||}_{C^n}<\delta\}$
+
+
+\subsection{Examples}
+\begin{enumerate}
+\item
+  $V=\{y\in C^0[0,1]\;|\;y(0)=0\}\subset C^0[0,1]$.
+  $$||y||_{C^0}(y,\delta)=\{u\in\mathcal{V}\;|\; ||u-y||_{C^0}<\delta\}$$
+  \begin{equation*}
+    \begin{aligned}
+      N_{C^0}(y,\delta)&=\{u\in\mathcal{V}\;|\; ||u-y||_C^0<\delta\} \\
+      &= \left( \text{\parbox{7em}{\centering all funcs in $\mathcal{V}$ within
+            $\delta$ of $y$}} \right) \\
+    \end{aligned}
+  \end{equation*}
+  So $||u-v||$ never $>\delta$. See pic. 1.
+\item
+  \begin{equation*}
+    \mathcal{V} = \{y\in C^1[0,1]\;|\;y(0)=0\} \subset C^1[0,1].
+  \end{equation*}
+\end{enumerate}
+See pic. 2 and 3.
+
+\begin{equation*}
+  ||y||_C^1 = \max_{0\le x\le1} |y(x)| + \max_{0\le x\le1} |y'(x)| = 4+3 = 7
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    N_{C^1}(y,\delta)&=\{u\in\mathcal{V}\;|\;||u-y||_C^1<\delta\} \\
+    &= \left( \text{\parbox{15em}{\centering all funcs in $\mathcal{V}$ s.t.
+          $||u-y||_C^1\le\delta_0$ and $||u'-y'||_C^1\le\delta_1$ where
+          $\delta_0+\delta_1<\delta$}} \right)
+  \end{aligned}
+\end{equation*}
+See pic. 4, 5, and 6. End.
+
+\subsection{Definition}
+Let $\mathcal{V}\subset C^n[a,b],\; n\ge0$ and
+$F:\mathcal{V}\rightarrow\mathbb{R}$ be given. An element $y_*\in\mathcal{V}$ is
+called a local minimizer of $F$ in $\mathcal{V}$ in the $C^n$-norm if
+$\exists\,\delta>0$ such that
+$$F(u)\ge F(y_*), \quad \forall u\in N_{C^n}(y_*,\delta)$$
+ or a local maximizer if
+$$F(u)\le F(y_*), \quad \forall u\in N_{C^n}(y_*,\delta).$$
+Local minimizers depend on how the neighborhoods are identified.
+
+\subsection{Example}
+Given
+\begin{align*}
+  \mathcal{V} &= \{y\in C^1[0,1] \;|\; y(0)=\alpha\} \\
+  F&:\mathcal{V} \rightarrow \mathbb{R} \\
+  F(y) &= \int_0^1 {(y'(x))}^2 [\beta-{(y'(x))}^2]\dd{x}
+\end{align*}
+where constants $\alpha, \beta > 0$.
+\subsubsection*{Claim}
+$F(y)$ has no absolute minimizer in $\mathbb{V}$.
+
+Proof: Consider simple graphs $\hat{y}(x)=\alpha+cx$, where $c$ is an arbitrary
+constant. Reference pic. 7.
+
+\begin{equation*}
+  F(\hat{y}) = \int_0^1 c^2[\beta-c^2]\dd{x} = c^2(\beta-c^2)
+\end{equation*}
+Here, $F(\hat{y})\rightarrow -\infty$ as $|c|\rightarrow\infty$. $\therefore$ no
+absolute minimum $\mathcal{V}$.
+
+\subsubsection*{Claim}
+$F(y)$ has a local minimizer in $\mathcal{V}$ in $C^1-norm$ at
+$y_*(x)\equiv\alpha$
+
+Proof:
+\begin{enumerate}[(i)]
+\item Reference pic. 8.
+  \begin{equation*}
+    F(y_*) = \int_0^10[\beta-0]\dd{x}=0
+  \end{equation*}
+\item Consider $N_{C^1}(y_*,\delta)$ for any $\delta\in(0;\beta)$
+  Reference pic. 9.
+  $$\delta_0+\delta_1<\delta$$
+  For any $u\in N_{C^1}(y_*,\delta)$ we have
+  \begin{align*}
+    |u(x)-\alpha| &\le \delta_0 < \delta < \sqrt{\beta} \\
+    |u'(x)-0| &\le \delta_1 < \delta < \sqrt{\beta} \\
+  \end{align*}
+  Substituting any such $u$ into $F$ gives
+  \begin{equation*}
+    F(u) = \int_0^1{(u'(x))}^2[\beta-{(u'(x))}^2]\dd{x} \ge 0
+  \end{equation*}
+  This is true for any $u$ in the neighborhood.
+\item Combining (i) and (ii), we get
+  \begin{equation*}
+    F(u) \ge F(y_8),\quad \forall u\in N_{C^1}(y_*,\delta)
+  \end{equation*}
+  where $0<\delta<\sqrt{\beta}$. $\therefore y_*(x)\equiv\alpha$ is a local min
+  in $C^1$-norm.
+\end{enumerate}
+
+\subsubsection*{Claim}
+Although $y_*$ is a local min in $C^1$-norm, it is not a local min in
+$C^0$-norm.
+
+Proof: For any $\delta>0$ consider graphs
+$$\tilde{u}(x)=\alpha+\epsilon\sin\left( \frac{x}{\epsilon^2} \right)$$
+where
+$$0<\epsilon<\delta,\quad 0<\epsilon\ll \beta$$
+Then
+\begin{enumerate}[(i)]
+\item $\tilde{u}\in\mathcal{V}$
+\item $\tilde{u}\in N_{C^1}(y_*,\delta)$ for any $\delta>0$
+\item $F(\tilde{u})<0$ provided $0<\epsilon\ll\beta$
+\end{enumerate}
+$\therefore y_*$  is not a local min in $C^0$-norm.
+
 \end{document}
