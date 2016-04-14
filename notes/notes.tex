@@ -3374,20 +3374,139 @@ $N_{C^n}(y,\delta)=\{u\in\mathcal{V} \;|\; {||u-v||}_{C^n}<\delta\}$
     \end{aligned}
   \end{equation*}
   So $||u-v||$ never $>\delta$. See pic. 1.
-\item
-    $\mathcal{V} = \{y\in C^1[0,1]\;|\;y(0)=0\} \subset C^1[0,1].$
-See pic. 2 and 3.
-\begin{equation*}
-  ||y||_C^1 = \max_{0\le x\le1} |y(x)| + \max_{0\le x\le1} |y'(x)| = 4+3 = 7
-\end{equation*}
-\begin{align*}
-  N_{C^1}(y,\delta)&=\{u\in\mathcal{V}\;|\;||u-y||_C^1<\delta\} \\
-    &= \left( \text{\parbox{15em}{\centering all funcs in $\mathcal{V}$ s.t.
-      $||u-y||_C^1\le\delta_0$ and $||u'-y'||_C^1\le\delta_1$ where
-      $\delta_0+\delta_1<\delta$}} \right)
-\end{align*}
+
+  \begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+          decorate,transform shape, decoration={ markings, mark=at position .8
+            with \node #1;}}}]
+      \pgfmathsetseed{2}
+      \draw[<->] (0,1) -- (0,0)node[below left]{$0$} -- (0,-0.5);
+      \draw[<->] (-0.1,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw[shift={(1,0)}](0pt,2pt) -- (0pt, -2pt);
+      \draw (0,0) -- (0.333,0.5) (0.333,0.5) to[out=-45,in=180] (1,-0.2)node[right]{$y$};
+      \draw[<->] (.1667,0.25) -- (.1667,0.50)node[above]{$\delta$};
+      \draw[dashed,shift={(0,.25)}] (0,0) -- (0.333,0.5) (0.333,0.5) to[out=-45,in=180] (1,-0.2);
+      \draw[dashed,shift={(0,-.25)}] (0,0) -- (0.333,0.5) (0.333,0.5) to[out=-45,in=180] (1,-0.2);
+      \draw[decoration = {random steps, segment length = 3mm, amplitude = 2mm}, decorate, rounded corners=1mm]
+      (0,0) -- (0.333,0.5) (0.333,0.5) to[out=-45,in=180] (1,-0.3)node[right]{$u$};
+    \end{tikzpicture}
+    \caption{$\hat{y}=3x+cx(1-x)\in\mathcal{V}$, $c$ arbitrary}
+    \label{fig:v-equation-4}
+  \end{figure}
+\item $\mathcal{V} = \{y\in C^1[0,1]\;|\;y(0)=0\} \subset C^1[0,1].$
+  \begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{.45\textwidth}
+      \centering
+      \begin{tikzpicture}[yscale=.25,x=4cm,y=3cm]
+        \draw[<->] (0,5) -- (0,4)node[left]{$4$} -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-2);
+        \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+        \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+        \draw[shift={(0,4)}](2pt,0pt) -- (-2pt,0pt);
+        \draw[domain=0:1,variable=\x] plot ({\x},{-(3*\x-2)^2+4});
+      \end{tikzpicture}
+      \caption{$y\in\mathcal{V}$}
+    \end{subfigure}
+    \begin{subfigure}[b]{.45\textwidth}
+      \centering
+      \begin{tikzpicture}[yscale=.25,x=4cm,y=3cm]
+        \draw[<->] (0,5) -- (0,4)node[left]{$4$} -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-2);
+        \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+        \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+        \draw[shift={(0,4)}](2pt,0pt) -- (-2pt,0pt);
+        \draw[domain=0:1,variable=\x] plot ({\x},{-2*(3*\x-2)});
+      \end{tikzpicture}
+      \caption{$y'(x)$}
+    \end{subfigure}
+    \caption{}
+    \label{fig:cn-arrrgh}
+  \end{figure}
+  Reference \cref{fig:cn-arrrgh}.
+  \begin{equation*}
+    ||y||_C^1 = \max_{0\le x\le1} |y(x)| + \max_{0\le x\le1} |y'(x)| = 4+3 = 7
+  \end{equation*}
+  \begin{align*}
+    N_{C^1}(y,\delta)&=\{u\in\mathcal{V}\;|\;||u-y||_C^1<\delta\} \\
+                     &= \left( \text{\parbox{15em}{\centering all funcs in $\mathcal{V}$ s.t.
+                       $||u-y||_C^1\le\delta_0$ and $||u'-y'||_C^1\le\delta_1$ where
+                       $\delta_0+\delta_1<\delta$}} \right)
+  \end{align*}
 \end{enumerate}
-See pic. 4, 5, and 6. End.
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{.45\textwidth}
+    \centering
+    \begin{tikzpicture}[yscale=.25,x=4cm,y=3cm]
+      \draw[<->] (0,5) -- (0,4)node[left]{$4$} -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-2);
+      \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+      \draw[shift={(0,4)}](2pt,0pt) -- (-2pt,0pt);
+      \draw[domain=0:1,variable=\x] plot ({\x},{-(3*\x-2)^2+4});
+      \draw[shift={(0,1)},dashed,domain=0:1,variable=\x] plot ({\x},{-(3*\x-2)^2+4});
+      \draw[shift={(0,-1)},dashed,domain=0:1,variable=\x] plot ({\x},{-(3*\x-2)^2+4});
+      \draw[<->](.3333,2.9998) -- ++(0,1)node[above]{$\delta_0$};
+      \draw[decoration=snake,decorate] (.6667,4) -- ++(0,1);
+      \draw (.6667,4.5) to[out=180,in=-90] (0.5,6)node[above]{$u$ in here};
+    \end{tikzpicture}
+    \caption{$y\in\mathcal{V}$}
+  \end{subfigure}
+  \begin{subfigure}[b]{.45\textwidth}
+    \centering
+    \begin{tikzpicture}[yscale=.25,x=4cm,y=3cm]
+      \draw[<->] (0,5) -- (0,4)node[left]{$4$} -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-2);
+      \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+      \draw[shift={(0,4)}](2pt,0pt) -- (-2pt,0pt);
+      \draw[domain=0:1,variable=\x] plot ({\x},{-2*(3*\x-2)});
+      \draw[shift={(0,1)},dashed,domain=0:1,variable=\x] plot ({\x},{-2*(3*\x-2)});
+      \draw[shift={(0,-1)},dashed,domain=0:.8333,variable=\x] plot ({\x},{-2*(3*\x-2)});
+      \draw[<->](.3333,2.0002) -- ++(0,1)node[above]{$\delta_1$};
+      \draw[decoration=snake,decorate] (.6667,0.0002) -- ++(0,1);
+      \draw (.6667,0.5002) to[out=45,in=-90] (0.5,6)node[above]{$u'$ in here};
+    \end{tikzpicture}
+    \caption{$y'(x)$}
+  \end{subfigure}
+  \caption{$\delta_0+\delta_1<\delta$}
+  \label{fig:cn-arrrgh2}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[yscale=.25,x=4cm,y=3cm,label/.style={ postaction={
+        decorate,transform shape, decoration={ markings, mark=at position .8
+          with \node #1;}}}]
+    \draw[<->] (0,5) -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-2);
+    \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+    \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+    \draw[domain=0:1,variable=\x] plot ({\x},{-(3*\x-2)^2+4}) node[right]{$y$};
+    \draw[domain=0:1,variable=\x] plot ({\x},{-(3*(\x*.8)-2)^2+4})
+    node[right]{$u$};
+  \end{tikzpicture}
+  \caption{$u\in N_{C_1}(y,\delta)$ for some $\delta\ll1$}
+  \label{fig:what}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[yscale=.25,x=4cm,y=3cm,label/.style={ postaction={
+        decorate,transform shape, decoration={ markings, mark=at position .8
+          with \node #1;}}}]
+    \draw[<->] (0,5) -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-2);
+    \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+    \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+    \draw[domain=0:1,variable=\x] plot ({\x},{-(3*\x-2)^2+4}) node[right]{$y$};
+    \draw[domain=0:.7015,variable=\x] plot ({\x},{-(3*(\x*.8)-2)^2+4.2});
+    \draw[domain=.9651:1,variable=\x] plot ({\x},{-(3*(\x*.8)-2)^2+4.2})
+    node[right]{$u$};
+    \draw[decorate,decoration={snake, segment length=5mm, amplitude=1mm}] (.7015,4.1) -- (.9651,4.1);
+  \end{tikzpicture}
+  \caption{$u\cancel{\in} N_{C_1}(y,\delta)$ for some $\delta\ll1$ (because
+    $u'-y'$ large at some $x$-values)}
+  \label{fig:what2}
+\end{figure}
+
+See \cref{fig:cn-arrrgh2,fig:what,fig:what2}.
 
 \subsection{Definition}
 Let $\mathcal{V}\subset C^n[a,b],\; n\ge0$ and
@@ -3411,7 +3530,22 @@ where constants $\alpha, \beta > 0$.
 $F(y)$ has no absolute minimizer in $\mathbb{V}$.
 
 Proof: Consider simple graphs $\hat{y}(x)=\alpha+cx$, where $c$ is an arbitrary
-constant. Reference pic. 7.
+constant. Reference \cref{fig:what3}.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+        decorate,transform shape, decoration={ markings, mark=at position .8
+          with \node #1;}}}]
+    \draw[<->] (0,1.1) -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-.1);
+    \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+    \draw[shift={(1,0)}](2pt,0pt) -- (-2pt,0pt);
+    \draw (0,.5)node[left]{$\alpha$} -- (1,1)node[right]{$\hat{y}\in\mathcal{V}$};
+    \draw (0,.5) node[circle,fill,inner sep=1pt]{};
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:what3}
+\end{figure}
 
 \begin{equation*}
   F(\hat{y}) = \int_0^1 c^2[\beta-c^2]\dd{x} = c^2(\beta-c^2)
@@ -3421,16 +3555,68 @@ absolute minimum $\mathcal{V}$.
 
 \subsubsection*{Claim}
 $F(y)$ has a local minimizer in $\mathcal{V}$ in $C^1-norm$ at
-$y_*(x)\equiv\alpha$
+$y_*(x)\equiv\alpha$.
 
 Proof:
 \begin{enumerate}[(i)]
-\item Reference pic. 8.
+\item Reference \cref{fig:what4}.
+  \begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+          decorate,transform shape, decoration={ markings, mark=at position .8
+            with \node #1;}}}]
+      \draw[<->] (0,1.1) -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-.1);
+      \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw[shift={(1,0)}](2pt,0pt) -- (-2pt,0pt);
+      \draw (0,.5)node[left]{$\alpha$} -- (1,.5)node[right]{$y_*\in\mathcal{V}$};
+      \draw (0,.5)node[circle,fill,inner sep=1pt]{};
+    \end{tikzpicture}
+    \caption{}
+    \label{fig:what4}
+  \end{figure}
   \begin{equation*}
     F(y_*) = \int_0^10[\beta-0]\dd{x}=0
   \end{equation*}
 \item Consider $N_{C^1}(y_*,\delta)$ for any $\delta\in(0;\beta)$
-  Reference pic. 9.
+  Reference \cref{fig:what5}.
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{.45\textwidth}
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+          decorate,transform shape, decoration={ markings, mark=at position .8
+            with \node #1;}}}]
+      \draw[<->] (0,1.1) -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-.1);
+      \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw[shift={(1,0)}](2pt,0pt) -- (-2pt,0pt);
+      \draw (0,.5)node[left]{$\alpha$} -- (1,.5)node[right]{$y_*$};
+      \draw (0,.5)node[circle,fill,inner sep=1pt]{};
+      \draw[dashed,shift={(0,.25)}] (0,.5) -- (1,.5);
+      \draw[dashed,shift={(0,-.25)}] (0,.5) -- (1,.5);
+      \draw[<->] (0.25,.5) -- (0.25,.75)node[above]{$\delta_0$};
+    \end{tikzpicture}
+    \caption{$y\in\mathcal{V}$}
+  \end{subfigure}
+  \begin{subfigure}[b]{.45\textwidth}
+    \centering
+    \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+          decorate,transform shape, decoration={ markings, mark=at position .8
+            with \node #1;}}}]
+      \draw[<->] (0,.8) -- (0,0) -- (0,0)node[below,left]{$0$} -- (0,-.4);
+      \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+      \draw[shift={(1,0)}](2pt,0pt) -- (-2pt,0pt);
+      \draw[very thick] (0,0) -- (1,0)node[above right]{$y_*'$};
+      \draw[dashed,shift={(0,.25)}] (0,0) -- (1,0);
+      \draw[dashed,shift={(0,-.25)}] (0,0) -- (1,0);
+      \draw[<->] (.25,0) -- (.25,.25)node[above]{$\delta_1$};
+    \end{tikzpicture}
+    \caption{$y'(x)$}
+  \end{subfigure}
+  \caption{$\delta_0+\delta_1<\delta$}
+  \label{fig:what5}
+\end{figure}
+
   $$\delta_0+\delta_1<\delta$$
   For any $u\in N_{C^1}(y_*,\delta)$ we have
   \begin{align*}
