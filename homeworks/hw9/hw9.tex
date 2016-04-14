@@ -198,7 +198,32 @@ Find the leading-order approximation.
   differential equation. Use this simplification to find an inner approximation.
 \end{enumerate}
 \subsubsection*{Solution}
-\todo{}
+\begin{enumerate}[(i)]
+\item We may utilize the change of variables to obtain $\od{h}{s}$ in terms of
+  $\od{u}{\tau}$
+  \begin{equation*}
+    \begin{aligned}
+      \od{u}{\tau} &= \od{u}{h}\od{h}{s}\od{s}{\tau} \\
+      &= \epsilon^{-\beta}\od{h}{s}\epsilon^{\alpha} \\
+      &= \epsilon^{\alpha-\beta}\od{h}{s} \\
+      \implies \od{h}{s} &= \epsilon^{\beta-\alpha}\od{u}{\tau} \\
+    \end{aligned}
+  \end{equation*}
+  Similarly, we may obtain $\od[2]{h}{s}$ in terms of $\od[2]{u}{\tau}$.
+  \begin{equation*}
+    \begin{aligned}
+      \od{}{\tau}\od{u}{\tau} &= \od{u}{\tau}\od{h}{s}\od{}{s}\od{s}{\tau} \\
+      \od[2]{u}{\tau} &= \epsilon^{\alpha-\beta}\od[2]{h}{s}\epsilon^{\alpha} \\
+      &= \epsilon^{2\alpha-\beta}od[2]{h}{s} \\
+      \implies \od[2]{h}{s} &= \epsilon^{\beta-2\alpha}\od[2]{u}{\tau}
+    \end{aligned}
+  \end{equation*}
+  Substituting $\od{h}{s}$ and $\od[2]{h}{s}$ into \cref{eq:minilab-problem-part-c}
+  \begin{equation*}
+    \epsilon\left(\epsilon^{\beta-2\alpha}\od[2]{u}{\tau}\right) =
+    h{\left(1+{\left(\epsilon^{\beta-\alpha}\od{u}{\tau}\right)}^2\right)}^{3/2}
+  \end{equation*}
+\end{enumerate}
 
 \subsection{d}
 \label{sec:minilab-part-d}
