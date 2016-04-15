@@ -334,9 +334,24 @@ So the leading-order outer approximation is
   \end{equation*}
   Substituting $\od{h}{s}$ and $\od[2]{h}{s}$ into \cref{eq:minilab-problem-part-c}
   \begin{equation*}
-    \epsilon\left(\epsilon^{\beta-2\alpha}\od[2]{u}{\tau}\right) =
+    \begin{aligned}
+      \epsilon\left(\epsilon^{\beta-2\alpha}\od[2]{u}{\tau}\right) &=
+      h{\left(1+{\left(\epsilon^{\beta-\alpha}\od{u}{\tau}\right)}^2\right)}^{3/2} \\
+      \epsilon^{\beta-2\alpha+1}\od[2]{u}{\tau} &=
     h{\left(1+{\left(\epsilon^{\beta-\alpha}\od{u}{\tau}\right)}^2\right)}^{3/2}
+    \end{aligned}
   \end{equation*}
+  Multiplying both sides by $\epsilon^{2\alpha-\beta-1}$ yields
+  \begin{equation*}
+    \od[2]{u}{\tau} = u \epsilon ^{2 \alpha -1} {\left(1+\epsilon ^{2 \beta -2 \alpha }
+        {\left(\od{u}{\tau}\right)}^2\right)}^{3/2}
+  \end{equation*}
+  Invoking $\alpha=\beta=1/2$ yields
+  \begin{equation*}
+    \boxed{\od[2]{u}{\tau} = u {\left(1+{\left(\od{u}{\tau}\right)}^2\right)}^{3/2}}.
+  \end{equation*}
+
+\item \todo{}
 \end{enumerate}
 
 \subsection{d}
