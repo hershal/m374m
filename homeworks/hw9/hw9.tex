@@ -352,7 +352,47 @@ So the leading-order outer approximation is
   \end{equation*}
   This is a regular ODE.\@
 
-\item \todo{}
+\item The simplification represents
+  \begin{equation*}
+    \od[2]{u}{\tau} = u{\left[ 1 + {\left( \frac{1}{2}\tan\gamma \right)}^2 \right]}^{3/2}
+  \end{equation*}
+  Let
+  \begin{equation*}
+    K = {\left[ 1 + {\left( \frac{1}{2}\tan\gamma \right)}^2 \right]}^{3/2}, \quad K>0
+  \end{equation*}
+  so that
+  \begin{equation}
+    \label{eq:minilab-c-ii-ode}
+    \od[2]{u}{\tau} = uK.
+  \end{equation}
+  The general solution to \cref{eq:minilab-c-ii-ode} is
+  \begin{equation*}
+    u_i(\tau) = c_1e^{k \tau} + c_2e^{-k \tau},\quad k={\left(\frac{{(3+(\sec\gamma)^2)}^{3/2}}{8}\right)}^{1/2}
+  \end{equation*}
+  Matching the inner and outer approximations:
+  \begin{equation*}
+    \begin{aligned}
+      \lim_{s\rightarrow0} h_0(s) &= \lim_{\tau\rightarrow\infty} c_1e^{k_1 \tau} + c_2e^{-k_2 \tau} \\
+      0 &= c_1e^{\infty} + \cancel{c_2e^{-k_2 \tau}} \\
+      \implies c_1 &= 0.
+    \end{aligned}
+  \end{equation*}
+  Thus our current inner approximation is
+  \begin{equation*}
+    u_i(\tau) = c_2e^{-k \tau}.
+  \end{equation*}
+  Deriving $u_i(\tau)$ and invoking the inner boundary condition yields
+  \begin{equation*}
+    \begin{aligned}
+      \od{u_i}{\tau} &= -k c_2e^{-k\tau} \\
+      u_i'(0) &= -k c_2 \\
+      \implies c_2 &= \frac{\tan\gamma}{k}
+    \end{aligned}
+  \end{equation*}
+  Finally, the inner approximation is
+  \begin{equation*}
+    \boxed{u_i(\tau)=\frac{-\tan\gamma}{k}e^{-k\tau}, \quad k={\left(\frac{{(3+(\sec\gamma)^2)}^{3/2}}{8}\right)}^{1/2}.}
+  \end{equation*}
 \end{enumerate}
 
 \subsection{d}
