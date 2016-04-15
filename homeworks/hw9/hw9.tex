@@ -273,7 +273,24 @@ This allows us to simplify:
 \subsubsection*{Problem}
 Find the leading-order outer approximation.
 \subsubsection*{Solution}
-\todo{}
+Collecting coefficients of $\epsilon^0$ yields
+\begin{equation*}
+  0 = h{\left[ 1 + {\left( \od{h}{s} \right)}^2 \right]}^{3/2}.
+\end{equation*}
+We may invoke the outer initial condition $h'(0)=0$. Since $h'$ is continuous
+across the outer boundary, we may approximate it by
+\begin{equation*}
+  \begin{aligned}
+    0 &= h(s){\left[ 1 + {\left( h'(s) \right)}^2 \right]}^{3/2} \\
+    0 &= h(s){\left[ 1 + {\left( 0 \right)}^2 \right]}^{3/2} \\
+    0 &= h(s) \\
+    \implies h(s) &= 0.
+  \end{aligned}
+\end{equation*}
+So the leading-order outer approximation is
+\begin{equation*}
+  \boxed{h_0(s)=0.}
+\end{equation*}
 
 \subsection{c}
 \label{sec:minilab-part-c}
