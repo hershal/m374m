@@ -297,7 +297,7 @@ So the leading-order outer approximation is
 \subsubsection*{Problem}
 \begin{enumerate}[(i)]
 \item For the inner approximation, consider the change of variables
-  $\tau=\epsilon^{-\alpha}(s-a)$ and $u=\epsilon^{-\beta}h$. Show that
+  $\tau=\epsilon^{-\alpha}(s-1)$ and $u=\epsilon^{-\beta}h$. Show that
   $\alpha=1/2$ and $\beta=1/2$ leads to the regular system
   \begin{equation}
     \label{eq:minilab-problem-part-c}
@@ -372,26 +372,27 @@ So the leading-order outer approximation is
   Matching the inner and outer approximations:
   \begin{equation*}
     \begin{aligned}
-      \lim_{s\rightarrow0} h_0(s) &= \lim_{\tau\rightarrow\infty} c_1e^{k_1 \tau} + c_2e^{-k_2 \tau} \\
-      0 &= c_1e^{\infty} + \cancel{c_2e^{-k_2 \tau}} \\
+      \lim_{s\rightarrow0} h_0(s) &= \lim_{\tau\rightarrow\infty} c_1e^{-k \tau} + c_2e^{k \tau} \\
+      0 &= c_1e^{\infty} + \cancel{c_2e^{k \tau}} \\
       \implies c_1 &= 0.
     \end{aligned}
   \end{equation*}
   Thus our current inner approximation is
   \begin{equation*}
-    u_i(\tau) = c_2e^{-k \tau}.
+    u_i(\tau) = c_2e^{k \tau}.
   \end{equation*}
   Deriving $u_i(\tau)$ and invoking the inner boundary condition yields
   \begin{equation*}
     \begin{aligned}
-      \od{u_i}{\tau} &= -k c_2e^{-k\tau} \\
-      u_i'(0) &= -k c_2 \\
+      \od{u_i}{\tau} &= k c_2e^{k\tau} \\
+      u_i'(0) &= k c_2 \\
+      \tan\gamma &= k c_2 \\
       \implies c_2 &= \frac{\tan\gamma}{k}
     \end{aligned}
   \end{equation*}
   Finally, the inner approximation is
   \begin{equation*}
-    \boxed{u_i(\tau)=\frac{-\tan\gamma}{k}e^{-k\tau}, \quad k={\left(\frac{{(3+(\sec\gamma)^2)}^{3/2}}{8}\right)}^{1/2}.}
+    \boxed{u_i(\tau)=\frac{\tan\gamma}{k}e^{k\tau}, \quad k={\left(\frac{{(3+(\sec\gamma)^2)}^{3/2}}{8}\right)}^{1/2}.}
   \end{equation*}
 \end{enumerate}
 
