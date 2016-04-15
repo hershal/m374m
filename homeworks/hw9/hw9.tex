@@ -248,7 +248,25 @@ appropriate parameter $0<\epsilon\ll1$.
   \end{aligned}
 \end{equation}
 \subsubsection*{Solution}
-\todo{}
+\begin{equation*}
+  \begin{aligned}
+    \frac{\sigma}{\rho g}\od{^2hL}{s^2L^2} &= hL{\left( 1+{\left( \od{hL}{sL} \right)}^2 \right)}^{3/2} \\
+    \frac{\sigma}{\rho g L^2}\od[2]{h}{s} &= h{\left( 1+{\left( \od{h}{s} \right)}^2 \right)}^{3/2} \\
+  \end{aligned}
+\end{equation*}
+Invoking the assumption $0<\frac{\sigma}{\rho g}\ll L^2$. Let
+$\epsilon=\frac{\sigma}{\rho g L^2}$. Then the assumption turns into
+\begin{equation*}
+  \begin{aligned}
+    0 &< \frac{\sigma}{\rho g}\ll L^2 \\
+    0 &< \frac{\sigma}{\rho g L^2}\ll 1 \\
+    \implies 0 &< \epsilon\ll 1. \\
+  \end{aligned}
+\end{equation*}
+This allows us to simplify:
+\begin{equation*}
+  \boxed{\epsilon\od[2]{h}{s} = h{\left[ 1 + {\left( \od{h}{s} \right)}^2 \right]}^{3/2}}.
+\end{equation*}
 
 \subsection{b}
 \label{sec:minilab-part-b}
