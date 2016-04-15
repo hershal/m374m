@@ -133,7 +133,85 @@ Find a uniformly valid approximation to the problem
 Assume boundary layer is on left side of interval and find leading-order
 composite approximation.
 \subsubsection*{Solution}
-\todo{}
+First we'll obtain the outer approximation. We'll collect coefficients of
+$\epsilon^0$ and solve the resulting ODE.\@
+\begin{equation*}
+  {(t+1)}^2y'(t) = 1
+\end{equation*}
+so that
+\begin{equation*}
+  \boxed{\implies y(t) = -\frac{1}{1+t}+c_1}
+\end{equation*}
+\Cref{eq:3.4.3-problem} is an initial value problem, so we cannot obtain $c_1$
+at the moment; We'll find $c_1$ during the matching step. To resolve the inner
+(boundary) layer we will introduce a change of variables. Let
+\begin{equation*}
+  t=\epsilon^{\alpha}s,\quad s=\epsilon^{-\alpha}t
+\end{equation*}
+so that \cref{eq:3.4.3-problem} becomes
+\begin{equation*}
+  \epsilon^{-2\alpha+1}y''(s) + {(t+1)}^2\epsilon^{-\alpha}y'(s) = 1.
+\end{equation*}
+Multiplying both sides by $\epsilon^{2\alpha-1}$ yields
+\begin{equation}
+  \label{eq:3.4.3-ys-alpha}
+  \begin{aligned}
+    y''(s) + {(t+1)}^2\epsilon^{\alpha-1}y'(s) &= \epsilon^{2\alpha-1} \\
+    y''(s) + {(\epsilon^{\alpha}s+1)}^2\epsilon^{\alpha-1}y'(s) &= \epsilon^{2\alpha-1} \\
+    y''(s) + (\epsilon^{2\alpha}s^2 + 2\epsilon^{\alpha}s + 1) \epsilon^{\alpha-1} y'(s) &= \epsilon^{2\alpha-1} \\
+    y''(s) + (\epsilon^{3\alpha-1}s^2 + 2\epsilon^{2\alpha-1}s + \epsilon^{\alpha-1}) y'(s) &= \epsilon^{2\alpha-1} \\
+  \end{aligned}
+\end{equation}
+so that $\alpha$ must conform to
+\begin{equation}
+  \label{eq:3.4.3-alpha-conditions}
+  \begin{aligned}
+    \alpha-1&\ge0, &\quad 2\alpha-1&\ge0, &\quad 3\alpha-1&\ge0 \\
+    \implies \alpha&\ge1, &\quad \implies \alpha&\ge1/2, &\quad \implies \alpha&\ge1/3 \\
+  \end{aligned}
+\end{equation}
+The minimum $\alpha$ value which conforms to the
+\cref{eq:3.4.3-alpha-conditions} is $\alpha=1$. Thus \cref{eq:3.4.3-ys-alpha}
+becomes a second-order ODE.\@
+\begin{equation}
+  \label{eq:3.4.3-ys}
+  \begin{aligned}
+    y''(s) + (\epsilon^{2}+2\epsilon+1)y'(s) &= \epsilon^{2\alpha-1} \\
+    \implies y''(s) + y'(s) &= 0 \\
+  \end{aligned}
+\end{equation}
+We'll refactor the $\epsilon y'(0)=1$ initial condition to apply for our
+substitution so that we may solve for $y(s)$.
+\begin{equation*}
+  \begin{aligned}
+    y(s) &= y(\epsilon^{-\alpha}t) \\
+    y'(s) &= \epsilon^{-\alpha}y(\epsilon^{-\alpha}t) \\
+    \implies \epsilon^{1-\alpha}y'(0) &= 1.
+  \end{aligned}
+\end{equation*}
+Since $\alpha=1$, the initial conditions for $y(s)$ become
+\begin{equation}
+  \label{eq:3.4.3-initial-conditions}
+  y(0) = 1,\quad y'(0) = 1.
+\end{equation}
+Thus, solving \cref{eq:3.4.3-ys} with initial conditions found in
+\cref{eq:3.4.3-initial-conditions} yields
+\begin{equation*}
+  \boxed{y(s) = 2-e^{-s}}
+\end{equation*}
+Now we'll perform the matching step to resolve $c_1$.
+\begin{equation*}
+  \begin{aligned}
+    \lim_{t\rightarrow0}-\frac{1}{1+t}+c_1 &= \lim_{s\rightarrow\infty}2-e^{-s} \\
+    -1+c_1 &= 2 \\
+    \implies c_1 &= 3.
+  \end{aligned}
+\end{equation*}
+Thus the uniform approximation in the form of $y(x)=y_0(x)+y_i(x)-C$, where $C$
+is the common limit, is
+\begin{equation*}
+  \boxed{y(x)=-\frac{1}{1+t}+2-e^{-s}.}
+\end{equation*}
 
 \section{Programming Minilab}
 Due to surface tension, a liquid-gas interface will rise up or dip down at a
