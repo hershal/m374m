@@ -3652,4 +3652,126 @@ Then
 \end{enumerate}
 $\therefore y_*$  is not a local min in $C^0$-norm.
 
+\section{Necessary Condititions For A Local Min/Max Of A Functional}
+\subsection{Definition}
+Consider a function space $\mathcal{V}$ of the form
+\begin{equation*}
+  \mathcal{V} = \{y\in C^n[a,b]\;|\;G_1(y)=c_1,\ldots,G_r(y)=C_r\}
+\end{equation*}
+where $G_1(y),\ldots,G_r(y)$ are given linear functionals. By the space of
+admissable variations associated with $\mathcal{V}$ we mean
+\begin{equation*}
+  \mathcal{V} = \{y\in C^n[a,b]\;|\;G_1(y)=0,\ldots,G_r(y)=0\}
+\end{equation*}
+i.e. a set a conditions which satisfy a homogenous form.
+
+\subsection{Examples}
+\begin{enumerate}
+\item $\mathcal{V}=\{y\in C^2[0,1]\;|\;y(0)=2,\; y'(1)=0,\; \int_0^1 y(x)\dd{x}=3\}$
+  then
+  \begin{equation*}
+    \mathcal{V} = \{y\in C^2[0,1]\;|\;y(0)=0,\; y'(1)=0,\;\int_0^1y(x)\dd{x}=0\}.
+  \end{equation*}
+\item $\mathcal{V}=C^2[0,1]$ (no conditions)
+  then $$\mathcal{V}_0=\mathcal{V}.$$
+\end{enumerate}
+
+\subsection{Definition}
+By the variation of a graph $y_*\in\mathcal{V}$ in a direction
+$h\in\mathcal{V}_0$, we mean the family of graphs
+$$(y_*+\epsilon h)\in\mathcal{V},\quad \epsilon\in\mathbb{R}$$
+For each $\epsilon$, $(y_*+\epsilon h)$ is a distorted version of $y_*$. The
+shape of the distortion of defined by $h$.
+
+\subsection{Example}
+\begin{equation*}
+  \begin{aligned}
+    \mathcal{V} &= \{y\in C^2[0,1]\;|\;y(0)=0,\;y(1)=1\} \\
+    \mathcal{V}_0 &= \{y\in C^2[0,1]\;|\;y(0)=0,\;y(0)=0,y(1)=0\}
+  \end{aligned}
+\end{equation*}
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+        decorate,transform shape, decoration={ markings, mark=at position .8
+          with \node #1;}}}]
+    \draw[<-] (0,1.1) -- (0,1)node[left]{$1$} -- (0,0) -- (0,0)node[below,left]{$0$};
+    \draw[->] (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+    \draw[shift={(0,1)}](2pt,0pt) -- (-2pt,0pt);
+    \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+    \draw (0,0) -- (1,1)node[right]{$y_*\in\mathcal{V}$};
+    \draw (0,0)node[circle,fill,inner sep=1pt]{};
+    \draw (1,1)node[circle,fill,inner sep=1pt]{};
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:y-star-in-v}
+\end{figure}
+Reference pic. 1, pic. 2.
+
+\subsection{Necesssary Conditions}
+Let $\mathcal{V}\subset C^n[a,b],\; n\ge0$ and
+$F:\mathcal{V}\rightarrow\mathbb{R}$ be given. If $y_*\in\mathcal{V}$ is a local
+min of $F$ in $\mathcal{V}$ in $C^n$-norm, then we must have
+\begin{equation*}
+  \left[\od{}{\epsilon}F(y_*+\epsilon h)\right]_{\epsilon=0}=0,\quad \forall h\in\mathcal{V}_0
+\end{equation*}
+This is called the ``1st order condition''.
+\begin{equation*}
+  \left[\od[2]{}{\epsilon}F(y_*+\epsilon h)\right]_{\epsilon=0}\ge0,\quad \forall h\in\mathcal{V}_0
+\end{equation*}
+This is called the ``2nd order condition''. For a local max, change $\ge$ to $\le$.
+
+\subsubsection{Proof}
+Suppose $y_*\in\mathcal{V}$ is a local minimum of $F$. Let $h\in V_0$ be
+arbitrary and define $f:\mathbb{R}\rightarrow\mathbb{R}$ by
+$$f(\epsilon) = F(y_*+\epsilon h).$$
+Since $y_*$ is a local minimum, we have
+$$F(u)\ge F(y_*),\quad \forall u\in N_{C^n}(y_*,\delta),\;\delta>0.$$
+Considering $u=y_*+\epsilon h$, this implies
+$$F(y_*+\epsilon h)\ge F(y_*),\quad \forall \epsilon\in(-c,c),\; c>0.$$
+Reference pic. 3. Thus $f(\epsilon)$ has a local min at $\epsilon=0$ and hence
+\begin{equation*}
+  \left[ \od{}{\epsilon}f(\epsilon) \right]_{\epsilon=0}=0,\quad
+  \left[ \od[2]{}{\epsilon} f(\epsilon) \right]_{\epsilon=0}\ge0.
+\end{equation*}
+
+\subsection{Example}
+\begin{equation*}
+  \begin{aligned}
+    \mathcal{V}&=\{y\in C^2[0,1]\;|\;y(0)=0,\; y(1)=1\} \\
+    \mathcal{V}_0&= \{y\in C^2[0,1]\;|\;y(0)=0,\; y(1)=0\} \\
+  \end{aligned}
+\end{equation*}
+$F:\mathcal{V}\rightarrow\mathbb{R}$, $F(y)=\int_0^12y(x)+{(y'(x))}^2\dd{x}$
+\begin{enumerate}
+\item Find an expression for
+$$\left[\od{}{\epsilon}F(y+\epsilon h)\right]$$ for arbitrary $y$ and $h$
+$$F(y+\epsilon h)=\int_0^1 2(y(x)+\epsilon h(x))+{(y'(x)+\epsilon h'(x))}^2\dd{x}$$
+\begin{equation*}
+  \begin{aligned}
+    \od{}{\epsilon}F(y+\epsilon h) &=
+    \od{}{\epsilon}\int_0^1 2(y(x)+\epsilon h(x))+{(y'(x)+\epsilon h'(x))}^2\dd{x} \\
+    &= \int_0^1 2 h(x) + 2(h'(x)+\epsilon h'(x))h'(x)\dd{x} \\
+    {\left[\od{}{\epsilon}F(y+\epsilon h)\right]}_{\epsilon=0} &= \int_0^1 2h(x)+2y'(x)h'(x)\dd{x} \\
+    \delta F(y,h) &= \int_0^1 2h(x) - (2y'(x))' h(x) \dd{x} + {\left[ 2y'(x)h(x) \right]}_{x=0}^{x=1} \\
+    &= \int_0^1(2-2y''(x))h(x)\dd{x} + \cancel{2h'(1)h(1)} - \cancel{2y'(0)h(0)} \\
+    \implies \delta F(y,h) &= \int_0^1(2-2y'')h(x)\dd{x}.
+  \end{aligned}
+\end{equation*}
+$\left[\od{}{\epsilon}F(y+\epsilon h)\right]_{\epsilon=0}$ is typically referred
+to as $\delta F(y,h)$, read as ``1st variation of $F$ at $y$ in direction
+$h$''.
+\item Observe: If $y_*\in\mathcal{V}$ is a local min or max of $F$, then it must
+  satisfy
+$$\delta F(y_*,h)=\int_0^1(2-2y_*''(x))h(x)\dd{x}=0,\quad \forall
+h\in\mathcal{V_0}$$
+This condition is met when
+$$2-2y_*''=0,\quad 0\le x\le 1$$
+Therefore we obtain an ODE for $y_*$. This is the Euler-Lagrange equation with
+boundary conditions from $\mathcal{V}$: $y_*(0)=0$ and $y_*(1)=0$. Solving gives
+$$y_*(x)=\frac{1}{2}x^2 + \frac{1}{2}x.$$
+Reference pic. 4. This is the only possible local min or max of $F$. This
+candidate is called the ``extremal of $F$.''
+\end{enumerate}
+
 \end{document}
