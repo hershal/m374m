@@ -285,7 +285,7 @@ Find the leading-order approximation.
   \begin{equation}
     \label{eq:minilab-problem-part-c}
     \od[2]{u}{\tau} = u{\left[ 1+{\left( \od{u}{\tau} \right)}^2 \right]}^{3/2},
-    \quad \tau\le0,\quad \od{u}{\tau}=\tan\gamma.
+    \quad \tau\le0,\quad \od{u}{\tau}(0)=\tan\gamma.
   \end{equation}
 
 \item This system is difficult to solve. To simplify it, we expect that
@@ -309,7 +309,7 @@ Find the leading-order approximation.
   Similarly, we may obtain $\od[2]{h}{s}$ in terms of $\od[2]{u}{\tau}$.
   \begin{equation*}
     \begin{aligned}
-      \od{}{\tau}\od{u}{\tau} &= \od{u}{\tau}\od{h}{s}\od{}{s}\od{s}{\tau} \\
+      \od{}{\tau}\od{u}{\tau} &= \epsilon^{\alpha-\beta}\od{h}{s}\od{}{s}\od{s}{\tau} \\
       \od[2]{u}{\tau} &= \epsilon^{\alpha-\beta}\od[2]{h}{s}\epsilon^{\alpha} \\
       &= \epsilon^{2\alpha-\beta}od[2]{h}{s} \\
       \implies \od[2]{h}{s} &= \epsilon^{\beta-2\alpha}\od[2]{u}{\tau}
