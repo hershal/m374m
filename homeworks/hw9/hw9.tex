@@ -406,7 +406,54 @@ meniscus height $\ell=y(L)$. Show that $\od{y}{x}$ remains bounded at all
 points as $\epsilon\downarrow0$, but that $\od[2]{y}{x}$ grows unbounded at
 $x=L$ as $\epsilon\downarrow0$.
 \subsubsection*{Solution}
-\todo{}
+Given
+\begin{equation*}
+  \begin{aligned}
+    \tau &= \epsilon^{-\alpha},\quad s=x/L \\
+    \implies \tau &= \epsilon^{-\alpha}(x/L-1)
+  \end{aligned}
+\end{equation*}
+and
+\begin{equation*}
+  \begin{aligned}
+    h &= y/L,\quad y=Lh \\
+    \implies u &= y/L\epsilon^{\beta},
+  \end{aligned}
+\end{equation*}
+we may rewrite the inner approximation as
+\begin{equation*}
+  y(x) = \frac{L\epsilon^{\beta}\tan\gamma}{k}e^{k\epsilon^{-\alpha}(x/L-1)}.
+\end{equation*}
+Thus an appropriate expression for the meniscus height $\ell=y(L)$ is
+\begin{equation*}
+  \begin{aligned}
+    y(L) &= \frac{L\epsilon^{\beta}\tan\gamma}{k} \\
+    \implies y(L) &= 0.00796857.
+  \end{aligned}
+\end{equation*}
+Furthermore, we'll show that $\od{y}{x}$ is bounded at all points as
+$\epsilon\downarrow0$.
+\begin{equation*}
+  y'(x) = \tan\gamma e^{k\epsilon^{-\alpha}(x/L-1)}
+\end{equation*}
+
+The exponent on $e$ when $x\in[0,L)$ is guaranteed to be negative due to the
+$x/L-1$ term. Furthermore, the $\epsilon^{-\alpha}$ term makes the exponent
+huge. Therefore, the exponent on $e$ is very large negative number, which upon
+setting $\epsilon\downarrow0$ makes $y'(x)=0$. When $x=L$, the $e$ term
+vanishes, leaving $\tan\gamma$, which is bounded between $[-1,1]$. Thus, $y'(x)$
+is bounded.
+
+We'll show that $\od[2]{y}{x}$ is unbounded at $x=L$ as $\epsilon\downarrow0$.
+\begin{equation*}
+  \begin{aligned}
+    y''(x) &= \left( \frac{k}{L\epsilon^{\alpha}} \right)\tan\gamma
+    e^{k\epsilon^{-\alpha}(x/L-1)} \\
+    y''(L) &= \left( \frac{k}{L\epsilon^{\alpha}} \right)\tan\gamma \\
+  \end{aligned}
+\end{equation*}
+As $\epsilon\downarrow0$, the $\frac{k}{L\epsilon^{\alpha}}$ term explodes, thus
+causing $y''(x)$ to grow unbounded.
 
 \subsection{e}
 \subsubsection*{Problem}
