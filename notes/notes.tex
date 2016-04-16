@@ -3857,8 +3857,22 @@ $$2-2y_*''=0,\quad 0\le x\le 1$$
 Therefore we obtain an ODE for $y_*$. This is the Euler-Lagrange equation with
 boundary conditions from $\mathcal{V}$: $y_*(0)=0$ and $y_*(1)=0$. Solving gives
 $$y_*(x)=\frac{1}{2}x^2 + \frac{1}{2}x.$$
-Reference pic. 4. This is the only possible local min or max of $F$. This
-candidate is called the ``extremal of $F$.''
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=3cm]
+    \draw[<->] (0,1.1) -- (0,1)node[left]{$1$} -- (0,0) -- (0,0)node[below left]{$0$} -- (0,-.1);
+    \draw[<->] (-0.1,0) -- (0,0) -- (1,0)node[below]{$1$} -- (1.1,0);
+    \draw[shift={(1,0)}](0pt,2pt) -- (0pt,-2pt);
+    \draw[shift={(0,1)}](2pt,0pt) -- (-2pt,0pt);
+    \draw (1,1)node[circle,fill,inner sep=1pt]{};
+    \draw (1,1)node[right]{$y_*\in\mathcal{V}$};
+    \draw (0,0)node[circle,fill,inner sep=1pt]{};
+    \draw[domain=0:1] plot ({\x}, {.5*(\x)^2+.5*\x});
+  \end{tikzpicture}
+  \caption{The only possible local min or max of $F$.}
+  \label{fig:extremal}
+\end{figure}
+Reference \cref{fig:extremal}. This candidate is called the ``extremal of $F$.''
 \end{enumerate}
 
 \end{document}
