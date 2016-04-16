@@ -3801,7 +3801,22 @@ Since $y_*$ is a local minimum, we have
 $$F(u)\ge F(y_*),\quad \forall u\in N_{C^n}(y_*,\delta),\;\delta>0.$$
 Considering $u=y_*+\epsilon h$, this implies
 $$F(y_*+\epsilon h)\ge F(y_*),\quad \forall \epsilon\in(-c,c),\; c>0.$$
-Reference pic. 3. Thus $f(\epsilon)$ has a local min at $\epsilon=0$ and hence
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=3cm]
+    \draw[<-] (0,1.1) -- (0,1)node[left]{$f$} -- (0,0) -- (0,0)node[below left]{$0$} -- (0,-.1);
+    \draw[<->] (-.6,0) -- (.5,0)node[below]{$\epsilon$} -- (.6,0);
+    \draw (-0.25,0)node[]{$($} (-0.25,-0.05)node[below]{$-c$};
+    \draw (0.25,0)node[]{$)$} (0.25,-0.05)node[below]{$c$};
+    \draw[domain=-.2165:.2165] plot ({\x}, {(\x*4)^2+.25});
+  \end{tikzpicture}
+  \caption{$f(\epsilon)\ge f(0)$}
+  \label{fig:fepsilon-le-fzero}
+\end{figure}
+
+Reference \cref{fig:fepsilon-le-fzero}. Thus $f(\epsilon)$ has a local min at
+$\epsilon=0$ and hence
 \begin{equation*}
   \left[ \od{}{\epsilon}f(\epsilon) \right]_{\epsilon=0}=0,\quad
   \left[ \od[2]{}{\epsilon} f(\epsilon) \right]_{\epsilon=0}\ge0.
