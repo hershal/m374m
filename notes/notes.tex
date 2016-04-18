@@ -3875,4 +3875,138 @@ $$y_*(x)=\frac{1}{2}x^2 + \frac{1}{2}x.$$
 Reference \cref{fig:extremal}. This candidate is called the ``extremal of $F$.''
 \end{enumerate}
 
+\section{Results for 1st Order Fixed-Fixed Problems}
+\subsection{Theorem}
+Consider $F:\mathcal{V}\rightarrow\mathbb{R}$ of the form
+$$\mathcal{V}=\{y\in C^2[a,b]\;|\;y(a)=\alpha,\;y(b)=\beta\},$$
+$$F(y)=\int_a^bL(x,y,y')\dd{x}$$
+where $L(x,y,y')$ is some expression in $x$, $y(x)$, and $y'(x)$.
+If $y_*\in\mathcal{V}$ is a local minimizer of $F$ in the $C^2$-norm, then we
+must have
+\begin{equation}
+  \label{eq:condition-1}
+  \left[\od{}{\epsilon}F(y_*+\epsilon h)\right]_{\epsilon=0}=0\quad\forall h\in\mathcal{V}_0
+\end{equation}
+\begin{equation}
+  \label{eq:condition-2}
+  \left[\od[2]{}{\epsilon}F(y_*+\epsilon h)\right]_{\epsilon=0}\ge0  \quad\forall h\in\mathcal{V}_0
+\end{equation}
+The condition in \cref{eq:condition-1} implies that $y_*$ must satisfy
+\begin{equation}
+  \label{eq:condition-1-prime}
+  (BVP)\quad\left\{
+  \begin{aligned}
+    \pd{L}{y}(x,y,y')-\od{}{x}\left[ \pd{L}{y'}(x,y,y') \right]=0\quad a\le x\le \\
+    y(a) = \alpha,\quad y(b)=\beta
+  \end{aligned} \right.
+\end{equation}
+The condition in \cref{eq:condition-2} implies that $y_*$ must also satisfy
+\begin{equation}
+  \label{eq:condition-2-prime}
+  \pd[2]{L}{y'}(x,y,y')\ge0,\quad a\le x \le b
+\end{equation}
+For a local minimizer, change $\ge$ to $\le$ in \cref{eq:condition-2,eq:condition-2-prime}.
+
+Sketch \cref{eq:condition-1}$\implies$\cref{eq:condition-1-prime}. Let
+$y\in\mathcal{V}$, $h\in\mathcal{V}_0$ be arbitrary.
+$$F(y+\epsilon h)=\int_a^bL(x,y+\epsilon h,y'+\epsilon h')\dd{x}$$
+\begin{equation}
+  \label{eq:something}
+  \begin{aligned}
+    \od{}{\epsilon}F(y+\epsilon h)&=\int_a^b\od{}{\epsilon}L(x,y+\epsilon h,y'+\epsilon h')\dd{x} \\
+    &= \int_a^b\pd{L}{y}(\cdots)h + \pd{L}{y'}(\cdots)h' \dd{x} \\
+    \left[\od{}{\epsilon}F(y+\epsilon h)\right]_{\epsilon=0}&=
+    \int_a^b\pd{L}{y}(x,y,y')h+\pd{L}{y'}(x,y,y')h'\dd{x} \\
+  \end{aligned}
+\end{equation}
+Let
+\begin{align*}
+  \delta F(y,h) &= \left[\od{}{\epsilon}F(y+\epsilon h)\right]_{\epsilon=0},\\
+  g &= \pd{L}{y}(x,y,y'), \\
+  f &= \pd{L}{y'}(x,y,y'). \\
+\end{align*}
+Then \cref{eq:something} turns to
+\begin{equation*}
+  \begin{aligned}
+    \delta F(y,h) &= \int_a^b gh + fh' \dd{h} \\
+    &= \int_a^b gh - f'h\dd{x} + \left[ fh \right]_{x=a}^{x=b} \\
+    &= \int_a^b (g-f')h\dd{x}+ \cancel{\left[ fh \right]_{x=b}} - \cancel{\left[ fh \right]_{x=a}}
+  \end{aligned}
+\end{equation*}
+The cancels occur since $h\in\mathcal{V}_0$. If $y=y_*$ is a local minimizer of
+$F$, then
+\begin{equation*}
+  \delta F(y,h) = \int_a^b (g-f')h \dd{x}=0,\quad \forall h\in\mathcal{V}_0.
+\end{equation*}
+This condition can only be satisfied if $$g-f'=0,\quad a\le x \le b.$$
+Substituting for $g$, $f$ gives
+\begin{equation*} \left\{
+  \begin{aligned}
+    &\pd{L}{y}(x,y,y') - \left[ \pd{L}{y'}(x,y,y') \right]'=0,\quad a\le x \le b \\
+    &y(a)=\alpha,\quad y(b)=\beta.
+  \end{aligned} \right.
+\end{equation*}
+
+\subsection{Example}
+$\mathcal{V}=\{y\in C^2[0,1]\;|\; y(0)=0,\; y(1)=1\}$
+$$F:\mathcal{V}\rightarrow\mathbb{R}$$
+$$F(y)=\int_0^12y(x)+{(y'(x))}^2\dd{x}$$
+where $$L(x,y,y')=2y+{(y')}^2.$$
+
+\begin{enumerate}
+\item Find candidates for local min, max of $F$ (``extremals'').
+  Derivitives of $L$:
+  \begin{equation*}
+    \pd{L}{y} = 2,\quad \pd{L}{y'} = 2y'
+  \end{equation*}
+  BVP for extremals:
+  \begin{equation*} \left\{
+      \begin{aligned}
+        &2-\left[ 2y' \right]'=0,\quad 0\le x\le 1 \\
+        &y(0)=0,\quad y(1)=1 \\
+      \end{aligned} \right.
+  \end{equation*}
+  ODE:
+  \begin{equation*}
+    2-2y''=0\rightarrow y''=1, \implies y=\frac{1}{2}x^2 + (x+1)
+  \end{equation*}
+  BCs:
+  \begin{equation*}
+    \begin{aligned}
+      y(0)=1&\rightarrow D=0 \\
+      y(1)=1&\rightarrow \frac{1}{2}+C=1\rightarrow C=\frac{1}{2} \\
+      \therefore & y_*(x) = \frac{1}{2}x^2 + \frac{1}{2} x
+    \end{aligned}
+  \end{equation*}
+  Here, $y_*$ is the only candidate for a local min/max.
+\item Use the condition in \cref{eq:condition-2-prime} to further classify
+  candidates. Derivitives of $L$:
+  \begin{equation*}
+    \pd{L}{y'}=2y',\quad \pd[2]{L}{y'}=2
+  \end{equation*}
+  Sign condition
+  \begin{equation*}
+    \pd[2]{L}{y'}(x,y_*,y_*')\equiv 2\ge0,\quad 0\le x \le1.
+  \end{equation*}
+  $\therefore$ $y_*$ could be a local min but not a local max.
+\item Is $y_*$ actually a local minimizer of $F$? Yes.
+  \subsubsection{Proof}
+  Consider $\delta>0$ be given. Consider any $u\in N_{C^2}(y_*,\delta)$ and let
+  $h=u-y_*$. Then $h\in\mathcal{V}_0$ and
+
+  \begin{equation*}
+    \begin{aligned}
+      F(u)&=F(y_*+h) \\
+      &= \int_a^b 2(y_*+h)+{(y_*'+h')}^2\dd{x} \\
+      &= \int_a^b 2y_* + {(y_*')}^2\dd{x} + \int_a^b 2h\dd{x} + \int_a^b 2y_*'h'\dd{x} + \int {(h')}^2\dd{x} \\
+      &= F(y_*) + \int_0^1 2h + 2y_*'h'\dd{x} + \int_0^1{(h')}^2\dd{x} \\
+      &= F(y_*) + \cancel{\int_0^1(2-2y_*'')h\dd{x}} + \int_0^1{(h')}^2\dd{x} \\
+      \therefore F(u) - F(y_*) &= \int_0^1{(h')}^2\dd{x} \ge 0 \\
+      \therefore F(u) &\ge F(y_*) \quad \forall u\in N_{C^2}(y_*,\delta)
+    \end{aligned}
+  \end{equation*}
+  $\therefore$ $y_*$ is a local min of $F$ (actually absolute min since no
+  conditions on $\delta>0$).
+\end{enumerate}
+
 \end{document}
