@@ -3838,7 +3838,7 @@ $$F(y+\epsilon h)=\int_0^1 2(y(x)+\epsilon h(x))+{(y'(x)+\epsilon h'(x))}^2\dd{x
   \begin{aligned}
     \od{}{\epsilon}F(y+\epsilon h) &=
     \od{}{\epsilon}\int_0^1 2(y(x)+\epsilon h(x))+{(y'(x)+\epsilon h'(x))}^2\dd{x} \\
-    &= \int_0^1 2 h(x) + 2(h'(x)+\epsilon h'(x))h'(x)\dd{x} \\
+    &= \int_0^1 2 h(x) + 2(y'(x)+\epsilon h'(x))h'(x)\dd{x} \\
     {\left[\od{}{\epsilon}F(y+\epsilon h)\right]}_{\epsilon=0} &= \int_0^1 2h(x)+2y'(x)h'(x)\dd{x} \\
     \delta F(y,h) &= \int_0^1 2h(x) - (2y'(x))' h(x) \dd{x} + {\left[ 2y'(x)h(x) \right]}_{x=0}^{x=1} \\
     &= \int_0^1(2-2y''(x))h(x)\dd{x} + \cancel{2h'(1)h(1)} - \cancel{2y'(0)h(0)} \\
