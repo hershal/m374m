@@ -27,7 +27,22 @@ Find first variation at $y_0$ for arbitrary $h$ as described, and show result
 vanishes. The functional is $$J(y)=\int_0^1(1+x){(y')}^2\dd{x}.$$
 
 \subsubsection*{Solution}
-\todo{}
+\begin{equation*}
+  \begin{aligned}
+    J(y_0+\epsilon h) &= \int_0^1(1+x){(y'(x))}^2\dd{x} \\
+    \od{}{\epsilon} J(y_0+\epsilon h(x)) &= \od{}{\epsilon} \int_0^1(1+x){(y'(x))}^2\dd{x} \\
+    &= \int_0^1 (1+x) (2h'(x)y_0'(x) + 2\epsilon {h'(x)}^2) \dd{x} \\
+    {\left[ \od{}{\epsilon} J(y_0+\epsilon h(x)) \right]}_{\epsilon=0} &= \int_0^1 (1+x) (2h'(x)y_0'(x)) \dd{x} \\
+    &= \int_0^1 \cancel{(1+x)} (2h'(x)\frac{1}{\cancel{(1+x)}\ln2}) \dd{x} \\
+    \delta J(y_0,h) &= \frac{2}{\ln2}\int_0^1 h'(x) \dd{x} \\
+    &= \frac{2}{\ln2}{\left[ h(x) \right]}_{x=0}^{x=1} \\
+    &= \frac{2}{\ln2}(h(1)-h(0)) \\
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \boxed{\implies \delta J(y_0,h) = 0.}
+\end{equation*}
 
 \subsection{13$^2$}
 \subsubsection*{Problem}
