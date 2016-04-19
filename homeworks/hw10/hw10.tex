@@ -49,7 +49,43 @@ For arbitrary $y$ and $h$ consider $J(y+\epsilon h)$. Find an expression for the
 second variation $${\left[\od[2]{}{\epsilon} J(y+\epsilon h)\right]}_{\epsilon=0}$$
 
 \subsubsection*{Solution}
-\todo{}
+Since the derive and integrate operators are linear, we may rearrange the
+problem to make the task easier.
+\begin{equation*}
+  \begin{aligned}
+    {\left[\od[2]{}{\epsilon} J(y+\epsilon h)\right]}_{\epsilon=0}
+    &= {\left[\od[2]{}{\epsilon} \int_0^1(x{(y'+\epsilon h')}^2+(y+\epsilon h)\sin(y'+\epsilon h'))\dd{x} \right]}_{\epsilon=0} \\
+    &= \int_0^1{\left[\od[2]{}{\epsilon} (x{(y'+\epsilon h')}^2+(y+\epsilon h)\sin(y'+\epsilon h'))\right]}_{\epsilon=0}\dd{x} \\
+  \end{aligned}
+\end{equation*}
+Expand
+\begin{equation*}
+  \int_0^1{\left[\od[2]{}{\epsilon}
+      h^2 x \epsilon ^2+2 h x \epsilon y_0'+h \epsilon \sin \left(h \epsilon
+        +y_0'\right)+y_0 \sin \left(h \epsilon +y_0'\right)+x \left(y_0'\right){}^2
+    \right]}_{\epsilon=0}\dd{x}
+\end{equation*}
+Derive
+\begin{equation*}
+  \int_0^1{\left[\od[2]{}{\epsilon}
+      h^3 (-\epsilon ) \sin \left(h \epsilon +y_0'\right)+2 h^2 x-h^2 y_0 \sin
+      \left(h \epsilon +y_0'\right)+2 h^2 \cos \left(h \epsilon +y_0'\right)
+    \right]}_{\epsilon=0}\dd{x}
+\end{equation*}
+Simplify
+\begin{equation*}
+  \int_0^1{\left[\od[2]{}{\epsilon}
+      -h^2 \left(h \epsilon \sin \left(h \epsilon +y_0'\right)+y_0 \sin \left(h
+          \epsilon +y_0'\right)-2 \cos \left(h \epsilon +y_0'\right)-2 x\right)
+    \right]}_{\epsilon=0}\dd{x}
+\end{equation*}
+Evaluate $\epsilon=0$
+\begin{equation*}
+  \boxed{\int_0^1
+      -h^2 \left(y_0 \sin \left(y_0'\right)-2 \cos \left(y_0'\right)-2 x\right)
+    \dd{x}}
+\end{equation*}
+
 
 \section{\S~4.3}
 \subsection{2$^3$a}
@@ -62,6 +98,7 @@ Find extremals for
 
 \subsubsection*{Remarks}
 Assume $[a,b]=[1,2]$ and $y(1)=0$ and $y(2)=1$.
+
 \subsubsection*{Solution}
 \todo{}
 
