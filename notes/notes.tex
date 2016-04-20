@@ -5,6 +5,7 @@
 
 \usepackage{homework-macros}
 \usetikzlibrary{plotmarks}
+\usetikzlibrary{patterns}
 \tikzexternalize
 
 \begin{document}
@@ -4012,14 +4013,33 @@ where $$L(x,y,y')=2y+{(y')}^2.$$
 \section{Case Study: Design of a Slide}
 \subsection{Problem}
 Consider desigining a slide of given height $h$, length $\ell$, initial speed
-$c$, and gravity $g$. See pic. 1. We seek a profile which minimizes the travel
+$c$, and gravity $g$. Reference \cref{fig:slide}. We seek a profile which minimizes the travel
 time $T$ down the slide.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=3cm,label/.style={ postaction={
+        decorate,transform shape, decoration={ markings, mark=at position .8
+          with \node #1;}}}]
+    \draw[<-] (0,1)node[left]{$y$} -- (0,0) -- (0,0);
+    \draw[->] (0,0) -- (1.5,0)node[below]{$x$};
+    \draw (0,.75)node[circle,fill,inner sep=1pt]{}node[left]{$h$};
+    \draw ({.375*(pi-sin(pi r))},0)node[circle,fill,inner sep=1pt]{}node[below]{$\ell$};
+    \draw[domain=0:pi,samples=50,pattern=north east lines] (0,0.75) --
+    plot({.375*(\x - sin(\x r))},{.75-.375*(1 - cos(\x r))}) -- ({.375*(pi-sin(pi r))},0) -- (0,0) -- cycle;
+    \draw[->] (.5,.5)node[above right]{$y(x)$} -- ({.375*(pi/2-sin(pi/2 r))+.01},{.75-.375*(1 - cos(pi/2 r))+.01});
+    \draw[->] (-0.5,0.5)node[circle,fill,inner sep=1pt]{}node[above]{$g$} -- (-0.5,0.25);
+    \draw[dashed] (-0.125,.875) -- (1.2,.875)node[right]{$h+\frac{c^2}{2g}$};
+  \end{tikzpicture}
+  \caption{Profile of slide}
+  \label{fig:slide}
+\end{figure}
 
 \subsubsection{Travel Time}
 Since $T$ depends on the profile curve, we have
 $$T=F(y),$$ where $F(y)$ is some functional. To find $F$, consider a mass $m$
 sliding down profile $y(x)$. Compute the time to travel across cross a given
-profile. See pic. 2. Let
+profile, such as the one in \cref{fig:slide}. Let
 \begin{align*}
   (x(t),y(x(t))) &= \text{position}\;t\ge0 \\
   \left(\od{x}{t},\od{y}{t}\right) &= (u,v) = \text{velocity}\;t\ge0
@@ -4068,8 +4088,8 @@ Consider $F:\mathcal{V}\rightarrow\mathbb{R}$ where
 Let $L(x,y,y')= {\left[ \frac{1+{(y'(x))}^2}{c^2+2g(h-y(x))} \right]}^{1/2} \dd{x}$.
 
 Consider $\mathcal{V}=\{y\in C^2[0,1]\;|\;y(0)=h,\; y(\ell)=0\;,
-y(x)<(h+c^2/2g)\}.$ See pic. 3. We seek local minimizers of $F$ in
-$\mathcal{V}$.
+y(x)<(h+c^2/2g)\}.$ Reference \cref{fig:slide}. We seek local minimizers of $F$
+in $\mathcal{V}$.
 
 \subsubsection{Necessary Condition}
 Every candidate for a local minimum must satisfy
