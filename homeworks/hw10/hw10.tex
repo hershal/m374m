@@ -135,6 +135,77 @@ Find an extremal for all
 \todo{}
 
 \section{Programming Minilab}
+When stretched between two symmetrically placed rings, a thin soap film will
+form a curved surface of revolution. If we denote the profile curve by $y(x)$
+where $x\in[-L,L]$, then the surface area is given by
+\begin{equation}
+  \label{eq:minilab-surface-area}
+  A(y)=\int_{-L}^L 2\pi y(x) \sqrt{1 + {\left[ y'(x) \right]}^2}\dd{x}.
+\end{equation}
+The specific shape adopted by the film can be described as that which minimizes
+the functional $A(y)$ in a given function space. Here we find candidates for
+local minimizers in the $C^2$-norm in the space $\mathcal{V}=\{y\in
+C^2[-L,L]\;|\;y(-L)=\alpha,\;y(L)=\beta,\;y(x)>0\}$. For simplicity, we assume
+$\alpha=\beta>0$.
 
+\begin{enumerate}[(a)]
+\item
+\subsubsection*{Problem}
+After a change of variable $x\rightarrow x/L$ and $y\rightarrow y/L$, show that
+any local minimizer $y_*\in \mathcal{V}$ must satisfy the following
+boundary-value problem, where $\gamma=\alpha/L$:
+\begin{equation}
+  \label{eq:minilab.a-problem}
+  yy''-{(y')}^2=1,\quad -1\le x\le1. \qquad y(-1)=\gamma,\quad y(1)=\gamma.
+\end{equation}
+
+\subsubsection*{Solution}
+\todo{}
+
+\item
+\subsubsection*{Problem}
+Consider the smooth function
+\begin{equation}
+  \label{eq:minilab.b-problem-smooth}
+  y_*(x)=\frac{1}{c}\cosh(cx+d),
+\end{equation}
+where $c>0$ and $d$ are arbitrary constants. Show that $y_*$ satisfies the
+differential equation. Moreover, show that $y_*$ will satisfy the boundary
+conditions and hence will be in the space $\mathcal{V}$ only if $d=0$ and $c>0$
+satisfies
+\begin{equation}
+  \label{eq:minilab.b.problem-satisfy}
+  \cosh(c) = \gamma c.
+\end{equation}
+
+\subsubsection*{Solution}
+\todo{}
+
+\item
+\subsubsection*{Problem}
+Show that \cref{eq:minilab.b.problem-satisfy} has two solutions for $c$ if
+$\gamma > \gamma_{\#}$, one solution if $\gamma = \gamma_{\#}$, and no solution
+if $0<\gamma<\gamma_{\#}$, where $\gamma_{\#}$ is an appropriate constant which
+you should find. Hence we have two, one, or no candidates for a local minimizer
+$y_*\in\mathcal{V}$ depending on the value of $\gamma$.
+
+\subsubsection*{Solution}
+\todo{}
+
+\item
+\subsubsection*{Problem}
+In the case when $\gamma > \gamma_{\#}$ and there are two candidate curves
+$y_*$, it can be shown that the candidate with the smaller $c$ is indeed a local
+minimizer whereas the other is not. Find an make plots of these curves on
+$[-1,1]$ for the case $\gamma=2$ and indicate which is the local minimizer. When
+$\gamma\le\gamma_{\#}$, it can be shown that there are no local minimizers of
+$A$ in $\mathcal{V}$; in this case, a surface of minimum area no longer has a
+class $C^2$ profile graph. What do you think might happen to the soap film in
+this case?
+
+\subsubsection*{Solution}
+\todo{}
+
+\end{enumerate}
 
 \end{document}
