@@ -4009,4 +4009,127 @@ where $$L(x,y,y')=2y+{(y')}^2.$$
   conditions on $\delta>0$).
 \end{enumerate}
 
+\section{Case Study: Design of a Slide}
+\subsection{Problem}
+Consider desigining a slide of given height $h$, length $\ell$, initial speed
+$c$, and gravity $g$. See pic. 1. We seek a profile which minimizes the travel
+time $T$ down the slide.
+
+\subsubsection{Travel Time}
+Since $T$ depends on the profile curve, we have
+$$T=F(y),$$ where $F(y)$ is some functional. To find $F$, consider a mass $m$
+sliding down profile $y(x)$. Compute the time to travel across cross a given
+profile. See pic. 2. Let
+\begin{align*}
+  (x(t),y(x(t))) &= \text{position}\;t\ge0 \\
+  \left(\od{x}{t},\od{y}{t}\right) &= (u,v) = \text{velocity}\;t\ge0
+\end{align*}
+Notice
+$$v=\od{y}{t}=\od{y}{x}\od{x}{t}=\od{y}{x}u.$$
+Assuming no friction or air resistance, conservation of energy requires
+\begin{equation*}
+  \left( \text{\parbox{7em}{\centering total energy at time $t\ge0$}} \right) =
+  \left( \text{\parbox{7em}{\centering total energy at time $t=0$}} \right)
+\end{equation*}
+Therefore
+\begin{equation}
+  \label{eq:energy-equation}
+  \frac{1}{2}m(u^2+v^2)+mgy = \frac{1}{2}m(u_0^2+v_0^2)+mgy_0
+\end{equation}
+Let $v^2={\left( \od{y}{x} \right)}^2u^2$, $c^2=u_0^2+v_0^2$, and $h=y_0$, where
+$c^2$ and $h$ are given constants. Multiplying \cref{eq:energy-equation} by
+$2/m$ gives
+\begin{equation*}
+  u^2\left[ 1+{\left( \od{y}{x} \right)}^2 \right]+2gy = c^2+2gh
+\end{equation*}
+so that
+\begin{equation*}
+  u^2 = \frac{c^2+2gh(h-y)}{1+{\left( \od{y}{x} \right)}^2}
+\end{equation*}
+Assuming $u=\od{x}{t}\ge0$ throughout the travel, we get
+\begin{equation*}
+  \od{x}{t} = {\left[ \frac{c^2+2g(h-y)}{1+{(y')}^2} \right]}^{1/2}
+\end{equation*}
+The travel time $T$ for a profile $y(x)$ is
+\begin{equation*}
+  T=\int_{t=0}^{t=T} \dd{t}.
+\end{equation*}
+Through a change of variable we obtain
+\begin{equation*}
+  T=\int_{x=0}^{x=\ell} \od{t}{x} \dd{x}
+  = \int_0^{\ell} {\left[ \frac{1+{(y'(x))}^2}{c^2+2gh(h-y(x))} \right]}^{1/2} \dd{x}.
+\end{equation*}
+
+\subsection{Restated Problem}
+Consider $F:\mathcal{V}\rightarrow\mathbb{R}$ where
+\begin{equation*}
+  F(y)=\int_0^{\ell}  {\left[ \frac{1+{(y'(x))}^2}{c^2+2gh(h-y(x))} \right]}^{1/2} \dd{x}.
+\end{equation*}
+Let $L(x,y,y')= {\left[ \frac{1+{(y'(x))}^2}{c^2+2g(h-y(x))} \right]}^{1/2} \dd{x}$.
+
+Consider $\mathcal{V}=\{y\in C^2[0,1]\;|\;y(0)=h,\; y(\ell)=0\;,
+y(x)<(h+c^2/2g)\}.$ See pic. 3. We seek local minimizers of $F$ in
+$\mathcal{V}$.
+
+\subsubsection{Necessary Condition}
+Every candidate for a local minimum must satisfy
+
+\begin{align*}
+  \text{(ODE)}
+  &\qquad \pd{L}{y}(x,y,y')-\od{}{x}\left[ \pd{L}{y'}(x,y,y') \right]=0,\quad 0\le x\le \ell\\
+  \text{(BCs)}
+  &\qquad y(0)=h,\quad h(\ell)=0.
+\end{align*}
+This becomes very difficult, though we may simpilfy.
+
+\subsubsection{Simplification of ODE}
+ODE can be simplified when $L(x,y,y')$ is independent of $x$.
+\begin{equation*}
+  L(x,y,y')=\frac{{[1+{(y')}^2]}^{1/2}}{{[c^2+2g(h-y)]}^{1/2}} = M(y,y')
+\end{equation*}
+
+\begin{equation}
+  \label{eq:m-equation}
+  \text{(ODE)}\quad\longleftrightarrow \quad 0=\pd{M}{y}- \od{}{x}\left[ \pd{M}{y'} \right]
+\end{equation}
+Multiplying \cref{eq:m-equation} by $y'$, using the derivative
+formula\footnote{$f'y'=(fy')'-fy''$} and then applying the chain rule:
+\begin{align*}
+  0 &= \pd{M}{y} y' - \od{}{x}\left[ \pd{M}{y'} \right]y' \\
+    &= \pd{M}{y}y' + \left[ \pd{M}{y'} \right]y'' - \od{}{x}\left[ \pd{M}{y'}y' \right] \\
+    &= \od{}{x}\left[ M(y,y') \right] - \od{}{x}\left[ \pd{M}{y'}y' \right]
+\end{align*}
+This allows us to integrate once
+\begin{equation*}
+  A = M(y,y')-\pd{M}{y'}(y,y')y',
+\end{equation*}
+where $A$ is an arbitrary constant. Substituting for $M$, the ODE becomes
+\begin{align*}
+  A
+  &= \frac{{\left[ 1+{(y')}^2 \right]}^{1/2}}{{\left[ c^2+2g(h-y) \right]}^{1/2}} -
+    \frac{\frac{1}{2}{\left[ 1+{(y')}^2 \right]}^{-1/2}2y'}{{\left[ c^2+2g(h-y) \right]}^{1/2}}y' \\
+  A{{\left[ c^2+2g(h-y) \right]}^{1/2}}
+  &= {\left[ 1+{(y')}^2 \right]}^{1/2} -
+    {\left[ 1+{(y')}^2 \right]}^{-1/2}{(y')}^2 \\
+  &= {\left[ 1+ {(y')}^2 \right]}^{-1/2} \\
+  A^2{\left[ c^2+2g(h-y) \right]}
+  &= {\left[ 1+ {(y')}^2 \right]}^{-1} \\
+\end{align*}
+Let
+\begin{align*}
+  \gamma &= c^2+2gh > 0 \\
+  \eta &= 2g
+\end{align*}
+\begin{align*}
+  1 + {(y')}^2 &= \frac{1}{a^2[\gamma-\eta y]} \\
+  {(y')}^2 &= \frac{1}{A[\gamma-\eta y]}-1 \\
+  \implies {(y')}^2 &= \frac{1-A^2[\gamma-\eta y]}{A^2[\gamma-\eta y]} \\
+\end{align*}
+Hence every candidate for a local minimum must satisfy
+\begin{align*}
+  {\left( \od{y}{x} \right)}^2 &= \frac{B-(\gamma-\eta y)}{(\gamma-\eta y)},\quad 0\le x \le \ell \\
+  y(0)&=h, \quad y(\ell)=0
+\end{align*}
+where $B>0$ is an arbitrary constant.
+
 \end{document}
