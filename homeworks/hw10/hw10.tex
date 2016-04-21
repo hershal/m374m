@@ -201,7 +201,21 @@ satisfies
 \end{equation}
 
 \subsubsection*{Solution}
-\todo{}
+Given
+\begin{align*}
+  y_*(x) &= \frac{1}{c}\cosh(cx+d) \\
+  y_*'(x) &= \sinh(cx+d) \\
+  y_*''(x) &= c\cosh(cx+d), \\
+\end{align*}
+then \cref{eq:minilab.a-problem} becomes
+\begin{equation}
+  \label{eq:minilab.b-identity}
+  \cosh^2(cx+d) - \sinh^2(cx+d) = 1.
+\end{equation}
+This is a trigonometric identity, so it is always true. Furthermore, the only
+way \cref{eq:minilab.b-identity} can satisfy the boundary conditions is when
+$d=0$ since $\cosh$ is symmetric across the $y$ axis, and when $c>0$ since
+$\cosh$ is never negative.
 
 \item
 \subsubsection*{Problem}
