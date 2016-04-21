@@ -110,7 +110,25 @@ Find extremals for
 Assume $[a,b]=[1,2]$ and $y(1)=0$ and $y(2)=1$.
 
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{align*}
+  L_y &= 0 \\
+  L_{y'} &= \frac{2y'(x)}{x^3} \\
+\end{align*}
+so that
+\begin{align*}
+  L_y - \od{}{x} L_{y'} &= 0, \\
+  -2 \od{}{x} y'(x) x^3 &= 0, \\
+  -2\left[ y''(x) x^{-3}-3x^{-4}y'(x) \right] &= 0.
+\end{align*}
+Solving this ODE results in
+\begin{equation*}
+  y(x)=c_1x^4+c_2.
+\end{equation*}
+Invoking the initial conditions resolves the constants.
+\begin{equation*}
+  \boxed{\frac{1}{15}(x^4-1)}
+\end{equation*}
 
 \subsection{2$^3$b}
 \subsubsection*{Problem}
