@@ -161,7 +161,23 @@ boundary-value problem, where $\gamma=\alpha/L$:
 \end{equation}
 
 \subsubsection*{Solution}
-\todo{}
+Let
+$$L = 2\pi y(x) \sqrt{1 + {\left[ y'(x) \right]}^2}.$$
+Then
+\begin{align*}
+  L_y(x,y,y') &= 2\pi {(1+{(y'(x))}^2)}^{1/2} \\
+  L_{y'}(x,y,y') &= \frac{2\pi y(x) y'(x)}{{(1+{(y'(x))}^2)}^{1/2}}. \\
+\end{align*}
+So that the Euler-Lagrange equation for this system is
+\begin{align*}
+  0 &= L_y(x,y,y') - \od{}{x}L_{y'}(x,y,y') \\
+  \implies 0 &= 2\pi {(1+{(y'(x))}^2)}^{1/2} - \od{}{x} \frac{2\pi y(x) y'(x)}{{(1+{(y'(x))}^2)}^{-1/2}} \\
+  2\pi {(1+{(y'(x))}^2)}^{1/2} &= \od{}{x} \frac{2\pi y(x) y'(x)}{{(1+{(y'(x))}^2)}^{-1/2}} \\
+  \frac{(1+{(y'(x))}^2)}{y(x)} &= \od{}{x} y'(x) \\
+  \frac{(1+{(y'(x))}^2)}{y(x)} &= y''(x) \\
+  1+{(y'(x))}^2 &= y(x) y''(x) \\
+  \implies y(x) y''(x) - {(y'(x))}^2 &= 1 \\
+\end{align*}
 
 \item
 \subsubsection*{Problem}
