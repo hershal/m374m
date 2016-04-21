@@ -141,7 +141,24 @@ Find extremals for
 \subsubsection*{Remarks}
 Assume $[a,b]=[1,2]$ and $y(1)=0$ and $y(2)=1$.
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{align*}
+  L_y &= 2y(x)+2e^x \\
+  L{y'} &= 2y'(x)
+\end{align*}
+so that
+\begin{align*}
+  L_y - \od{}{x} L_{y'} &= 0, \\
+  2y(x) + 2e^x - 2y''(x) &= 0. \\
+\end{align*}
+Solving this ODE results in
+\begin{equation*}
+  y(x) = c_1 e^x + c_2 e^{-x} + \frac{x e^x}{2}.
+\end{equation*}
+Invoking the initial conditions resolves the constants.
+\begin{equation*}
+  \boxed{y(x) = \frac{e^x x}{2}+3.11627 e^{-x}-0.921741 e^x}
+\end{equation*}
 
 \subsection{4}
 \subsubsection*{Problem}
