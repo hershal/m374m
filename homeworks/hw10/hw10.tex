@@ -226,7 +226,34 @@ you should find. Hence we have two, one, or no candidates for a local minimizer
 $y_*\in\mathcal{V}$ depending on the value of $\gamma$.
 
 \subsubsection*{Solution}
-\todo{}
+Reference \cref{fig:minilab.c-gamma-intercept}. Notice that there are two
+intersections of $y(c)$ with the $\gamma$-line when
+$\gamma>\gamma_{\#}$, one intersection when $y(c)$ is tangent to $\gamma_{\#}$,
+and no intersections when $\gamma<\gamma_{\#}$. We have found the intersection
+point as approximately $(1.2, 1.5088)$. Hence there are two, one, or zero
+candidates for a local minimizer $y_*\in\mathcal{V}$ depending on $\gamma$.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[width=10cm, height=7.5cm,
+      domain=-.5:4,
+      xmin=-.5, xmax=4, restrict x to domain=-.5:4,
+      ymin=-2, ymax=6, restrict y to domain=-2:6,
+      view={0}{90}, xlabel=$c$, ylabel=$y$,
+      axis lines=middle, xtick=\empty, ytick=\empty,
+      x label style={at={(axis cs:3.9,-0.1)},anchor=north},
+      y label style={at={(axis cs:-0.1,5.9)},anchor=east}]
+
+      \addplot[domain=-.5:4,samples=100] {cosh(x)/x} node[above right,pos=0.1]{$y(c)=\frac{\cosh c}{c}$};
+      \addplot[domain=-.5:4,samples=100] {sinh(x)/x-cosh(x)/x^2} node[below right,pos=0.15]
+      {$y'(c)=\frac{\sinh c}{c}-\frac{\cosh c}{c^2}$};
+      \addplot[dashed,domain=-1:4] {1.5088} node[below,pos=0.95]{$\gamma_{\#}$};
+      \addplot[only marks] coordinates {(1.2,1.5088)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{$\gamma_{\#}$ intercept}
+  \label{fig:minilab.c-gamma-intercept}
+\end{figure}
 
 \item
 \subsubsection*{Problem}
