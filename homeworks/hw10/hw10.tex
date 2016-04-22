@@ -168,8 +168,24 @@ Find an extremal for all
   J(y) = \int_1^2\frac{\sqrt{1+{(y')}^2}}{x}\dd{x},\quad y(1)=0,\quad y(2)=1.
 \end{equation}
 \subsubsection*{Solution}
-\todo{}
-
+Let
+\begin{align*}
+  L_y &= 0 \\
+  L_{y'} &= \frac{y'(x)}{x\sqrt{1+{(y'(x))}^2}} \\
+\end{align*}
+We may use the short form of the Euler-Lagrange equation to solve this system.
+\begin{align*}
+  L_y - \od{}{x} L_{y'} &= 0, \\
+  -\od{}{x}\frac{y'(x)}{x\sqrt{1+{(y'(x))}^2}} &= 0, \\
+\end{align*}
+Solving this (problematic) ODE results in
+\begin{equation*}
+  y(x) = \pm i e^{-c_1}\sqrt{e^2c_1-1}+c_2
+\end{equation*}
+Invoking the initial conditions resolves the constants
+\begin{equation*}
+  \boxed{y(x) = 2+i \sqrt{x^2-5}}
+\end{equation*}
 \section{Minilab}
 When stretched between two symmetrically placed rings, a thin soap film will
 form a curved surface of revolution. If we denote the profile curve by $y(x)$
