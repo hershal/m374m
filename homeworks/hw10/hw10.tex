@@ -175,16 +175,18 @@ Let
 \end{align*}
 We may use the short form of the Euler-Lagrange equation to solve this system.
 \begin{align*}
-  L_y - \od{}{x} L_{y'} &= 0, \\
-  -\od{}{x}\frac{y'(x)}{x\sqrt{1+{(y'(x))}^2}} &= 0, \\
+  c &= L_{y'}(x,y') \\
+  c &= \frac{y'(x)}{x\sqrt{1+{(y'(x))}^2}} \\
+  y'(x) &= cx\sqrt{1+{(y'(x))}^2} \\
+  {(y'(x))}^2 &= c^2x^2 + c^2 x^2 {(y'(x))}^2 \\
+  {(y'(x))}^2(1-c^2x^2) &= c^2x^2 \\
+  {(y'(x))}^2 &= \frac{c^2x^2}{1-c^2x^2} \\
+  y'(x) &= \frac{cx}{\sqrt{1-c^2x^2}} \\
+  \implies y(x) &= \frac{\sqrt{1-c_1^2x^2}}{c_1}+c_2 \\
 \end{align*}
-Solving this (problematic) ODE results in
-\begin{equation*}
-  y(x) = \pm i e^{-c_1}\sqrt{e^2c_1-1}+c_2
-\end{equation*}
 Invoking the initial conditions resolves the constants
 \begin{equation*}
-  \boxed{y(x) = 2+i \sqrt{x^2-5}}
+  \boxed{y(x) = 2-\sqrt{5-x^2}}
 \end{equation*}
 \section{Minilab}
 When stretched between two symmetrically placed rings, a thin soap film will
