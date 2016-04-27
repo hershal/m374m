@@ -80,7 +80,63 @@ Find the extremal for
 \end{equation}
 
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{align*}
+  L(x,y,y') &= y'^2/2+y'y+y'+y \\
+  L_y(x,y,y') &= 1 + y' \\
+  L_{y'}(x,y,y') &= 1 + y + y' \\
+\end{align*}
+Invoking the Euler equation results in
+\begin{equation}
+\label{eq:5b-ode}
+\begin{aligned}
+  0 &= 1 + y' - \od{}{x}(1 + y + y') \\
+  &= -y''+1 \\
+  \implies y'' &= 1 \\
+\end{aligned}
+\end{equation}
+Based on the non-free condition, this ODE may be solved by standard methods
+\begin{equation}
+  \label{eq:5b-eq1}
+  \implies y(x) = c_2 x+\frac{x^2}{2}+\frac{1}{2}
+\end{equation}
+The remaining constant $c_2$ may be determined by natural boundary condition
+\begin{equation}
+  \label{eq:5b-eq2}
+  \begin{aligned}
+    L_{y'}(b,y(b),y'(b)) &= 0 \\
+    1 + y(1) + y'(1) &= 0 \\
+  \end{aligned}
+\end{equation}
+We'll use \cref{eq:5b-eq1,eq:5b-eq2} to synthesize a condition to solve for the
+remaining constant in \cref{eq:5b-eq1}. We'll get $y(1)$ from \cref{eq:5b-eq1}.
+\begin{equation}
+  \label{eq:5b-eq1-eval}
+  \begin{aligned}
+    y(x) &= c_2x + \frac{1}{2} + \frac{x^2}{2} \\
+    y(1) &= c_2 + 1
+  \end{aligned}
+\end{equation}
+and insert \cref{eq:5b-eq1} into \cref{eq:5b-eq2}
+\begin{equation}
+  \label{eq:5b-yp}
+  \begin{aligned}
+    0 &= y'(1) + y(1) + 1  + 1 \\
+    0 &= y'(1) + c_2 + 2 \\
+    y'(1) &= -c_2 - 2 \\
+  \end{aligned}
+\end{equation}
+Deriving \cref{eq:5b-eq1-eval} and setting it equal to \cref{eq:5b-yp}.
+\begin{equation*}
+  \begin{aligned}
+    c_2 + 1 &= -c_2 - 2 \\
+    \implies c_2 &= -3/2 \\
+  \end{aligned}
+\end{equation*}
+We may re-solve \cref{eq:5b-ode} by standard methods with this additional condition
+\begin{equation*}
+\boxed{y(x) = \frac{1}{2} \left(x^2-5 x+1\right)}
+\end{equation*}
 
 \subsection{6$^1$}
 \subsubsection*{Problem}
