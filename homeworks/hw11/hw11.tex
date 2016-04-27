@@ -148,9 +148,36 @@ defined by
     y\in C^2[a,b],\quad y(a)=y_0. \\
   \end{aligned}
 \end{equation}
-
+\subsubsection*{Remarks}
+Determine the boundary-value problem that a local minimizer or maximizer must
+satisfy.
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{equation*}
+  J(y+\epsilon h) = \int_a^b L(x,y+\epsilon h, y'+\epsilon h')\dd{x} + G(y(b) + \epsilon h(b)).
+\end{equation*}
+Then
+\begin{align*}
+  \od{}{\epsilon} J(y+\epsilon h) &= \int_a^b\pd{L}{y}(x,y+\epsilon h, y'+\epsilon h') +
+                                    \pd{L}{y'}(x,y+\epsilon h, y'+\epsilon h')h'\dd{x} +
+                                    G'(y(b)+\epsilon h(b))h(b) \\
+  \delta F(y,h) &= \int_a^b g h + f h'\dd{x} + G'(y(b)+\epsilon h(b))h(b) \\
+  &= \int_a^b gh - f'h\dd{x} + {[fh]}_{x=a}^{x=b} + G'(y(b))h(b) \\
+\end{align*}
+Due to the properties of the normed vector space, $h(a)=0$ so that
+\begin{align*}
+  \delta F(y,h) &= \int_a^b gh - f'h\;\dd{x} + {[f]}_{x=b}h(b) + G'(y(b))h(b) \\
+  0 &= \int_a^b gh - f'h\;\dd{x} + ({[f]}_{x=b} + G'(y(b)))h(b) \\
+\end{align*}
+Due to the fundamental lemma of the calculus of variations, $(g-f')=0$ and
+${[f]}_{x=b} + G'(y(b))=0$. Thus, the natural boundary condition at $x=b$ is
+\begin{equation*}
+  {[f]}_{x=b} + G'(y(b))=0
+\end{equation*}
+or
+\begin{equation*}
+  \boxed{\pd{L}{y'}(b,y(b),y'(b)) + G'(y(b)) = 0 \quad y(a)=y_0.}
+\end{equation*}
 
 \subsection{7}
 \subsubsection*{Problem}
