@@ -230,5 +230,54 @@ Thus
 \end{equation*}
 
 \section{Mini-lab}
+A basic problem in geometry is to find the shortest curve along a surface
+between two points; such a curve is called a geodesic. For a cylinder of radius
+$r$, any curve along the surface is defined by $x = r\cos\theta(t)$, $y =
+r\sin\theta(t)$ and $z = z(t)$, where $\theta(t)$ and $z(t)$ are functions of $t
+\in [0,1]$, and the length of the curve (integral of the speed) is
+\begin{equation}
+  \label{eq:minilab-curve-length}
+  F(\theta,z) = \int_0^1\sqrt{r^2{[\theta'(t)]}^2 + {[z'(t)]}^2}\dd{t}
+\end{equation}
+We suppose the points P0 and P1 on the surface are $(r,0,0)$ and $(0,r,h)$. The
+shortest curve between them is that curve which minimizes the functional
+$F(\theta,z)$ in a given function space. Here we find candidates for local
+minimizers in the $C^2$-norm in the space $V=\{\theta,\;z\in
+C^2[0,1]\;|\;{(r\cos\theta,r\sin\theta,z)}_{t=0}=P_0,
+\;{(r\cos\theta,r\sin\theta,z)}_{t=1}=P_1\}$.
+
+\subsection{a}
+\subsubsection*{Problem}
+Write out the boundary-value problem that any candidate pair
+$(\theta,z)\in\mathcal{V}$ must satisfy. Using the differential equations, show
+that $z'(t)/\theta'(t)$ or $\theta'(t)/z'(t)$ must be constant. From this deduce
+that every solution pair $(\theta(t),z(t))$ must trace out a line in the
+$\theta,z$-coordinate plane, and any such line can be described by $\theta(t) =
+At + B$, $z(t) = Ct + D$, where $A$, $B$, $C$, and $D$ are arbitrary constants.
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{b}
+\subsubsection*{Problem}
+By considering the boundary conditions, show that there is a family of solutions
+to the boundary-value problem. Make and superimpose plots (in $xyz$-space) of
+the candidate curves $(x,y,z)$ = $(r\cos\theta(t),r\sin\theta(t),z(t)), t\in[0,1]$,
+for a few different choices of the constants in the family; include positive and
+negative values where possible; for plotting purposes take $r = 1$ and $h =
+1.5$.
+
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{c}
+\subsubsection*{Problem}
+The shortest among the candidate curves can be shown to be a local minimizer of
+$F$ in $\mathcal{V}$ . By inspection, guided by the plots in (b), identify this
+geodesic curve for the given points $P0$ and $P1$. If the point $P1$ were moved
+to $(−r,0,h)$, what would be the geodesic curve? Would there be only one in this
+case?
+
+\subsubsection*{Solution}
+\todo{}
 
 \end{document}
