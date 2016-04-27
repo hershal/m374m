@@ -28,7 +28,27 @@ For simplicity, change the second boundary condition on the second function to
 $y_2(\pi/4)=0$.
 
 \subsubsection*{Solution}
-\todo{}
+Let
+$$L = 4y_1^2 + y_2^2 + y_1'y_2',$$
+\begin{align*}
+  L_{y_1} &= 8 y_2, &\quad L_{y_2} &= 2 y_2, \\
+  L_{y_1'} &= y_2', &\quad L_{y_2'} &= y_1'. \\
+\end{align*}
+Invoking the Euler equation for $y_1$ and $y_2$ respectively results in
+\begin{align*}
+  0 &= 8 y_2 - \od{}{x} y_2' &\quad 0 &= 2y_1 - \od{}{x} y_1' \\
+  0 &= 8 y_2 - y_2'' &\quad 0 &= 2y_1 - y_1'' \\
+\end{align*}
+Solving this system of ODEs results in
+\begin{equation*}
+  \boxed{
+    \begin{aligned}
+      y_1(x) &= \frac{e^{-2 x} \left(-e^{4 x}+\left(e^{\pi }-1\right) e^{2 x} \cos (2 x)+e^{\pi }\right)}{2 \left(e^{\pi }-1\right)} \\
+      y_2(x) &= \frac{e^{-2 x} \left(-e^{4 x}+\left(e^{\pi }-1\right) \left(-e^{2
+              x}\right) \cos (2 x)+e^{\pi }\right)}{e^{\pi }-1}
+    \end{aligned}
+  }
+\end{equation*}
 
 \subsection{5b}
 \subsubsection*{Problem}
