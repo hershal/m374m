@@ -4152,4 +4152,134 @@ Hence every candidate for a local minimum must satisfy
 \end{align*}
 where $B>0$ is an arbitrary constant.
 
+\subsection{Recall}
+For an optimal slide problem, every candidate must satisfy
+
+\begin{align*}
+  \text{ODE} &\quad {\left(\od{y}{x}\right)}^2= \frac{B-(\gamma-\eta y)}{\gamma-\eta y},\quad 0\le x\le\ell \\
+  \text{BCs} &\quad y(0)=h,\quad y(\ell)=0.
+\end{align*}
+Let
+\begin{align*}
+  \gamma &= c^2+2gh>0 \\
+  \eta &= 2g>0 \\
+  B &>0 \\
+\end{align*}
+where $\gamma$ and $\eta$ are given constants and $B$ is arbitrary.
+
+\subsection{Solution of ODE}
+To find solution curves, we consider a parametric description.
+\begin{align*}
+  x &= f(s), \quad y = g(s) \\
+  \alpha &\le s \le \beta \\
+  \od{x}{s}&\ge0 \;\text{since}\; x\uparrow \;\text{as}\; s\uparrow
+\end{align*}
+We can choose one of $f(s)$ or $g(s)$ to simplify ODE, then solve for the other.
+The ODE requires
+\begin{equation*}
+  {\left(\od{y}{x}\right)}^2 = \frac{B-\gamma-\eta y}{\gamma - \eta y}
+\end{equation*}
+where
+\begin{equation*}
+  {\left(\od{y}{x}\right)}^2 - {\left( \frac{\od{y}{s}}{\od{x}{s}} \right)}^2
+\end{equation*}
+Rearranging gives
+\begin{equation}
+  \label{eq:dx-ds}
+  {\left( \od{x}{s} \right)}^2 = \frac{(\gamma-\eta y)}{B - (\gamma-\eta y)}{\left( \od{y}{s} \right)}^2
+\end{equation}
+To simplify, choose $y=g(s)$ such that
+\begin{equation*}
+  (\gamma-\eta y) = B\sin^2(s) \rightarrow y = \frac{\gamma-B\sin^2(s)}{\eta}
+\end{equation*}
+\begin{equation*}
+  \od{y}{s} = \frac{-2B}{\eta}\sin(s)\cos(s)
+\end{equation*}
+Substituting into \cref{eq:dx-ds} we find that $x=f(s)$ must satisfy
+\begin{align*}
+{\left( \od{x}{s} \right)}^2 &= \frac{B\sin^2(s)}{B-B\sin^2(s)}{\left( \frac{-2B}{\eta}\sin(s)\cos(s) \right)}^2 \\
+                             &= \frac{\sin^2{s}}{\cos^2{s}}\frac{4B^2}{\eta^2}\sin^2(s)\cos^2(s) \\
+                             &= \frac{4B^2}{\eta^2}\sin^4(s) \\
+  \left( \od{x}{s} \right) &= \frac{2B}{\eta}\sin^2(s) \ge 0.
+\end{align*}
+Integrating gives
+\begin{align*}
+  x &= E + \int\frac{2B}{\eta}\sin^2(s)\dd{s} \\
+  &= E + \int\frac{2B}{\eta}\left[ \frac{1}{2}-\frac{1}{2}\cos(2s) \right]\dd{s} \\
+  &= E + \frac{2B}{\eta} \int\left[ \frac{1}{2}s-\frac{1}{4}\sin(2s) \right]\dd{s} \\
+\end{align*}
+Where $\frac{2B}{\eta}>0$. Let $D=\frac{2B}{\eta}$. Hence the solution curves of
+the ODE are
+\begin{align*}
+  x(s) &= E + D\left[ s-\frac{1}{2}\sin(2s) \right] \\
+  y(s) &= \frac{\gamma}{\eta} -D\sin^2(s),\quad \alpha\le s\le\beta
+\end{align*}
+where $\eta$, $\gamma>0$ given, and $D>0$, $E$, $\alpha$, $\beta$ arbitrary
+constants. The range is $(0\le\alpha<\beta\le\pi)$ due to periodicity of
+$\sin^2(s)$ and $\sin(2s)$.
+
+\subsubsection{Boundary Conditions}
+\begin{align*}
+  (x,y) &= (0,h) &\quad E + D\left[ \alpha-\frac{1}{2}\sin(2\alpha) \right] &= 0 \\
+  @s &= \alpha &\quad \frac{\gamma}{\eta} - D\sin^2(\alpha) &= h \\
+\end{align*}
+and
+\begin{align*}
+  (x,y) &= (\ell,0) &\quad E + D\left[ \beta-\frac{1}{2}\sin(2\beta) \right] &= 0 \\
+  @s &= \beta &\quad \frac{\gamma}{\eta} - D\sin^2(\beta) &= 0. \\
+\end{align*}
+Therefore we have four equations for four unknowns $D$, $E$, $\alpha$, $\beta$.
+\subsection{Result 1}
+The BC equations have a unique solution $D>0$, $E$, $0\le\alpha<\beta\le\pi$ for
+any given $h>0$, $\ell>0$, $c\ge0$, $g>0$. Hence there is a sinle candidate for
+a local minimizer.
+\subsubsection{Sketch}
+Consider the case $c=0$. Then
+$$\frac{\gamma}{\eta}=\frac{c^2+2gh}{2g}=h$$
+The BC equations for $D>0$, $E$, $0\le\alpha<\beta\le\pi$ become
+\begin{equation}
+  \label{eq:what-is-this-1}
+  E + D\left[ \alpha-\frac{1}{2}\sin(2\alpha) \right] = 0 \\
+\end{equation}
+\begin{equation}
+  \label{eq:what-is-this-2}
+  h - D\sin^2(\alpha) = h
+\end{equation}
+\begin{equation}
+  \label{eq:what-is-this-3}
+  E + D\left[ \beta-\frac{1}{2}\sin(2\beta) \right] = \ell \\
+\end{equation}
+\begin{equation}
+  \label{eq:what-is-this-4}
+  h - D\sin^2(\beta) = 0
+\end{equation}
+\begin{align*}
+  \text{\cref{eq:what-is-this-2}} \rightarrow& D\sin^2(\alpha)=0 \\
+                                             & \sin^2(\alpha)=0 \\
+                                             & \implies \alpha=0
+\end{align*}
+\begin{align*}
+  \text{\cref{eq:what-is-this-1}},\;\alpha=0 \rightarrow& D\sin^2(\alpha)=0 \\
+                                                        & \sin^2(\alpha)=0 \\
+                                                        & \implies \alpha=0
+\end{align*}
+\todo{more equations}
+\begin{align*}
+  \text{\cref{eq:what-is-this-4}},\; \rightarrow& \frac{\ell\sin^2(\beta)}{\beta-\frac{1}{2}\sin(2\beta)}=h
+                                                & \frac{\sin^2(\beta)}{\beta-\frac{1}{2}\sin(2\beta)}=\frac{h}{\ell}
+                                                & = f(\beta)
+\end{align*}
+For $\beta\in(0,\pi]$, the func $f(\beta)$ is monotonic, non-negative, and
+\begin{align*}
+  f(\beta)&\rightarrow\infty \text{as} \beta\rightarrow0^+ \\
+  f(\pi) &= 0 \\
+\end{align*}
+\subsubsection{Result 2}
+The cycloid is a local min of $F$ in $\mathcal{V}$. in $C^2$-norm. Actually, it
+is the absolute min of $F$in $\mathcal{V}$.
+\subsubsection{Picture}
+If $\frac{h}{\ell}\ge (\text{special \#})$, where the special number is around
+$0.6$, then see pic. 2. If $0<\frac{h}{\ell}<(\text{special \#})$, then see
+pic. 3.
+
 \end{document}
