@@ -275,8 +275,28 @@ that every solution pair $(\theta(t),z(t))$ must trace out a line in the
 $\theta,z$-coordinate plane, and any such line can be described by $\theta(t) =
 At + B$, $z(t) = Ct + D$, where $A$, $B$, $C$, and $D$ are arbitrary constants.
 \subsubsection*{Solution}
-\todo{}
-
+Let
+\begin{align*}
+  L &= \sqrt{r^2{[\theta'(t)]}^2 + {[z'(t)]}^2} \\
+  L_{\theta} &= 0 &\quad L_{z} &= 0 \\
+  L_{\theta'} &= 2r^2\theta' &\quad L_{z'} &= 2z' \\
+\end{align*}
+Invoking the Euler equations for $\theta$ and $z$ respectively yields
+\begin{align*}
+  0 &= 0 - \od{}{t}2r^2\theta' &\quad 0 &= 0 - \od{}{t}2z' \\
+  0 &= -2r^2\theta'' &\quad 0 &= 2z'' \\
+\end{align*}
+so that
+\begin{equation}
+  \label{eq:minilab-a-result}
+  \begin{aligned}
+    c_1 &= \theta' &\quad c_2 &= z'. \\
+  \end{aligned}
+\end{equation}
+This result implies that $\theta'/z'=c_1/c_2=c_3$ which is constant.
+Furthermore, \cref{eq:minilab-a-result} implies that $\theta(t)=At+B$ and
+$z(t)=Ct+D$ trace out a line in the $\theta,z$-coordinate plane, where $A$, $B$,
+$C$, and $D$ are arbitrary constants.
 \subsection{b}
 \subsubsection*{Problem}
 By considering the boundary conditions, show that there is a family of solutions
