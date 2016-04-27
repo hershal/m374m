@@ -38,7 +38,35 @@ Find the extremal for
 \end{equation}
 
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{align*}
+  L(x,y,y') &= e^{2 x} \left({\left(y'\right)}^2-y^2\right) \\
+  L_y(x,y,y') &= -2 e^{2 x} y \\
+  L_{y'}(x,y,y') &= 2 e^{2 x} y' \\
+\end{align*}
+Invoking the Euler equation results in
+\begin{equation}
+\label{eq:5a-ode}
+\begin{aligned}
+  0 &= -2 e^{2 x} y - \od{}{x}2 e^{2 x} y' \\
+    &= -2 e^{2 x} y - 4e^{2x}y' - 2e^{2x}y'' \\
+  0 &= y + 2y' + y''
+\end{aligned}
+\end{equation}
+Based on the non-free condition, this ODE may be solved by standard methods
+\begin{equation*}
+  \implies y(x) = e^{-x}(1+c_2x).
+\end{equation*}
+The remaining constant $c_2$ may be determined by natural boundary condition
+\begin{align*}
+  L_{y'}(b,y(b),y'(b)) &= 2 e^{6} y'(3) \\
+  0 &= 2e^{6}y'(3) \\
+  \implies y'(3) &= 3.
+\end{align*}
+We may re-solve \cref{eq:5a-ode} standard methods with this additional condition
+\begin{equation*}
+  \boxed{y(x) = -\frac{1}{2} e^{-x} (x-2)}
+\end{equation*}
 
 \subsection{5c}
 \subsubsection*{Problem}
