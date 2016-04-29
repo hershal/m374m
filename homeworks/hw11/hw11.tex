@@ -312,8 +312,29 @@ negative values where possible; for plotting purposes take $r = 1$ and $h =
 1.5$.
 
 \subsubsection*{Solution}
-\todo{}
-
+Given that $P_0 = (r,0,0)$, $P_1=(0,r,h)$;
+$P_0={(r\cos\theta,r\sin\theta,z)}_{t=0}$,
+$P_1={(r\cos\theta,r\sin\theta,z)}_{t=1}$, we may obtain a family of solutions
+by careful consideration and logical reasoning. We'll start with $P_1$.
+\begin{equation*}
+  \begin{aligned}
+    r &= {(r\cos\theta)}_{t=0} &\quad 0 &= {(r\sin\theta)}_{t=0} &\quad 0 &=z_{t=0} \\
+    r &= {(r\cos(At+B))}_{t=0} &\quad 0 &= {(r\sin(At+B))}_{t=0} &\quad 0 &=z(0) \\
+    r &= r\cos(B) &\quad 0 &= r\sin(B) &\quad 0 &=D \\
+  \end{aligned}
+\end{equation*}
+This implies that $B=n2\pi$, where $n$ is some integer. Furthermore
+\begin{equation*}
+  \begin{aligned}
+    0 &= {(r\cos\theta)}_{t=1} &\quad r &= {(r\sin\theta)}_{t=1} &\quad h &=z_{t=1} \\
+    0 &= {(r\cos(At+B))}_{t=1} &\quad r &= {(r\sin(At+B))}_{t=1} &\quad h &=z(1) \\
+    0 &= r\cos(A+B) &\quad r &= r\sin(A+B) &\quad h &=z(1) \\
+    0 &= r\cos(A+n2\pi) &\quad r &= r\sin(A+n2\pi) &\quad h &=C \\
+  \end{aligned}
+\end{equation*}
+This implies $A=\pi(4n+1)/2$ and $z(1)=h$. Thus we may conclude that there is a
+family of solutions in $\theta(t)=At+b$ and $z(t)=Ct+D$ where $A=n2/pi$,
+$B=\pi(4n+1)/2$, $C=h$, and $D=0$, $\forall n\in\mathbb{Z}$.
 \subsection{c}
 \subsubsection*{Problem}
 The shortest among the candidate curves can be shown to be a local minimizer of
