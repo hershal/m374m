@@ -22,6 +22,8 @@
 <b><a href="http://r2labs.us/static/m374m/hw9.pdf">HW9</a></b>
 |
 <b><a href="http://r2labs.us/static/m374m/hw10.pdf">HW10</a></b>
+|
+<b><a href="http://r2labs.us/static/m374m/hw11.pdf">HW11</a></b>
 
 <p align="center">
 <b><a href="http://r2labs.us/static/m374m/notes.pdf">Notes</a></b>
