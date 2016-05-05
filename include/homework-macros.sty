@@ -20,6 +20,7 @@
 \usepackage{pgfplots}
 \usepackage[strict]{changepage}
 \usepackage[bindingoffset=0.0in,hmarginratio=1:1]{geometry}
+\usepackage{etoolbox}
 
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{external}
@@ -59,3 +60,9 @@
 
 \let\stdsection\section%
 \renewcommand{\section}{\cleardoublepage\stdsection}
+\let\stdsubsection\subsection%
+\renewcommand{\subsection}{
+  \ifnumequal{\value{subsection}}{0}
+  {\stdsubsection}
+  {\clearpage\stdsubsection}
+}
