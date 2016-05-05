@@ -4282,4 +4282,145 @@ If $\frac{h}{\ell}\ge (\text{special \#})$, where the special number is around
 $0.6$, then see pic. 2. If $0<\frac{h}{\ell}<(\text{special \#})$, then see
 pic. 3.
 
+
+\section{\todo{}}
+\section{\todo{}}
+\section{\todo{}}
+\todo{}
+Condition (2) implies that $y_*$ must also satisfy
+$$\pd[2]{L}{y''}(x,y_*,y_*'',y_*''')\ge0,\quad a\le x\le b.$$
+For a local maximizer, change $\ge$ to $\le$ in (2), (2').
+\subsection{Sketch of (1)$\rightarrow$(1')}
+Let $y\in\mathcal{V},\;h\in\mathcal{V}_0$ be arbitrary.
+\begin{equation*}
+  F(y+\epsilon h) = \int_a^b L(x,y+\epsilon h, y'+\epsilon h', y''+\epsilon h'')\dd{x}
+\end{equation*}
+so that
+\begin{equation*}
+  \begin{aligned}
+    {\left[ \od{}{\epsilon}F(y+\epsilon h) \right]}_{\epsilon=0} &=
+    \int_a^b\pd{L}{y}h + \pd{L}{y'}h' + \pd{L}{y''}h''\dd{x}
+    &= \int_a^b gh + fh' + qh''\dd{x}
+  \end{aligned}
+\end{equation*}
+Integration by parts yields
+\begin{equation*}
+    \delta F(y,h) = \int_a^b gh-f'h-g'h' \dd{x} + \cancel{{\left[ fh \right]}_{x=a}^{x=b}} + \cancel{{\left[ gh' \right]}_{x=a}^{x=b}}
+\end{equation*}
+The cancels occur because $h\in\mathcal{V}_0$. Another integration by parts
+yields
+\begin{equation*}
+  \delta F(y,h) = \int_a^b gh-f'h-g'h' \dd{x} - \cancel{{[g'h]}_{x=a}^{x=b}}
+\end{equation*}
+The cancel occurs because $h\in\mathcal{V}_0$. If $y=y_*$ is a local minimizer,
+then
+\begin{equation*}
+  \delta F(y,h) = \int_a^b(g-f'+q'')h\dd{x} = 0,\quad \forall h\in\mathcal{V}_0
+\end{equation*}
+This condition can be satisfied only if
+\begin{equation*}
+  g - f' + q'' =0,\quad a\le x \le b
+\end{equation*}
+This leads to the stated ODE.
+
+\subsection{Example}
+\begin{equation*}
+  \mathcal{V} = \left\{ y\in C^4[0,1]\;|\;y(0)=1,y(1)=0,y'(0)=0,y'(1)=0 \right\}
+\end{equation*}
+See pic 2.
+\begin{equation*}
+  F(y)=\int_0^1 {(y'')}^2 + yy' + {(y')}^2 - y \dd{x}
+\end{equation*}
+\begin{enumerate}[(i)]
+\item Find candidates for local min/max
+  \begin{equation*}
+    \begin{aligned}
+      \text{ODE:}\quad& [L_y] - [L_{y'}]' + [L_{y''}]'' = 0,\quad 0\le x \le 1 \\
+      &[y'-1] - [y+2y']' + [2y'']'' = 0 \\
+      &\cancel{y'}-1-\cancel{y'}-2y''+2y''''=0
+    \end{aligned}
+  \end{equation*}
+The homogenous solution looks like
+  \begin{equation*}
+    \begin{aligned}
+      y'''' - y'' &= \frac{1}{2} \\
+      y_H'''' - y_H'' &= 0 \\
+      r^4 - r^2 &= 0 \\
+      r^2(r^2-1) &= 0 \\
+    \end{aligned}
+  \end{equation*}
+$r=0,0,-1,1$ so that
+\begin{equation*}
+  y_H(x) = \cancel{c_1e^{0x}} + \cancel{c_2e^{0x}} + c_3e^x + c_4e^{-x}
+\end{equation*}
+The particular solution looks like
+\begin{equation*}
+  \begin{aligned}
+    y_P'''' - y_P'' &= \frac{1}{2} \\
+    y_P &= Ax^2
+    \implies y_P(x) &= -\frac{1}{4}x^2
+  \end{aligned}
+\end{equation*}
+The boundary conditions end up
+\begin{equation*}
+  \begin{aligned}
+    y(0)&=1, &\quad y'(0)&= 0 \\
+    y(1)&=0, &\quad y'(1)&= 0 \\
+  \end{aligned}
+\end{equation*}
+This gives us a unique solution for $c_1,\ldots,c_4$.
+\item
+Use condition (2') to classify
+\begin{equation*}
+  \pd[2]{L}{y''}(x,y_*,y_*',y_*'') = 2 > \ge 0,\quad 0\le x \le 1
+\end{equation*}
+$\therefore$ candidate could be a local min (actually an abs min).
+\end{enumerate}
+\subsection{Sketch of (2)$\rightarrow$(2')}
+Consider 1st order case
+\begin{equation*}
+  F(y) = \int_a^b L(x,y,y')\dd{x}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    \mathcal{V} &= \left\{ y\in C^2[a,b]\;|\;y(a)=\alpha,\;y(b)=\beta \right\} \\
+    \mathcal{V}_0 &= \cdots
+  \end{aligned}
+\end{equation*}
+\subsubsection{Claim}
+The condition
+\begin{equation}
+  \label{eq:what-is-this-2}
+  {\left[ \od[2]{}{\epsilon}F(y_*+\epsilon h) \right]}_{\epsilon=0}\ge 0,\quad \forall h\in \mathcal{V}_0
+\end{equation}
+implies
+\begin{equation}
+  \label{eq:what-is-this-2-prime}
+  \pd[2]{L}{y'}(x,y_*,y_*')\ge 0,\quad a \le x \le b
+\end{equation}
+
+\subsubsection{Proof}
+\begin{equation*}
+  {\left[ \od[2]{}{\epsilon}F(y_*+\epsilon h] \right]}_{\epsilon=0} = \int_a^bL_{y'y'}{(h')}^2 + 2L_{yy'}hh' + L_{yy}h^2 \dd{x}
+\end{equation*}
+Let $x_{\#}\in(a,b)$, $N\ge1$ be arbitrary and consider $h_{\#}$ as shown. See
+pic. 3, 4. By condition (2, \cref{eq:what-is-this-2}) with $h=h_{\#}$ we have
+\begin{equation*}
+  \begin{aligned}
+    \int_a^bL_{y'y'}{(h_{\#}')}^2 + 2L_{yy'}h_{\#}h_{\#}' + L_{yy}^2h_{\#}^2 \ge 0 \\
+    \int_{x_{\#}+\frac{1}{N}}^{x_{\#}-\frac{1}{N}}L_{y'y'}O(1) + 2L_{yy'}O\left(
+      \frac{1}{N} \right) + L_{yy}^2O\left( \frac{1}{N^2} \right) \ge 0 \\
+  \end{aligned}
+\end{equation*}
+Letting $N\rightarrow\infty$ the terms with $h_{\#}$ vanish and interval
+$\left(x_{\#}-\frac{1}{N},x_{\#}+\frac{1}{N}\right)$ shrints onto $x_{\#}$. The
+only way for integral to be $\ge 0$ is if
+\begin{equation*}
+  {\left[ L_{y'y'}{(h_{\#})}^2 \right]}_{x=x_{\#}} \ge 0
+\end{equation*}
+or
+\begin{equation*}
+  {\left[ L_{y'y'} \right]}_{x=x_{\#}} \ge 0
+\end{equation*}
+Result holds for any $x_{\#}\in(a,b)$ and also $x_{\#}=a,b$ by continuity
 \end{document}
