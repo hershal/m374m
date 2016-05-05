@@ -23,7 +23,24 @@ Find the extremals for the functional:
   \end{aligned}
 \end{equation}
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{align*}
+  L &= yy'+{(y'')}^2, \\
+  L_y &= y', \\
+  L_{y'} &= y, \\
+  L_{y''} &= 2y''. \\
+\end{align*}
+The Euler equation turns out to be
+\begin{align*}
+  0 &= L_y - \od{}{x}L_{y'} + \od[2]{}{x}L_{y''} \\
+    &= y' - \od{}{x}y + \od[2]{}{x}2y'' \\
+    &= y'''' \\
+\end{align*}
+This system with initial conditions may be solved by standard methods of solving
+ODEs.
+\begin{equation*}
+  \boxed{y(x) = x + x^3}
+\end{equation*}
 
 \subsection{1e}
 Find the extremals for the functional:
