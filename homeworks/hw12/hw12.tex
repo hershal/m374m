@@ -7,6 +7,7 @@
 
 \usepackage{homework-macros}
 \tikzexternalize%
+\usetikzlibrary{patterns}
 
 \begin{document}
 \maketitle
@@ -132,7 +133,20 @@ Thus
 \subsubsection*{Problem}
 Determine the equation of the shortest arc in the first quardrant that passes
 through $(0,0)$ and $(1,0)$ and encloses a prescribed area $A$ with the $x$
-axis, where $0<A\le\pi/8$.
+axis, where $0<A\le\pi/8$. Reference \cref{fig:4.6.5}.
+\begin{figure}[tp]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=3cm]
+    \draw[<-] (0,1)node[left]{$y$} -- (0,0);
+    \draw[->] (0,0) -- (1.25,0)node[below]{$x$};
+    \draw (0,0)node[circle,fill,inner sep=1pt]{};
+    \draw (1,0)node[circle,fill,inner sep=1pt]{};
+    \draw[pattern=north east lines] (0,0) to[out=20,in=160] (1,0){};
+    \draw[->] (0.5,0.5)node[above]{$A$} -- (0.5,0.15);
+  \end{tikzpicture}
+  \caption{}
+  \label{fig:4.6.5}
+\end{figure}
 \subsubsection*{Remarks}
 Find extremals for $F(y)=\int_0^1\sqrt{1+{(y')}^2}\dd{x}$ subject to
 $G(y)=\int_0^1y\;\dd{x}=A$ where $y(0)=0$ and $y(1)=0$. For concreteness, assume
