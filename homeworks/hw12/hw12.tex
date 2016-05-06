@@ -155,6 +155,65 @@ $A=\pi/16$. What happens if $A>\pi/8$?
 \todo{}
 
 \section{Mini-lab}
+When its ends are attached to two fixed points, a chain of given length and
+weight will hang to form a suspension curve. The resulting shape can be
+described as that curve $y(x)$, $x\in[-L,L]$ which minimizes the chain
+potential energy $E(y)$ subject to the length condition $G(y)=\ell$ where
+\begin{equation}
+  \label{eq:minilab-problem}
+  E(y) = \int_{-L}^{L}\rho g y(x)\sqrt{1+{[y'(x)]}^2\;\dd{x}},\quad
+  G(y)=\int_{-L}^{L}\sqrt{1+{[y'(x)]}^2\;\dd{x}}.
+\end{equation}
+In the above, $\ell$ is the chain length, $\rho$ is the chain mass per unit
+length, and $g$ is gravitational acceleration. Here we find candidates for local
+minimizers in the $C^2$-norm in the space $V-\{y\in
+C^2[-L,L]\;|\;y(-L)=0,\;y(L)=0\}$. We assume $\rho$, $g$, $\ell$, and $L$ are
+given positive constants.
+
+\subsection{}
+\subsubsection*{Problem}
+\label{sec:minilab-a}
+Write out the boundary-value problem that any candidate curve $y\in V$ must
+satisfy, and find the general solution of the differential equation.
+
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{}
+\subsubsection*{Problem}
+By relabeling constants as necessary, show that the conditions $y(-L)=0$,
+$y(L)=0$, and $G(y)=\ell$ can be reduced to two equations for two unknown
+constants $b$ and $c$; specifically
+\begin{equation}
+  \label{eq:minilab-b-problem}
+  \frac{bc}{L}=\cosh(c),\quad \frac{\ell c}{2L}=\sinh(c)
+\end{equation}
+
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{}
+\subsubsection*{Problem}
+Show that \cref{sec:minilab-a} has two solutions for the pair $b$, $c$ if
+$\ell/(2L)>1$, and no solution if $0<\ell/(2L)<1$. Hence we have two or no
+candidate curves depending on the ratio $\ell/(2L)$. What happens if
+$\ell/(2L)=1$? What is the only possible shape of the suspension curve in this
+case? What is the physical reason there can be no solution if $0<\ell/(2L)<1$?
+
+\subsubsection*{Solution}
+\todo{}
+
+\subsection{}
+\subsubsection*{Problem}
+In the case when $ell/(2L)>1$ and there are two candidate curves, it can be
+shown that one is a local minimizer and the other a local maximizer. Find and
+make plots of these curves for the case of a chain of length $\ell=0.5\text{m}$
+of mass $m-0.005\text{kg}$ (so $\rho=m/\ell$) suspended between points with
+separation $2L=0.2\text{m}$, where $g=9.8\text{m/s$^2$}$. Indicate which is the
+minimizer and maximizer; this should be clear. What is the middle sag-depth
+$q=|y(0)|$ for the energy-minimizing shape?
+
+\subsubsection*{Solution}
 \todo{}
 
 \end{document}
