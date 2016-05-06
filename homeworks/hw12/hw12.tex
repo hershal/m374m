@@ -89,7 +89,44 @@ subject to
   \int_0^{\pi}y^2\dd{x} = 1.
 \end{equation}
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{equation*}
+  L = {y'}^2,\quad G = y^2, \quad L^* = L-\lambda G
+\end{equation*}
+so that
+\begin{align*}
+  L^*_y &= 2\lambda y \\
+  L^*_{y'} &= 2y'.
+\end{align*}
+The Euler equation turns out to be
+\begin{align*}
+  0 &= L^*_y - \od{}{x}L^*{y'} \\
+    &= 2\lambda y - \od{}{x} 2y' \\
+    &= 2\lambda y - 2y'' \\
+    &= y'' - \lambda y
+\end{align*}
+This system with initial conditions may be solved by standard methods of solving
+ODEs.
+\begin{equation}
+  \label{eq:4.6.1-y}
+  y(x) = c \sin(\sqrt{h}x),\quad h \in \mathbb{Z},\quad h\ge1, \quad h^2=-\lambda
+\end{equation}
+We may involve the constraint in order to resolve the final constant from
+\cref{eq:4.6.1-y}.
+\begin{align*}
+  1 &= \int_0^{\pi} c^2 {\sin(\sqrt{h}x)}^2 \dd{x} \\
+    &= c^2\frac{\pi}{2}-\frac{\sin(2\pi\sqrt{h})}{4\sqrt{h}} \\
+\end{align*}
+given that $h\in\mathbb{Z}$ and $h^2=-\lambda$, the $\sin(2\pi\sqrt{h})$
+parameter vanishes so that
+\begin{align*}
+  1 &= \frac{c^2\pi}{2} - 0 \\
+  \implies c &= \sqrt{\frac{\pi}{2}}. \\
+\end{align*}
+Thus
+\begin{equation*}
+  \boxed{y(x) = \sqrt{\frac{\pi}{2}} \sin\left(\sqrt{-\lambda}x\right).}
+\end{equation*}
 
 \subsection{5$^1$}
 \subsubsection*{Problem}
