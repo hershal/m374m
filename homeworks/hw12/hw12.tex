@@ -177,7 +177,50 @@ Write out the boundary-value problem that any candidate curve $y\in V$ must
 satisfy, and find the general solution of the differential equation.
 
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{align*}
+  L &= \rho g y \sqrt{1+{[y'(x)]}^2} \\
+  M &= \sqrt{1+{[y'(x)]}^2} \\
+  N &= L + \lambda N \\
+    &= \rho g y(x)\sqrt{1+{[y'(x)]}^2} + \sqrt{1+{[y'(x)]}^2} \\
+  N_{y'} &= \frac{(\rho g y(x) + \lambda) y'(x)}{\sqrt{1+{[y'(x)]}^2}} \\
+\end{align*}
+The Euler equation turns out to be
+\begin{align*}
+  c &= N - y'(x)N_{y'} \\
+    &= (\rho g y(x) + \lambda)\sqrt{1+{[y'(x)]}^2} -
+      \frac{{[y'(x)]}^2(\rho g y(x) + \lambda)}{\sqrt{1+{[y'(x)]}^2}} \\
+\end{align*}
+From this result we may obtain a relation for ${[y'(x)]}^2$.
+\begin{equation}
+  \label{eq:minilab-a-yps}
+  {[y'(x)]}^2 = \frac{{(\rho g y(x) + \lambda)}^2}{c^2} - 1
+\end{equation}
+Let $zc = \rho g y(x) + \lambda$. Thus
+\begin{align*}
+  cz(x) &= \rho g y(x) + \lambda \\
+  \implies y(x) &= \frac{cz(x)}{\rho g} - \frac{\lambda}{\rho g} \\
+  \implies y'(x) &= \frac{c}{\rho g} \od{z}{x}.
+\end{align*}
+Now we may rewrite \cref{eq:minilab-a-yps} in terms of $z(x)$.
+\begin{align*}
+  \frac{c^2}{\rho^2g^2}{\left( \od{z}{x} \right)}^2
+  &= \frac{z^2\cancel{c^2}}{\cancel{c^2}} - 1 \\
+  \od{z}{x} &= \frac{\rho g }{c}\sqrt{z^2-1} \\
+\end{align*}
+We may solve this ODE by standard methods.
+\begin{equation}
+  \label{eq:minilab-b-z}
+  \begin{aligned}
+    z(x) &= \frac{e^{-\frac{\rho g x}{c}-b} + e^{\frac{\rho g x}{c}+b}}{2} \\
+    &= \cosh\left(\frac{\rho g x}{c} + b\right)
+  \end{aligned}
+\end{equation}
+Rewriting \cref{eq:minilab-b-z} in terms of $y(x)$ gives us the general
+solution.
+\begin{equation*}
+  \boxed{y(x) = \frac{c}{\rho g}\cosh\left(\frac{\rho g x}{c}+b\right) - \frac{\lambda}{\rho g}}
+\end{equation*}
 
 \subsection{}
 \subsubsection*{Problem}
