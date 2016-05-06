@@ -65,11 +65,14 @@ The Euler equation turns out to be
   0 &= L_y - \od{}{x}L_{y'} + \od[2]{}{x}L_{y''} \\
     &= 2y - \od{}{x}(2y'+2y''+2y') + \od[2]{}{x}(2y''+2y') \\
     &= 2y - \od{}{x}(4y'+2y'') + \od[2]{}{x}(2y'+2y'') \\
+    &= 2y - (4y''+2y''') + (2y'''+2y''''') \\
+    &= 2y - 4y'' + 2y''''' \\
+    &= y - 2y'' + y''''' \\
 \end{align*}
 This system with initial conditions may be solved by standard methods of solving
 ODEs.
 \begin{equation*}
-  \boxed{y(x) = 3xe^x+xe^x}
+  \boxed{y(x) = 3xe^{-x}+e^{-x}}
 \end{equation*}
 
 \section{\S~4.6}
