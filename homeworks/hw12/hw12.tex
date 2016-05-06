@@ -233,7 +233,46 @@ constants $b$ and $c$; specifically
 \end{equation}
 
 \subsubsection*{Solution}
-\todo{}
+$y(-L)=0$ and $y(L)=0$ implies that
+\begin{equation*}
+  \begin{aligned}
+    \frac{a}{\rho g}\cosh\left(\frac{\rho g L}{a}+d\right) - \frac{\lambda}{\rho g}
+    &= \frac{a}{\rho g}\cosh\left(-\frac{\rho g L}{a}+d\right) - \frac{\lambda}{\rho g} \\
+    \frac{a}{\rho g}\cosh\left(\frac{\rho g L}{a}+d\right)
+    &= \frac{a}{\rho g}\cosh\left(-\frac{\rho g L}{a}+d\right) \\
+    \cosh\left(\frac{\rho g L}{a}+d\right) &= \cosh\left(-\frac{\rho g L}{a}+d\right).
+  \end{aligned}
+\end{equation*}
+Since $\cosh$ is symmetric, $\implies d=0$.
+\begin{align*}
+  \therefore \; y(x) &= \frac{a}{\rho g}\cosh\left(\frac{\rho g x}{a}\right)
+  - \frac{\lambda}{\rho g},\\
+  y'(x) &= \sinh\left(\frac{\rho g x}{a}\right).
+\end{align*}
+We'll invoke the length condition $G(y)=\ell$:
+\begin{align*}
+  \ell
+  &= \int_{-L}^L \sqrt{1 + {\left[ \sinh\left(\frac{\rho g x}{a}\right) \right]}^2} \dd{x} \\
+  &= \int_{-L}^L \cosh\left(\frac{\rho g x}{a}\right) \dd{x} \\
+  &= \left[ \frac{a}{\rho g}\sinh\left( \frac{\rho g x}{a} \right) \right]_{-L}^{L} \\
+  &= \frac{2a}{\rho g}\sinh\left( \frac{\rho g L}{a} \right) \\
+\end{align*}
+Let $c = \frac{\rho g L}{a}$. Then
+\begin{equation*}
+  \boxed{\frac{\ell c}{2L} = \sinh(c)}
+\end{equation*}
+For $y(L)=0$, we have
+\begin{align*}
+  y(L) &= \frac{a}{\rho g}\cosh\left(\frac{\rho g L}{a}\right) - \frac{\lambda}{\rho g} \\
+  0 &= \frac{a}{\rho g}\cosh\left(\frac{\rho g L}{a}\right) - \frac{\lambda}{\rho g} \\
+  \frac{\lambda}{\rho g} &= \frac{a}{\rho g}\cosh\left(\frac{\rho g L}{a}\right) \\
+  \frac{\lambda}{a} &= \cosh\left( \frac{\rho g L}{a} \right) \\
+  \frac{\lambda}{a} &= \cosh(c) \\
+\end{align*}
+Let $b = \frac{\rho g L}{a}$. Thus
+\begin{equation*}
+  \boxed{\frac{bc}{L}=\cosh(c).}
+\end{equation*}
 
 \subsection{}
 \subsubsection*{Problem}
