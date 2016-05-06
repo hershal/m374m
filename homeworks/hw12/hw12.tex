@@ -53,7 +53,24 @@ Find the extremals for the functional:
   \end{aligned}
 \end{equation}
 \subsubsection*{Solution}
-\todo{}
+Let
+\begin{align*}
+  L &= 2y \\
+  L_y &= 2y' + 2y'' + 2y' \\
+  L_{y'} &= 2y' + 2y'' + 2y' \\
+  L_{y''} &= 2y'' + 2y' \\
+\end{align*}
+The Euler equation turns out to be
+\begin{align*}
+  0 &= L_y - \od{}{x}L_{y'} + \od[2]{}{x}L_{y''} \\
+    &= 2y - \od{}{x}(2y'+2y''+2y') + \od[2]{}{x}(2y''+2y') \\
+    &= 2y - \od{}{x}(4y'+2y'') + \od[2]{}{x}(2y'+2y'') \\
+\end{align*}
+This system with initial conditions may be solved by standard methods of solving
+ODEs.
+\begin{equation*}
+  \boxed{y(x) = 3xe^x+xe^x}
+\end{equation*}
 
 \section{\S~4.6}
 \subsection{1}
