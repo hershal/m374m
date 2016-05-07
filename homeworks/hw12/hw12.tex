@@ -283,7 +283,27 @@ $\ell/(2L)=1$? What is the only possible shape of the suspension curve in this
 case? What is the physical reason there can be no solution if $0<\ell/(2L)<1$?
 
 \subsubsection*{Solution}
-\todo{}
+When $\ell/2L>1$, $\sinh(c)=c\ell/2L$ has three solutions; when $0<\ell/2L<1$,
+no solutions; when $\ell/2L=1$, $c$ is tangent to $\sinh(c)$ at $(0,0)$.
+Reference \cref{fig:minilab-c}.
+
+\begin{figure}[htp]
+  \centering
+  \begin{tikzpicture}[x=4cm,y=3cm,scale=0.5]
+    \draw[<->] (0,3)node[left]{$y$} -- (0,-3.1);
+    \draw[<->] (-3,0) -- (3.1,0)node[below]{$c$};
+    \draw[domain=-2:2] plot({\x}, {(e^(\x)-e^(-\x))/2}) node[right]{$\sinh(c)$};
+    \draw[domain=-3:3] plot({\x}, {\x}) node[right]{$c$};
+    \draw[domain=-3:3,dotted] plot({\x}, {0.5*\x}) node[right]{$0.5c$};
+    \draw[domain=-2:2,dashed] plot({\x}, {1.5*\x}) node[right]{$1.5c$};
+    \draw (0,0)node[circle,fill,inner sep=1pt]{};
+    \draw (1.62213,2.433195)node[circle,fill,inner sep=1pt]{};
+    \draw (-1.62213,-2.433195)node[circle,fill,inner sep=1pt]{};
+  \end{tikzpicture}
+  \caption{$\sinh(c)$ compared to various ratios of $\ell/2L$}
+  \label{fig:minilab-c}
+\end{figure}
+
 
 \subsection{}
 \subsubsection*{Problem}
