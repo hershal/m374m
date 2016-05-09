@@ -285,14 +285,15 @@ case? What is the physical reason there can be no solution if $0<\ell/(2L)<1$?
 \subsubsection*{Solution}
 When $\ell/2L>1$, $\sinh(c)=c\ell/2L$ has three solutions; when $0<\ell/2L<1$,
 no solutions; when $\ell/2L=1$, $c$ is tangent to $\sinh(c)$ at $(0,0)$.
-Reference \cref{fig:minilab-c}.
+Reference \cref{fig:minilab-c}. There is no solution when $0<\ell/2L<1$ since
+the rope is shorter than the distance between the two points.
 
 \begin{figure}[htp]
   \centering
   \begin{tikzpicture}[x=4cm,y=3cm,scale=0.5]
     \draw[<->] (0,3)node[left]{$y$} -- (0,-3.1);
     \draw[<->] (-3,0) -- (3.1,0)node[below]{$c$};
-    \draw[domain=-2:2] plot({\x}, {(e^(\x)-e^(-\x))/2}) node[right]{$\sinh(c)$};
+    \draw[domain=-1.82:1.82] plot({\x}, {(e^(\x)-e^(-\x))/2}) node[left]{$\sinh(c)$};
     \draw[domain=-3:3] plot({\x}, {\x}) node[right]{$c$};
     \draw[domain=-3:3,dotted] plot({\x}, {0.5*\x}) node[right]{$0.5c$};
     \draw[domain=-2:2,dashed] plot({\x}, {1.5*\x}) node[right]{$1.5c$};
