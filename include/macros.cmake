@@ -6,6 +6,12 @@ add_custom_command(OUTPUT homework-macros.sty
   COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/include/homework-macros.sty ./homework-macros.sty
 )
 
+add_custom_command(OUTPUT notes-macros.sty
+  DEPENDS ${PROJECT_SOURCE_DIR}/include/macros.sty ${PROJECT_SOURCE_DIR}/include/notes-macros.sty
+  COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/include/macros.sty ./macros.sty
+  COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/include/notes-macros.sty ./notes-macros.sty
+)
+
 add_custom_command(OUTPUT cheat-sheet-macros.sty
   DEPENDS ${PROJECT_SOURCE_DIR}/include/macros.sty ${PROJECT_SOURCE_DIR}/include/cheat-sheet-macros.sty
   COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/include/macros.sty ./macros.sty
