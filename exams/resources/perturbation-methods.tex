@@ -65,10 +65,41 @@
     solution.
   \end{enumerate}
 
-\item[Singularly Perturbed w/ Differential Solutions] \hfill
-  \begin{enumerate}
-  \item
-  \end{enumerate}
+\item[Boundary Layers] Also known as singularly perturbed with differential
+  solutions. Usually ``outer'' layer is away from $\epsilon\ll0$ (i.e.
+  $t>\delta\epsilon$), and the ``inner'' layer is close to $\epsilon\ll0$ (i.e.
+  $\epsilon\downarrow0$).
+  \begin{description}
+  \item [Outer Boundary Approximation] \hfill
+    \begin{enumerate}
+    \item Collect powers of $\epsilon$.
+    \item Solve for $y$ and invoke outer boundary condition. This is
+      $y_{\text{outer}}$.
+    \end{enumerate}
+  \item[Inner Boundary Condition (Problematic Layer)] \hfill
+    \begin{enumerate}
+    \item Introduce a change of variables $t=\epsilon^{\alpha}s$,
+      $s=\epsilon^{-\alpha}t$, $t=\epsilon^{\alpha}s$. Note that derivatives
+      follow this rule:
+      \begin{align*}
+        \od{y}{t} &= \od{y}{s}\od{s}{t} \\
+        \od[2]{y}{t} &= \od{}{t}\od{y}{t} = \od{}{s}\od{y}{t}\od{s}{t}
+      \end{align*}
+    \item Remove the $\epsilon$ coefficient on the highest derivative; find the
+      minimum $\alpha$ that allows the $\epsilon$ powers to be $\ge1$.
+    \item Collect powers of $\epsilon$.
+    \item Solve for $y$ and invoke inner boundary condition. This is
+      $y_{\text{inner}}$.
+    \end{enumerate}
+  \item[Matching] \hfill
+    \begin{enumerate}
+    \item set up
+      $\lim_{x\rightarrow0}y_{\text{inner}}=\lim_{s\rightarrow\infty}y_{\text{outer}}$
+      and solve for remaining constants.
+    \item The uniform approximation is $y(x)=y_{\text{inner}}(x) +
+      y_{\text{outer}}(x)-C$, where $C$ is the common limit.
+    \end{enumerate}
+  \end{description}
 
 \item[Taylor Series]
   $$f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}{(x-a)}^2+\frac{f^{(3)}(a)}{3!}{(x-a)}^3+\cdots$$

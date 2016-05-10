@@ -1,29 +1,2 @@
-\item[Boundary Layers] \hfill
-  \begin{description}
-  \item [Outer Boundary Approximation] \hfill
-    \begin{enumerate}
-    \item Collect powers of $\epsilon$.
-    \item Solve for $y$ and invoke outer boundary condition. This is
-      $y_{\text{outer}}$.
-    \end{enumerate}
-  \item[Inner Boundary Condition (Problematic)] \hfill
-    \begin{enumerate}
-    \item Introduce a change of variables $t=\epsilon^{\alpha}s$,
-      $s=\epsilon^{-\alpha}t$, $t=\epsilon^{\alpha}s$.
-    \item Remove the $\epsilon$ coefficient on the highest derivative; find the
-      minimum $\alpha$ that allows the $\epsilon$ powers to be $\ge1$.
-    \item Collect powers of $\epsilon$.
-    \item Solve for $y$ and invoke inner boundary condition. This is
-      $y_{\text{inner}}$.
-    \end{enumerate}
-  \item[Matching] \hfill
-    \begin{enumerate}
-    \item set up
-      $\lim_{x\rightarrow0}y_{\text{inner}}=\lim_{s\rightarrow\infty}y_{\text{outer}}$
-      and solve for remaining constants.
-    \item The uniform approximation is $y(x)=y_{\text{inner}}(x) +
-      y_{\text{outer}}(x)-C$, where $C$ is the common limit.
-    \end{enumerate}
-  \end{description}
 \item[Euler Equation]
   $$L_y-\od{}{x}L_{y'}+\od[2]{}{x}L_{y''}-\cdots+(-1)^n\od[n]{}{n}L_{y^{(n)}}=0$$
