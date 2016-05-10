@@ -176,7 +176,7 @@ becomes a second-order ODE.\@
 \begin{equation}
   \label{eq:3.4.3-ys}
   \begin{aligned}
-    y''(s) + (\epsilon^{2}+2\epsilon+1)y'(s) &= \epsilon^{2\alpha-1} \\
+    y''(s) + (\epsilon^{2}s^{2}+2\epsilon s+1)y'(s) &= \epsilon^{2\alpha-1} \\
     \implies y''(s) + y'(s) &= 0 \\
   \end{aligned}
 \end{equation}
@@ -185,7 +185,7 @@ substitution so that we may solve for $y(s)$.
 \begin{equation*}
   \begin{aligned}
     y(s) &= y(\epsilon^{-\alpha}t) \\
-    y'(s) &= \epsilon^{-\alpha}y(\epsilon^{-\alpha}t) \\
+    y'(s) &= \epsilon^{-\alpha}y'(\epsilon^{-\alpha}t) \\
     \implies \epsilon^{1-\alpha}y'(0) &= 1.
   \end{aligned}
 \end{equation*}
@@ -207,10 +207,10 @@ Now we'll perform the matching step to resolve $c_1$.
     \implies c_1 &= 3.
   \end{aligned}
 \end{equation*}
-Thus the uniform approximation in the form of $y(x)=y_0(x)+y_i(x)-C$, where $C$
+Thus the uniform approximation in the form of $y(t)=y_0(t)+y_i(t)-C$, where $C$
 is the common limit, is
 \begin{equation*}
-  \boxed{y(x)=-\frac{1}{1+t}+3-e^{-s}.}
+  \boxed{y(t)=-\frac{1}{1+t}+3-e^{-s}.}
 \end{equation*}
 
 \section{Programming Minilab}
