@@ -1,2 +1,32 @@
 \item[Euler Equation]
-  $$L_y-\od{}{x}L_{y'}+\od[2]{}{x}L_{y''}-\cdots+(-1)^n\od[n]{}{n}L_{y^{(n)}}=0$$
+  $$L_y-\od{}{x}L_{y'}+\od[2]{}{x}L_{y''}-\cdots+{(-1)}^n\od[n]{}{n}L_{y^{(n)}}=0$$
+\item[1st Order Fixed-Fixed] Given
+  $$F(y) = \int_a^b f(x)\dd{x}, \quad y(a)=x_0, \quad y(b)=x_1$$
+  \begin{enumerate}
+  \item Let
+    \begin{align*}
+      L(x,y(x),y'(x)) &= f(x) \\
+      L_{y}(x,y(x),y'(x)) &= \od{f(x)}{y} \\
+      L_{y'}(x,y(x),y'(x)) &= \od{f(x)}{y'} \\
+    \end{align*}
+  \item Use an Euler equation and solve for $y(x)$. Invoke boundary conditions
+    to resolve the constants. This is the extremal.
+  \end{enumerate}
+\item[1st Order Fixed-Free] Given
+  $$F(y) = \int_a^b f(x)\dd{x}, \quad y(a)=x_0, \quad y(b)\;\text{free}$$
+  \begin{enumerate}
+  \item Let
+    \begin{align*}
+      L(x,y(x),y'(x)) &= f(x) \\
+      L_{y}(x,y(x),y'(x)) &= \od{f(x)}{y} \\
+      L_{y'}(x,y(x),y'(x)) &= \od{f(x)}{y'} \\
+    \end{align*}
+  \item Use an Euler equation and solve for $y(x)$. Invoke the boundary
+    condition to resolve a constant. You will have one unresolved constant after
+    this.
+  \item Invoke the Natural Boundary Condition $L_{y'}=0$ about the free
+    endpoint. This will give a second boundary.
+  \item Use this second boundary to resolve the remaining constant.
+  \end{enumerate}
+\item[\todo{2nd Order Fixed-Fixed}]
+\item[\todo{Multivariable Order Fixed-Fixed}]
