@@ -2278,6 +2278,8 @@ $\epsilon^3\sin\epsilon\ne0(\epsilon^3)$, but $\epsilon^3\sin\epsilon=1(\epsilon
 $$\lim_{\epsilon\downarrow0}\abs{\frac{\epsilon^3\sin\epsilon}{\epsilon^4}}=1.$$
 $\epsilon^3\sin\epsilon\ne0(\epsilon^3)$, but $\epsilon^3\sin\epsilon\ne1(\epsilon^3)$
 
+\section{\todo{Case Study: Spinning Body}}
+
 \section{Regularly Perturbed Algebraic Equations}
 \subsection{Problem}
 Consider a regular perturbed algebraiac equation e.g.
@@ -2289,7 +2291,7 @@ Consider a regular perturbed algebraiac equation e.g.
     \end{aligned}
   \right.
 \end{equation}
-We seek to construct an approximation $x^{a}_{(\epsilon)}$ to each solution.
+We seek to construct an approximation $x^{a}(\epsilon)$ to each solution.
 Reference \todo{FIG}
 \subsection{Standard Procedure}
 Assume solutions of $(\text{P})$ can be represented by a standard power series
@@ -2297,14 +2299,14 @@ in $\epsilon$.
 
 \begin{equation*}
   \begin{aligned}
-    x_{(\epsilon)}&=x_0+\epsilon x_1 + \epsilon^2x_2+\cdots \\
+    x(\epsilon)&=x_0+\epsilon x_1 + \epsilon^2x_2+\cdots \\
     &= \mathcal{O}(1) + \mathcal{O}(\epsilon) \\
   \end{aligned}
 \end{equation*}
 where $x_0, x_1,\ldots$ are unknown coefficients. Substituting into (P) gives
 \begin{equation*}
   \begin{aligned}
-    x^2_{(\epsilon)}+e^{\epsilon x_{(\epsilon)}} - 5 &= 0,\quad 0\le\epsilon\ll1 \\
+    x^2(\epsilon)+e^{\epsilon x(\epsilon)} - 5 &= 0,\quad 0\le\epsilon\ll1 \\
     f(\epsilon) + g(\epsilon) -5 &= 0
   \end{aligned}
 \end{equation*}
@@ -2427,6 +2429,9 @@ A representation of the two solutions is
   \end{aligned}
 \end{equation*}
 This recovers the exact solution with just two terms.
+
+\section{\todo{Regulary Perturbed Differential Equations}}
+\todo{}
 
 \section{Case Study: Ballistic Targeting}
 \subsection{Problem}
@@ -2644,6 +2649,9 @@ system.
   next chapter \todo{ref to next chapter}.
 \end{enumerate}
 
+\section{\todo{Poincare Linstedt Method}}
+\todo{}
+
 \section{Singularly Perturbed Algebraic Equations}
 \subsection{Problem}
 Consider a singularly perturbed algebraic equationn
@@ -2741,7 +2749,7 @@ Let $f(\delta) = z^4(\delta)$.
       4z^3(\delta)+z'(\delta) \right]_{\delta=0} + \frac{\delta}{2}\left[
       12z^2(\delta)z'(\delta)z'(\delta) + 4z^3(\delta)z''(\delta)
     \right]_{\delta=0} \\
-    &= z_0^4+\delta(4z_0^3z_1) + \delta^2(6z_0z_1^2+2z_0^32z_2).
+    &= z_0^4+\delta(4z_0^3z_1) + \delta^2(6z_0^2z_1^2+2z_0^32z_2).
   \end{aligned}
 \end{equation*}
 Substituting into \cref{eq:sing-pert-star} gives
@@ -2783,6 +2791,8 @@ Since $\delta=\epsilon^{1/3}$ and $x=\epsilon^{-\alpha}z$ ($\alpha=1/3$), we get
     x(\epsilon)^{(4)} &= \frac{-1-i\sqrt{3}}{2\epsilon^{1/3}} + \frac{1}{3}. \\
   \end{aligned}
 \end{equation*}
+
+\section{\todo{Singularly Perturbed Differential Equations}}
 
 \section{Case Study: Reaction With Fast Components}
 \subsection{Problem}
@@ -3029,6 +3039,8 @@ So in our case, the final composite approximation is
   }
 \end{equation*}
 % Reference pic. 3.
+
+\section{\todo{Case Study: Liquid-Gas Interface}}
 
 \section{Calculus of Variations}
 \subsection{Definition}
