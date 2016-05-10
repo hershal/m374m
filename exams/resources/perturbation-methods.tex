@@ -85,6 +85,11 @@
         \od{y}{t} &= \od{y}{s}\od{s}{t} \\
         \od[2]{y}{t} &= \od{}{t}\od{y}{t} = \od{}{s}\od{y}{t}\od{s}{t}
       \end{align*}
+      e.g.
+      \begin{align*}
+        y'(x) &= \epsilon^{-\alpha}y'(s) \\
+        y''(x) &= \epsilon^{-2\alpha}y''(s) \\
+      \end{align*}
     \item Remove the $\epsilon$ coefficient on the highest derivative; find the
       minimum $\alpha$ that allows the $\epsilon$ powers to be $\ge1$.
     \item Collect powers of $\epsilon$.
@@ -105,8 +110,10 @@
   {\tiny
     \begin{align*}
       f(x) &= f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}{(x-a)}^2+\frac{f^{(3)}(a)}{3!}{(x-a)}^3+\cdots \\
-      \frac{1}{1+f(x)} &= \frac{1}{f(0)+1}-\frac{x f'(0)}{(f(0)+1)^2}+x^2 \left(\frac{f'(0)^2}{(f(0)+1)^3}-\frac{f''(0)}{2 (f(0)+1)^2}\right)- {\mathcal{O}(x)}^3 \\
-      \frac{1}{1+x f(x)} &= 1 + x^2 \left(f(0)^2-f'(0)\right)+x^3 \left(-\frac{f''(0)}{2}+2 f(0) f'(0)-f(0)^3\right)-f(0) x + {\mathcal{O}(x)}^4
+      \frac{1}{1+f(x)} &= \frac{1}{{f(0)}+1}-\frac{x f'(0)}{{(f(0)+1)}^2}+x^2
+                         \left(\frac{{f'(0)}^2}{{(f(0)+1)}^3}-\frac{f''(0)}{2 {(f(0)+1)}^2}\right)- {\mathcal{O}(x)}^3 \\
+      \frac{1}{1+x f(x)} &= 1 + x^2 \left({f(0)}^2-f'(0)\right)+x^3
+                           \left(-\frac{f''(0)}{2}+2 f(0) f'(0)-{f(0)}^3\right)-f(0) x + {\mathcal{O}(x)}^4
     \end{align*}
   }
 \item[Poincar\'e-Lindstedt Method] \hfill
