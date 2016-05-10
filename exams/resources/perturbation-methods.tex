@@ -89,21 +89,26 @@
       minimum $\alpha$ that allows the $\epsilon$ powers to be $\ge1$.
     \item Collect powers of $\epsilon$.
     \item Solve for $y$ and invoke inner boundary condition. This is
-      $y_{\text{inner}}$.
+      $y_{\text{inner}}$. You should have one remaining constant.
     \end{enumerate}
   \item[Matching] \hfill
     \begin{enumerate}
     \item set up
       $\lim_{x\rightarrow0}y_{\text{inner}}=\lim_{s\rightarrow\infty}y_{\text{outer}}$
-      and solve for remaining constants.
+      and solve for remaining constant.
     \item The uniform approximation is $y(x)=y_{\text{inner}}(x) +
       y_{\text{outer}}(x)-C$, where $C$ is the common limit.
     \end{enumerate}
   \end{description}
 
 \item[Taylor Series]
-  $$f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}{(x-a)}^2+\frac{f^{(3)}(a)}{3!}{(x-a)}^3+\cdots$$
-
+  {\tiny
+    \begin{align*}
+      f(x) &= f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}{(x-a)}^2+\frac{f^{(3)}(a)}{3!}{(x-a)}^3+\cdots \\
+      \frac{1}{1+f(x)} &= \frac{1}{f(0)+1}-\frac{x f'(0)}{(f(0)+1)^2}+x^2 \left(\frac{f'(0)^2}{(f(0)+1)^3}-\frac{f''(0)}{2 (f(0)+1)^2}\right)- {\mathcal{O}(x)}^3 \\
+      \frac{1}{1+x f(x)} &= 1 + x^2 \left(f(0)^2-f'(0)\right)+x^3 \left(-\frac{f''(0)}{2}+2 f(0) f'(0)-f(0)^3\right)-f(0) x + {\mathcal{O}(x)}^4
+    \end{align*}
+  }
 \item[Poincar\'e-Lindstedt Method] \hfill
   \begin{enumerate}
   \item Introduce a distorted time scale in the perturbation series. Let
