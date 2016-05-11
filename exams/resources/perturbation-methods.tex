@@ -104,6 +104,109 @@
     \item The uniform approximation is $y(x)=y_{\text{inner}}(x) +
       y_{\text{outer}}(x)-C$, where $C$ is the common limit.
     \end{enumerate}
+
+    {\tiny Use singular perturbation methods to obtain a uniform approximate
+      solution. Assume boundary layer is on left side of interval and find
+      leading-order composite approximation.
+      \begin{equation}
+        \label{eq:3.3.1g-problem}
+        \epsilon y''+2y'+e^y=0,\quad y(0)=y(1)=0.
+      \end{equation}
+      First we'll obtain the outer approximation. We'll collect coefficients of
+      $\epsilon^0$ and solve the resulting ODE.\@
+      \begin{equation*}
+        \begin{aligned}
+          2y'+e^y&=0 \\
+          2\od{y}{x}+e^y&=0 \\
+          2\od{y}{x} &= -e^y \\
+          \int -e^{-y} \dd{y} &= \int\frac{1}{2} \dd{x} \\
+          e^{-y} &= \frac{x}{2}+c \\
+          \ln e^{-y} &= \ln\left( \frac{x}{2}+c \right) \\
+          -y &= \ln\left( \frac{x}{2}+c \right) \\
+          \implies y &= -\ln\left( \frac{x}{2}+c \right).
+        \end{aligned}
+      \end{equation*}
+      Invoking the initial condition on the outer boundary resolves $c$:
+      \begin{equation*}
+        \begin{aligned}
+          y(1) &= \ln\left( \frac{1}{2}+c \right) \\
+          0 &= \ln\left( \frac{1}{2}+c \right) \\
+          \implies c &= \frac{1}{2}.
+        \end{aligned}
+      \end{equation*}
+      So the outer boundary approximation is
+      \begin{equation*}
+        \boxed{y_0(x) = -\ln\left( \frac{x+1}{2} \right).}
+      \end{equation*}
+      To resolve the inner (boundary) layer we will introduce a change of variables.
+      Let
+      \begin{equation*}
+        x=\epsilon^{\alpha}s,\quad s=\epsilon^{-\alpha}x
+      \end{equation*}
+      so that \cref{eq:3.3.1g-problem} becomes
+      \begin{equation*}
+        \epsilon^{-2\alpha+1}y''(s) + 2\epsilon^{-\alpha}y'(s) + e^y = 0.
+      \end{equation*}
+      Multiplying both sides by $\epsilon^{2\alpha-1}$ yields
+      \begin{equation}
+        \label{eq:3.3.1g-ys-alpha}
+        y''(s) + 2\epsilon^{\alpha-1}y'(s) + \epsilon^{2\alpha-1}e^y=0
+      \end{equation}
+      so that $\alpha$ must conform to
+      \begin{equation}
+        \label{eq:3.3.1g-alpha-conditions}
+        \begin{aligned}
+          \alpha-1&\ge0, &\quad 2\alpha-1&\ge0 \\
+          \implies \alpha&\ge1, &\quad \implies \alpha&\ge1/2. \\
+        \end{aligned}
+      \end{equation}
+      The minimum $\alpha$ value which conforms to the
+      \cref{eq:3.3.1g-alpha-conditions} is $\alpha=1$. Thus \cref{eq:3.3.1g-ys-alpha}
+      becomes
+      \begin{equation*}
+        \label{eq:3.3.1g-ys}
+        y''(s) + 2y + \epsilon e^y=0.
+      \end{equation*}
+      Collecting coefficients of $\epsilon^0$ yeilds a linear second-order ODE\@
+      \begin{equation*}
+        y''(s) + 2y'(s) = 0
+      \end{equation*}
+      whose characteristic equation of
+      \begin{equation*}
+        r^2+2r=0
+      \end{equation*}
+      yields a solution in the form
+      \begin{equation*}
+        y(s) = c_1 + c_2e^{-2s}
+      \end{equation*}
+      Invoking the initial condition in the boundary (inner) layer resolves $c_2$:
+      \begin{equation*}
+        \begin{aligned}
+          y(0) &= c_1+c_2 \\
+          \implies c_2 &= -c_1.
+        \end{aligned}
+      \end{equation*}
+      So that the boundary (inner) approximation becomes
+      \begin{equation*}
+        \boxed{y_i(s) = c_1(1-e^{-2s})}
+      \end{equation*}
+      Now we'll perform the matching step to resolve $c_1$.
+      \begin{equation*}
+        \begin{aligned}
+          \lim_{x\rightarrow0}-\ln\left(\frac{x+1}{2}\right) &= \lim_{s\rightarrow\infty}c_1(1-e^{-2s}) \\
+          -\ln\left(\frac{1}{2}\right) &= c_1
+          \implies c_1 &= -\ln\left(\frac{1}{2}\right)
+        \end{aligned}
+      \end{equation*}
+      Thus the uniform approximation in the form of $y(x)=y_0(x)+y_i(x)-C$, where $C$
+      is the common limit, is
+      \begin{equation*}
+        \boxed{y(x)=-\ln\left( \frac{x+1}{2} \right) -
+          \ln\left(\frac{1}{2}\right)(1-e^{-2x/\epsilon}) +
+          \ln\left( \frac{1}{2} \right).}
+      \end{equation*}
+    }
+
   \end{description}
 
 \item[Taylor Series]

@@ -1,5 +1,7 @@
 \item[Euler Equation]
   $$L_y-\od{}{x}L_{y'}+\od[2]{}{x}L_{y''}-\cdots+{(-1)}^n\od[n]{}{n}L_{y^{(n)}}=0$$
+  $$L_y(y(x),y'(x)) - y'(x)L_{y'}(x,y(x),y'(x))=c$$
+  $$L_{y'}(x,y')=c$$
 \item[1st Order Fixed-Fixed] Given
   $$F(y) = \int_a^b f(x)\dd{x}, \quad y(a)=x_0, \quad y(b)=x_1$$
   \begin{enumerate}
@@ -28,5 +30,73 @@
     endpoint. This will give a second boundary.
   \item Use this second boundary to resolve the remaining constant.
   \end{enumerate}
-\item[\todo{2nd Order Fixed-Fixed}]
-\item[\todo{Multivariable Order Fixed-Fixed}]
+
+{\tiny
+Find the extremal for
+\begin{equation}
+  \label{eq:5a-problem}
+  \begin{aligned}
+    J(y) = \int_0^3 e^{2x}(y'^2-y^2)\dd{x}, \\
+    y(0)=1, y(3)=\text{free}. \\
+  \end{aligned}
+\end{equation}
+\begin{align*}
+  L(x,y,y') &= e^{2 x} \left({\left(y'\right)}^2-y^2\right) \\
+  L_y(x,y,y') &= -2 e^{2 x} y \\
+  L_{y'}(x,y,y') &= 2 e^{2 x} y' \\
+\end{align*}
+\begin{equation}
+\label{eq:5a-ode}
+\begin{aligned}
+  0 &= -2 e^{2 x} y - \od{}{x}2 e^{2 x} y' \\
+    &= -2 e^{2 x} y - 4e^{2x}y' - 2e^{2x}y'' \\
+  0 &= y + 2y' + y''
+\end{aligned}
+\end{equation}
+Based on the non-free condition, this ODE may be solved by standard methods
+\begin{equation*}
+  \implies y(x) = e^{-x}(1+c_2x).
+\end{equation*}
+The remaining constant $c_2$ may be determined by natural boundary condition
+\begin{align*}
+  L_{y'}(b,y(b),y'(b)) &= 2 e^{6} y'(3) \\
+  0 &= 2e^{6}y'(3) \\
+  \implies y'(3) &= 0.
+\end{align*}
+We may re-solve by standard methods with this additional
+condition:
+\begin{equation*}
+  \boxed{y(x) = -\frac{1}{2} e^{-x} (x-2).}
+\end{equation*}
+}
+
+\item[2nd Order Fixed-Fixed] Use the same method for 1st order fixed-fixed, just
+  involving another term in the Lagrangian.
+
+{\tiny
+Find the extremals for the functional:
+\begin{equation}
+  \label{eq:4.4.1d-problem}
+  \begin{aligned}
+    J(y) &= \int_0^1 (yy'+{(y'')}^2)\dd{t} \\
+    y(0) &= 0, \quad y(1) = 2, \quad y'(0) = 1,\quad y'(1) = 4 \\
+  \end{aligned}
+\end{equation}
+\begin{align*}
+  L &= yy'+{(y'')}^2, \\
+  L_y &= y', \\
+  L_{y'} &= y, \\
+  L_{y''} &= 2y''. \\
+\end{align*}
+\begin{align*}
+  0 &= L_y - \od{}{x}L_{y'} + \od[2]{}{x}L_{y''} \\
+    &= y' - \od{}{x}y + \od[2]{}{x}2y'' \\
+    &= y'''' \\
+\end{align*}
+\begin{equation*}
+  \boxed{y(x) = x + x^3}
+\end{equation*}
+}
+
+\item[Multivariable Fixed-Fixed] Same method as fixed-fixed, just have two
+  equations. Solve for each $y_i$ independently.
