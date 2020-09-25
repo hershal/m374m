@@ -35,8 +35,6 @@
 %        system is defined in the file rigidbody.m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-pkg load odepkg;
-
 % Define global constants
 global m a b c ;
 

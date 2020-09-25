@@ -35,8 +35,6 @@
 %        file glycolysis.m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-pkg load odepkg;
-
 % Define global constants
 global a b ;
 

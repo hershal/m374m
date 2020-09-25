@@ -35,8 +35,6 @@
 %        file lovehate.m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-pkg load odepkg
-
 % Define global constants
 global a b c d ;
 

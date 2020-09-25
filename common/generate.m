@@ -2,8 +2,6 @@
 # -*- mode: octave -*-
 
 function ret = generate(f, problem, points = [-2, 0, 2; -2, 0, 2], tf=6)
-  pkg load odepkg;
-
   x0 = points(1, :);
   y0 = points(2, :);
   t0 = 0;

@@ -1,7 +1,24 @@
 #!/usr/bin/env octave
 # -*- mode: octave -*-
 
-pkg load odepkg;
+
+function generate_minilab()
+  global g
+  global L
+
+  c1 = [10, 0.25];
+  c2 = [10, 0.5];
+  c3 = [10, 1];
+  configs = [c1;c2;c3];
+
+  for i=1:size(configs,1)
+    cc = configs(i,:);
+    g = cc(1);
+    L = cc(2);
+    dumpMinilab(i); clear -globals
+  endfor
+endfunction
+
 
 function dumpMinilab(config)
   global g
@@ -21,18 +38,3 @@ function dumpMinilab(config)
   dlmwrite(sprintf("minilab-1-%i.mat", config), tu1, " ", "precision", "%.5f");
   dlmwrite(sprintf("minilab-2-%i.mat", config), tu2, " ", "precision", "%.5f");
 endfunction
-
-global g
-global L
-
-c1 = [10, 0.25];
-c2 = [10, 0.5];
-c3 = [10, 1];
-configs = [c1;c2;c3];
-
-for i=1:size(configs,1)
-  cc = configs(i,:);
-  g = cc(1);
-  L = cc(2);
-  dumpMinilab(i); clear -globals
-endfor

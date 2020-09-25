@@ -35,8 +35,6 @@
 %        defined in the file pendulum.m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-pkg load odepkg
-
 % Define global constants
 global g  L ;
 

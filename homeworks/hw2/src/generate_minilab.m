@@ -1,7 +1,21 @@
 #!/usr/bin/env octave
 # -*- mode: octave -*-
 
-pkg load odepkg;
+function generate_minilab()
+  global cin eta V gamma
+  c1 = [10^(-2), 10^(-2), 10, 10^(-1)];
+  c2 = [10^(-2), 10^(-1), 1, 10^(-1)];
+  configs = [c1; c2];
+
+  for i=1:size(configs,1)
+    cc = configs(i,:);
+    cin = cc(1);
+    eta = cc(2);
+    V = cc(3);
+    gamma = cc(4);
+    dumpMinilab(i); clear -globals
+  endfor
+endfunction
 
 function dumpMinilab(prob)
   global V eta gamma
@@ -25,17 +39,3 @@ function dumpMinilab(prob)
   ## plot(tsoln1,usoln1,'b-')  ; %plot u versus t
   ## plot(tsoln2,usoln2,'r--') ; %plot u versus t
 endfunction
-
-global cin eta V gamma
-c1 = [10^(-2), 10^(-2), 10, 10^(-1)];
-c2 = [10^(-2), 10^(-1), 1, 10^(-1)];
-configs = [c1; c2];
-
-for i=1:size(configs,1)
-  cc = configs(i,:);
-  cin = cc(1);
-  eta = cc(2);
-  V = cc(3);
-  gamma = cc(4);
-  dumpMinilab(i); clear -globals
-endfor

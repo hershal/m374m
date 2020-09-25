@@ -32,8 +32,6 @@
 %        This system is defined in the file rtank.m
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-pkg load odepkg
-
 % Define global constants
 global cin eta V gamma ;
 

@@ -1,8 +1,27 @@
 #!/usr/bin/env octave
 # -*- mode: octave -*-
 
-pkg load odepkg;
-vopt = odeset ("InitialStep", 1e-2, "MaxStep", 1e-2, "RelTol", 1e-3, "AbsTol", 1e-3);
+function generate_minilab()
+  vopt = odeset ("InitialStep", 1e-2, "MaxStep", 1e-2, "RelTol", 1e-3, "AbsTol", 1e-3);
+  global a
+  global b
+  global c
+  global d
+
+  c1 = [0 3 -3 0, 1, 1];
+  c2 = [-4 3 3 -4, 2, 1];
+  c3 = [-2 3 3 -2, 2, 2];
+  configs = [c1; c2; c3];
+
+  for i=1:size(configs,1)
+    cc = configs(i,:);
+    a = cc(1);
+    b = cc(2);
+    c = cc(3);
+    d = cc(4);
+    dumpMinilab(cc(5),cc(6)); clear -globals
+  endfor
+endfunction
 
 ## figure(1); clf; hold on;
 ## figure(2); clf; hold on;
@@ -32,22 +51,3 @@ function dumpMinilab(prob, subprob)
     clear tsoln usoln u1 u2 uu;
   end
 endfunction
-
-global a
-global b
-global c
-global d
-
-c1 = [0 3 -3 0, 1, 1];
-c2 = [-4 3 3 -4, 2, 1];
-c3 = [-2 3 3 -2, 2, 2];
-configs = [c1; c2; c3];
-
-for i=1:size(configs,1)
-  cc = configs(i,:);
-  a = cc(1);
-  b = cc(2);
-  c = cc(3);
-  d = cc(4);
-  dumpMinilab(cc(5),cc(6)); clear -globals
-endfor

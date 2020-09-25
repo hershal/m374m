@@ -36,8 +36,6 @@
 %        is the inverse radius variable.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-pkg load odepkg;
-
 % Define global constants
 global rho gamma c ;
 

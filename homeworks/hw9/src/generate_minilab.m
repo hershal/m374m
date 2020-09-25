@@ -1,10 +1,26 @@
 #!/usr/bin/env octave
 # -*- mode: octave -*-
 
-pkg load odepkg;
+function generate_minilab()
+  global sigma
+  global rho
+  global g
+  global gamma
+
+  c1 = [0.05, 1000, 10, pi/3];
+  configs = [c1;];
+
+  for i=1:size(configs,1)
+    cc = configs(i,:);
+    sigma = cc(1);
+    rho = cc(2);
+    g = cc(3);
+    gamma = cc(4);
+    dumpMinilab(); clear -globals
+  endfor
+endfunction
 
 function dumpMinilab()
-
   L = 0.07;
   a = 0;
   b = L;
@@ -42,22 +58,4 @@ function dumpMinilab()
 
   uexpected = [xplot uplot(:,1) zeros(size(uplot,1),1)];
   dlmwrite("minilab-expected.mat", uexpected, " ", "precision", "%.5f");
-
 endfunction
-
-global sigma
-global rho
-global g
-global gamma
-
-c1 = [0.05, 1000, 10, pi/3];
-configs = [c1;];
-
-for i=1:size(configs,1)
-  cc = configs(i,:);
-  sigma = cc(1);
-  rho = cc(2);
-  g = cc(3);
-  gamma = cc(4);
-  dumpMinilab(); clear -globals
-endfor

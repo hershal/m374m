@@ -2,8 +2,6 @@
 # -*- mode: octave -*-
 
 function ret = generate_inorder(f, problem, points = [], tf = [])
-  pkg load odepkg;
-
   x0 = points(1, :);
   y0 = points(2, :);
   t0 = 0;

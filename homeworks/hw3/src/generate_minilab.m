@@ -1,7 +1,21 @@
 #!/usr/bin/env octave
 # -*- mode: octave -*-
 
-pkg load odepkg;
+function generate_minilab()
+  global c h
+  configs = [4, 0.8;
+             4, 1.0;
+             4, 1.5;
+             4, 1.6;
+             4, 2.0];
+
+  for i=1:size(configs,1)
+    cc = configs(i,:);
+    c = cc(1);
+    h = cc(2);
+    dumpMinilab(i); clear -globals
+  endfor
+endfunction
 
 function dumpMinilab(prob)
   u0 = 0;
@@ -21,16 +35,3 @@ function dumpMinilab(prob)
   end
 endfunction
 
-global c h
-configs = [4, 0.8;
-           4, 1.0;
-           4, 1.5;
-           4, 1.6;
-           4, 2.0];
-
-for i=1:size(configs,1)
-  cc = configs(i,:);
-  c = cc(1);
-  h = cc(2);
-  dumpMinilab(i); clear -globals
-endfor
